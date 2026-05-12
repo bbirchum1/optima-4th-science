@@ -1,0 +1,1887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – Meet Our Earth</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+  background: #F4F0EB url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #2B1D12;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap { max-width: 920px; margin: 0 auto; background: #FAF7F3; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%);
+  border-bottom: 6px solid #55C8E8;
+  padding: 22px 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 6px; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #34B76F, #55C8E8, #34B76F);
+}
+.header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.header-logo {
+  width: 52px; height: 52px; border-radius: 50%; background: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title {
+  font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+  text-shadow: 0 2px 12px rgba(85,200,232,0.3);
+}
+.header-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(85,200,232,0.15); border: 1.5px solid rgba(85,200,232,0.35);
+  border-radius: 28px; padding: 6px 16px;
+}
+.header-badge span:first-child { font-size: 22px; }
+.header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ── Hero Visual ── */
+.hero-visual {
+  background: linear-gradient(180deg, #070a12 0%, #0e1829 60%, #1a2540 100%);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #55C8E8;
+}
+.hero-visual svg { display: block; width: 100%; height: auto; }
+
+/* ── Info Strip ── */
+.info-strip {
+  display: flex; flex-wrap: wrap; background: #fff;
+  border-bottom: 2px solid #E8DDD2;
+}
+.info-item {
+  flex: 1; min-width: 150px; padding: 12px 16px;
+  border-right: 1px solid #E8DDD2;
+  display: flex; align-items: center; gap: 10px;
+}
+.info-item:last-child { border-right: none; }
+.info-icon {
+  width: 40px; height: 40px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.info-value { font-size: 16px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+/* ── Card System ── */
+.card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 22px; overflow: hidden;
+  box-shadow: 0 2px 12px rgba(43,29,18,0.04);
+}
+.card-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 20px; border-bottom: 2px solid;
+}
+.card-head-icon {
+  width: 42px; height: 42px; border-radius: 50%; color: #fff;
+  font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.card-head-title { font-size: 20px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+.card-body { padding: 18px 22px; }
+.card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+.card-body p:last-child { margin-bottom: 0; }
+
+.theme-earth .card-head { background: #FFF7EE; border-color: #F0DCC4; }
+.theme-earth .card-head-icon { background: #C7922C; }
+.theme-sky .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-sky .card-head-icon { background: #55C8E8; }
+.theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+.theme-forest .card-head-icon { background: #34B76F; }
+.theme-rock .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+.theme-rock .card-head-icon { background: #8B6FC0; }
+.theme-lava .card-head { background: #FFF0EC; border-color: #F5C4BA; }
+.theme-lava .card-head-icon { background: #E8636B; }
+.theme-magma .card-head { background: #FFF3DC; border-color: #F5E6C8; }
+.theme-magma .card-head-icon { background: #D4772C; }
+
+/* ── Activity Cards ── */
+.activity-card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 18px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(43,29,18,0.04);
+}
+.activity-card.act-warmup  { border-left: 6px solid #E8636B; }
+.activity-card.act-lesson  { border-left: 6px solid #D4772C; }
+.activity-card.act-explore { border-left: 6px solid #55C8E8; }
+.activity-card.act-practice{ border-left: 6px solid #34B76F; }
+
+.act-head {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px 14px 18px;
+  border-bottom: 1.5px solid #E8DDD2;
+}
+.act-num {
+  width: 38px; height: 38px; border-radius: 14px; color: #fff;
+  font-size: 18px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.act-title { font-size: 19px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+.act-subtitle { font-size: 12px; color: #9A8E82; }
+.act-time {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap;
+  margin-left: auto; flex-shrink: 0;
+}
+.act-body { padding: 18px 22px 18px 20px; }
+.act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+/* ── Callout Boxes ── */
+.callout {
+  border-radius: 14px; padding: 16px 18px;
+  display: flex; align-items: flex-start; gap: 12px;
+  margin-bottom: 14px;
+}
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+.callout-sky    { background: #EAF8FD; border: 2px solid #D6F2FB; }
+.callout-think  { background: #FFF7EE; border: 2px solid #F0DCC4; }
+.callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+.callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+.callout-earth  { background: #FFF7EE; border: 2px solid #F0DCC4; }
+
+/* ── Socratic Questions ── */
+.socratic-q {
+  background: linear-gradient(135deg, #FFF7EE, #FFF3E0);
+  border: 2px solid #E8C88A;
+  border-radius: 16px; padding: 16px 20px;
+  margin: 16px 0;
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.socratic-q .label {
+  font-size: 11px; color: #C7922C; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px;
+}
+.socratic-q .question {
+  font-size: 17px; color: #2B1D12; font-weight: 700;
+  line-height: 1.6; font-style: italic;
+}
+
+/* ── Diagram Containers ── */
+.diagram-wrap {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 16px; margin: 16px 0;
+  text-align: center;
+}
+.diagram-wrap svg { max-width: 100%; height: auto; }
+.diagram-caption { font-size: 13px; color: #9A8E82; margin-top: 10px; font-weight: 600; }
+
+/* ── Key Concept Box ── */
+.key-concept {
+  background: #EAF8FD; border: 2px solid #D6F2FB;
+  border-radius: 14px; padding: 18px 20px; margin: 14px 0;
+}
+.key-concept .kc-label {
+  font-size: 13px; color: #2A8DB5; text-transform: uppercase;
+  letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px;
+}
+.key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+.key-concept p:last-child { margin-bottom: 0; }
+
+/* ── Practice Questions ── */
+.pq {
+  background: #FAFAF6; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 14px 18px; margin-bottom: 12px;
+}
+.pq-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  color: #fff; font-weight: 800; font-size: 14px;
+  margin-right: 8px; vertical-align: middle;
+}
+.pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+
+/* ── Vocab Flashcards ── */
+.vocab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+.flip-card { perspective: 800px; height: 160px; cursor: pointer; }
+.flip-card-inner {
+  position: relative; width: 100%; height: 100%;
+  transition: transform 0.5s ease; transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  border-radius: 16px; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 18px 20px; text-align: center;
+  border: 2px solid #E8DDD2; box-shadow: 0 2px 10px rgba(43,29,18,0.06);
+}
+.flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+.flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+.flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #0E1C42; margin-bottom: 6px; }
+.flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+.flip-card-back {
+  background: linear-gradient(145deg, #0E1C42, #1A2D5A);
+  border-color: #0E1C42; transform: rotateY(180deg);
+}
+.flip-card-back .fc-def { font-size: 15px; color: #fff; line-height: 1.6; font-weight: 600; }
+.flip-card-back .fc-word-back {
+  font-size: 11px; color: #55C8E8; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 8px;
+}
+.flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 10px; font-weight: 600; }
+.fc-color-1 .flip-card-front { border-top-color: #55C8E8; }
+.fc-color-2 .flip-card-front { border-top-color: #34B76F; }
+.fc-color-3 .flip-card-front { border-top-color: #C7922C; }
+.fc-color-4 .flip-card-front { border-top-color: #8B6FC0; }
+.fc-color-5 .flip-card-front { border-top-color: #E8636B; }
+.fc-color-6 .flip-card-front { border-top-color: #D4772C; }
+
+/* ── Vocab Tooltips ── */
+.vtip {
+  position: relative; color: #8B6FC0; font-weight: 700;
+  cursor: help; border-bottom: 2px dotted rgba(139,111,192,0.45); transition: color 0.15s;
+}
+.vtip:hover { color: #6B4FA0; }
+.vtip .vtip-box {
+  position: fixed; background: #0E1C42; color: #fff;
+  padding: 12px 16px; border-radius: 12px; font-size: 14px; font-weight: 600;
+  font-style: normal; line-height: 1.55; width: 250px; text-align: center;
+  opacity: 0; visibility: hidden; transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  pointer-events: none; z-index: 9999;
+  box-shadow: 0 6px 24px rgba(14,28,66,0.35); border: 1.5px solid rgba(85,200,232,0.3);
+  transform: translateY(6px);
+}
+.vtip .vtip-box::after {
+  content: ''; position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%); border: 7px solid transparent; border-top-color: #0E1C42;
+}
+.vtip .vtip-word {
+  font-size: 11px; color: #55C8E8; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block;
+}
+.vtip:hover .vtip-box { opacity: 1; visibility: visible; transform: translateY(0); }
+
+/* ── Details / Go Deeper ── */
+.go-deeper {
+  background: linear-gradient(135deg, #F0EDF6, #E8E2F2);
+  border: 2px solid #D8D0E8; border-radius: 16px;
+  margin: 16px 0; overflow: hidden;
+}
+.go-deeper summary {
+  padding: 14px 18px; font-size: 16px; font-weight: 800;
+  color: #0E1C42; cursor: pointer;
+  display: flex; align-items: center; gap: 10px; list-style: none;
+}
+.go-deeper summary::-webkit-details-marker { display: none; }
+.go-deeper summary::before { content: '🔭'; font-size: 22px; }
+.go-deeper summary::after { content: '▸'; margin-left: auto; font-size: 18px; color: #8B6FC0; transition: transform 0.3s; }
+.go-deeper[open] summary::after { transform: rotate(90deg); }
+.go-deeper .gd-body { padding: 4px 18px 16px; font-size: 15px; color: #5A4D3E; line-height: 1.7; border-top: 1.5px solid #D8D0E8; }
+.go-deeper .gd-body p { margin-bottom: 10px; }
+
+/* ── Types Grid ── */
+.types-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; }
+.type-card {
+  border-radius: 16px; padding: 16px; text-align: center;
+  border: 2px solid; position: relative; overflow: hidden;
+}
+.type-card svg { display: block; margin: 0 auto 10px; }
+.type-name { font-size: 16px; font-weight: 800; color: #0E1C42; margin-bottom: 4px; }
+.type-desc { font-size: 13px; color: #5A4D3E; line-height: 1.5; }
+.tc-rotate    { background: #EAF8FD; border-color: #D6F2FB; }
+.tc-revolve   { background: #FFF7EE; border-color: #F0DCC4; }
+.tc-tilt      { background: #F0EDF6; border-color: #D8D0E8; }
+
+/* ── Mind-Blowing Fact ── */
+.mind-blow {
+  background: linear-gradient(135deg, #0a0e1a, #0E1C42);
+  border: 2px solid rgba(85,200,232,0.3);
+  border-radius: 18px; padding: 18px 22px; margin: 18px 0;
+  display: flex; align-items: flex-start; gap: 14px;
+  position: relative; overflow: hidden;
+}
+.mind-blow::before {
+  content: ''; position: absolute; top: -30px; right: -30px;
+  width: 100px; height: 100px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(85,200,232,0.15), transparent);
+}
+.mind-blow-icon { font-size: 36px; flex-shrink: 0; animation: mind-blow-bounce 2s ease-in-out infinite; }
+@keyframes mind-blow-bounce { 0%,100%{transform:scale(1)} 50%{transform:scale(1.12)} }
+.mind-blow-content { flex: 1; }
+.mind-blow-label { font-size: 11px; color: #FFD700; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 4px; }
+.mind-blow-text { font-size: 16px; color: #fff; line-height: 1.6; font-weight: 600; }
+.mind-blow-text strong { color: #55C8E8; }
+
+/* ── Clickable Diagram ── */
+.diagram-interactive { position: relative; }
+.diagram-interactive .hotspot { cursor: pointer; opacity: 0; transition: opacity 0.2s; }
+.diagram-interactive .hotspot:hover { opacity: 0.25; }
+.diagram-interactive .hotspot.active { opacity: 0.35; }
+.diagram-info-panel {
+  background: #0E1C42; color: #fff;
+  padding: 14px 20px; border-radius: 14px;
+  font-size: 15px; line-height: 1.55; font-weight: 600; text-align: center;
+  border: 1.5px solid rgba(85,200,232,0.3); box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  margin: 10px 0 0; display: none;
+}
+.diagram-info-panel.visible { display: block; }
+.diagram-info-panel .dip-word {
+  font-size: 11px; color: #FFD700; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; display: block; margin-bottom: 3px;
+}
+
+/* ── Size Comparison ── */
+.size-compare-wrap {
+  background: linear-gradient(180deg, #070a12, #0e1829);
+  border: 2px solid rgba(85,200,232,0.25); border-radius: 16px;
+  padding: 16px; margin: 16px 0; text-align: center;
+}
+.size-compare-wrap svg { max-width: 100%; height: auto; }
+.size-compare-caption { font-size: 13px; color: #9A8E82; margin-top: 10px; font-weight: 600; }
+
+/* ── Quiz ── */
+.quiz-card {
+  background: #fff; border: 2px solid #E8DDD2; border-left: 6px solid #F5A623;
+  border-radius: 18px; margin-bottom: 18px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(43,29,18,0.04);
+}
+.quiz-q {
+  background: #FAFAF6; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 16px 18px; margin-bottom: 14px;
+}
+.quiz-q-text { font-size: 17px; color: #2B1D12; font-weight: 700; line-height: 1.6; margin-bottom: 12px; }
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt {
+  padding: 10px 16px; border-radius: 12px; border: 2px solid #E8DDD2; background: #fff;
+  font-size: 15px; font-weight: 700; color: #2B1D12; cursor: pointer; transition: all 0.2s;
+  display: flex; align-items: center; gap: 10px; user-select: none;
+}
+.quiz-opt:hover { background: #EAF8FD; border-color: #55C8E8; }
+.quiz-opt.correct { background: #EEF8F0 !important; border-color: #34B76F !important; color: #1a6b35 !important; }
+.quiz-opt.wrong   { background: #FFF0EC !important; border-color: #E8636B !important; color: #a33 !important; }
+.quiz-opt.disabled { pointer-events: none; opacity: 0.6; }
+.quiz-opt .opt-letter {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: #E8DDD2; color: #5A4D3E; font-size: 14px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s;
+}
+.quiz-opt.correct .opt-letter { background: #34B76F; color: #fff; }
+.quiz-opt.wrong .opt-letter   { background: #E8636B; color: #fff; }
+.quiz-feedback { font-size: 14px; padding: 10px 14px; border-radius: 10px; margin-top: 10px; display: none; font-weight: 600; line-height: 1.5; }
+.quiz-feedback.show { display: block; }
+.quiz-feedback.fb-correct { background: #EEF8F0; color: #1a6b35; border: 1.5px solid #B8E8CF; }
+.quiz-feedback.fb-wrong   { background: #FFF0EC; color: #8a3030; border: 1.5px solid #F5C4BA; }
+.quiz-score {
+  text-align: center; padding: 16px; background: linear-gradient(135deg, #EAF8FD, #D6F2FB);
+  border: 2px solid #B8E8F5; border-radius: 14px; margin-top: 8px; display: none;
+}
+.quiz-score.show { display: block; }
+.quiz-score-num { font-size: 36px; font-weight: 900; color: #0E1C42; }
+.quiz-score-label { font-size: 14px; color: #9A8E82; font-weight: 700; }
+.quiz-score-msg { font-size: 16px; color: #2B1D12; font-weight: 700; margin-top: 6px; }
+
+/* ── Video Embed System ── */
+.video-wrap {
+  border-radius: 18px; overflow: hidden; border: 2px solid #E8DDD2;
+  box-shadow: 0 4px 20px rgba(43,29,18,0.08); background: #000; margin: 0 0 22px;
+}
+.video-wrap-header {
+  display: flex; align-items: center; gap: 12px; padding: 12px 18px;
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  border-bottom: 2px solid rgba(85,200,232,0.2);
+}
+.video-wrap-type { font-size: 10px; color: #55C8E8; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+.video-wrap-title { font-size: 16px; color: #fff; font-weight: 800; line-height: 1.2; }
+.video-ratio { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.video-ratio iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.video-placeholder {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, #0e1829, #0E1C42);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 24px;
+}
+.video-placeholder-icon { font-size: 44px; margin-bottom: 10px; opacity: 0.55; }
+.video-placeholder-text { font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 600; line-height: 1.5; font-family: 'Nunito', sans-serif; }
+.video-placeholder-id { font-size: 11px; color: rgba(85,200,232,0.4); font-family: monospace; margin-top: 6px; }
+
+/* ── Progress Bar ── */
+.progress-wrap {
+  position: sticky; top: 0; z-index: 200;
+  background: #0E1C42; padding: 8px 20px 10px;
+  border-bottom: 2px solid rgba(85,200,232,0.3);
+  display: flex; align-items: center; gap: 14px;
+}
+.progress-label { font-size: 12px; color: #55C8E8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+.progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+.progress-fill {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, #55C8E8, #34B76F, #FFD700);
+  border-radius: 10px; transition: width 0.4s ease;
+}
+.progress-pct { font-size: 13px; color: #FFD700; font-weight: 800; min-width: 36px; text-align: right; }
+
+/* ── Tab Bar ── */
+.tab-bar {
+  position: sticky; top: 44px; z-index: 100;
+  background: #FAF7F3; border-bottom: 3px solid #E8DDD2;
+  display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex: 1; min-width: 130px; padding: 12px 8px 11px;
+  background: transparent; border: none; border-bottom: 4px solid transparent;
+  font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700;
+  color: #9A8E82; cursor: pointer; transition: all 0.2s;
+  white-space: nowrap; line-height: 1.3; text-align: center;
+}
+.tab-btn:hover { color: #0E1C42; background: #F0EDE8; }
+.tab-btn.active { color: #0E1C42; border-bottom-color: #55C8E8; background: #fff; }
+.tab-btn .tab-check { display: none; font-size: 12px; color: #34B76F; margin-left: 4px; font-weight: 800; }
+.tab-btn.visited .tab-check { display: inline; }
+
+/* ── Tab Panels ── */
+.tab-panel { display: none; padding: 24px 28px 36px; }
+.tab-panel.active { display: block; }
+.scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+/* ── Intro 2-col ── */
+.intro-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px 28px 0; }
+.intro-2col .card { margin-bottom: 0; }
+.intro-2col .card .card-head { cursor: pointer; user-select: none; position: relative; }
+.intro-2col .card .card-head::after {
+  content: '▾'; position: absolute; right: 16px; top: 50%;
+  transform: translateY(-50%); font-size: 16px; color: #9A8E82; transition: transform 0.25s ease;
+}
+.intro-2col .card.collapsed .card-head::after { transform: translateY(-50%) rotate(-90deg); }
+.intro-2col .card.collapsed .card-body { display: none; }
+
+/* ── Need Strip ── */
+.need-strip { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 28px 16px; }
+.need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 700; white-space: nowrap; }
+.need-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: #EEF8F0; border: 1.5px solid #C4E5CC;
+  border-radius: 20px; padding: 5px 12px; font-size: 13px; color: #0E1C42; font-weight: 700;
+}
+
+/* ── Tab Next Button ── */
+.tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+.tab-next-btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px;
+  background: linear-gradient(135deg, #55C8E8, #34B76F);
+  color: #fff; border: none; border-radius: 28px;
+  font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800;
+  cursor: pointer; box-shadow: 0 4px 16px rgba(85,200,232,0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(85,200,232,0.45); }
+
+/* ── Checklist ── */
+.checklist-item:hover { background: #F0EDE8 !important; }
+.checklist-item.checked { background: #EEF8F0 !important; border-color: #B8E8CF !important; }
+.checklist-item.checked .check-icon { border-color: transparent !important; background: transparent !important; font-size: 22px !important; }
+.checklist-item.checked span:last-child { color: #5A4D3E; }
+
+/* ── Back to Top ── */
+.back-to-top {
+  position: fixed; bottom: 28px; right: 28px; height: 44px; padding: 0 18px 0 14px;
+  border-radius: 22px; background: linear-gradient(135deg, #55C8E8, #34B76F);
+  color: #fff; border: none; font-size: 14px; font-weight: 800;
+  font-family: 'Nunito', sans-serif; cursor: pointer;
+  box-shadow: 0 4px 18px rgba(85,200,232,0.35);
+  display: flex; align-items: center; gap: 6px;
+  opacity: 0; visibility: hidden; transform: translateY(20px);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.2s;
+  z-index: 500; letter-spacing: 0.3px;
+}
+.back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { box-shadow: 0 6px 24px rgba(85,200,232,0.5); transform: translateY(-3px); }
+
+/* ── Confetti Canvas ── */
+#confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000; }
+
+/* ── Footer ── */
+.footer { background: #0E1C42; border-top: 4px solid #55C8E8; padding: 18px 28px; text-align: center; }
+.footer-line1 { font-size: 15px; color: #fff; margin-bottom: 4px; }
+.footer-line1 span { color: #55C8E8; font-weight: 700; }
+.footer-line2 { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+.footer-line3 { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+strong { color: #0E1C42; }
+em { color: #5A4D3E; }
+
+@media (max-width: 620px) {
+  .intro-2col { grid-template-columns: 1fr; }
+  .types-grid { grid-template-columns: 1fr; }
+  .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 4px; }
+}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+<!-- ═══ PROGRESS BAR ═══ -->
+<div class="progress-wrap">
+  <span class="progress-label">🌍 Lesson Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">Meet Our Earth: A Planet Always in Motion</div>
+  <div class="header-badge">
+    <span>🔬</span>
+    <span>SCIENCE &middot; EARTH &amp; SPACE</span>
+  </div>
+</div>
+
+<!-- ═══ HERO SVG — Earth Revolving Around the Sun ═══ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- ── Orbit motion path: ellipse center (460,130) rx=275 ry=68 ── -->
+    <!-- Counterclockwise: Summer(right)→Fall(top)→Winter(left)→Spring(bottom) -->
+    <path id="orbitMotionPath" d="M 735,130 A 275,68 0 0,0 185,130 A 275,68 0 0,0 735,130"/>
+
+    <!-- Gradients -->
+    <radialGradient id="spaceG" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#080c18"/>
+      <stop offset="100%" stop-color="#030508"/>
+    </radialGradient>
+    <radialGradient id="sunBodyG" cx="38%" cy="32%" r="65%">
+      <stop offset="0%"   stop-color="#FFFDE0"/>
+      <stop offset="25%"  stop-color="#FFE040"/>
+      <stop offset="65%"  stop-color="#F5A623"/>
+      <stop offset="100%" stop-color="#D4772C"/>
+    </radialGradient>
+    <radialGradient id="sunCoronaG" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="rgba(255,200,50,0.75)"/>
+      <stop offset="45%"  stop-color="rgba(245,166,35,0.25)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <radialGradient id="earthSeaG" cx="38%" cy="32%" r="65%">
+      <stop offset="0%"   stop-color="#3BB8E0"/>
+      <stop offset="55%"  stop-color="#1A72AA"/>
+      <stop offset="100%" stop-color="#0D4870"/>
+    </radialGradient>
+    <radialGradient id="earthAtmG" cx="50%" cy="50%" r="50%">
+      <stop offset="72%"  stop-color="transparent"/>
+      <stop offset="100%" stop-color="rgba(85,200,232,0.45)"/>
+    </radialGradient>
+
+    <!-- Filters -->
+    <filter id="coronaBlur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="atmoBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <filter id="glowSoft">
+      <feGaussianBlur stdDeviation="2.5"/>
+    </filter>
+
+    <!-- Arrowhead for orbit direction -->
+    <marker id="orbitArr" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="rgba(85,200,232,0.5)"/>
+    </marker>
+  </defs>
+
+  <style>
+    @keyframes twkl { 0%,100%{opacity:.08} 50%{opacity:.9} }
+    @keyframes coronaPulse { 0%,100%{opacity:.55} 50%{opacity:.88} }
+    @keyframes sunSpin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+    .hst{animation:twkl ease-in-out infinite}
+    .t1{animation-duration:3.1s;animation-delay:0s}
+    .t2{animation-duration:4.4s;animation-delay:.65s}
+    .t3{animation-duration:2.7s;animation-delay:1.3s}
+    .t4{animation-duration:3.8s;animation-delay:.25s}
+    .t5{animation-duration:4.9s;animation-delay:1.85s}
+    .t6{animation-duration:2.4s;animation-delay:.9s}
+    .t7{animation-duration:3.5s;animation-delay:2.2s}
+    .t8{animation-duration:4.1s;animation-delay:.45s}
+    .t9{animation-duration:2.9s;animation-delay:1.55s}
+    .t10{animation-duration:3.6s;animation-delay:.75s}
+    .t11{animation-duration:4.6s;animation-delay:2.4s}
+    .t12{animation-duration:2.6s;animation-delay:1.1s}
+    .t13{animation-duration:3.3s;animation-delay:.35s}
+    .t14{animation-duration:4.2s;animation-delay:1.95s}
+    .corona { animation: coronaPulse 2.8s ease-in-out infinite; }
+    /* Sun inner spin gives a subtle shimmer */
+    .sun-shimmer { animation: sunSpin 40s linear infinite; transform-origin: 460px 130px; }
+  </style>
+
+  <!-- ── Deep space background ── -->
+  <rect width="920" height="260" fill="url(#spaceG)"/>
+
+  <!-- Subtle nebula wisps -->
+  <ellipse cx="180" cy="70"  rx="160" ry="55" fill="rgba(20,35,90,0.35)"/>
+  <ellipse cx="740" cy="195" rx="130" ry="48" fill="rgba(35,15,75,0.28)"/>
+  <ellipse cx="820" cy="55"  rx="80"  ry="35" fill="rgba(25,45,80,0.2)"/>
+  <ellipse cx="100" cy="210" rx="90"  ry="40" fill="rgba(15,30,70,0.2)"/>
+
+  <!-- ── Stars ── -->
+  <circle class="hst t1"  cx="28"  cy="20"  r="1.6" fill="#fff"/>
+  <circle class="hst t2"  cx="82"  cy="60"  r="1.0" fill="#cce8ff"/>
+  <circle class="hst t3"  cx="55"  cy="150" r="1.2" fill="#fff"/>
+  <circle class="hst t4"  cx="138" cy="32"  r="0.8" fill="#fff"/>
+  <circle class="hst t5"  cx="162" cy="215" r="1.1" fill="#ffe8aa"/>
+  <circle class="hst t6"  cx="92"  cy="238" r="0.9" fill="#fff"/>
+  <circle class="hst t7"  cx="265" cy="14"  r="1.3" fill="#fff"/>
+  <circle class="hst t8"  cx="308" cy="248" r="1.0" fill="#cce8ff"/>
+  <circle class="hst t9"  cx="595" cy="18"  r="1.4" fill="#fff"/>
+  <circle class="hst t10" cx="648" cy="244" r="1.0" fill="#fff"/>
+  <circle class="hst t11" cx="758" cy="24"  r="1.3" fill="#ffe8aa"/>
+  <circle class="hst t12" cx="838" cy="88"  r="0.9" fill="#fff"/>
+  <circle class="hst t13" cx="895" cy="220" r="1.2" fill="#cce8ff"/>
+  <circle class="hst t14" cx="815" cy="200" r="1.0" fill="#fff"/>
+  <!-- Tiny static stars -->
+  <circle cx="198" cy="244" r="0.6" fill="#fff" opacity="0.3"/>
+  <circle cx="418" cy="250" r="0.5" fill="#fff" opacity="0.3"/>
+  <circle cx="685" cy="10"  r="0.6" fill="#fff" opacity="0.4"/>
+  <circle cx="558" cy="252" r="0.5" fill="#fff" opacity="0.3"/>
+  <circle cx="900" cy="145" r="0.7" fill="#fff" opacity="0.25"/>
+  <circle cx="14"  cy="190" r="0.6" fill="#fff" opacity="0.3"/>
+
+  <!-- ══════════════════════════════════════
+       ORBIT PATH (visual dashed ellipse)
+  ══════════════════════════════════════ -->
+  <ellipse cx="460" cy="130" rx="275" ry="68"
+    fill="none"
+    stroke="rgba(85,200,232,0.22)"
+    stroke-width="1.5"
+    stroke-dasharray="7,5"/>
+
+  <!-- Orbit direction arrow (at upper-right of ellipse, ~45° position) -->
+  <!-- Point at approx (655, 78): tangent points upper-left for counterclockwise -->
+  <path d="M658,80 L648,72" stroke="rgba(85,200,232,0.45)" stroke-width="1.8"
+    stroke-linecap="round" marker-end="url(#orbitArr)"/>
+
+  <!-- "365 days" annotation on orbit path -->
+  <text x="460" y="50" text-anchor="middle"
+    font-family="Nunito,sans-serif" font-size="9.5" font-weight="700"
+    fill="rgba(85,200,232,0.5)" letter-spacing="0.5">
+    1 complete orbit = 365 days = 1 year
+  </text>
+
+  <!-- ══════════════════════════════════════
+       SEASON LABELS (outside orbit edges)
+  ══════════════════════════════════════ -->
+
+  <!-- Summer (right of orbit, x>759) -->
+  <rect x="762" y="118" width="92" height="24" rx="8"
+    fill="rgba(245,166,35,0.14)" stroke="rgba(245,166,35,0.35)" stroke-width="1.2"/>
+  <text x="808" y="134" text-anchor="middle"
+    font-family="Nunito,sans-serif" font-size="12" font-weight="800" fill="#F5A623">☀️ Summer</text>
+
+  <!-- Fall (above orbit top, y&lt;60) -->
+  <rect x="418" y="10" width="64" height="22" rx="8"
+    fill="rgba(199,146,44,0.14)" stroke="rgba(199,146,44,0.35)" stroke-width="1.2"/>
+  <text x="450" y="25" text-anchor="middle"
+    font-family="Nunito,sans-serif" font-size="12" font-weight="800" fill="#C7922C">🍂 Fall</text>
+
+  <!-- Winter (left of orbit, x&lt;162) -->
+  <rect x="14" y="118" width="90" height="24" rx="8"
+    fill="rgba(85,200,232,0.12)" stroke="rgba(85,200,232,0.35)" stroke-width="1.2"/>
+  <text x="59" y="134" text-anchor="middle"
+    font-family="Nunito,sans-serif" font-size="12" font-weight="800" fill="#55C8E8">❄️ Winter</text>
+
+  <!-- Spring (below orbit bottom, y>220) -->
+  <rect x="414" y="224" width="72" height="22" rx="8"
+    fill="rgba(52,183,111,0.12)" stroke="rgba(52,183,111,0.35)" stroke-width="1.2"/>
+  <text x="450" y="239" text-anchor="middle"
+    font-family="Nunito,sans-serif" font-size="12" font-weight="800" fill="#34B76F">🌸 Spring</text>
+
+  <!-- ══════════════════════════════════════
+       SUN (center of orbit)
+  ══════════════════════════════════════ -->
+
+  <!-- Outer corona (large pulsing glow) -->
+  <circle class="corona" cx="460" cy="130" r="80"
+    fill="url(#sunCoronaG)" filter="url(#coronaBlur)"/>
+
+  <!-- Inner warm glow ring -->
+  <circle cx="460" cy="130" r="52"
+    fill="rgba(255,200,50,0.18)" filter="url(#glowSoft)"/>
+
+  <!-- Sun body -->
+  <circle cx="460" cy="130" r="36" fill="url(#sunBodyG)"/>
+
+  <!-- Sun surface shimmer detail -->
+  <g class="sun-shimmer">
+    <ellipse cx="480" cy="115" rx="10" ry="7"  fill="rgba(255,255,180,0.18)"/>
+    <ellipse cx="443" cy="142" rx="8"  ry="5"  fill="rgba(255,220,80,0.14)"/>
+    <ellipse cx="468" cy="148" rx="6"  ry="4"  fill="rgba(255,200,60,0.1)"/>
+  </g>
+
+  <!-- Sun label -->
+  <text x="460" y="126" text-anchor="middle"
+    font-family="Nunito,sans-serif" font-size="12" font-weight="900" fill="#fff" opacity="0.95">Sun</text>
+  <text x="460" y="140" text-anchor="middle"
+    font-family="Nunito,sans-serif" font-size="9" fill="rgba(255,240,180,0.65)">our star ☀️</text>
+
+  <!-- ══════════════════════════════════════
+       EARTH — animated along orbit path
+  ══════════════════════════════════════ -->
+  <g>
+    <!-- Atmosphere glow (rendered below Earth body) -->
+    <circle r="26" fill="url(#earthAtmG)" filter="url(#atmoBlur)"/>
+    <!-- Thin atmosphere ring -->
+    <circle r="20" fill="none" stroke="#55C8E8" stroke-width="3" opacity="0.22"/>
+
+    <!-- Ocean / Earth body -->
+    <circle r="18" fill="url(#earthSeaG)"/>
+
+    <!-- Night-side shadow (slight crescent darkening, left side) -->
+    <path d="M0,-18 A18,18 0 0,0 0,18 A9,18 0 0,1 0,-18"
+      fill="rgba(0,8,25,0.38)"/>
+
+    <!-- Land masses -->
+    <ellipse cx="-5" cy="-8"  rx="7"  ry="5"  fill="#2EAA5C" opacity="0.9"/>
+    <ellipse cx="5"  cy="3"   rx="4.5" ry="6.5" fill="#34B76F" opacity="0.85"/>
+    <ellipse cx="-7" cy="6"   rx="5"  ry="3"  fill="#2EAA5C" opacity="0.75"/>
+    <ellipse cx="4"  cy="-13" rx="4"  ry="2.5" fill="#34B76F" opacity="0.7"/>
+    <ellipse cx="-3" cy="12"  rx="3.5" ry="2" fill="#2EAA5C" opacity="0.6"/>
+
+    <!-- Polar caps -->
+    <ellipse cx="0" cy="-15" rx="7"  ry="2.8" fill="#fff" opacity="0.85"/>
+    <ellipse cx="0" cy="15"  rx="5.5" ry="2.2" fill="#fff" opacity="0.75"/>
+
+    <!-- Axis line (tilted ~23°) -->
+    <line x1="-4" y1="-20" x2="4" y2="20"
+      stroke="rgba(255,255,255,0.55)" stroke-width="1.2" stroke-dasharray="2.5,2"/>
+
+    <!-- Axis pole dots -->
+    <circle cx="-4" cy="-20" r="2" fill="#55C8E8" opacity="0.8"/>
+    <circle cx="4"  cy="20"  r="2" fill="#55C8E8" opacity="0.7"/>
+
+    <!-- "Earth" label (moves with Earth, always upright) -->
+    <text y="32" text-anchor="middle"
+      font-family="Nunito,sans-serif" font-size="10" font-weight="800"
+      fill="#55C8E8" opacity="0.95">🌍 Earth</text>
+
+    <!-- ── THE MOTION ANIMATION ── -->
+    <animateMotion dur="20s" repeatCount="indefinite" rotate="none">
+      <mpath href="#orbitMotionPath"/>
+    </animateMotion>
+  </g>
+
+  <!-- ══════════════════════════════════════
+       BOTTOM TITLE
+  ══════════════════════════════════════ -->
+  <text x="460" y="256" text-anchor="middle"
+    font-family="Nunito, sans-serif" font-size="13" font-weight="900"
+    fill="#55C8E8" letter-spacing="2.5" opacity="0.9">
+    MEET OUR EARTH · 4TH GRADE EARTH SCIENCE
+  </text>
+</svg>
+</div>
+
+<!-- ═══ INFO STRIP ═══ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q1 &middot; Unit 2</div>
+      <div class="info-detail">Earth &amp; Space Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 2</div>
+      <div class="info-detail">Lesson 2.01 &mdash; Earth Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#F0EDF6;">🌍</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Earth's Motion</div>
+      <div class="info-detail">Rotation, Revolution &amp; Seasons</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF7EE;">🔬</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">NGSS 4-ESS2</div>
+      <div class="info-detail">Earth's Systems</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ INTRO 2-COL ═══ -->
+<div class="intro-2col">
+  <div class="card theme-earth scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">❓</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question for Today</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This&hellip;</div>
+          <div class="question">"Right now, you feel completely still — but scientists say Earth is racing through space at 67,000 miles per hour. How can that be? And how does Earth's invisible movement control everything from day and night to the changing seasons?"</div>
+        </div>
+      </div>
+      <p>Keep this question in your mind as you explore today's lesson. By the end, you'll be able to answer it like a real scientist!</p>
+    </div>
+  </div>
+
+  <div class="card theme-sky scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#E8636B;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain the difference between Earth's rotation and revolution, and what each one causes.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#D4772C;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> describe how Earth's tilted axis creates the four seasons as it revolves around the Sun.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#34B76F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> use the words <em>rotate, revolve, axis, orbit,</em> and <em>hemisphere</em> correctly to describe Earth's movements in space.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Colored pencils</span>
+  <span class="need-chip"><span>📐</span>Ruler (optional)</span>
+</div>
+
+<!-- ═══ TAB BAR ═══ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab" onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="lesson" onclick="switchTab('lesson')">📘 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="explore" onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB 1: VOCABULARY
+══════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <div class="video-wrap" style="margin-bottom:22px;">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to Lesson 2.01 — Meet Our Earth!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🌍</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 2-01-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Activity 1: Warm-Up -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#E8636B;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Warm-Up: What Do You Already Know?</div>
+        <div class="act-subtitle">Activate your prior knowledge!</div>
+      </div>
+      <div class="act-time" style="background:#E8636B;">⏱ 5 min</div>
+    </div>
+    <div class="act-body">
+      <p>In your science notebook, draw a quick sketch of Earth moving through space. Try to show <strong>at least two different ways</strong> Earth might be moving. Don't worry about being perfect — just draw what you think!</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Write &amp; Reflect</div>
+          <div class="question">"Right now, does it feel like you're moving? What would you notice if Earth suddenly stopped spinning? What would change about your day?"</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>There are no wrong answers here! Scientists always start by asking questions. We'll come back to your sketch at the end of the lesson to see how much your thinking has grown.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vocab Flip Cards -->
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>These six words are your science superpowers for today! <strong>Tap each card to flip it</strong> and read the definition. You'll use all of them throughout the lesson.</p>
+      <div class="vocab-grid">
+
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌍</div><div class="fc-word">Rotate</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Rotate</div><div class="fc-def">To spin around a center point or axis. Earth rotates once every 24 hours, giving us day and night!</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">☀️</div><div class="fc-word">Revolve</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Revolve</div><div class="fc-def">To move in a circular path around another object. Earth revolves around the Sun once every 365 days — that's one year!</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">📍</div><div class="fc-word">Axis</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Axis</div><div class="fc-def">An imaginary line that goes through the center of Earth from the North Pole to the South Pole. Earth spins on this invisible stick!</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌀</div><div class="fc-word">Orbit</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Orbit</div><div class="fc-def">The path one object in space takes as it moves around another object — like the oval path Earth travels around the Sun.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌐</div><div class="fc-word">Hemisphere</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Hemisphere</div><div class="fc-def">One half of a sphere. Earth is divided into the Northern and Southern Hemispheres — the top half and the bottom half!</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🧭</div><div class="fc-word">Navigate</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Navigate</div><div class="fc-def">To find the way to a place, often using tools like maps, the stars, or knowledge of Earth's movements.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="mind-blow">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Mind-Blowing Fact</div>
+      <div class="mind-blow-text">Right now — without moving a single muscle — you are traveling through space at about <strong>67,000 miles per hour</strong> as Earth orbits the Sun. That's about 100 times faster than any commercial airplane. You just can't feel it!</div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📘 The Lesson →</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB 2: THE LESSON
+══════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#D4772C;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📘 The Lesson: Earth Is Always Moving</div>
+        <div class="act-subtitle">Discover the two amazing movements that shape our world!</div>
+      </div>
+      <div class="act-time" style="background:#D4772C;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="video-wrap">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">📘</span>
+          <div>
+            <div class="video-wrap-type">Activity 2 · Lesson Explainer</div>
+            <div class="video-wrap-title">Earth's Rotation, Revolution &amp; the Seasons!</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">📘</div>
+            <div class="video-placeholder-text">Lesson explainer video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 2-01-lesson-explainer --></div>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size:18px;"><strong>Part 1 — Earth Never Stands Still</strong></p>
+      <p>Even though you can't feel it, Earth is always moving — in two very different ways at the same time! Understanding these movements explains almost everything about our daily lives, from when the sun rises to why we have winter.</p>
+
+      <p>The first movement is called <span class="vtip"><strong>rotation</strong><span class="vtip-box"><span class="vtip-word">Rotate</span>To spin around a center point or axis. Earth rotates once every 24 hours!</span></span>. Earth spins like a top on an imaginary line called its <span class="vtip"><strong>axis</strong><span class="vtip-box"><span class="vtip-word">Axis</span>An imaginary line that runs through the center of Earth from the North Pole to the South Pole.</span></span>. One full spin takes exactly 24 hours — that's what we call one <strong>day</strong>.</p>
+
+      <p>The second movement is called <span class="vtip"><strong>revolution</strong><span class="vtip-box"><span class="vtip-word">Revolve</span>To move in a circular path around another object. Earth revolves around the Sun once every 365 days!</span></span>. Earth travels in a huge oval path called an <span class="vtip"><strong>orbit</strong><span class="vtip-box"><span class="vtip-word">Orbit</span>The path one object takes as it moves around another object in space.</span></span> around the Sun. One complete trip around the Sun takes 365 days — that's one <strong>year</strong>!</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Stop &amp; Think</div>
+          <div class="question">"Rotation causes day and night. Revolution causes a year. Can you think of something in your daily life that is controlled by one of these movements? How about two things?"</div>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE ORBIT DIAGRAM -->
+      <div class="diagram-wrap diagram-interactive">
+        <svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,sans-serif;">
+          <defs>
+            <radialGradient id="sunG" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#FFF0A0"/>
+              <stop offset="50%" stop-color="#F5A623"/>
+              <stop offset="100%" stop-color="#D4772C"/>
+            </radialGradient>
+            <radialGradient id="sunGlowD" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#F5A623" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="transparent"/>
+            </radialGradient>
+            <radialGradient id="eOcean" cx="40%" cy="38%" r="60%">
+              <stop offset="0%" stop-color="#2A8DB5"/>
+              <stop offset="100%" stop-color="#155A80"/>
+            </radialGradient>
+            <filter id="sBlur"><feGaussianBlur stdDeviation="6"/></filter>
+          </defs>
+          <style>
+            @keyframes sunD { 0%,100%{opacity:.6} 50%{opacity:1} }
+            .sd-glow { animation: sunD 2.5s ease-in-out infinite; }
+          </style>
+
+          <!-- Space background -->
+          <rect width="720" height="400" fill="#070a12" rx="12"/>
+
+          <!-- Stars -->
+          <circle cx="30" cy="25" r="1" fill="#fff" opacity="0.6"/>
+          <circle cx="120" cy="60" r="0.8" fill="#fff" opacity="0.5"/>
+          <circle cx="200" cy="15" r="1.2" fill="#fff" opacity="0.7"/>
+          <circle cx="500" cy="30" r="0.9" fill="#fff" opacity="0.5"/>
+          <circle cx="620" cy="55" r="1" fill="#fff" opacity="0.6"/>
+          <circle cx="680" cy="20" r="1.1" fill="#fff" opacity="0.5"/>
+          <circle cx="55" cy="350" r="0.8" fill="#fff" opacity="0.4"/>
+          <circle cx="680" cy="360" r="1" fill="#fff" opacity="0.5"/>
+          <circle cx="700" cy="290" r="0.9" fill="#fff" opacity="0.4"/>
+          <circle cx="40" cy="280" r="1.1" fill="#fff" opacity="0.5"/>
+
+          <!-- Orbit path -->
+          <ellipse cx="280" cy="200" rx="200" ry="140" fill="none" stroke="rgba(85,200,232,0.2)" stroke-width="1.5" stroke-dasharray="8,5"/>
+
+          <!-- Orbit direction arrows (4 small arrows on the ellipse) -->
+          <text x="278" y="57" fill="rgba(85,200,232,0.5)" font-size="14">▶</text>
+          <text x="476" y="202" fill="rgba(85,200,232,0.5)" font-size="14">▼</text>
+          <text x="272" y="345" fill="rgba(85,200,232,0.5)" font-size="14">◀</text>
+          <text x="76" y="205" fill="rgba(85,200,232,0.5)" font-size="14">▲</text>
+
+          <!-- Sun at center -->
+          <circle class="sd-glow" cx="280" cy="200" r="50" fill="url(#sunGlowD)" filter="url(#sBlur)"/>
+          <circle cx="280" cy="200" r="26" fill="url(#sunG)"/>
+          <text x="280" y="204" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">Sun</text>
+
+          <!-- ── SUMMER EARTH (top) ── -->
+          <!-- Earth mini -->
+          <circle cx="280" cy="62" r="22" fill="url(#eOcean)"/>
+          <ellipse cx="274" cy="54" rx="8" ry="6" fill="#34B76F" opacity="0.8"/>
+          <ellipse cx="284" cy="64" rx="5" ry="7" fill="#34B76F" opacity="0.7"/>
+          <ellipse cx="280" cy="42" rx="7" ry="3" fill="#fff" opacity="0.7"/>
+          <ellipse cx="280" cy="82" rx="6" ry="2.5" fill="#fff" opacity="0.6"/>
+          <!-- Axis tilted (right lean) -->
+          <line x1="272" y1="40" x2="288" y2="84" stroke="#FFD700" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.8"/>
+          <!-- NH label (upper hemisphere tilted toward sun) -->
+          <rect x="300" y="44" width="80" height="22" rx="6" fill="#FFF7EE" stroke="#F0DCC4" stroke-width="1.5"/>
+          <text x="340" y="59" text-anchor="middle" font-size="12" font-weight="800" fill="#D4772C">☀️ SUMMER</text>
+          <line x1="300" y1="55" x2="302" y2="55" stroke="#D4772C" stroke-width="1"/>
+
+          <!-- ── FALL EARTH (right) ── -->
+          <circle cx="476" cy="200" r="22" fill="url(#eOcean)"/>
+          <ellipse cx="470" cy="192" rx="8" ry="6" fill="#34B76F" opacity="0.8"/>
+          <ellipse cx="480" cy="202" rx="5" ry="7" fill="#34B76F" opacity="0.7"/>
+          <ellipse cx="476" cy="180" rx="7" ry="3" fill="#fff" opacity="0.7"/>
+          <ellipse cx="476" cy="220" rx="6" ry="2.5" fill="#fff" opacity="0.6"/>
+          <line x1="468" y1="178" x2="484" y2="222" stroke="#FFD700" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.8"/>
+          <rect x="504" y="188" width="78" height="22" rx="6" fill="#FFF7EE" stroke="#F0DCC4" stroke-width="1.5"/>
+          <text x="543" y="203" text-anchor="middle" font-size="12" font-weight="800" fill="#C7922C">🍂 FALL</text>
+
+          <!-- ── WINTER EARTH (bottom) ── -->
+          <circle cx="280" cy="338" r="22" fill="url(#eOcean)"/>
+          <ellipse cx="274" cy="330" rx="8" ry="6" fill="#34B76F" opacity="0.8"/>
+          <ellipse cx="284" cy="340" rx="5" ry="7" fill="#34B76F" opacity="0.7"/>
+          <ellipse cx="280" cy="318" rx="7" ry="3" fill="#fff" opacity="0.7"/>
+          <ellipse cx="280" cy="358" rx="6" ry="2.5" fill="#fff" opacity="0.6"/>
+          <!-- Axis tilted same direction (now NH tips away from sun) -->
+          <line x1="272" y1="316" x2="288" y2="360" stroke="#FFD700" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.8"/>
+          <rect x="300" y="326" width="88" height="22" rx="6" fill="#EAF8FD" stroke="#D6F2FB" stroke-width="1.5"/>
+          <text x="344" y="341" text-anchor="middle" font-size="12" font-weight="800" fill="#2A8DB5">❄️ WINTER</text>
+
+          <!-- ── SPRING EARTH (left) ── -->
+          <circle cx="84" cy="200" r="22" fill="url(#eOcean)"/>
+          <ellipse cx="78" cy="192" rx="8" ry="6" fill="#34B76F" opacity="0.8"/>
+          <ellipse cx="88" cy="202" rx="5" ry="7" fill="#34B76F" opacity="0.7"/>
+          <ellipse cx="84" cy="180" rx="7" ry="3" fill="#fff" opacity="0.7"/>
+          <ellipse cx="84" cy="220" rx="6" ry="2.5" fill="#fff" opacity="0.6"/>
+          <line x1="76" y1="178" x2="92" y2="222" stroke="#FFD700" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.8"/>
+          <rect x="6" y="188" width="72" height="22" rx="6" fill="#EEF8F0" stroke="#C4E5CC" stroke-width="1.5"/>
+          <text x="42" y="203" text-anchor="middle" font-size="12" font-weight="800" fill="#34B76F">🌸 SPRING</text>
+
+          <!-- Axis tilt key -->
+          <rect x="555" y="306" width="155" height="80" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(85,200,232,0.2)" stroke-width="1"/>
+          <text x="633" y="324" text-anchor="middle" font-size="11" font-weight="800" fill="#55C8E8">KEY</text>
+          <line x1="570" y1="340" x2="578" y2="360" stroke="#FFD700" stroke-width="1.5" stroke-dasharray="3,2"/>
+          <text x="590" y="355" font-size="10" fill="rgba(255,255,255,0.7)" font-weight="600">= Earth's axis (always</text>
+          <text x="575" y="368" font-size="10" fill="rgba(255,255,255,0.7)" font-weight="600">tilted same direction!)</text>
+
+          <!-- Hotspots (transparent, clickable) -->
+          <circle class="hotspot" data-part="sun" data-info="The Sun sits at the center of our solar system! Earth orbits around it, pulled by the Sun's gravity. The Sun is about 93 million miles away, yet its light reaches us in just 8 minutes. All of Earth's energy comes from the Sun." cx="280" cy="200" r="26" fill="#FFD700"/>
+          <circle class="hotspot" data-part="summer" data-info="SUMMER ☀️ — During summer in the Northern Hemisphere, Earth's axis tilts TOWARD the Sun. The Sun's rays hit more directly and spread less, making things warmer. Days are longer and nights are shorter." cx="280" cy="62" r="22" fill="#F5A623"/>
+          <circle class="hotspot" data-part="fall" data-info="FALL 🍂 — Earth is between summer and winter. Your hemisphere receives sunlight at a middle angle. Days and nights are nearly equal in length — this is called the autumnal equinox!" cx="476" cy="200" r="22" fill="#F5A623"/>
+          <circle class="hotspot" data-part="winter" data-info="WINTER ❄️ — During winter in the Northern Hemisphere, Earth's axis tilts AWAY from the Sun. The Sun's rays hit at a low angle and spread out more, so they warm things less. Days are shorter and nights are longer." cx="280" cy="338" r="22" fill="#55C8E8"/>
+          <circle class="hotspot" data-part="spring" data-info="SPRING 🌸 — Earth is between winter and summer again. Your hemisphere receives sunlight at an even angle once more. Days and nights are nearly equal again — this is the vernal equinox!" cx="84" cy="200" r="22" fill="#34B76F"/>
+        </svg>
+
+        <div style="background:linear-gradient(135deg,#EAF8FD,#D6F2FB);border:2px solid #B8E8F5;border-radius:14px;padding:12px 18px;margin-top:10px;display:flex;align-items:center;gap:12px;">
+          <span style="font-size:28px;flex-shrink:0;animation:mind-blow-bounce 2s ease-in-out infinite;">👆</span>
+          <p style="font-size:15px;color:#0E1C42;line-height:1.55;margin:0;font-weight:600;">Tap on the <strong>Sun</strong>, or on Earth at each <strong>season</strong>, to learn what's happening at that point in Earth's orbit!</p>
+        </div>
+        <div class="diagram-info-panel" id="diagramPanel">
+          <span class="dip-word" id="diagramWord"></span>
+          <span id="diagramInfo"></span>
+        </div>
+      </div>
+
+      <div class="key-concept">
+        <div class="kc-label">🔑 Key Concept</div>
+        <p>Here's the key difference: <span class="vtip"><strong>Rotation</strong><span class="vtip-box"><span class="vtip-word">Rotate</span>To spin around a center point or axis. Earth rotates once every 24 hours!</span></span> is Earth <strong>spinning</strong> like a top — it causes day and night. <span class="vtip"><strong>Revolution</strong><span class="vtip-box"><span class="vtip-word">Revolve</span>To move in a circular path around another object. Earth revolves around the Sun once every 365 days.</span></span> is Earth <strong>traveling</strong> around the Sun — it takes one full year.</p>
+        <p>Think of it this way: a basketball spinning on your finger is rotating. That same basketball moving around your head in a circle is revolving. Earth does both at the same time!</p>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Stop &amp; Reason</div>
+          <div class="question">"Earth's axis is always tilted in the same direction as it revolves. What do you think would happen to the seasons if Earth's axis were perfectly straight up and down, with NO tilt at all?"</div>
+        </div>
+      </div>
+
+      <!-- PART 2: THREE KEY MOVEMENTS -->
+      <p style="font-size:18px; margin-top:20px;"><strong>Part 2 — Earth's Three Key Movements</strong></p>
+      <p>Earth's movements can be broken down into three ideas that work together. Scientists use all three to explain everything from sunrise to the seasons!</p>
+
+      <div class="types-grid">
+
+        <div class="type-card tc-rotate">
+          <svg viewBox="0 0 180 100" width="180" height="100" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="100" fill="#EAF8FD" rx="8"/>
+            <circle cx="90" cy="50" r="30" fill="#1A6FA8"/>
+            <ellipse cx="83" cy="41" rx="11" ry="8" fill="#34B76F" opacity="0.8"/>
+            <ellipse cx="98" cy="57" rx="7" ry="10" fill="#34B76F" opacity="0.7"/>
+            <ellipse cx="90" cy="22" rx="8" ry="3" fill="#fff" opacity="0.7"/>
+            <ellipse cx="90" cy="78" rx="7" ry="2.5" fill="#fff" opacity="0.6"/>
+            <line x1="90" y1="18" x2="90" y2="82" stroke="#fff" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.6"/>
+            <path d="M57,50 A33,33 0 0,1 57,30" stroke="#FFD700" stroke-width="2.5" fill="none" stroke-linecap="round" marker-end="url(#arrR)"/>
+            <defs><marker id="arrR" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#FFD700"/></marker></defs>
+            <text x="90" y="96" text-anchor="middle" font-size="9" fill="#2A8DB5" font-weight="700">24 hours = 1 day</text>
+          </svg>
+          <div class="type-name">Rotation</div>
+          <div class="type-desc">Earth spins on its axis. One full spin = 24 hours. This gives us day and night!</div>
+        </div>
+
+        <div class="type-card tc-revolve">
+          <svg viewBox="0 0 180 100" width="180" height="100" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="100" fill="#FFF7EE" rx="8"/>
+            <!-- Sun -->
+            <circle cx="90" cy="50" r="14" fill="#F5A623"/>
+            <circle cx="90" cy="50" r="10" fill="#FFE066"/>
+            <!-- Orbit ellipse -->
+            <ellipse cx="90" cy="50" rx="65" ry="38" fill="none" stroke="#D4772C" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <!-- Earth on orbit -->
+            <circle cx="155" cy="50" r="9" fill="#1A6FA8"/>
+            <ellipse cx="151" cy="46" rx="4" ry="3" fill="#34B76F" opacity="0.8"/>
+            <!-- Arrow -->
+            <path d="M155,41 A65,38 0 0,0 140,15" stroke="#C7922C" stroke-width="2" fill="none" stroke-linecap="round" marker-end="url(#arrV)"/>
+            <defs><marker id="arrV" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#C7922C"/></marker></defs>
+            <text x="90" y="96" text-anchor="middle" font-size="9" fill="#C7922C" font-weight="700">365 days = 1 year</text>
+          </svg>
+          <div class="type-name">Revolution</div>
+          <div class="type-desc">Earth travels around the Sun in an oval orbit. One full trip = 365 days (one year)!</div>
+        </div>
+
+        <div class="type-card tc-tilt">
+          <svg viewBox="0 0 180 100" width="180" height="100" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="100" fill="#F0EDF6" rx="8"/>
+            <!-- Earth tilted -->
+            <circle cx="90" cy="50" r="28" fill="#1A6FA8"/>
+            <ellipse cx="82" cy="41" rx="11" ry="8" fill="#34B76F" opacity="0.8"/>
+            <ellipse cx="97" cy="56" rx="7" ry="9" fill="#34B76F" opacity="0.7"/>
+            <ellipse cx="90" cy="24" rx="8" ry="3" fill="#fff" opacity="0.7"/>
+            <ellipse cx="90" cy="76" rx="7" ry="2.5" fill="#fff" opacity="0.6"/>
+            <!-- Tilted axis (leaning right ~23°) -->
+            <line x1="79" y1="21" x2="101" y2="79" stroke="#8B6FC0" stroke-width="2" stroke-dasharray="3,2"/>
+            <circle cx="79" cy="21" r="3" fill="#FFD700"/>
+            <circle cx="101" cy="79" r="3" fill="#FFD700"/>
+            <!-- Tilt angle label -->
+            <text x="110" y="28" font-size="10" fill="#8B6FC0" font-weight="800">23.5°</text>
+            <text x="90" y="96" text-anchor="middle" font-size="9" fill="#8B6FC0" font-weight="700">always tilted the same way!</text>
+          </svg>
+          <div class="type-name">The Tilt</div>
+          <div class="type-desc">Earth's axis is tilted 23.5°. This tilt — combined with revolution — creates our four seasons!</div>
+        </div>
+
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Observe &amp; Reason</div>
+          <div class="question">"The Northern and Southern Hemispheres have opposite seasons. When it's summer in the USA, it's winter in Australia. Using what you just learned about tilt, can you explain WHY?"</div>
+        </div>
+      </div>
+
+      <div class="callout callout-earth">
+        <span class="callout-icon">🧭</span>
+        <p><strong>Real-World Connection:</strong> Long before GPS, sailors and explorers used their knowledge of Earth's movements to navigate the oceans! They measured how high the Sun was in the sky at noon to figure out their <em>latitude</em> — how far north or south they were. Earth's predictable movements made it possible to cross entire oceans without any modern technology.</p>
+      </div>
+
+      <!-- SIZE / SCALE COMPARISON -->
+      <div class="size-compare-wrap scroll-reveal">
+        <svg viewBox="0 0 680 190" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,sans-serif;">
+          <defs>
+            <radialGradient id="moonG" cx="40%" cy="35%" r="60%">
+              <stop offset="0%" stop-color="#D0C8B8"/>
+              <stop offset="100%" stop-color="#9A9280"/>
+            </radialGradient>
+            <radialGradient id="earthG2" cx="38%" cy="35%" r="60%">
+              <stop offset="0%" stop-color="#2A8DB5"/>
+              <stop offset="100%" stop-color="#155A80"/>
+            </radialGradient>
+            <radialGradient id="sunG2" cx="40%" cy="35%" r="60%">
+              <stop offset="0%" stop-color="#FFF0A0"/>
+              <stop offset="60%" stop-color="#F5A623"/>
+              <stop offset="100%" stop-color="#D4772C"/>
+            </radialGradient>
+          </defs>
+
+          <!-- Moon -->
+          <circle cx="80" cy="110" r="18" fill="url(#moonG)"/>
+          <circle cx="76" cy="104" r="3" fill="#A09080" opacity="0.4"/>
+          <circle cx="85" cy="115" r="2" fill="#A09080" opacity="0.3"/>
+          <text x="80" y="138" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">Moon</text>
+          <text x="80" y="152" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.5)">r = 1,737 km</text>
+
+          <!-- Earth -->
+          <circle cx="240" cy="110" r="38" fill="url(#earthG2)"/>
+          <ellipse cx="230" cy="98" rx="14" ry="10" fill="#34B76F" opacity="0.8"/>
+          <ellipse cx="248" cy="116" rx="10" ry="13" fill="#34B76F" opacity="0.7"/>
+          <ellipse cx="240" cy="74" rx="12" ry="4.5" fill="#fff" opacity="0.7"/>
+          <ellipse cx="240" cy="146" rx="10" ry="4" fill="#fff" opacity="0.6"/>
+          <text x="240" y="160" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">Earth</text>
+          <text x="240" y="174" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.5)">r = 6,371 km</text>
+
+          <!-- Sun (partially visible, large arc) -->
+          <clipPath id="sunClip"><rect x="400" y="0" width="280" height="190"/></clipPath>
+          <circle cx="470" cy="350" r="310" fill="url(#sunG2)" clip-path="url(#sunClip)" opacity="0.9"/>
+          <text x="560" y="90" text-anchor="middle" font-size="13" font-weight="800" fill="#FFE066">Sun</text>
+          <text x="560" y="108" text-anchor="middle" font-size="10" fill="rgba(255,200,80,0.7)">r = 695,700 km</text>
+
+          <!-- Scale note -->
+          <text x="340" y="30" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.6)" font-style="italic">Artistic scale — the real Sun is far, far larger than this!</text>
+
+          <!-- Star note -->
+          <rect x="20" y="10" width="200" height="34" rx="8" fill="rgba(85,200,232,0.1)" stroke="rgba(85,200,232,0.2)" stroke-width="1"/>
+          <text x="120" y="26" text-anchor="middle" font-size="10" fill="#55C8E8" font-weight="700">🌟 1.3 million Earths</text>
+          <text x="120" y="39" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.6)">could fit inside the Sun!</text>
+        </svg>
+        <div class="size-compare-caption" style="color:rgba(255,255,255,0.5);">Earth is about 4× wider than the Moon — but the Sun is about 109× wider than Earth! Everything is bigger in space than you can imagine.</div>
+      </div>
+
+      <!-- GO DEEPER 1 -->
+      <details class="go-deeper scroll-reveal">
+        <summary>Curious? Go Deeper — Why Do We Have Leap Years?</summary>
+        <div class="gd-body">
+          <p>You know that Earth takes 365 days to orbit the Sun. But here's the tricky part: it actually takes <strong>365 days, 5 hours, 48 minutes, and 46 seconds</strong> — almost a quarter of a day extra!</p>
+          <p>If we ignored those extra hours, our calendar would slowly drift out of sync with the seasons. After a few hundred years, summer would arrive in what our calendar calls January!</p>
+          <p>To fix this, we add an extra day every four years — February 29th. This is called a <strong>leap year</strong>. Those four leftover quarter-days add up to one full day over four years. Brilliant, right?</p>
+          <p>The next leap year is 2028. If your birthday is February 29th, you only celebrate the "real" date every four years!</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB 3: GUIDED EXPLORATION
+══════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#55C8E8;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🔬 Guided Exploration: From Spin to Season</div>
+        <div class="act-subtitle">Follow how Earth's movements connect to change everything around us!</div>
+      </div>
+      <div class="act-time" style="background:#55C8E8;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="video-wrap">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">🔬</span>
+          <div>
+            <div class="video-wrap-type">Activity 3 · Guided Exploration</div>
+            <div class="video-wrap-title">How Does One Spin Lead to a Whole Season?</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">🔬</div>
+            <div class="video-placeholder-text">Guided exploration video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 2-01-exploration-explainer --></div>
+          </div>
+        </div>
+      </div>
+
+      <p>Let's trace the chain of events that connects Earth's invisible movements to the world you see and feel every day. As you read each step, look back at the orbit diagram on the Lesson tab!</p>
+
+      <div style="position:relative; margin:16px 0;">
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F5A623,#FFE066);color:#0E1C42;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(245,166,35,0.3);">1</div>
+          <div style="flex:1;background:#FFF7EE;border:2px solid #F0DCC4;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>The Sun Shines:</strong> The Sun pours out enormous amounts of light and heat in all directions. As Earth orbits the Sun in its <span class="vtip"><strong>orbit</strong><span class="vtip-box"><span class="vtip-word">Orbit</span>The path one object takes as it moves around another object in space.</span></span>, it catches some of that energy. This is the only source of heat that powers our weather, plants, and life itself.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2A8DB5,#55C8E8);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(85,200,232,0.3);">2</div>
+          <div style="flex:1;background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Earth Rotates:</strong> As Earth spins on its <span class="vtip"><strong>axis</strong><span class="vtip-box"><span class="vtip-word">Axis</span>An imaginary line through Earth from the North Pole to the South Pole.</span></span>, one side faces the Sun (day!) and the other side faces away (night!). This rotation happens constantly — once every 24 hours. That's why the Sun appears to "rise" in the east every morning and "set" in the west every evening.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1a6035,#34B76F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(52,183,111,0.3);">3</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Earth Revolves:</strong> While rotating, Earth is ALSO slowly traveling along its <span class="vtip"><strong>orbit</strong><span class="vtip-box"><span class="vtip-word">Orbit</span>The path Earth takes as it travels around the Sun.</span></span> around the Sun. It takes 365 days (one full year) to complete one trip. This revolution, combined with Earth's tilt, is what drives the seasons — and why we need a calendar!</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#5a3a80,#8B6FC0);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(139,111,192,0.3);">4</div>
+          <div style="flex:1;background:#F0EDF6;border:2px solid #D8D0E8;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>The Tilt Makes Seasons:</strong> Earth's <span class="vtip"><strong>axis</strong><span class="vtip-box"><span class="vtip-word">Axis</span>An imaginary line through Earth from the North Pole to the South Pole. It stays tilted the same direction all year!</span></span> always tilts the same direction in space. As Earth <span class="vtip">revolves<span class="vtip-box"><span class="vtip-word">Revolve</span>To move in a circular path around another object.</span></span>, this means the Northern and Southern <span class="vtip"><strong>Hemispheres</strong><span class="vtip-box"><span class="vtip-word">Hemisphere</span>One half of Earth — the Northern or Southern half, divided by the equator.</span></span> take turns leaning closer to the Sun. When your <span class="vtip">hemisphere<span class="vtip-box"><span class="vtip-word">Hemisphere</span>One half of Earth.</span></span> leans in — it's summer. When it leans away — it's winter!</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think Like a Scientist</div>
+          <div class="question">"An explorer 500 years ago had no GPS or maps. She noticed the Sun was very low in the sky at noon. What might that tell her about where on Earth she was — and what season it might be? How is that like using a ruler?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Mind-Blowing Fact</div>
+      <div class="mind-blow-text">One day on <strong>Venus</strong> is longer than one year on Venus! Venus spins so slowly that it takes <strong>243 Earth-days</strong> to rotate once — but only 225 Earth-days to complete its orbit around the Sun. On Venus, a year passes before the day ends!</div>
+    </div>
+  </div>
+
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper — What If Earth Had No Tilt?</summary>
+    <div class="gd-body">
+      <p>Imagine if Earth's axis were perfectly straight up and down — no tilt at all. What would our planet be like?</p>
+      <p>Every single day, everywhere on Earth, would receive exactly the same amount of sunlight. There would be <strong>no seasons</strong>. January would feel exactly like July, everywhere in the world.</p>
+      <p>The places near the equator would always be warm. The poles would always be cold. But the dramatic changes — the blooming of spring, the heat of summer, the crunch of fall leaves, the snow of winter — would simply never happen.</p>
+      <p>Most of Earth's plants, animals, and even human civilizations are built around seasonal changes. Without the tilt, life on Earth would look completely different. That 23.5° lean isn't just a coincidence — it shaped the entire living world!</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB 4: SELF-CHECK QUIZ
+══════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div class="quiz-card scroll-reveal" style="margin-top:0;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#F5A623;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">⚡</div>
+      <div style="flex:1;">
+        <div style="font-size:19px;color:#0E1C42;font-weight:800;line-height:1.2;">🧠 Quick Self-Check</div>
+        <div style="font-size:12px;color:#9A8E82;">Not graded — just for you! See how much you've learned before the assignment.</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+
+      <!-- Q1 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. What does Earth's <em>rotation</em> cause?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>The four seasons</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Day and night</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Earth's orbit around the Sun</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌍 That's right! As Earth spins (rotates) on its axis, one side faces the Sun (day) and the other faces away (night).</div>
+        <div class="quiz-feedback fb-wrong">Not quite! Think about the movement that happens every 24 hours — spinning vs. orbiting. Which one would make the Sun appear to rise and set?</div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">2. What is the real cause of Earth's seasons?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Earth getting closer to the Sun in summer and farther in winter</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>The Moon blocking the Sun's heat</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Earth's tilted axis as it revolves around the Sun</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌟 Exactly! Earth's 23.5° tilt stays pointed the same direction all year. As Earth revolves, different hemispheres take turns leaning toward the Sun — creating seasons!</div>
+        <div class="quiz-feedback fb-wrong">Not quite! Hint: Earth is actually slightly closer to the Sun in January (winter in the Northern Hemisphere). So distance isn't the answer. Think about the tilt and which direction the axis points!</div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-text">3. What is the difference between Earth's rotation and its revolution?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Rotation is Earth spinning on its axis (1 day); revolution is Earth orbiting the Sun (1 year)</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Rotation is Earth orbiting the Sun; revolution is Earth spinning on its axis</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>They are the same thing — just different words for Earth spinning</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🎯 Perfect! Rotation = spin (24 hours = 1 day). Revolution = orbit around the Sun (365 days = 1 year). Two different movements, two different effects!</div>
+        <div class="quiz-feedback fb-wrong">Not quite! Remember: rotation = spinning on the axis (like a spinning top), and revolution = traveling around the Sun (like a marble rolling around in a bowl).</div>
+      </div>
+
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum"></div>
+        <div class="quiz-score-label">out of 3 correct</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB 5: ASSIGNMENT
+══════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#34B76F;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment: Show What You Know</div>
+        <div class="act-subtitle">Time to show your science thinking!</div>
+      </div>
+      <div class="act-time" style="background:#34B76F;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="video-wrap">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">✍️</span>
+          <div>
+            <div class="video-wrap-type">Activity 4 · Assignment Explainer</div>
+            <div class="video-wrap-title">Here's What to Do for Your Assignment!</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">✍️</div>
+            <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 2-01-assignment-explainer --></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PART A -->
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">📝 Part A &mdash; Science Notebook: Earth's Rotation</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Open your science notebook. Add <strong>"Earth's Rotation and Revolution"</strong> to your Table of Contents. Then on a clean page, write the title at the top and draw this diagram:</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#34B76F;">1</span>
+        <span class="pq-text"><strong>Rotation Diagram:</strong> Draw Earth. Add a line from top to bottom to show the <strong>axis</strong> — label the <strong>North Pole</strong> and <strong>South Pole</strong>. Draw curved arrows around Earth to show it spinning. Then write: <em>"1 rotation = 24 hours (1 day)"</em></span>
+      </div>
+
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🌍 Part B &mdash; Science Notebook: Earth's Revolution</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">On the same page or the next clean page, draw this diagram:</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#D4772C;">2</span>
+        <span class="pq-text"><strong>Revolution Diagram:</strong> Draw a small Sun in the center. Around it, draw a big circle to show Earth's orbit. Draw Earth in four places on the orbit and label each one: <strong>Spring, Summer, Fall, Winter</strong>. Add arrows to show which direction Earth moves. Tilt Earth in each spot to show the axis always leans the same way. Then write: <em>"1 revolution = 1 year (365 days)"</em></span>
+      </div>
+
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">💬 Part C &mdash; Short Answer Questions</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer each question below in <strong>complete sentences</strong> in your science notebook. Use your vocabulary words!</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#55C8E8;">3</span>
+        <span class="pq-text">What is the difference between rotation and revolution? Give one example of what each one causes.</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#55C8E8;">4</span>
+        <span class="pq-text">Explain in your own words why Earth has four seasons. Make sure to use the words <em>axis, tilt,</em> and <em>revolve</em> in your answer.</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#55C8E8;">5</span>
+        <span class="pq-text">A sailor 500 years ago had no GPS. She noticed the Sun was very low in the sky at noon. What does that tell her about where on Earth she is (her hemisphere and rough location)? How did early explorers <em>navigate</em> using Earth's movements?</span>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Reflect</div>
+          <div class="question">"Look back at the sketch you drew during the Warm-Up. What is different about your new diagram? What did you learn today that changed how you picture Earth moving?"</div>
+        </div>
+      </div>
+
+      <!-- SUBMISSION CHECKLIST -->
+      <div style="background:#fff;border:2px solid #55C8E8;border-radius:18px;margin-top:20px;overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:10px;padding:14px 20px;background:#EAF8FD;border-bottom:2px solid #D6F2FB;">
+          <div style="width:42px;height:42px;border-radius:50%;background:#55C8E8;color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">📬</div>
+          <div>
+            <div style="font-size:10px;color:#9A8E82;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;">Time to Submit</div>
+            <div style="font-size:20px;color:#0E1C42;font-weight:800;line-height:1.2;">What to Turn In</div>
+          </div>
+        </div>
+        <div style="padding:18px 22px;">
+          <p style="font-size:16px;color:#5A4D3E;line-height:1.65;margin-bottom:14px;">When you've finished all three parts, submit your work in Canvas. Use this checklist to make sure everything is complete!</p>
+
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;">☐</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part A — Rotation Diagram:</strong> Earth with labeled axis (North Pole, South Pole), curved arrows, and the note "1 rotation = 24 hours".</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;">☐</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part B — Revolution Diagram:</strong> Sun at center, orbit path, Earth at all four seasons (Spring/Summer/Fall/Winter), direction arrows, axis tilt shown, "1 revolution = 1 year".</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;">☐</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part C — Questions 3, 4, &amp; 5</strong> answered in complete sentences, using at least three vocabulary words from today.</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:16px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;">☐</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Reflection:</strong> Written note comparing your warm-up sketch to your final diagram — what changed in your thinking?</span>
+          </div>
+
+          <div style="background:#FFF7EE;border:2px solid #F0DCC4;border-radius:14px;padding:14px 18px;">
+            <div style="font-size:13px;color:#C7922C;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;margin-bottom:8px;">📎 How to Submit</div>
+            <div style="font-size:15px;color:#2B1D12;line-height:1.7;">
+              Submit your completed work in the Canvas assignment in whichever way works best for you:<br/><br/>
+              <span style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px;">📸 <strong>Photo</strong> — Take a clear picture of your notebook pages and upload it.</span><br/>
+              <span style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px;">⌨️ <strong>Type it</strong> — Type your answers and describe your drawings in the Canvas text box.</span><br/>
+              <span style="display:inline-flex;align-items:center;gap:8px;">🎥 <strong>Video</strong> — Record yourself explaining your diagrams and answers out loud!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ESSENTIAL QUESTION REVISIT -->
+  <div class="card theme-sky scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">🔄</div>
+      <div>
+        <div class="card-head-label">Circle Back</div>
+        <div class="card-head-title">Revisit Our Essential Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🌍</span>
+        <div>
+          <div class="label">Now You Know!</div>
+          <div class="question">"Right now, you feel completely still — but scientists say Earth is racing through space at 67,000 miles per hour. How can that be? And how does Earth's invisible movement control everything from day and night to the changing seasons?"</div>
+        </div>
+      </div>
+      <p>Now that you've completed the lesson, write a <strong>2–3 sentence answer</strong> to this question. Try to use at least <strong>three vocabulary words</strong> from today: <em>rotate, revolve, axis, orbit, hemisphere,</em> or <em>navigate</em>.</p>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">⭐</span>
+        <p><strong>Outstanding work, scientist!</strong> You've discovered that Earth is always in motion — <span class="vtip">rotating<span class="vtip-box"><span class="vtip-word">Rotate</span>To spin around a center point or axis. Earth rotates once every 24 hours!</span></span> on its axis to give us day and night, and <span class="vtip">revolving<span class="vtip-box"><span class="vtip-word">Revolve</span>To move in a circular path around another object.</span></span> around the Sun to give us our year and seasons. Next lesson, we'll explore the amazing story of how Earth's features — mountains, oceans, and plains — were shaped by forces deep inside the planet!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOSING VIDEO -->
+  <div class="video-wrap scroll-reveal" style="margin-bottom:0;">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🌍</span>
+      <div>
+        <div class="video-wrap-type">Closing · Lesson Wrap-Up</div>
+        <div class="video-wrap-title">Great Work Today — Here's What's Coming Next!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🌍</div>
+        <div class="video-placeholder-text">Lesson closing &amp; next lesson preview coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 2-01-closing --></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end tab-assignment -->
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <div class="footer-line1"><span>Optima Academy Online</span> &middot; Science &middot; Quarter 1 &middot; Student Lesson Page</div>
+  <div class="footer-line2">Lesson 2.01 &middot; Earth Science: Meet Our Earth — A Planet Always in Motion</div>
+  <div class="footer-line3">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div><!-- end page-wrap -->
+
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
+  <span style="font-size:20px;">🌍</span> Back to Top
+</button>
+<canvas id="confettiCanvas"></canvas>
+
+<script>
+// ── Tab System ──
+var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];
+var tabsVisited = new Set(['vocab']);
+
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  var panel = document.getElementById('tab-' + tabId);
+  var btn = document.querySelector('[data-tab="' + tabId + '"]');
+  if (panel) panel.classList.add('active');
+  if (btn) { btn.classList.add('active'); btn.classList.add('visited'); }
+  tabsVisited.add(tabId);
+  var pct = Math.round((tabsVisited.size / TAB_ORDER.length) * 100);
+  var fill = document.getElementById('progressFill');
+  var pctEl = document.getElementById('progressPct');
+  if (fill) fill.style.width = pct + '%';
+  if (pctEl) pctEl.textContent = pct + '%';
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c){
+    if (tabId === 'vocab') { c.classList.remove('collapsed'); }
+    else { c.classList.add('collapsed'); }
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── Checklist ──
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  var icon = item.querySelector('.check-icon');
+  icon.textContent = item.classList.contains('checked') ? '🌍' : '☐';
+  var items = document.querySelectorAll('.checklist-item');
+  if (Array.from(items).every(function(it){ return it.classList.contains('checked'); })) {
+    setTimeout(window.launchConfetti, 200);
+  }
+}
+
+// ── Clickable Diagram ──
+(function(){
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel = document.getElementById('diagramPanel');
+  var wordEl = document.getElementById('diagramWord');
+  var infoEl = document.getElementById('diagramInfo');
+  if (!panel) return;
+  hotspots.forEach(function(hs){
+    hs.addEventListener('click', function(e){
+      e.stopPropagation();
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+      hs.classList.add('active');
+      var part = hs.getAttribute('data-part').replace(/-/g,' ');
+      wordEl.textContent = part.charAt(0).toUpperCase() + part.slice(1);
+      infoEl.innerHTML = hs.getAttribute('data-info');
+      panel.classList.add('visible');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+  document.addEventListener('click', function(e){
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+    }
+  });
+})();
+
+// ── Self-Check Quiz ──
+var quizAnswered = 0;
+var quizCorrect = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen = optEl.getAttribute('data-val');
+  var opts = q.querySelectorAll('.quiz-opt');
+  opts.forEach(function(o){
+    if (o.getAttribute('data-val') === correct) { o.classList.add('correct'); }
+    else { o.classList.add('disabled'); }
+  });
+  var fbCorrect = q.querySelector('.fb-correct');
+  var fbWrong = q.querySelector('.fb-wrong');
+  if (chosen === correct) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+  if (quizAnswered === 3) {
+    var scoreBox = document.getElementById('quizScore');
+    var scoreNum = document.getElementById('quizScoreNum');
+    var scoreMsg = document.getElementById('quizScoreMsg');
+    scoreNum.textContent = quizCorrect;
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '🌍 Perfect score! You\'re a true Earth scientist!';
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌟 Great job! You\'re almost there!';
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip){
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function(){
+    var rect = tip.getBoundingClientRect();
+    var bw = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Back to Top ──
+(function(){
+  var btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function(){ btn.classList.toggle('show', window.pageYOffset > 400); });
+})();
+
+// ── Confetti ──
+(function(){
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#55C8E8','#34B76F','#F5A623','#FFD700','#8B6FC0','#E8636B','#1A6FA8','#D4772C'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x,y){
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){ for(var i=0;i<count;i++) particles.push(new Particle(x,y)); if(!animating){animating=true;animate();} }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){particles.splice(i,1);return;}
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6);}
+      else{ctx.beginPath();ctx.arc(0,0,p.size/2,0,Math.PI*2);ctx.fill();}
+      ctx.restore();
+    });
+    if(particles.length>0){requestAnimationFrame(animate);} else{animating=false;ctx.clearRect(0,0,canvas.width,canvas.height);}
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.4, 50);
+    burst(cx,     window.innerHeight*.3, 60);
+    burst(cx+100, window.innerHeight*.4, 50);
+  };
+})();
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+
+// ── Intro card click-to-toggle ──
+document.querySelectorAll('.intro-2col .card').forEach(function(card){
+  card.querySelector('.card-head').addEventListener('click', function(){
+    card.classList.toggle('collapsed');
+  });
+});
+</script>
+</body>
+</html>
