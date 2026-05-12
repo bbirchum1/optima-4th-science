@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – Observing the Sky: Nature's Compass</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+    background: #F0F4F8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    color: #1A2B3C;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page-wrap { max-width: 920px; margin: 0 auto; background: #F7FAFD; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+  /* ── Header ── */
+  .header {
+    background: linear-gradient(135deg, #0E1C42 0%, #12305E 60%, #1A3F6F 100%);
+    border-bottom: 6px solid #55C8E8;
+    padding: 22px 28px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 6px; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #C7922C, #55C8E8, #C7922C);
+  }
+  .header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .header-logo {
+    width: 52px; height: 52px; border-radius: 50%; background: #fff;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .header-logo img { width: 48px; height: 38px; }
+  .header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+  .header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+  .header-title {
+    font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+    text-shadow: 0 2px 12px rgba(85,200,232,0.3);
+  }
+  .header-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(85,200,232,0.15); border: 1.5px solid rgba(85,200,232,0.35);
+    border-radius: 28px; padding: 6px 16px;
+  }
+  .header-badge span:first-child { font-size: 22px; }
+  .header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+  /* ── Hero Visual ── */
+  .hero-visual {
+    background: linear-gradient(180deg, #0B1437 0%, #1A4068 40%, #C7A45A 80%, #E8C882 100%);
+    padding: 0; position: relative; overflow: hidden;
+    border-bottom: 3px solid #55C8E8;
+  }
+  .hero-visual svg { display: block; width: 100%; height: auto; }
+
+  /* ── Info Strip ── */
+  .info-strip {
+    display: flex; flex-wrap: wrap; background: #fff;
+    border-bottom: 2px solid #D8E8F0;
+  }
+  .info-item {
+    flex: 1; min-width: 150px; padding: 12px 16px;
+    border-right: 1px solid #D8E8F0;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .info-item:last-child { border-right: none; }
+  .info-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+  .info-value { font-size: 16px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+  .info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+  /* ── Content Area ── */
+  .content { padding: 24px 28px 36px; }
+
+  /* ── Card System ── */
+  .card { background: #fff; border: 2px solid #D8E8F0; border-radius: 18px; margin-bottom: 22px; overflow: hidden; box-shadow: 0 2px 12px rgba(14,28,66,0.04); }
+  .card-head { display: flex; align-items: center; gap: 10px; padding: 14px 20px; border-bottom: 2px solid; }
+  .card-head-icon { width: 42px; height: 42px; border-radius: 50%; color: #fff; font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+  .card-head-title { font-size: 20px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+  .card-body { padding: 18px 22px; }
+  .card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+  .card-body p:last-child { margin-bottom: 0; }
+
+  /* ── Color Themes ── */
+  .theme-sky   .card-head { background: #EAF8FD; border-color: #C4E8F5; }
+  .theme-sky   .card-head-icon { background: #55C8E8; }
+  .theme-earth .card-head { background: #FFF7EE; border-color: #F0DCC4; }
+  .theme-earth .card-head-icon { background: #C7922C; }
+  .theme-sun   .card-head { background: #FFFBEA; border-color: #F5E6A8; }
+  .theme-sun   .card-head-icon { background: #D4A017; }
+  .theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+  .theme-forest .card-head-icon { background: #34B76F; }
+  .theme-rock  .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+  .theme-rock  .card-head-icon { background: #8B6FC0; }
+  .theme-ocean .card-head { background: #E8F4FD; border-color: #C0DDF5; }
+  .theme-ocean .card-head-icon { background: #2980B9; }
+
+  /* ── Activity Cards ── */
+  .activity-card { background: #fff; border: 2px solid #D8E8F0; border-radius: 18px; margin-bottom: 18px; overflow: hidden; box-shadow: 0 2px 10px rgba(14,28,66,0.04); }
+  .activity-card.act-warmup   { border-left: 6px solid #E8636B; }
+  .activity-card.act-lesson   { border-left: 6px solid #C7922C; }
+  .activity-card.act-explore  { border-left: 6px solid #55C8E8; }
+  .activity-card.act-practice { border-left: 6px solid #34B76F; }
+  .activity-card.act-check    { border-left: 6px solid #8B6FC0; }
+
+  .act-head { display: flex; align-items: center; gap: 12px; padding: 14px 20px 14px 18px; border-bottom: 1.5px solid #D8E8F0; }
+  .act-num { width: 38px; height: 38px; border-radius: 14px; color: #fff; font-size: 18px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .act-title { font-size: 19px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+  .act-subtitle { font-size: 12px; color: #9A8E82; }
+  .act-time { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap; margin-left: auto; flex-shrink: 0; }
+  .act-body { padding: 18px 22px 18px 20px; }
+  .act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+  /* ── Callout Boxes ── */
+  .callout { border-radius: 14px; padding: 16px 18px; display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+  .callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+  .callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+  .callout-sky    { background: #EAF8FD; border: 2px solid #C4E8F5; }
+  .callout-think  { background: #FFF7EE; border: 2px solid #F0DCC4; }
+  .callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+  .callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+  .callout-sun    { background: #FFFBEA; border: 2px solid #F5E6A8; }
+
+  /* ── Socratic Questions ── */
+  .socratic-q { background: linear-gradient(135deg, #EAF8FD, #F0F8FF); border: 2px solid #A8D8F0; border-radius: 16px; padding: 16px 20px; margin: 16px 0; display: flex; align-items: flex-start; gap: 12px; }
+  .socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+  .socratic-q .label { font-size: 11px; color: #2980B9; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; }
+  .socratic-q .question { font-size: 17px; color: #1A2B3C; font-weight: 700; line-height: 1.6; font-style: italic; }
+
+  /* ── Diagram Containers ── */
+  .diagram-wrap { background: #fff; border: 2px solid #D8E8F0; border-radius: 16px; padding: 16px; margin: 16px 0; text-align: center; }
+  .diagram-wrap svg { max-width: 100%; height: auto; }
+  .diagram-caption { font-size: 13px; color: #9A8E82; margin-top: 10px; font-weight: 600; text-align: center; }
+
+  /* ── Key Concept Box ── */
+  .key-concept { background: #EAF8FD; border: 2px solid #A8D8F0; border-radius: 14px; padding: 18px 20px; margin: 14px 0; }
+  .key-concept .kc-label { font-size: 13px; color: #2980B9; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px; }
+  .key-concept p { font-size: 16px; color: #1A2B3C; line-height: 1.7; margin-bottom: 8px; }
+  .key-concept p:last-child { margin-bottom: 0; }
+
+  /* ── Practice Questions ── */
+  .pq { background: #F5F9FC; border: 2px solid #D8E8F0; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; }
+  .pq-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; color: #fff; font-weight: 800; font-size: 14px; margin-right: 8px; vertical-align: middle; }
+  .pq-text { font-size: 17px; color: #1A2B3C; line-height: 1.65; margin-bottom: 8px; }
+
+  /* ── Vocab Flashcards ── */
+  .vocab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+  .flip-card { perspective: 800px; height: 160px; cursor: pointer; }
+  .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.5s ease; transform-style: preserve-3d; }
+  .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+  .flip-card-front, .flip-card-back { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 16px; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 18px 20px; text-align: center; border: 2px solid #D8E8F0; box-shadow: 0 2px 10px rgba(14,28,66,0.06); }
+  .flip-card-front { background: #F7FAFD; border-top: 5px solid; }
+  .flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+  .flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #0E1C42; margin-bottom: 6px; }
+  .flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+  .flip-card-back { background: linear-gradient(145deg, #0E1C42, #1A3F6F); border-color: #0E1C42; transform: rotateY(180deg); }
+  .flip-card-back .fc-def { font-size: 15px; color: #fff; line-height: 1.6; font-weight: 600; }
+  .flip-card-back .fc-word-back { font-size: 11px; color: #55C8E8; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 8px; }
+  .flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 10px; font-weight: 600; }
+  .fc-color-1 .flip-card-front { border-top-color: #55C8E8; }
+  .fc-color-2 .flip-card-front { border-top-color: #C7922C; }
+  .fc-color-3 .flip-card-front { border-top-color: #D4A017; }
+  .fc-color-4 .flip-card-front { border-top-color: #34B76F; }
+  .fc-color-5 .flip-card-front { border-top-color: #8B6FC0; }
+  .fc-color-6 .flip-card-front { border-top-color: #2980B9; }
+
+  /* ── Vocab Tooltips ── */
+  .vtip { position: relative; color: #8B6FC0; font-weight: 700; cursor: help; border-bottom: 2px dotted rgba(139,111,192,0.45); transition: color 0.15s; }
+  .vtip:hover { color: #6B4FA0; }
+  .vtip .vtip-box { position: fixed; background: #0E1C42; color: #fff; padding: 12px 16px; border-radius: 12px; font-size: 14px; font-weight: 600; font-style: normal; line-height: 1.55; width: 250px; text-align: center; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s; pointer-events: none; z-index: 9999; box-shadow: 0 6px 24px rgba(14,28,66,0.35); border: 1.5px solid rgba(85,200,232,0.3); transform: translateY(6px); }
+  .vtip .vtip-box::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 7px solid transparent; border-top-color: #0E1C42; }
+  .vtip .vtip-word { font-size: 11px; color: #55C8E8; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block; }
+  .vtip:hover .vtip-box { opacity: 1; visibility: visible; transform: translateY(0); }
+
+  /* ── Details / Go Deeper ── */
+  details { background: #fff; border: 2px solid #D8E8F0; border-left: 5px solid #8B6FC0; border-radius: 14px; margin-bottom: 12px; overflow: hidden; }
+  details summary { padding: 12px 18px; font-size: 16px; font-weight: 700; color: #0E1C42; cursor: pointer; }
+  details summary:hover { background: #F5F9FC; }
+  details > div { padding: 12px 18px 14px; font-size: 16px; color: #5A4D3E; line-height: 1.65; border-top: 1.5px solid #D8E8F0; }
+
+  .go-deeper { background: linear-gradient(135deg, #F0EDF6, #E8E2F2); border: 2px solid #D8D0E8; border-radius: 16px; margin: 16px 0; overflow: hidden; }
+  .go-deeper summary { padding: 14px 18px; font-size: 16px; font-weight: 800; color: #0E1C42; cursor: pointer; display: flex; align-items: center; gap: 10px; list-style: none; }
+  .go-deeper summary::-webkit-details-marker { display: none; }
+  .go-deeper summary::before { content: '🔭'; font-size: 22px; }
+  .go-deeper summary::after { content: '▸'; margin-left: auto; font-size: 18px; color: #8B6FC0; transition: transform 0.3s; }
+  .go-deeper[open] summary::after { transform: rotate(90deg); }
+  .go-deeper .gd-body { padding: 4px 18px 16px; font-size: 15px; color: #5A4D3E; line-height: 1.7; border-top: 1.5px solid #D8D0E8; }
+  .go-deeper .gd-body p { margin-bottom: 10px; }
+
+  /* ── Activities Header ── */
+  .activities-header { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+  .activities-header-icon { width: 44px; height: 44px; border-radius: 50%; background: #0E1C42; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+  .activities-header-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+  .activities-header-title { font-size: 22px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+
+  /* ── Types Grid ── */
+  .types-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; }
+  .type-card { border-radius: 16px; padding: 16px; text-align: center; border: 2px solid; position: relative; overflow: hidden; }
+  .type-card svg { display: block; margin: 0 auto 10px; }
+  .type-name { font-size: 16px; font-weight: 800; color: #0E1C42; margin-bottom: 4px; }
+  .type-desc { font-size: 13px; color: #5A4D3E; line-height: 1.5; }
+  .tc-sky   { background: #EAF8FD; border-color: #A8D8F0; }
+  .tc-water { background: #E8F4FD; border-color: #A0CCE8; }
+  .tc-sense { background: #EEF8F0; border-color: #B8E0C4; }
+
+  /* ── Size Comparison ── */
+  .size-compare-wrap { background: linear-gradient(180deg, #D6EEFB, #EAF8FD); border: 2px solid #A8D8F0; border-radius: 16px; padding: 16px; margin: 16px 0; text-align: center; }
+  .size-compare-wrap svg { max-width: 100%; height: auto; }
+  .size-compare-caption { font-size: 13px; color: #9A8E82; margin-top: 10px; font-weight: 600; text-align: center; }
+
+  /* ── Self-Check Quiz ── */
+  .quiz-card { background: #fff; border: 2px solid #D8E8F0; border-left: 6px solid #C7922C; border-radius: 18px; margin-bottom: 18px; overflow: hidden; box-shadow: 0 2px 10px rgba(14,28,66,0.04); }
+  .quiz-q { background: #F5F9FC; border: 2px solid #D8E8F0; border-radius: 14px; padding: 16px 18px; margin-bottom: 14px; }
+  .quiz-q-text { font-size: 17px; color: #1A2B3C; font-weight: 700; line-height: 1.6; margin-bottom: 12px; }
+  .quiz-options { display: flex; flex-direction: column; gap: 8px; }
+  .quiz-opt { padding: 10px 16px; border-radius: 12px; border: 2px solid #D8E8F0; background: #fff; font-size: 15px; font-weight: 700; color: #1A2B3C; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 10px; user-select: none; }
+  .quiz-opt:hover { background: #EAF8FD; border-color: #55C8E8; }
+  .quiz-opt.correct { background: #EEF8F0 !important; border-color: #34B76F !important; color: #1a6b35 !important; }
+  .quiz-opt.wrong   { background: #FFF0EC !important; border-color: #E8636B !important; color: #a33 !important; }
+  .quiz-opt.disabled { pointer-events: none; opacity: 0.6; }
+  .quiz-opt .opt-letter { width: 28px; height: 28px; border-radius: 50%; background: #D8E8F0; color: #5A4D3E; font-size: 14px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s; }
+  .quiz-opt.correct .opt-letter { background: #34B76F; color: #fff; }
+  .quiz-opt.wrong   .opt-letter { background: #E8636B; color: #fff; }
+  .quiz-feedback { font-size: 14px; padding: 10px 14px; border-radius: 10px; margin-top: 10px; display: none; font-weight: 600; line-height: 1.5; }
+  .quiz-feedback.show { display: block; }
+  .quiz-feedback.fb-correct { background: #EEF8F0; color: #1a6b35; border: 1.5px solid #B8E8CF; }
+  .quiz-feedback.fb-wrong   { background: #FFF0EC; color: #8a3030; border: 1.5px solid #F5C4BA; }
+  .quiz-score { text-align: center; padding: 16px; background: linear-gradient(135deg, #EAF8FD, #F0F8FF); border: 2px solid #A8D8F0; border-radius: 14px; margin-top: 8px; display: none; }
+  .quiz-score.show { display: block; }
+  .quiz-score-num { font-size: 36px; font-weight: 900; color: #0E1C42; }
+  .quiz-score-label { font-size: 14px; color: #9A8E82; font-weight: 700; }
+  .quiz-score-msg { font-size: 16px; color: #1A2B3C; font-weight: 700; margin-top: 6px; }
+
+  /* ── Mind-Blowing Fact ── */
+  .mind-blow { background: linear-gradient(135deg, #0B1437, #0E1C42); border: 2px solid rgba(85,200,232,0.3); border-radius: 18px; padding: 18px 22px; margin: 18px 0; display: flex; align-items: flex-start; gap: 14px; position: relative; overflow: hidden; }
+  .mind-blow::before { content: ''; position: absolute; top: -30px; right: -30px; width: 100px; height: 100px; border-radius: 50%; background: radial-gradient(circle, rgba(85,200,232,0.15), transparent); }
+  .mind-blow-icon { font-size: 36px; flex-shrink: 0; animation: mind-blow-bounce 2s ease-in-out infinite; }
+  @keyframes mind-blow-bounce { 0%,100%{transform:scale(1)} 50%{transform:scale(1.12)} }
+  .mind-blow-content { flex: 1; }
+  .mind-blow-label { font-size: 11px; color: #FFD700; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 4px; }
+  .mind-blow-text { font-size: 16px; color: #fff; line-height: 1.6; font-weight: 600; }
+  .mind-blow-text strong { color: #55C8E8; }
+
+  /* ── Diagram Interactive ── */
+  .diagram-interactive { position: relative; }
+  .diagram-interactive .hotspot { cursor: pointer; opacity: 0; transition: opacity 0.2s; }
+  .diagram-interactive .hotspot:hover { opacity: 0.25; }
+  .diagram-interactive .hotspot.active { opacity: 0.35; }
+  .diagram-info-panel { background: #0E1C42; color: #fff; padding: 14px 20px; border-radius: 14px; font-size: 15px; line-height: 1.55; font-weight: 600; text-align: center; border: 1.5px solid rgba(85,200,232,0.3); box-shadow: 0 4px 16px rgba(0,0,0,0.2); margin: 10px 0 0; display: none; }
+  .diagram-info-panel.visible { display: block; }
+  .diagram-info-panel .dip-word { font-size: 11px; color: #FFD700; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; display: block; margin-bottom: 3px; }
+
+  /* ── Footer ── */
+  .footer { background: #0E1C42; border-top: 4px solid #55C8E8; padding: 18px 28px; text-align: center; }
+  .footer-line1 { font-size: 15px; color: #fff; margin-bottom: 4px; }
+  .footer-line1 span { color: #55C8E8; font-weight: 700; }
+  .footer-line2 { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+  .footer-line3 { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+  strong { color: #0E1C42; }
+  em { color: #5A4D3E; }
+  .sky-blue { color: #2980B9; font-weight: 700; }
+  .gold-text { color: #C7922C; font-weight: 700; }
+
+  /* ── Interactive Checklist ── */
+  .checklist-item:hover { background: #EAF8FD !important; }
+  .checklist-item.checked { background: #EEF8F0 !important; border-color: #B8E8CF !important; }
+  .checklist-item.checked .check-icon { border-color: transparent !important; background: transparent !important; font-size: 22px !important; }
+  .checklist-item.checked span:last-child { color: #5A4D3E; }
+
+  /* ── Progress Bar ── */
+  .progress-wrap { position: sticky; top: 0; z-index: 200; background: #0E1C42; padding: 8px 20px 10px; border-bottom: 2px solid rgba(85,200,232,0.3); display: flex; align-items: center; gap: 14px; }
+  .progress-label { font-size: 12px; color: #55C8E8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+  .progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+  .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #55C8E8, #C7922C, #FFD700); border-radius: 10px; transition: width 0.4s ease; }
+  .progress-pct { font-size: 13px; color: #FFD700; font-weight: 800; min-width: 36px; text-align: right; }
+
+  /* ── Back to Top ── */
+  .back-to-top { position: fixed; bottom: 28px; right: 28px; height: 44px; padding: 0 18px 0 14px; border-radius: 22px; background: linear-gradient(135deg, #55C8E8, #2980B9); color: #fff; border: none; font-size: 14px; font-weight: 800; font-family: 'Nunito', sans-serif; cursor: pointer; box-shadow: 0 4px 18px rgba(85,200,232,0.35); display: flex; align-items: center; gap: 6px; opacity: 0; visibility: hidden; transform: translateY(20px); transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.2s; z-index: 500; }
+  .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+  .back-to-top:hover { box-shadow: 0 6px 24px rgba(85,200,232,0.5); transform: translateY(-3px); }
+
+  /* ── Confetti Canvas ── */
+  #confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000; }
+
+  /* ── Video Embed ── */
+  .video-wrap { border-radius: 18px; overflow: hidden; border: 2px solid #D8E8F0; box-shadow: 0 4px 20px rgba(14,28,66,0.08); background: #000; margin: 0 0 22px; }
+  .video-wrap-header { display: flex; align-items: center; gap: 12px; padding: 12px 18px; background: linear-gradient(135deg, #0E1C42, #1A3F6F); border-bottom: 2px solid rgba(85,200,232,0.2); }
+  .video-wrap-type { font-size: 10px; color: #55C8E8; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+  .video-wrap-title { font-size: 16px; color: #fff; font-weight: 800; line-height: 1.2; }
+  .video-ratio { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+  .video-ratio iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+  .video-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #0B1437, #0E1C42); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; }
+  .video-placeholder-icon { font-size: 44px; margin-bottom: 10px; opacity: 0.55; }
+  .video-placeholder-text { font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 600; line-height: 1.5; font-family: 'Nunito', sans-serif; }
+  .video-placeholder-id { font-size: 11px; color: rgba(85,200,232,0.4); font-family: monospace; margin-top: 6px; }
+  .video-feedback { display: none; }
+  .video-feedback.show { display: block; }
+
+  /* ── Tab Bar ── */
+  .tab-bar { position: sticky; top: 44px; z-index: 100; background: #F7FAFD; border-bottom: 3px solid #D8E8F0; display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .tab-bar::-webkit-scrollbar { display: none; }
+  .tab-btn { flex: 1; min-width: 130px; padding: 12px 8px 11px; background: transparent; border: none; border-bottom: 4px solid transparent; font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700; color: #9A8E82; cursor: pointer; transition: all 0.2s; white-space: nowrap; line-height: 1.3; text-align: center; }
+  .tab-btn:hover { color: #0E1C42; background: #EAF8FD; }
+  .tab-btn.active { color: #0E1C42; border-bottom-color: #55C8E8; background: #fff; }
+  .tab-btn .tab-check { display: none; font-size: 12px; color: #34B76F; margin-left: 4px; font-weight: 800; }
+  .tab-btn.visited .tab-check { display: inline; }
+
+  /* ── Tab Panels ── */
+  .tab-panel { display: none; padding: 24px 28px 36px; }
+  .tab-panel.active { display: block; }
+  .scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+  /* ── Intro 2-col ── */
+  .intro-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px 28px 0; }
+  .intro-2col .card { margin-bottom: 0; }
+  .intro-2col .card .card-head { cursor: pointer; user-select: none; position: relative; }
+  .intro-2col .card .card-head::after { content: '▾'; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #9A8E82; transition: transform 0.25s ease; }
+  .intro-2col .card.collapsed .card-head::after { transform: translateY(-50%) rotate(-90deg); }
+  .intro-2col .card.collapsed .card-body { display: none; }
+
+  /* ── Need Strip ── */
+  .need-strip { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 28px 16px; }
+  .need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 700; white-space: nowrap; }
+  .need-chip { display: inline-flex; align-items: center; gap: 5px; background: #EAF8FD; border: 1.5px solid #A8D8F0; border-radius: 20px; padding: 5px 12px; font-size: 13px; color: #0E1C42; font-weight: 700; }
+
+  /* ── Tab Next Button ── */
+  .tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+  .tab-next-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px; background: linear-gradient(135deg, #55C8E8, #2980B9); color: #fff; border: none; border-radius: 28px; font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 16px rgba(85,200,232,0.3); transition: transform 0.2s, box-shadow 0.2s; }
+  .tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(85,200,232,0.4); }
+
+  @media (max-width: 620px) {
+    .intro-2col { grid-template-columns: 1fr; }
+    .types-grid { grid-template-columns: 1fr; }
+    .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 4px; }
+  }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+<!-- ═══ PROGRESS BAR ═══ -->
+<div class="progress-wrap">
+  <span class="progress-label">☀️ Lesson Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" /></div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">Observing the Sky: Nature's Compass</div>
+  <div class="header-badge">
+    <span>🔬</span>
+    <span>SCIENCE &middot; EARTH &amp; SPACE</span>
+  </div>
+</div>
+
+<!-- ═══ HERO SVG ═══ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0B1437"/>
+      <stop offset="35%" stop-color="#1A4068"/>
+      <stop offset="70%" stop-color="#3A7CA8"/>
+      <stop offset="100%" stop-color="#C7A45A"/>
+    </linearGradient>
+    <linearGradient id="oceanGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A6A8A"/>
+      <stop offset="100%" stop-color="#0E3D5A"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#FFD700" stop-opacity="1"/>
+      <stop offset="40%" stop-color="#F5A623" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#F5A623" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sunriseSoft" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#FFB347" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#FFB347" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur4"><feGaussianBlur stdDeviation="4"/></filter>
+    <filter id="blur8"><feGaussianBlur stdDeviation="8"/></filter>
+    <filter id="blur2"><feGaussianBlur stdDeviation="2"/></filter>
+  </defs>
+  <style>
+    @keyframes star-twinkle { 0%,100%{opacity:.15} 50%{opacity:.8} }
+    @keyframes sun-pulse { 0%,100%{r:30;opacity:.95} 50%{r:33;opacity:1} }
+    @keyframes sun-glow-pulse { 0%,100%{opacity:.4} 50%{opacity:.7} }
+    @keyframes arc-dash { 0%{stroke-dashoffset:600} 100%{stroke-dashoffset:0} }
+    @keyframes bird-flap { 0%,100%{transform:scaleY(1)} 50%{transform:scaleY(0.5)} }
+    @keyframes bird-fly-1 { 0%{transform:translateX(0)} 100%{transform:translateX(40px)} }
+    @keyframes bird-fly-2 { 0%{transform:translateX(0)} 100%{transform:translateX(-30px)} }
+    @keyframes cloud-drift { 0%,100%{transform:translateX(0)} 50%{transform:translateX(12px)} }
+    @keyframes wave-move { 0%,100%{transform:translateX(0)} 50%{transform:translateX(-10px)} }
+    @keyframes horizon-glow { 0%,100%{opacity:.5} 50%{opacity:.8} }
+    .star-t{animation:star-twinkle ease-in-out infinite}
+    .st1{animation-duration:3s;animation-delay:0s}
+    .st2{animation-duration:4.5s;animation-delay:.7s}
+    .st3{animation-duration:3.8s;animation-delay:1.4s}
+    .st4{animation-duration:5s;animation-delay:.3s}
+    .st5{animation-duration:4s;animation-delay:2s}
+    .st6{animation-duration:3.5s;animation-delay:1s}
+    .sun-main{animation:sun-pulse 3s ease-in-out infinite}
+    .sun-glow{animation:sun-glow-pulse 3s ease-in-out infinite}
+    .arc-path{animation:arc-dash 3s ease-out forwards}
+    .cloud1{animation:cloud-drift 6s ease-in-out infinite}
+    .cloud2{animation:cloud-drift 8s ease-in-out infinite 2s}
+    .wave1{animation:wave-move 4s ease-in-out infinite}
+    .wave2{animation:wave-move 5s ease-in-out infinite 1s}
+    .h-glow{animation:horizon-glow 4s ease-in-out infinite}
+    .birdg1{animation:bird-fly-1 8s ease-in-out infinite}
+    .birdg2{animation:bird-fly-2 10s ease-in-out infinite 2s}
+  </style>
+
+  <!-- Sky -->
+  <rect width="920" height="260" fill="url(#skyGrad)"/>
+
+  <!-- Stars (faint — dawn sky) -->
+  <circle class="star-t st1" cx="60" cy="28" r="1.2" fill="#fff"/>
+  <circle class="star-t st2" cx="160" cy="18" r="0.9" fill="#fff"/>
+  <circle class="star-t st3" cx="280" cy="35" r="1.4" fill="#fff"/>
+  <circle class="star-t st4" cx="800" cy="22" r="1" fill="#fff"/>
+  <circle class="star-t st5" cx="700" cy="40" r="1.3" fill="#fff"/>
+  <circle class="star-t st6" cx="860" cy="30" r="0.8" fill="#fff"/>
+
+  <!-- Horizon glow -->
+  <ellipse class="h-glow" cx="460" cy="200" rx="380" ry="50" fill="#C7A45A" opacity="0.3" filter="url(#blur8)"/>
+
+  <!-- Sun arc path (dotted) -->
+  <path class="arc-path" d="M80,220 Q260,40 460,30 Q660,40 840,220" stroke="#FFD700" stroke-width="2" fill="none" stroke-dasharray="8,6" stroke-dashoffset="600" opacity="0.55"/>
+
+  <!-- E label -->
+  <circle cx="80" cy="220" r="16" fill="#FFD700" opacity="0.2"/>
+  <text x="80" y="225" text-anchor="middle" font-family="Nunito,sans-serif" font-size="13" font-weight="800" fill="#FFD700" opacity="0.8">E</text>
+
+  <!-- W label -->
+  <circle cx="840" cy="220" r="16" fill="#FFD700" opacity="0.2"/>
+  <text x="840" y="225" text-anchor="middle" font-family="Nunito,sans-serif" font-size="13" font-weight="800" fill="#FFD700" opacity="0.8">W</text>
+
+  <!-- Sun (near zenith) -->
+  <circle class="sun-glow" cx="460" cy="55" r="55" fill="url(#sunGlow)" filter="url(#blur8)"/>
+  <circle class="sun-glow" cx="460" cy="55" r="36" fill="#FFE040" opacity="0.3" filter="url(#blur4)"/>
+  <circle class="sun-main" cx="460" cy="55" r="30" fill="#FFD700"/>
+  <circle cx="460" cy="55" r="24" fill="#FFE867"/>
+
+  <!-- Sun rays -->
+  <g opacity="0.5" transform="translate(460,55)">
+    <line x1="0" y1="-38" x2="0" y2="-48" stroke="#FFD700" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="27" y1="-27" x2="34" y2="-34" stroke="#FFD700" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="38" y1="0" x2="48" y2="0" stroke="#FFD700" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="27" y1="27" x2="34" y2="34" stroke="#FFD700" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="0" y1="38" x2="0" y2="48" stroke="#FFD700" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="-27" y1="27" x2="-34" y2="34" stroke="#FFD700" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="-38" y1="0" x2="-48" y2="0" stroke="#FFD700" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="-27" y1="-27" x2="-34" y2="-34" stroke="#FFD700" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Clouds -->
+  <g class="cloud1">
+    <ellipse cx="200" cy="90" rx="55" ry="20" fill="#fff" opacity="0.18"/>
+    <ellipse cx="220" cy="82" rx="38" ry="17" fill="#fff" opacity="0.12"/>
+  </g>
+  <g class="cloud2">
+    <ellipse cx="680" cy="105" rx="48" ry="18" fill="#fff" opacity="0.15"/>
+    <ellipse cx="700" cy="97" rx="32" ry="15" fill="#fff" opacity="0.1"/>
+  </g>
+
+  <!-- Ocean -->
+  <rect x="0" y="198" width="920" height="62" fill="url(#oceanGrad)"/>
+
+  <!-- Waves -->
+  <g class="wave1">
+    <path d="M0,208 Q60,202 120,208 Q180,214 240,208 Q300,202 360,208 Q420,214 480,208 Q540,202 600,208 Q660,214 720,208 Q780,202 840,208 Q900,214 920,208" stroke="#55C8E8" stroke-width="1.5" fill="none" opacity="0.4"/>
+  </g>
+  <g class="wave2">
+    <path d="M0,218 Q80,213 160,218 Q240,223 320,218 Q400,213 480,218 Q560,223 640,218 Q720,213 800,218 Q880,223 920,218" stroke="#55C8E8" stroke-width="1" fill="none" opacity="0.3"/>
+  </g>
+
+  <!-- Ship silhouette -->
+  <g transform="translate(680,185)">
+    <polygon points="0,12 60,12 50,0 10,0" fill="#0E1C42" opacity="0.6"/>
+    <rect x="22" y="-22" width="3" height="24" fill="#0E1C42" opacity="0.5"/>
+    <polygon points="25,-20 45,2 25,2" fill="#1A4068" opacity="0.4"/>
+  </g>
+
+  <!-- Birds group 1 -->
+  <g class="birdg1" transform="translate(150,75)">
+    <path d="M0,0 Q5,-4 10,0 Q15,-4 20,0" stroke="#fff" stroke-width="1.5" fill="none" opacity="0.7"/>
+    <path d="M25,4 Q30,0 35,4 Q40,0 45,4" stroke="#fff" stroke-width="1.5" fill="none" opacity="0.5"/>
+  </g>
+
+  <!-- Birds group 2 -->
+  <g class="birdg2" transform="translate(750,95)">
+    <path d="M0,0 Q5,-4 10,0 Q15,-4 20,0" stroke="#fff" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <path d="M-10,5 Q-5,1 0,5 Q5,1 10,5" stroke="#fff" stroke-width="1.5" fill="none" opacity="0.4"/>
+  </g>
+
+  <!-- Horizon line -->
+  <line x1="0" y1="199" x2="920" y2="199" stroke="#55C8E8" stroke-width="1" opacity="0.4"/>
+
+  <!-- Label -->
+  <text x="460" y="250" text-anchor="middle" font-family="Nunito,sans-serif" font-size="14" font-weight="800" fill="#FFD700" letter-spacing="3" opacity="0.85">OBSERVING THE SKY: NATURE'S COMPASS</text>
+</svg>
+</div>
+
+<!-- ═══════════ INFO STRIP ═══════════ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q1 &middot; Unit 2</div>
+      <div class="info-detail">Patterns in the Sky</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF7EE;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 2</div>
+      <div class="info-detail">Lesson 2.02 &mdash; Earth Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFFBEA;">☀️</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">The Sky</div>
+      <div class="info-detail">Sun Patterns &amp; Navigation</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">🌍</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">1-ESS1-1</div>
+      <div class="info-detail">Patterns in the Sky</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ INTRO CARDS ═══════════ -->
+<div class="intro-2col">
+  <div class="card theme-earth scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">❓</div>
+      <div>
+        <div class="card-head-label">Key Question</div>
+        <div class="card-head-title">Our Big Question for Today</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This&hellip;</div>
+          <div class="question">"How did early explorers use natural clues and the sun's position to navigate and determine their proximity to land?"</div>
+        </div>
+      </div>
+      <p>Keep this question in mind as you work through today's lesson. By the end, you'll be able to answer it like a real navigator!</p>
+    </div>
+  </div>
+
+  <div class="card theme-sky scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#F5F9FC;border-radius:14px;margin-bottom:10px;border:1.5px solid #D8E8F0;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#E8636B;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> describe how the sun's position in the sky changes from morning to noon to evening.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#F5F9FC;border-radius:14px;margin-bottom:10px;border:1.5px solid #D8E8F0;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#C7922C;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> identify natural clues that early explorers used to determine their proximity to land.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#F5F9FC;border-radius:14px;border:1.5px solid #D8E8F0;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#34B76F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain why observing patterns in the sky was important for navigation.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span> Science notebook</span>
+  <span class="need-chip"><span>✏️</span> Colored pencils</span>
+  <span class="need-chip"><span>🧭</span> Labels worksheet</span>
+</div>
+
+<!-- ═══════════ TAB BAR ═══════════ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab" onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="lesson" onclick="switchTab('lesson')">📘 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="explore" onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+<!-- ═══ TAB 1: VOCABULARY ═══ -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <div class="video-wrap" style="margin-bottom:22px;">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to Today's Lesson!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🎬</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 2-02-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Activity 1: Warm-Up -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#E8636B;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Warm-Up: What Do You Already Know?</div>
+        <div class="act-subtitle">Activate your prior knowledge!</div>
+      </div>
+      <div class="act-time" style="background:#E8636B;">⏱ 5 min</div>
+    </div>
+    <div class="act-body">
+      <p>Imagine you're on a big ship, sailing across the wide ocean. There are <strong>no maps, no phones, and no GPS</strong>. In your science notebook, draw a quick picture of what you see around you &mdash; sky, water, and anything else you might notice.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Write &amp; Reflect</div>
+          <div class="question">"Without any technology, how would you know which direction you're going? What clues from nature might help you find your way?"</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>There are no wrong answers here! Long ago, brave explorers figured this out by using their eyes, their brains, and the world around them. We'll come back to your ideas at the end of the lesson!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vocabulary -->
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Before we explore, let's learn the words scientists and navigators use. <strong>Tap each card to flip it</strong> and read the definition. You'll see these words throughout the lesson!</p>
+      <div class="vocab-grid">
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">📍</div><div class="fc-word">Proximity</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Proximity</div><div class="fc-def">The state of being near or close to something in distance or time.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🧭</div><div class="fc-word">Navigation</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Navigation</div><div class="fc-def">The process of planning and following a path to get from one place to another.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌅</div><div class="fc-word">Horizon</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Horizon</div><div class="fc-def">The line in the distance where the sky appears to meet the land or sea.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">👁️</div><div class="fc-word">Observation</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Observation</div><div class="fc-def">Using your senses to carefully notice and gather information about the world around you.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🔄</div><div class="fc-word">Pattern</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Pattern</div><div class="fc-def">Something that happens in a regular, predictable way that can be expected to repeat.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌐</div><div class="fc-word">Cardinal Directions</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Cardinal Directions</div><div class="fc-def">The four main directions on a compass: North, South, East, and West.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mind-blow">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Mind-Blowing Fact</div>
+      <div class="mind-blow-text">Ancient Polynesian sailors navigated across more than <strong>2,000 miles of open ocean</strong> &mdash; with NO maps or instruments! They read the stars, ocean waves, wind direction, and bird behavior to find tiny islands in the Pacific.</div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📘 The Lesson →</button>
+  </div>
+</div>
+
+<!-- ═══ TAB 2: THE LESSON ═══ -->
+<div class="tab-panel" id="tab-lesson">
+
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#C7922C;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📘 The Lesson: Reading the Sky</div>
+        <div class="act-subtitle">Discover how nature has always shown the way!</div>
+      </div>
+      <div class="act-time" style="background:#C7922C;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="video-wrap">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">📘</span>
+          <div>
+            <div class="video-wrap-type">Activity 2 · Lesson Explainer</div>
+            <div class="video-wrap-title">How Did Early Explorers Find Their Way?</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">📘</div>
+            <div class="video-placeholder-text">Lesson explainer video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 2-02-lesson-explainer --></div>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size:18px;"><strong>Part 1 — Using the Sun as a Guide</strong></p>
+      <p>Imagine you're on a big ship, sailing across the wide ocean. There are no maps, no phones, and no GPS. How would you know where you're going? Long ago, brave explorers had to use their eyes, their brains, and clues from nature to find their way.</p>
+      <p>The <strong>sun</strong> was like a giant compass in the sky. Explorers watched it carefully every single day because the sun follows a <span class="vtip"><strong>pattern</strong><span class="vtip-box"><span class="vtip-word">Pattern</span>Something that happens in a regular, predictable way that can be expected to repeat.</span></span> &mdash; the same reliable path across the sky, day after day.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Stop &amp; Think</div>
+          <div class="question">"Have you ever noticed where the sun is in the morning vs. the afternoon? Think back — does the sun seem to move across the sky during the day?"</div>
+        </div>
+      </div>
+
+      <p>Here's what early explorers knew and used every day:</p>
+
+      <!-- Sun path diagram -->
+      <div class="diagram-wrap diagram-interactive">
+        <svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,sans-serif;">
+          <defs>
+            <linearGradient id="daySky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#B8E0F8"/>
+              <stop offset="80%" stop-color="#D6EEFB"/>
+              <stop offset="100%" stop-color="#EFD89A"/>
+            </linearGradient>
+            <linearGradient id="groundDia" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#8B9F6A"/>
+              <stop offset="100%" stop-color="#6B7A4A"/>
+            </linearGradient>
+            <radialGradient id="sunDia" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0%" stop-color="#FFD700"/>
+              <stop offset="70%" stop-color="#F5A623"/>
+              <stop offset="100%" stop-color="#F5A623" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="sunriseDia" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0%" stop-color="#FFB347" stop-opacity="0.7"/>
+              <stop offset="100%" stop-color="#FFB347" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="gDia"><feGaussianBlur stdDeviation="5"/></filter>
+            <filter id="gDia2"><feGaussianBlur stdDeviation="3"/></filter>
+          </defs>
+
+          <!-- Sky -->
+          <rect width="720" height="280" fill="url(#dayDay)" rx="0"/>
+          <rect width="720" height="280" fill="#B8E0F8"/>
+          <rect y="200" width="720" height="80" fill="#EFD89A" opacity="0.3"/>
+
+          <!-- Ground -->
+          <rect x="0" y="280" width="720" height="120" fill="url(#groundDia)"/>
+          <rect x="0" y="280" width="720" height="8" fill="#7A9060"/>
+
+          <!-- Sun arc (dotted path) -->
+          <path d="M80,270 Q240,50 360,30 Q480,50 640,270" stroke="#F5A623" stroke-width="2.5" fill="none" stroke-dasharray="10,7" opacity="0.7"/>
+
+          <!-- SUNRISE (east) - dim orange circle -->
+          <ellipse cx="80" cy="270" rx="50" ry="30" fill="url(#sunriseDia)" filter="url(#gDia)"/>
+          <circle cx="80" cy="268" r="18" fill="#FFB347" opacity="0.85"/>
+          <circle cx="80" cy="268" r="13" fill="#FFD080"/>
+
+          <!-- NOON SUN (zenith) - bright gold -->
+          <ellipse cx="360" cy="44" rx="60" ry="40" fill="#FFD700" opacity="0.2" filter="url(#gDia)"/>
+          <circle cx="360" cy="44" r="28" fill="#FFD700"/>
+          <circle cx="360" cy="44" r="20" fill="#FFE867"/>
+          <!-- noon rays -->
+          <g opacity="0.6" transform="translate(360,44)">
+            <line x1="0" y1="-36" x2="0" y2="-44" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+            <line x1="25" y1="-25" x2="31" y2="-31" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+            <line x1="36" y1="0" x2="44" y2="0" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+            <line x1="25" y1="25" x2="31" y2="31" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+            <line x1="-25" y1="-25" x2="-31" y2="-31" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+            <line x1="-36" y1="0" x2="-44" y2="0" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+            <line x1="-25" y1="25" x2="-31" y2="31" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+            <line x1="0" y1="36" x2="0" y2="44" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+          </g>
+
+          <!-- SUNSET (west) - dim orange -->
+          <ellipse cx="640" cy="270" rx="50" ry="30" fill="url(#sunriseDia)" filter="url(#gDia)"/>
+          <circle cx="640" cy="268" r="18" fill="#FF8C42" opacity="0.85"/>
+          <circle cx="640" cy="268" r="13" fill="#FFAD70"/>
+
+          <!-- Person at noon + shadow -->
+          <rect x="352" y="264" width="16" height="32" rx="4" fill="#5A4D3E"/>
+          <ellipse cx="360" cy="262" rx="8" ry="9" fill="#8B6B40"/>
+          <!-- Short noon shadow -->
+          <rect x="332" y="290" width="20" height="5" rx="2" fill="#4a4a3a" opacity="0.5"/>
+          <!-- Shadow pill label -->
+          <rect x="232" y="294" width="130" height="22" rx="11" fill="#E8E0D0" stroke="#C0B898" stroke-width="1.2"/>
+          <text x="297" y="309" text-anchor="middle" font-size="11" font-weight="700" fill="#5A4D3E">Shadow points North</text>
+
+          <!-- Horizon line -->
+          <line x1="0" y1="280" x2="720" y2="280" stroke="#7A9060" stroke-width="2"/>
+
+          <!-- Cardinal direction ground pills — widths sized to fit text -->
+          <rect x="18" y="290" width="122" height="26" rx="6" fill="#FFF7EE" stroke="#F0DCC4" stroke-width="1.5"/>
+          <text x="79" y="307" text-anchor="middle" font-size="12" font-weight="800" fill="#C7922C">East · Sunrise</text>
+
+          <rect x="266" y="316" width="190" height="26" rx="6" fill="#FFFBEA" stroke="#F5E6A8" stroke-width="1.5"/>
+          <text x="361" y="333" text-anchor="middle" font-size="12" font-weight="800" fill="#D4A017">Noon · Highest Point</text>
+
+          <rect x="576" y="290" width="126" height="26" rx="6" fill="#FFF7EE" stroke="#F0DCC4" stroke-width="1.5"/>
+          <text x="639" y="307" text-anchor="middle" font-size="12" font-weight="800" fill="#C7922C">West · Sunset</text>
+
+          <!-- Arrows on arc -->
+          <polygon points="160,135 152,120 168,122" fill="#F5A623" opacity="0.7"/>
+          <polygon points="556,135 548,122 564,120" fill="#F5A623" opacity="0.7"/>
+
+          <!-- Floating label: Sunrise — pill width sized to text -->
+          <line x1="80" y1="250" x2="80" y2="226" stroke="#0E1C42" stroke-width="1.5"/>
+          <rect x="14" y="212" width="132" height="26" rx="13" fill="#FFF0EC" stroke="#F5C4BA" stroke-width="1.5"/>
+          <text x="80" y="229" text-anchor="middle" font-size="12" font-weight="700" fill="#E8636B">Sunrise · East</text>
+
+          <!-- Floating label: Noon — pill width sized to text -->
+          <line x1="360" y1="74" x2="360" y2="116" stroke="#0E1C42" stroke-width="1.5"/>
+          <rect x="282" y="116" width="156" height="26" rx="13" fill="#FFFBEA" stroke="#F5E6A8" stroke-width="1.5"/>
+          <text x="360" y="133" text-anchor="middle" font-size="12" font-weight="700" fill="#D4A017">Highest at Noon</text>
+
+          <!-- Floating label: Sunset — pill width sized to text, kept inside 720px -->
+          <line x1="640" y1="250" x2="640" y2="226" stroke="#0E1C42" stroke-width="1.5"/>
+          <rect x="576" y="212" width="130" height="26" rx="13" fill="#FFF0EC" stroke="#F5C4BA" stroke-width="1.5"/>
+          <text x="641" y="229" text-anchor="middle" font-size="12" font-weight="700" fill="#E8636B">Sunset · West</text>
+
+          <!-- Clickable Hotspots -->
+          <circle class="hotspot" data-part="sunrise-east" data-info="The sun rises in the east every morning without fail. This was one of an explorer's most reliable daily clues — as soon as the sun peeked above the horizon, you knew which direction was east!" cx="80" cy="268" r="40" fill="#FFD700"/>
+          <circle class="hotspot" data-part="noon-sun" data-info="At noon, the sun reaches its HIGHEST point in the sky. This was a critical moment for sailors — at noon, shadows are at their SHORTEST and point almost exactly north! A free compass, every day." cx="360" cy="44" r="50" fill="#FFD700"/>
+          <circle class="hotspot" data-part="sunset-west" data-info="The sun always sets in the west. By watching where the sun dipped below the horizon each evening, sailors could check if they had stayed on course throughout the day." cx="640" cy="268" r="40" fill="#FFD700"/>
+          <rect class="hotspot" data-part="shadow" data-info="Notice the short shadow pointing left (north). At noon, your shadow always points toward the north pole! Early explorers used this trick every day to confirm their direction — no compass needed." x="315" y="258" width="90" height="50" rx="4" fill="#FFD700"/>
+          <rect class="hotspot" data-part="horizon" data-info="The horizon is where the sky meets the sea. Explorers scanned it carefully for clouds that sat unusually still — these sometimes meant an island was hiding underneath, causing the cloud to form!" x="0" y="272" width="720" height="20" rx="0" fill="#FFD700"/>
+        </svg>
+
+        <div style="background:linear-gradient(135deg,#EAF8FD,#F0F8FF);border:2px solid #A8D8F0;border-radius:14px;padding:12px 18px;margin-top:10px;display:flex;align-items:center;gap:12px;">
+          <span style="font-size:28px;flex-shrink:0;animation:mind-blow-bounce 2s ease-in-out infinite;">👆</span>
+          <p style="font-size:15px;color:#1A2B3C;line-height:1.55;margin:0;font-weight:600;">Tap on the sun at any position &mdash; sunrise, noon, or sunset &mdash; and tap the shadow or the horizon to learn what each one told early explorers.</p>
+        </div>
+        <div class="diagram-info-panel" id="diagramPanel">
+          <span class="dip-word" id="diagramWord"></span>
+          <span id="diagramInfo"></span>
+        </div>
+      </div>
+
+      <div class="key-concept">
+        <div class="kc-label">🔑 Key Concept</div>
+        <p>The sun follows the same <span class="vtip"><strong>pattern</strong><span class="vtip-box"><span class="vtip-word">Pattern</span>Something that happens in a regular, predictable way that can be expected to repeat.</span></span> every single day &mdash; it rises in the <strong>east</strong>, climbs to its highest point at <strong>noon</strong>, and sets in the <strong>west</strong>. This pattern never changes, which made it the most reliable navigation tool in the world!</p>
+        <p>Think of it like a clock in the sky. An explorer could look up at any time of day and get a general sense of direction just from where the sun was positioned.</p>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Stop &amp; Reason</div>
+          <div class="question">"Why do you think the sun was so important to explorers? If you were at sea for 30 days, how many times would you be able to use the sun as a guide?"</div>
+        </div>
+      </div>
+
+      <!-- Part 2: Types of clues -->
+      <p style="font-size:18px; margin-top:20px;"><strong>Part 2 — Signs That Land Was Close</strong></p>
+      <p>Even when they couldn't see land, explorers looked for <strong>clues</strong> that it was nearby. These clues told them their <span class="vtip"><strong>proximity</strong><span class="vtip-box"><span class="vtip-word">Proximity</span>The state of being near or close to something in distance or time.</span></span> to shore. Scientists group these natural clues into three types:</p>
+
+      <div class="types-grid">
+        <!-- Sky Clues -->
+        <div class="type-card tc-sky">
+          <svg viewBox="0 0 180 100" width="180" height="100" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="100" fill="#EAF8FD" rx="8"/>
+            <!-- Sky background -->
+            <rect width="180" height="70" fill="#B8E0F8" rx="8"/>
+            <!-- Cloud over island -->
+            <ellipse cx="90" cy="30" rx="40" ry="16" fill="#fff" opacity="0.9"/>
+            <ellipse cx="106" cy="24" rx="28" ry="14" fill="#fff" opacity="0.7"/>
+            <!-- Birds -->
+            <path d="M40,20 Q45,15 50,20 Q55,15 60,20" stroke="#5A4D3E" stroke-width="1.5" fill="none"/>
+            <path d="M50,35 Q55,30 60,35 Q65,30 70,35" stroke="#5A4D3E" stroke-width="1.5" fill="none"/>
+            <!-- Island below cloud (implied) -->
+            <ellipse cx="90" cy="68" rx="35" ry="10" fill="#8B9F6A" opacity="0.6"/>
+            <!-- Dotted line connecting cloud to island -->
+            <line x1="90" y1="46" x2="90" y2="58" stroke="#2980B9" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+          </svg>
+          <div class="type-name">Sky Clues</div>
+          <div class="type-desc">Birds that don't fly far from shore, and still clouds hovering over hidden islands.</div>
+        </div>
+
+        <!-- Water Clues -->
+        <div class="type-card tc-water">
+          <svg viewBox="0 0 180 100" width="180" height="100" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="100" fill="#E8F4FD" rx="8"/>
+            <!-- Deep water (blue) -->
+            <rect x="0" y="40" width="100" height="60" fill="#1A6A8A" rx="4" opacity="0.7"/>
+            <!-- Shallow water (green) -->
+            <rect x="80" y="40" width="100" height="60" fill="#3A9A6A" rx="4" opacity="0.6"/>
+            <!-- Color change label -->
+            <line x1="90" y1="38" x2="90" y2="100" stroke="#fff" stroke-width="2" opacity="0.5" stroke-dasharray="4,3"/>
+            <text x="38" y="35" text-anchor="middle" font-size="10" font-weight="700" fill="#1A3F6F">Deep Blue</text>
+            <text x="135" y="35" text-anchor="middle" font-size="10" font-weight="700" fill="#1A5A40">Green = Land!</text>
+            <!-- Seaweed / driftwood floating -->
+            <ellipse cx="130" cy="62" rx="12" ry="4" fill="#5A8A3A" opacity="0.7"/>
+            <rect x="108" y="74" width="20" height="4" rx="2" fill="#8B6B40" opacity="0.6"/>
+          </svg>
+          <div class="type-name">Water Clues</div>
+          <div class="type-desc">Water changing from deep blue to green, plus floating seaweed or driftwood from nearby shores.</div>
+        </div>
+
+        <!-- Sensory Clues -->
+        <div class="type-card tc-sense">
+          <svg viewBox="0 0 180 100" width="180" height="100" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="100" fill="#EEF8F0" rx="8"/>
+            <!-- Ocean -->
+            <rect y="55" width="180" height="45" fill="#B8D8F0" rx="4" opacity="0.5"/>
+            <!-- Wavy lines (smell/air) -->
+            <path d="M50,45 Q65,35 80,45 Q95,55 110,45" stroke="#34B76F" stroke-width="2" fill="none" opacity="0.6"/>
+            <path d="M60,30 Q75,20 90,30 Q105,40 120,30" stroke="#34B76F" stroke-width="1.5" fill="none" opacity="0.4"/>
+            <path d="M70,16 Q85,8 100,16 Q115,24 130,16" stroke="#34B76F" stroke-width="1" fill="none" opacity="0.3"/>
+            <!-- Nose icon (simplified) -->
+            <ellipse cx="34" cy="48" rx="12" ry="15" fill="#FFD0A0" opacity="0.8"/>
+            <path d="M28,55 Q34,62 40,55" stroke="#C0A070" stroke-width="1.5" fill="none"/>
+            <!-- Leaf/plant icon -->
+            <ellipse cx="148" cy="50" rx="14" ry="10" fill="#34B76F" opacity="0.7" transform="rotate(-30,148,50)"/>
+            <line x1="148" y1="60" x2="148" y2="80" stroke="#5A8A40" stroke-width="2"/>
+          </svg>
+          <div class="type-name">Sensory Clues</div>
+          <div class="type-desc">The smell of plants or soil carried on the breeze — your nose can detect land before your eyes can!</div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Observe &amp; Reason</div>
+          <div class="question">"Look at the three types of clues. If you were at sea for many days, which type of clue do you think would be the FIRST sign you were getting close to land? Why?"</div>
+        </div>
+      </div>
+
+      <div class="callout callout-think">
+        <span class="callout-icon">🌍</span>
+        <p><strong>Real-World Connection:</strong> On October 11, 1492, Christopher Columbus's sailors spotted <strong>floating green weeds and a branch with berries</strong> — water clues! The next morning, they saw land. Those natural signs told them they were in proximity to shore hours before they could see it.</p>
+      </div>
+
+      <!-- Shadow Length Comparison -->
+      <div class="size-compare-wrap scroll-reveal">
+        <svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,sans-serif;">
+          <!-- Ground -->
+          <rect x="0" y="160" width="680" height="40" fill="#8B9F6A"/>
+          <rect x="0" y="160" width="680" height="3" fill="#7A9060"/>
+
+          <!-- Sky gradient -->
+          <rect x="0" y="0" width="680" height="160" fill="#B8E0F8"/>
+
+          <!-- Person 1 (7am - very long shadow) -->
+          <rect x="80" y="118" width="10" height="42" rx="3" fill="#5A4D3E"/>
+          <ellipse cx="85" cy="115" rx="8" ry="9" fill="#8B6B40"/>
+          <!-- Long morning shadow -->
+          <ellipse cx="37" cy="163" rx="48" ry="5" fill="#4a4a3a" opacity="0.35"/>
+          <!-- Sun (low, east) -->
+          <circle cx="25" cy="130" r="14" fill="#FFB347" opacity="0.8"/>
+          <!-- Arrow showing sun direction -->
+          <line x1="40" y1="130" x2="65" y2="130" stroke="#F5A623" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+          <text x="85" y="185" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">7:00 AM</text>
+          <text x="85" y="197" text-anchor="middle" font-size="10" fill="#ddd">Very long shadow</text>
+
+          <!-- Person 2 (12pm - short shadow) -->
+          <rect x="328" y="118" width="10" height="42" rx="3" fill="#5A4D3E"/>
+          <ellipse cx="333" cy="115" rx="8" ry="9" fill="#8B6B40"/>
+          <!-- Very short noon shadow -->
+          <ellipse cx="333" cy="163" rx="12" ry="4" fill="#4a4a3a" opacity="0.4"/>
+          <!-- Sun (high, overhead) -->
+          <circle cx="333" cy="55" r="18" fill="#FFD700"/>
+          <g opacity="0.5" transform="translate(333,55)">
+            <line x1="0" y1="-26" x2="0" y2="-32" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+            <line x1="18" y1="-18" x2="22" y2="-22" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+            <line x1="26" y1="0" x2="32" y2="0" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+            <line x1="-18" y1="-18" x2="-22" y2="-22" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+            <line x1="-26" y1="0" x2="-32" y2="0" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+          </g>
+
+          <text x="333" y="185" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">12:00 PM</text>
+          <text x="333" y="197" text-anchor="middle" font-size="10" fill="#ddd">Shortest shadow → NORTH</text>
+
+          <!-- Person 3 (5pm - long shadow other way) -->
+          <rect x="578" y="118" width="10" height="42" rx="3" fill="#5A4D3E"/>
+          <ellipse cx="583" cy="115" rx="8" ry="9" fill="#8B6B40"/>
+          <!-- Long evening shadow (opposite direction) -->
+          <ellipse cx="625" cy="163" rx="48" ry="5" fill="#4a4a3a" opacity="0.35"/>
+          <!-- Sun (low, west) -->
+          <circle cx="648" cy="130" r="14" fill="#FF8C42" opacity="0.8"/>
+          <line x1="632" y1="130" x2="610" y2="130" stroke="#F5A623" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+          <text x="583" y="185" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">5:00 PM</text>
+          <text x="583" y="197" text-anchor="middle" font-size="10" fill="#ddd">Long shadow, other way</text>
+
+          <!-- VS labels -->
+          <text x="210" y="145" text-anchor="middle" font-size="20" font-weight="900" fill="#fff" opacity="0.4">→</text>
+          <text x="460" y="145" text-anchor="middle" font-size="20" font-weight="900" fill="#fff" opacity="0.4">→</text>
+        </svg>
+        <div class="size-compare-caption">Shadows change length AND direction throughout the day. At noon, they're always shortest — and point north! This was an explorer's daily compass check.</div>
+      </div>
+
+      <!-- Go Deeper 1 -->
+      <details class="go-deeper scroll-reveal">
+        <summary>Curious? Go Deeper — Why Does the Sun Seem to Move?</summary>
+        <div class="gd-body">
+          <p>Here's a secret: the sun doesn't actually move! <em>We</em> do. Earth is spinning on its axis like a giant top, completing one full spin every 24 hours. As Earth spins, different parts of it face toward the sun &mdash; that's what makes the sun appear to "travel" across our sky.</p>
+          <p>Early explorers didn't know this yet. They believed the sun moved around Earth. But their <strong>observations</strong> were still perfect &mdash; the sun's apparent path from east to west was a reliable, daily pattern they could count on for navigation, even without understanding the science behind it!</p>
+          <p>You'll explore Earth's rotation in an upcoming lesson. For now, what matters is that the sun's pattern is predictable &mdash; and that made it an incredible natural compass.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+</div>
+
+<!-- ═══ TAB 3: GUIDED EXPLORATION ═══ -->
+<div class="tab-panel" id="tab-explore">
+
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#55C8E8;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🔬 Guided Exploration: An Explorer's Day at Sea</div>
+        <div class="act-subtitle">Follow an explorer from dawn to dusk!</div>
+      </div>
+      <div class="act-time" style="background:#55C8E8;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="video-wrap">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">🔬</span>
+          <div>
+            <div class="video-wrap-type">Activity 3 · Guided Exploration</div>
+            <div class="video-wrap-title">Follow the Journey of an Explorer!</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">🔬</div>
+            <div class="video-placeholder-text">Guided exploration video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 2-02-exploration-explainer --></div>
+          </div>
+        </div>
+      </div>
+
+      <p>Let's trace a day in the life of an early explorer at sea. At each step, they used <span class="vtip"><strong>observation</strong><span class="vtip-box"><span class="vtip-word">Observation</span>Using your senses to carefully notice and gather information about the world around you.</span></span> to navigate. Follow along in your notebook!</p>
+
+      <div style="position:relative;margin:16px 0;">
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#FF8C42,#FFB347);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(255,140,66,0.3);">1</div>
+          <div style="flex:1;background:#FFF0EC;border:2px solid #F5C4BA;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#1A2B3C;line-height:1.6;margin:0;"><strong>🌅 Dawn — Mark the East:</strong> As the sky lightens, the explorer watches for the sun to peek above the <span class="vtip"><strong>horizon</strong><span class="vtip-box"><span class="vtip-word">Horizon</span>The line in the distance where the sky appears to meet the land or sea.</span></span>. The moment it appears, they point and declare: <em>"There is east."</em> Now they know all four <span class="vtip"><strong>cardinal directions</strong><span class="vtip-box"><span class="vtip-word">Cardinal Directions</span>The four main directions on a compass: North, South, East, and West.</span></span>.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#55C8E8,#2980B9);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(85,200,232,0.3);">2</div>
+          <div style="flex:1;background:#EAF8FD;border:2px solid #A8D8F0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#1A2B3C;line-height:1.6;margin:0;"><strong>🐦 Mid-Morning — Watch for Sky Clues:</strong> As the ship sails on, the explorer scans the horizon. Suddenly &mdash; birds! Not ocean birds, but small land birds that rarely fly more than a few miles from shore. <em>"Land must be close!"</em> The explorer notes their direction of flight as a clue to where land might be.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#D4A017,#FFD700);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(212,160,23,0.3);">3</div>
+          <div style="flex:1;background:#FFFBEA;border:2px solid #F5E6A8;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#1A2B3C;line-height:1.6;margin:0;"><strong>☀️ Noon — Take a Direction Check:</strong> When the sun is at its very highest, the explorer stands straight and looks at their shadow &mdash; the shortest shadow of the day. It points <strong>north</strong>! They compare this to the ship's heading and adjust course. They also notice the water changing from deep blue to greener shades — a water clue that shore is near.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#5A4D3E,#8B7355);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(90,77,62,0.3);">4</div>
+          <div style="flex:1;background:#F5F9FC;border:2px solid #D8E8F0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#1A2B3C;line-height:1.6;margin:0;"><strong>🌇 Evening — Confirm with Sunset:</strong> As the day ends, the explorer watches the sun settle below the <span class="vtip">horizon<span class="vtip-box"><span class="vtip-word">Horizon</span>The line in the distance where the sky appears to meet the land or sea.</span></span> in the <strong>west</strong>. This confirms the ship is still heading in the right direction. The crew also smells something new on the breeze &mdash; the earthy scent of soil and plants. Their <span class="vtip">proximity<span class="vtip-box"><span class="vtip-word">Proximity</span>The state of being near or close to something in distance or time.</span></span> to land is increasing!</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think Like a Scientist</div>
+          <div class="question">"The explorer in our story used clues from the sky, the water, AND their sense of smell. Why is using MULTIPLE clues better than relying on just one? Have you ever used more than one clue to figure something out?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Mind-Blowing Fact</div>
+      <div class="mind-blow-text">At noon on a sunny day, your shadow <em>right now</em> is pointing almost exactly north! Try it — go outside at noon and look at your shadow. Early explorers used this <strong>free, daily compass</strong> thousands of years before the magnetic compass was invented!</div>
+    </div>
+  </div>
+
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper — The Art of Wayfinding</summary>
+    <div class="gd-body">
+      <p>The ancient Polynesians were the greatest ocean navigators in history. They sailed canoes across the Pacific Ocean &mdash; the world's largest ocean &mdash; to settle islands thousands of miles apart. Their secret? The art of <strong>wayfinding</strong>.</p>
+      <p>Wayfinders memorized the rising and setting positions of over 200 stars. They read wave patterns with their bodies to feel ocean currents. They watched how seabirds behaved at different distances from land. They even noticed how clouds smelled differently near islands!</p>
+      <p>This knowledge was passed from teacher to student for thousands of years, with no written instructions. Today, modern wayfinders are reviving this ancient art &mdash; and proving it works just as well as GPS!</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+</div>
+
+<!-- ═══ TAB 4: SELF-CHECK ═══ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div class="quiz-card scroll-reveal" style="margin-top:0;margin-bottom:18px;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #D8E8F0;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#C7922C;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">⚡</div>
+      <div style="flex:1;">
+        <div style="font-size:19px;color:#0E1C42;font-weight:800;line-height:1.2;">🧠 Quick Self-Check</div>
+        <div style="font-size:12px;color:#9A8E82;">Not graded — just for you! See how much you remember before starting the assignment.</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+
+      <!-- Q1 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. Where does the sun rise each morning?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>In the west</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>In the east</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Directly overhead</div>
+        </div>
+        <div class="quiz-feedback fb-correct">☀️ That's right! The sun always rises in the east — one of nature's most reliable daily patterns!</div>
+        <div class="quiz-feedback fb-wrong">Not quite! Remember the sun's pattern: it starts low on one side of the sky in the morning. Which side is east?</div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-text">2. Which clue told early explorers they were probably close to land?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Seeing small birds that don't fly far from shore</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>The sky turning purple at night</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>The water getting deeper and darker</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🐦 Excellent! Land birds depend on shore to survive, so seeing them meant land was in proximity — close by!</div>
+        <div class="quiz-feedback fb-wrong">Not quite! Think about living things that depend on land to survive — what would you see flying in the sky near a coast?</div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">3. What does the word "proximity" mean?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>A tool used to find north and south</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>A pattern that repeats in the sky</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Being near or close to something</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🎯 Perfect! Proximity means nearness or closeness — explorers used clues to figure out how close they were to land!</div>
+        <div class="quiz-feedback fb-wrong">Not quite! Flip back to your vocabulary cards. Proximity is all about distance — how close or far something is.</div>
+      </div>
+
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum"></div>
+        <div class="quiz-score-label">out of 3 correct</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+
+        <div class="video-feedback" id="quizVideoCorrect">
+          <div class="video-wrap" style="margin-top:14px;text-align:left;">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">⭐</span>
+              <div>
+                <div class="video-wrap-type">✅ Feedback · Perfect Score</div>
+                <div class="video-wrap-title">Amazing work, navigator!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">⭐</div>
+                <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 2-02-quiz-perfect --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="video-feedback" id="quizVideoReview">
+          <div class="video-wrap" style="margin-top:14px;text-align:left;">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">💪</span>
+              <div>
+                <div class="video-wrap-type">📚 Feedback · Keep Going</div>
+                <div class="video-wrap-title">You're getting there — let's review!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">🔄</div>
+                <div class="video-placeholder-text">Review encouragement video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 2-02-quiz-review --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+</div>
+
+<!-- ═══ TAB 5: ASSIGNMENT ═══ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#34B76F;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment: Show What You Know</div>
+        <div class="act-subtitle">Now it's your turn!</div>
+      </div>
+      <div class="act-time" style="background:#34B76F;">⏱ 12 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="video-wrap">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">✍️</span>
+          <div>
+            <div class="video-wrap-type">Activity 4 · Assignment Explainer</div>
+            <div class="video-wrap-title">Here's What to Do for Your Assignment!</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">✍️</div>
+            <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 2-02-assignment-explainer --></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 1: Table of Contents -->
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">📖 Step 1 — Update Your Table of Contents</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Add this new entry to your science notebook:</p>
+      <div class="pq">
+        <span style="font-size:16px;color:#1A2B3C;"><strong>Page __:</strong> Nature's Navigational Tools</span>
+      </div>
+
+      <!-- Part A: Draw the Sun's Path -->
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🌞 Step 2 — Draw the Sun's Path</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Turn to your assigned page and do the following. <strong>Title:</strong> <em>The Sun Moves from East to West</em></p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#34B76F;">1</span>
+        <span class="pq-text">Draw a big arc (like a rainbow) across your page to show the sun's path across the sky.</span>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#34B76F;">2</span>
+        <span class="pq-text">Label three points on the arc: <strong>Sunrise</strong> in the East · <strong>Noon</strong> overhead · <strong>Sunset</strong> in the West</span>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#34B76F;">3</span>
+        <span class="pq-text">Draw small arrows along the arc to show the sun moving from <strong>east to west</strong>. Add a short shadow at noon pointing north.</span>
+      </div>
+
+      <div class="socratic-q" style="margin-top:12px;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This</div>
+          <div class="question">"Why do you think the sun's position can help people find direction?"</div>
+        </div>
+      </div>
+
+      <!-- Part B: Clues That Land Is Near -->
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🐦 Step 3 — Clues That Land Is Near</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Make a new section on the same page titled: <strong>Clues That Land Is Near</strong></p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#C7922C;">4</span>
+        <span class="pq-text">Make a list of the 4 natural clues early sailors used to find land. Next to each clue, draw a small picture to help you remember it.</span>
+      </div>
+
+      <p style="font-size:16px;color:#5A4D3E;margin:8px 0 4px 0;font-weight:700;">Here are the four clues to list:</p>
+      <div class="pq"><span class="pq-num" style="background:#2980B9;">A</span><span class="pq-text"><strong>Birds</strong> — especially birds that don't fly far from land</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2980B9;">B</span><span class="pq-text"><strong>Clouds</strong> — certain kinds often form and hover over islands</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2980B9;">C</span><span class="pq-text"><strong>Water Color</strong> — shallow water near land looks lighter or greener</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2980B9;">D</span><span class="pq-text"><strong>Seaweed or Driftwood</strong> — floating plants or sticks come from land</span></div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This</div>
+          <div class="question">"If you were an explorer at sea, which clue would you look for first? Why?"</div>
+        </div>
+      </div>
+
+      <!-- Part C: Short Answer -->
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">✍️ Step 4 — Reflect and Write</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">In your notebook, answer these questions in <strong>complete sentences</strong>. Use your vocabulary words!</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#8B6FC0;">5</span>
+        <span class="pq-text">How did early explorers use the sun and nature to help them find their way?</span>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#8B6FC0;">6</span>
+        <span class="pq-text">Which clue do you think was the most helpful? Why?</span>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#8B6FC0;">7</span>
+        <span class="pq-text">Do you think we could still use these natural clues today? Explain your thinking.</span>
+      </div>
+
+      <!-- Submission Checklist -->
+      <div style="background:#fff;border:2px solid #55C8E8;border-radius:18px;margin-top:20px;overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:10px;padding:14px 20px;background:#EAF8FD;border-bottom:2px solid #C4E8F5;">
+          <div style="width:42px;height:42px;border-radius:50%;background:#55C8E8;color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">📬</div>
+          <div>
+            <div style="font-size:10px;color:#9A8E82;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;">Time to Submit</div>
+            <div style="font-size:20px;color:#0E1C42;font-weight:800;line-height:1.2;">What to Turn In</div>
+          </div>
+        </div>
+        <div style="padding:18px 22px;">
+          <p style="font-size:16px;color:#5A4D3E;line-height:1.65;margin-bottom:14px;">When you have finished all the steps, submit your work in the assignment on Canvas. Use the checklist to make sure you have everything!</p>
+
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#F5F9FC;border:1.5px solid #D8E8F0;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
+            <span style="font-size:16px;color:#1A2B3C;line-height:1.55;"><strong>Table of Contents</strong> updated with the new page entry.</span>
+          </div>
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#F5F9FC;border:1.5px solid #D8E8F0;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
+            <span style="font-size:16px;color:#1A2B3C;line-height:1.55;"><strong>Step 2 — Sun's Path Drawing:</strong> Arc with labeled sunrise (east), noon, sunset (west), arrows, and a noon shadow pointing north.</span>
+          </div>
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#F5F9FC;border:1.5px solid #D8E8F0;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
+            <span style="font-size:16px;color:#1A2B3C;line-height:1.55;"><strong>Step 3 — Clues List:</strong> All four natural clues listed with a small picture next to each one.</span>
+          </div>
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#F5F9FC;border:1.5px solid #D8E8F0;border-radius:12px;margin-bottom:16px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
+            <span style="font-size:16px;color:#1A2B3C;line-height:1.55;"><strong>Step 4 — Reflect and Write:</strong> Questions 5, 6, and 7 answered in <em>complete sentences</em> using vocabulary words.</span>
+          </div>
+
+          <div style="background:#FFFBEA;border:2px solid #F5E6A8;border-radius:14px;padding:14px 18px;">
+            <div style="font-size:13px;color:#C7922C;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;margin-bottom:8px;">📎 How to Submit</div>
+            <div style="font-size:15px;color:#1A2B3C;line-height:1.7;">
+              You may submit your work in whichever way works best for you:<br/><br/>
+              <span style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px;">⌨️ <strong>Type it</strong> — Type your answers directly into the Canvas assignment.</span><br/>
+              <span style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px;">📸 <strong>Photo</strong> — Take a clear picture of your notebook work and upload it.</span><br/>
+              <span style="display:inline-flex;align-items:center;gap:8px;">🎥 <strong>Video</strong> — Record a short video explaining your answers and showing your drawings.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Return to Essential Question -->
+  <div class="card theme-earth scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">🔄</div>
+      <div>
+        <div class="card-head-label">Circle Back</div>
+        <div class="card-head-title">Revisit Our Key Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Now You Know!</div>
+          <div class="question">"How did early explorers use natural clues and the sun's position to navigate and determine their proximity to land?"</div>
+        </div>
+      </div>
+      <p>Now that you've completed the lesson, write a <strong>2&ndash;3 sentence answer</strong> to this question in your science notebook. Try to use at least <strong>three vocabulary words</strong> from today!</p>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">⭐</span>
+        <p><strong>Excellent work today, navigator!</strong> You've learned that early explorers used the sun's daily <span class="vtip">pattern<span class="vtip-box"><span class="vtip-word">Pattern</span>Something that happens in a regular, predictable way that can be expected to repeat.</span></span> — rising in the east, highest at noon, setting in the west — to find their <span class="vtip">cardinal directions<span class="vtip-box"><span class="vtip-word">Cardinal Directions</span>The four main directions on a compass: North, South, East, and West.</span></span>. They also read natural clues like birds, water color, and smells to judge their <span class="vtip">proximity<span class="vtip-box"><span class="vtip-word">Proximity</span>The state of being near or close to something in distance or time.</span></span> to land. Next, we'll explore how modern scientists study patterns in Earth's sky and space!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Closing video slot -->
+  <div class="video-wrap scroll-reveal" style="margin-bottom:0;">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🌅</span>
+      <div>
+        <div class="video-wrap-type">Closing · Lesson Wrap-Up</div>
+        <div class="video-wrap-title">Great Work Today — Here's What's Coming Next!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🌅</div>
+        <div class="video-placeholder-text">Lesson closing &amp; next lesson preview video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 2-02-closing --></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <div class="footer-line1"><span>Optima Academy Online</span> &middot; Science &middot; Quarter 1 &middot; Student Lesson Page</div>
+  <div class="footer-line2">Lesson 2.02 &middot; Earth Science: Observing the Sky — Nature's Compass</div>
+  <div class="footer-line3">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div><!-- end page-wrap -->
+
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
+  <span style="font-size:20px;">☀️</span> Back to Top
+</button>
+<canvas id="confettiCanvas"></canvas>
+
+<script>
+// ── Tab System ──
+var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];
+var tabsVisited = new Set(['vocab']);
+
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+  var panel = document.getElementById('tab-' + tabId);
+  var btn = document.querySelector('[data-tab="' + tabId + '"]');
+  if (panel) panel.classList.add('active');
+  if (btn) { btn.classList.add('active'); btn.classList.add('visited'); }
+  tabsVisited.add(tabId);
+  var pct = Math.round((tabsVisited.size / TAB_ORDER.length) * 100);
+  var fill = document.getElementById('progressFill');
+  var pctEl = document.getElementById('progressPct');
+  if (fill) fill.style.width = pct + '%';
+  if (pctEl) pctEl.textContent = pct + '%';
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c) {
+    if (tabId === 'vocab') { c.classList.remove('collapsed'); }
+    else { c.classList.add('collapsed'); }
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── Checklist ──
+document.querySelectorAll('.checklist-item').forEach(function(item) {
+  item.addEventListener('click', function() {
+    var icon = this.querySelector('.check-icon');
+    if (this.classList.contains('checked')) { icon.textContent = '☀️'; }
+    else { icon.textContent = '☐'; }
+  });
+});
+
+// ── Clickable Diagram ──
+(function() {
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel = document.getElementById('diagramPanel');
+  var wordEl = document.getElementById('diagramWord');
+  var infoEl = document.getElementById('diagramInfo');
+  if (!panel) return;
+  hotspots.forEach(function(hs) {
+    hs.addEventListener('click', function(e) {
+      e.stopPropagation();
+      hotspots.forEach(function(h) { h.classList.remove('active'); });
+      hs.classList.add('active');
+      var part = hs.getAttribute('data-part').replace(/-/g, ' ');
+      wordEl.textContent = part.charAt(0).toUpperCase() + part.slice(1);
+      infoEl.innerHTML = hs.getAttribute('data-info');
+      panel.classList.add('visible');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h) { h.classList.remove('active'); });
+    }
+  });
+})();
+
+// ── Self-Check Quiz ──
+var quizAnswered = 0;
+var quizCorrect = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen = optEl.getAttribute('data-val');
+  var opts = q.querySelectorAll('.quiz-opt');
+  opts.forEach(function(o) {
+    if (o.getAttribute('data-val') === correct) { o.classList.add('correct'); }
+    else { o.classList.add('disabled'); }
+  });
+  var fbCorrect = q.querySelector('.fb-correct');
+  var fbWrong = q.querySelector('.fb-wrong');
+  if (chosen === correct) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+  if (quizAnswered === 3) {
+    var scoreBox = document.getElementById('quizScore');
+    var scoreNum = document.getElementById('quizScoreNum');
+    var scoreMsg = document.getElementById('quizScoreMsg');
+    scoreNum.textContent = quizCorrect;
+    var vCorrect = document.getElementById('quizVideoCorrect');
+    var vReview = document.getElementById('quizVideoReview');
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '☀️ Perfect! You\'re a natural navigator!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌅 Great job! Almost there!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip) {
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function() {
+    var rect = tip.getBoundingClientRect();
+    var bw = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Back to Top ──
+(function() {
+  var btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() { btn.classList.toggle('show', window.pageYOffset > 400); });
+})();
+
+// ── Confetti ──
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#55C8E8','#C7922C','#FFD700','#34B76F','#8B6FC0','#2980B9','#F5A623','#E8636B'];
+  function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count) {
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i) {
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti=function() {
+    var cx=window.innerWidth/2;
+    burst(cx-100,window.innerHeight*.45,50);
+    burst(cx,window.innerHeight*.35,60);
+    burst(cx+100,window.innerHeight*.45,50);
+  };
+})();
+
+// ── Hook confetti to quiz ──
+(function() {
+  var scoreEl=document.getElementById('quizScore');
+  if(!scoreEl) return;
+  new MutationObserver(function(muts) {
+    muts.forEach(function(m) {
+      if(m.target.classList.contains('show') && m.target.id==='quizScore') {
+        if(parseInt(document.getElementById('quizScoreNum').textContent)===3) setTimeout(window.launchConfetti,300);
+      }
+    });
+  }).observe(scoreEl,{attributes:true,attributeFilter:['class']});
+})();
+
+// ── Hook confetti to checklist ──
+(function() {
+  var items=document.querySelectorAll('.checklist-item');
+  items.forEach(function(item) {
+    item.addEventListener('click',function() {
+      setTimeout(function() {
+        if(Array.from(items).every(function(it){ return it.classList.contains('checked'); }))
+          setTimeout(window.launchConfetti,200);
+      },50);
+    });
+  });
+})();
+
+// ── Intro card click-to-toggle ──
+document.querySelectorAll('.intro-2col .card').forEach(function(card) {
+  card.querySelector('.card-head').addEventListener('click', function() {
+    card.classList.toggle('collapsed');
+  });
+});
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+</script>
+</body>
+</html>
