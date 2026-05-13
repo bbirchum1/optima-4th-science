@@ -1,0 +1,2039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – Create a Map of the "New World"</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+    background: #F4F0EB url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    color: #2B1D12;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page-wrap { max-width: 920px; margin: 0 auto; background: #FAF7F3; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+  /* ── Header ── */
+  .header {
+    background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%);
+    border-bottom: 6px solid #C7922C;
+    padding: 22px 28px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 6px; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #F5A623, #C7922C, #F5A623);
+  }
+  .header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .header-logo {
+    width: 52px; height: 52px; border-radius: 50%; background: #fff;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .header-logo img { width: 48px; height: 38px; }
+  .header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+  .header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+  .header-title {
+    font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+    text-shadow: 0 2px 12px rgba(199,146,44,0.4);
+  }
+  .header-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(199,146,44,0.18); border: 1.5px solid rgba(199,146,44,0.4);
+    border-radius: 28px; padding: 6px 16px;
+  }
+  .header-badge span:first-child { font-size: 22px; }
+  .header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+  /* ── Hero Visual ── */
+  .hero-visual {
+    background: linear-gradient(180deg, #0a1f3a 0%, #0d3055 50%, #0a2540 100%);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #C7922C;
+  }
+  .hero-visual svg { display: block; width: 100%; height: auto; }
+
+  /* ── Info Strip ── */
+  .info-strip {
+    display: flex; flex-wrap: wrap; background: #fff;
+    border-bottom: 2px solid #E8DDD2;
+  }
+  .info-item {
+    flex: 1; min-width: 150px; padding: 12px 16px;
+    border-right: 1px solid #E8DDD2;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .info-item:last-child { border-right: none; }
+  .info-icon {
+    width: 40px; height: 40px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+  .info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+  .info-value { font-size: 16px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+  .info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+  /* ── Content Area ── */
+  .content { padding: 24px 28px 36px; }
+
+  /* ── Card System ── */
+  .card {
+    background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+    margin-bottom: 22px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(43,29,18,0.04);
+  }
+  .card-head {
+    display: flex; align-items: center; gap: 10px;
+    padding: 14px 20px; border-bottom: 2px solid;
+  }
+  .card-head-icon {
+    width: 42px; height: 42px; border-radius: 50%; color: #fff;
+    font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+  .card-head-title { font-size: 20px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+  .card-body { padding: 18px 22px; }
+  .card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+  .card-body p:last-child { margin-bottom: 0; }
+
+  /* ── Color Themes ── */
+  .theme-lava .card-head { background: #FFF0EC; border-color: #F5C4BA; }
+  .theme-lava .card-head-icon { background: #E8636B; }
+  .theme-earth .card-head { background: #FFF7EE; border-color: #F0DCC4; }
+  .theme-earth .card-head-icon { background: #C7922C; }
+  .theme-sky .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+  .theme-sky .card-head-icon { background: #55C8E8; }
+  .theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+  .theme-forest .card-head-icon { background: #34B76F; }
+  .theme-rock .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+  .theme-rock .card-head-icon { background: #8B6FC0; }
+  .theme-magma .card-head { background: #FFF3DC; border-color: #F5E6C8; }
+  .theme-magma .card-head-icon { background: #D4772C; }
+
+  /* ── Activity Cards ── */
+  .activity-card {
+    background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+    margin-bottom: 18px; overflow: hidden;
+    box-shadow: 0 2px 10px rgba(43,29,18,0.04);
+  }
+  .activity-card.act-warmup  { border-left: 6px solid #E8636B; }
+  .activity-card.act-lesson  { border-left: 6px solid #D4772C; }
+  .activity-card.act-explore { border-left: 6px solid #55C8E8; }
+  .activity-card.act-practice{ border-left: 6px solid #34B76F; }
+  .activity-card.act-check   { border-left: 6px solid #8B6FC0; }
+
+  .act-head {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 20px 14px 18px;
+    border-bottom: 1.5px solid #E8DDD2;
+  }
+  .act-num {
+    width: 38px; height: 38px; border-radius: 14px; color: #fff;
+    font-size: 18px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .act-title { font-size: 19px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+  .act-subtitle { font-size: 12px; color: #9A8E82; }
+  .act-time {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 4px 12px; border-radius: 20px;
+    font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap;
+    margin-left: auto; flex-shrink: 0;
+  }
+  .act-body { padding: 18px 22px 18px 20px; }
+  .act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+  /* ── Callout Boxes ── */
+  .callout {
+    border-radius: 14px; padding: 16px 18px;
+    display: flex; align-items: flex-start; gap: 12px;
+    margin-bottom: 14px;
+  }
+  .callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+  .callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+  .callout-lava   { background: #FFF0EC; border: 2px solid #F5C4BA; }
+  .callout-think  { background: #FFF7EE; border: 2px solid #F0DCC4; }
+  .callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+  .callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+  .callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+
+  /* ── Socratic Questions ── */
+  .socratic-q {
+    background: linear-gradient(135deg, #FFF7EE, #FFF3E0);
+    border: 2px solid #E8C88A;
+    border-radius: 16px; padding: 16px 20px;
+    margin: 16px 0;
+    display: flex; align-items: flex-start; gap: 12px;
+  }
+  .socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+  .socratic-q .label {
+    font-size: 11px; color: #C7922C; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; margin-bottom: 4px;
+  }
+  .socratic-q .question {
+    font-size: 17px; color: #2B1D12; font-weight: 700;
+    line-height: 1.6; font-style: italic;
+  }
+
+  /* ── Diagram Containers ── */
+  .diagram-wrap {
+    background: #fff; border: 2px solid #E8DDD2;
+    border-radius: 16px; padding: 16px; margin: 16px 0;
+    text-align: center;
+  }
+  .diagram-wrap svg { max-width: 100%; height: auto; }
+  .diagram-caption {
+    font-size: 13px; color: #9A8E82; margin-top: 10px;
+    font-weight: 600; text-align: center;
+  }
+
+  /* ── Key Concept Box ── */
+  .key-concept {
+    background: #FFF3DC; border: 2px solid #F5E6C8;
+    border-radius: 14px; padding: 18px 20px; margin: 14px 0;
+  }
+  .key-concept .kc-label {
+    font-size: 13px; color: #C7922C; text-transform: uppercase;
+    letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px;
+  }
+  .key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+  .key-concept p:last-child { margin-bottom: 0; }
+
+  /* ── Practice Questions ── */
+  .pq {
+    background: #FAFAF6; border: 2px solid #E8DDD2;
+    border-radius: 14px; padding: 14px 18px; margin-bottom: 12px;
+  }
+  .pq-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px; border-radius: 50%;
+    color: #fff; font-weight: 800; font-size: 14px;
+    margin-right: 8px; vertical-align: middle;
+  }
+  .pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+
+  /* ── Vocab Flashcards ── */
+  .vocab-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 14px; margin: 14px 0;
+  }
+  .flip-card { perspective: 800px; height: 160px; cursor: pointer; }
+  .flip-card-inner {
+    position: relative; width: 100%; height: 100%;
+    transition: transform 0.5s ease; transform-style: preserve-3d;
+  }
+  .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+  .flip-card-front, .flip-card-back {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    border-radius: 16px; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 18px 20px; text-align: center; border: 2px solid #E8DDD2;
+    box-shadow: 0 2px 10px rgba(43,29,18,0.06);
+  }
+  .flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+  .flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+  .flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #0E1C42; margin-bottom: 6px; }
+  .flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+  .flip-card-back {
+    background: linear-gradient(145deg, #0E1C42, #1A2D5A);
+    border-color: #0E1C42; transform: rotateY(180deg);
+  }
+  .flip-card-back .fc-def { font-size: 15px; color: #fff; line-height: 1.6; font-weight: 600; }
+  .flip-card-back .fc-word-back {
+    font-size: 11px; color: #55C8E8; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; margin-bottom: 8px;
+  }
+  .flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 10px; font-weight: 600; }
+  .fc-color-1 .flip-card-front { border-top-color: #C7922C; }
+  .fc-color-2 .flip-card-front { border-top-color: #34B76F; }
+  .fc-color-3 .flip-card-front { border-top-color: #55C8E8; }
+  .fc-color-4 .flip-card-front { border-top-color: #8B6FC0; }
+  .fc-color-5 .flip-card-front { border-top-color: #D4772C; }
+  .fc-color-6 .flip-card-front { border-top-color: #E8636B; }
+
+  /* ── Vocab Tooltips ── */
+  .vtip {
+    position: relative; color: #8B6FC0; font-weight: 700; cursor: help;
+    border-bottom: 2px dotted rgba(139,111,192,0.45); transition: color 0.15s;
+  }
+  .vtip:hover { color: #6B4FA0; }
+  .vtip .vtip-box {
+    position: fixed; background: #0E1C42; color: #fff;
+    padding: 12px 16px; border-radius: 12px;
+    font-size: 14px; font-weight: 600; font-style: normal; line-height: 1.55;
+    width: 250px; text-align: center; opacity: 0; visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    pointer-events: none; z-index: 9999;
+    box-shadow: 0 6px 24px rgba(14,28,66,0.35);
+    border: 1.5px solid rgba(85,200,232,0.3); transform: translateY(6px);
+  }
+  .vtip .vtip-box::after {
+    content: ''; position: absolute; top: 100%; left: 50%;
+    transform: translateX(-50%); border: 7px solid transparent;
+    border-top-color: #0E1C42;
+  }
+  .vtip .vtip-word {
+    font-size: 11px; color: #55C8E8; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block;
+  }
+  .vtip:hover .vtip-box { opacity: 1; visibility: visible; transform: translateY(0); }
+
+  /* ── Details / Go Deeper ── */
+  details {
+    background: #fff; border: 2px solid #E8DDD2;
+    border-left: 5px solid #8B6FC0;
+    border-radius: 14px; margin-bottom: 12px; overflow: hidden;
+  }
+  details summary { padding: 12px 18px; font-size: 16px; font-weight: 700; color: #0E1C42; cursor: pointer; }
+  details summary:hover { background: #FAFAF6; }
+  details > div {
+    padding: 12px 18px 14px; font-size: 16px; color: #5A4D3E;
+    line-height: 1.65; border-top: 1.5px solid #E8DDD2;
+  }
+
+  /* ── Activities Header ── */
+  .activities-header { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+  .activities-header-icon {
+    width: 44px; height: 44px; border-radius: 50%; background: #0E1C42;
+    display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;
+  }
+  .activities-header-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+  .activities-header-title { font-size: 22px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+  .activities-header-time { font-size: 14px; color: #9A8E82; font-weight: 600; }
+
+  /* ── Types Grid ── */
+  .types-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; }
+  .type-card {
+    border-radius: 16px; padding: 16px; text-align: center;
+    border: 2px solid; position: relative; overflow: hidden;
+  }
+  .type-card svg { display: block; margin: 0 auto 10px; }
+  .type-name { font-size: 16px; font-weight: 800; color: #0E1C42; margin-bottom: 4px; }
+  .type-desc { font-size: 13px; color: #5A4D3E; line-height: 1.5; }
+  .tc-physical  { background: #EEF8F0; border-color: #C4E5CC; }
+  .tc-resource  { background: #FFF7EE; border-color: #F0DCC4; }
+  .tc-ecosystem { background: #EAF8FD; border-color: #D6F2FB; }
+
+  /* ── Footer ── */
+  .footer {
+    background: #0E1C42; border-top: 4px solid #C7922C;
+    padding: 18px 28px; text-align: center;
+  }
+  .footer-line1 { font-size: 15px; color: #fff; margin-bottom: 4px; }
+  .footer-line1 span { color: #F5A623; font-weight: 700; }
+  .footer-line2 { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+  .footer-line3 { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+  /* ── Mind-Blowing Fact ── */
+  .mind-blow {
+    background: linear-gradient(135deg, #1a2a4a, #0E1C42);
+    border: 2px solid rgba(199,146,44,0.35);
+    border-radius: 18px; padding: 18px 22px;
+    margin: 18px 0; display: flex; align-items: flex-start; gap: 14px;
+    position: relative; overflow: hidden;
+  }
+  .mind-blow::before {
+    content: ''; position: absolute; top: -30px; right: -30px;
+    width: 100px; height: 100px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(199,146,44,0.15), transparent);
+  }
+  .mind-blow-icon {
+    font-size: 36px; flex-shrink: 0;
+    animation: mind-blow-bounce 2s ease-in-out infinite;
+  }
+  @keyframes mind-blow-bounce { 0%,100%{transform:scale(1)} 50%{transform:scale(1.12)} }
+  .mind-blow-content { flex: 1; }
+  .mind-blow-label {
+    font-size: 11px; color: #FFD700; text-transform: uppercase;
+    letter-spacing: 1.5px; font-weight: 800; margin-bottom: 4px;
+  }
+  .mind-blow-text { font-size: 16px; color: #fff; line-height: 1.6; font-weight: 600; }
+  .mind-blow-text strong { color: #55C8E8; }
+
+  /* ── Clickable Diagram ── */
+  .diagram-interactive { position: relative; }
+  .diagram-interactive .hotspot { cursor: pointer; opacity: 0; transition: opacity 0.2s; }
+  .diagram-interactive .hotspot:hover { opacity: 0.25; }
+  .diagram-interactive .hotspot.active { opacity: 0.35; }
+  .diagram-info-panel {
+    background: #0E1C42; color: #fff; padding: 14px 20px; border-radius: 14px;
+    font-size: 15px; line-height: 1.55; font-weight: 600; text-align: center;
+    border: 1.5px solid rgba(85,200,232,0.3); box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    margin: 10px 0 0; display: none;
+  }
+  .diagram-info-panel.visible { display: block; }
+  .diagram-info-panel .dip-word {
+    font-size: 11px; color: #FFD700; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; display: block; margin-bottom: 3px;
+  }
+
+  /* ── Scale / Compare Wrap ── */
+  .scale-compare-wrap {
+    background: linear-gradient(180deg, #EAF8FD, #D6EEFB);
+    border: 2px solid #D6F2FB; border-radius: 16px;
+    padding: 16px; margin: 16px 0; text-align: center;
+  }
+  .scale-compare-wrap svg { max-width: 100%; height: auto; }
+  .scale-compare-caption {
+    font-size: 13px; color: #9A8E82; margin-top: 10px;
+    font-weight: 600; text-align: center;
+  }
+
+  /* ── Self-Check Quiz ── */
+  .quiz-card {
+    background: #fff; border: 2px solid #E8DDD2; border-left: 6px solid #F5A623;
+    border-radius: 18px; margin-bottom: 18px; overflow: hidden;
+    box-shadow: 0 2px 10px rgba(43,29,18,0.04);
+  }
+  .quiz-q {
+    background: #FAFAF6; border: 2px solid #E8DDD2;
+    border-radius: 14px; padding: 16px 18px; margin-bottom: 14px;
+  }
+  .quiz-q-text { font-size: 17px; color: #2B1D12; font-weight: 700; line-height: 1.6; margin-bottom: 12px; }
+  .quiz-options { display: flex; flex-direction: column; gap: 8px; }
+  .quiz-opt {
+    padding: 10px 16px; border-radius: 12px; border: 2px solid #E8DDD2; background: #fff;
+    font-size: 15px; font-weight: 700; color: #2B1D12; cursor: pointer; transition: all 0.2s;
+    display: flex; align-items: center; gap: 10px; user-select: none;
+  }
+  .quiz-opt:hover { background: #FFF7EE; border-color: #F5A623; }
+  .quiz-opt.correct { background: #EEF8F0 !important; border-color: #34B76F !important; color: #1a6b35 !important; }
+  .quiz-opt.wrong { background: #FFF0EC !important; border-color: #E8636B !important; color: #a33 !important; }
+  .quiz-opt.disabled { pointer-events: none; opacity: 0.6; }
+  .quiz-opt .opt-letter {
+    width: 28px; height: 28px; border-radius: 50%; background: #E8DDD2; color: #5A4D3E;
+    font-size: 14px; font-weight: 800; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: all 0.2s;
+  }
+  .quiz-opt.correct .opt-letter { background: #34B76F; color: #fff; }
+  .quiz-opt.wrong .opt-letter { background: #E8636B; color: #fff; }
+  .quiz-feedback {
+    font-size: 14px; padding: 10px 14px; border-radius: 10px;
+    margin-top: 10px; display: none; font-weight: 600; line-height: 1.5;
+  }
+  .quiz-feedback.show { display: block; }
+  .quiz-feedback.fb-correct { background: #EEF8F0; color: #1a6b35; border: 1.5px solid #B8E8CF; }
+  .quiz-feedback.fb-wrong { background: #FFF0EC; color: #8a3030; border: 1.5px solid #F5C4BA; }
+  .quiz-score {
+    text-align: center; padding: 16px; background: linear-gradient(135deg, #FFF7EE, #FFF3DC);
+    border: 2px solid #F5E6C8; border-radius: 14px; margin-top: 8px; display: none;
+  }
+  .quiz-score.show { display: block; }
+  .quiz-score-num { font-size: 36px; font-weight: 900; color: #0E1C42; }
+  .quiz-score-label { font-size: 14px; color: #9A8E82; font-weight: 700; }
+  .quiz-score-msg { font-size: 16px; color: #2B1D12; font-weight: 700; margin-top: 6px; }
+
+  /* ── Go Deeper ── */
+  .go-deeper {
+    background: linear-gradient(135deg, #F0EDF6, #E8E2F2);
+    border: 2px solid #D8D0E8; border-radius: 16px; margin: 16px 0; overflow: hidden;
+  }
+  .go-deeper summary {
+    padding: 14px 18px; font-size: 16px; font-weight: 800; color: #0E1C42; cursor: pointer;
+    display: flex; align-items: center; gap: 10px; list-style: none;
+  }
+  .go-deeper summary::-webkit-details-marker { display: none; }
+  .go-deeper summary::before { content: '🔭'; font-size: 22px; }
+  .go-deeper summary::after {
+    content: '▸'; margin-left: auto; font-size: 18px; color: #8B6FC0; transition: transform 0.3s;
+  }
+  .go-deeper[open] summary::after { transform: rotate(90deg); }
+  .go-deeper .gd-body {
+    padding: 4px 18px 16px; font-size: 15px; color: #5A4D3E; line-height: 1.7;
+    border-top: 1.5px solid #D8D0E8;
+  }
+  .go-deeper .gd-body p { margin-bottom: 10px; }
+
+  /* ── Video Slots ── */
+  .video-wrap {
+    border-radius: 18px; overflow: hidden; border: 2px solid #E8DDD2;
+    box-shadow: 0 4px 20px rgba(43,29,18,0.08); background: #000; margin: 0 0 22px;
+  }
+  .video-wrap-header {
+    display: flex; align-items: center; gap: 12px; padding: 12px 18px;
+    background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+    border-bottom: 2px solid rgba(85,200,232,0.2);
+  }
+  .video-wrap-type { font-size: 10px; color: #55C8E8; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+  .video-wrap-title { font-size: 16px; color: #fff; font-weight: 800; line-height: 1.2; }
+  .video-ratio { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+  .video-ratio iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+  .video-placeholder {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, #1a2a4a, #0E1C42);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 24px;
+  }
+  .video-placeholder-icon { font-size: 44px; margin-bottom: 10px; opacity: 0.55; }
+  .video-placeholder-text { font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 600; line-height: 1.5; font-family: 'Nunito', sans-serif; }
+  .video-placeholder-id { font-size: 11px; color: rgba(85,200,232,0.4); font-family: monospace; margin-top: 6px; letter-spacing: 0.5px; }
+  .video-feedback { display: none; }
+  .video-feedback.show { display: block; }
+
+  /* ── Scroll Animations ── */
+  .scroll-reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── Back to Top ── */
+  .back-to-top {
+    position: fixed; bottom: 28px; right: 28px; height: 44px;
+    padding: 0 18px 0 14px; border-radius: 22px;
+    background: linear-gradient(135deg, #C7922C, #D4772C);
+    color: #fff; border: none; font-size: 14px; font-weight: 800;
+    font-family: 'Nunito', sans-serif; cursor: pointer;
+    box-shadow: 0 4px 18px rgba(199,146,44,0.4);
+    display: flex; align-items: center; gap: 6px;
+    opacity: 0; visibility: hidden; transform: translateY(20px);
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.2s;
+    z-index: 500; letter-spacing: 0.3px;
+  }
+  .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+  .back-to-top:hover { box-shadow: 0 6px 24px rgba(199,146,44,0.55); transform: translateY(-3px); }
+
+  /* ── Confetti ── */
+  #confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000; }
+
+  /* ── Progress Bar ── */
+  .progress-wrap {
+    position: sticky; top: 0; z-index: 200;
+    background: #0E1C42; padding: 8px 20px 10px;
+    border-bottom: 2px solid rgba(199,146,44,0.3);
+    display: flex; align-items: center; gap: 14px;
+  }
+  .progress-label { font-size: 12px; color: #F5A623; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+  .progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+  .progress-fill {
+    height: 100%; width: 0%;
+    background: linear-gradient(90deg, #C7922C, #F5A623, #FFD700);
+    border-radius: 10px; transition: width 0.4s ease;
+  }
+  .progress-pct { font-size: 13px; color: #FFD700; font-weight: 800; min-width: 36px; text-align: right; }
+
+  /* ── Tab Bar ── */
+  .tab-bar {
+    position: sticky; top: 44px; z-index: 100;
+    background: #FAF7F3; border-bottom: 3px solid #E8DDD2;
+    display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .tab-bar::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex: 1; min-width: 130px; padding: 12px 8px 11px;
+    background: transparent; border: none; border-bottom: 4px solid transparent;
+    font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700;
+    color: #9A8E82; cursor: pointer; transition: all 0.2s;
+    white-space: nowrap; line-height: 1.3; text-align: center;
+  }
+  .tab-btn:hover { color: #0E1C42; background: #F0EDE8; }
+  .tab-btn.active { color: #0E1C42; border-bottom-color: #C7922C; background: #fff; }
+  .tab-btn .tab-check { display: none; font-size: 12px; color: #34B76F; margin-left: 4px; font-weight: 800; }
+  .tab-btn.visited .tab-check { display: inline; }
+
+  /* ── Tab Panels ── */
+  .tab-panel { display: none; padding: 24px 28px 36px; }
+  .tab-panel.active { display: block; }
+  .scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+  /* ── Intro 2-col ── */
+  .intro-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px 28px 0; }
+  .intro-2col .card { margin-bottom: 0; }
+  .intro-2col .card .card-head { cursor: pointer; user-select: none; position: relative; }
+  .intro-2col .card .card-head::after {
+    content: '▾'; position: absolute; right: 16px; top: 50%;
+    transform: translateY(-50%); font-size: 16px; color: #9A8E82; transition: transform 0.25s ease;
+  }
+  .intro-2col .card.collapsed .card-head::after { transform: translateY(-50%) rotate(-90deg); }
+  .intro-2col .card.collapsed .card-body { display: none; }
+
+  /* ── Need Strip ── */
+  .need-strip {
+    display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
+    padding: 12px 28px 16px;
+  }
+  .need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 700; white-space: nowrap; }
+  .need-chip {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: #EEF8F0; border: 1.5px solid #C4E5CC;
+    border-radius: 20px; padding: 5px 12px;
+    font-size: 13px; color: #0E1C42; font-weight: 700;
+  }
+
+  /* ── Tab Next Button ── */
+  .tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+  .tab-next-btn {
+    display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px;
+    background: linear-gradient(135deg, #C7922C, #D4772C);
+    color: #fff; border: none; border-radius: 28px;
+    font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800;
+    cursor: pointer; box-shadow: 0 4px 16px rgba(199,146,44,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(199,146,44,0.5); }
+
+  /* ── Checklist ── */
+  .checklist-item:hover { background: #F0EDE8 !important; }
+  .checklist-item.checked { background: #EEF8F0 !important; border-color: #B8E8CF !important; }
+  .checklist-item.checked .check-icon { border-color: transparent !important; background: transparent !important; font-size: 22px !important; }
+  .checklist-item.checked span:last-child { color: #5A4D3E; }
+
+  /* ── 3-col vocab ── */
+  .vocab-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 14px 0; }
+  .vocab-grid-3 .flip-card { height: 150px; }
+  .vocab-grid-3 .fc-word { font-size: 16px; }
+  .vocab-grid-3 .fc-def { font-size: 14px; }
+
+  strong { color: #0E1C42; }
+  em { color: #5A4D3E; }
+  .gold { color: #C7922C; font-weight: 700; }
+
+  @media (max-width: 620px) {
+    .intro-2col { grid-template-columns: 1fr; }
+    .vocab-grid-3 { grid-template-columns: repeat(2, 1fr); }
+    .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 4px; }
+    .types-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+<!-- ═══ PROGRESS BAR ═══ -->
+<div class="progress-wrap">
+  <span class="progress-label">🗺️ Lesson Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" /></div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">Create a Map of the &ldquo;New World&rdquo;</div>
+  <div class="header-badge">
+    <span>🗺️</span>
+    <span>SCIENCE &middot; EARTH &amp; SPACE</span>
+  </div>
+</div>
+
+<!-- ═══════════ HERO SVG ═══════════ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ocean" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a1f3a"/>
+      <stop offset="60%" stop-color="#0d3055"/>
+      <stop offset="100%" stop-color="#0a2540"/>
+    </linearGradient>
+    <linearGradient id="landGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a5a28"/>
+      <stop offset="100%" stop-color="#2a4018"/>
+    </linearGradient>
+    <linearGradient id="waveGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1a6090" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#2a80b8" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#1a6090" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="moonGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#FFD700" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softBlur"><feGaussianBlur stdDeviation="2"/></filter>
+    <filter id="shipBlur"><feGaussianBlur stdDeviation="1"/></filter>
+    <clipPath id="heroClip"><rect width="920" height="260"/></clipPath>
+  </defs>
+
+  <style>
+    @keyframes star-twinkle { 0%,100%{opacity:.15} 50%{opacity:.85} }
+    @keyframes wave-roll { 0%{transform:translateX(0)} 100%{transform:translateX(-80px)} }
+    @keyframes ship-bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+    @keyframes compass-pulse { 0%,100%{opacity:.7;transform:scale(1)} 50%{opacity:1;transform:scale(1.05)} }
+    @keyframes moon-glow { 0%,100%{opacity:.7} 50%{opacity:1} }
+    @keyframes grid-fade { 0%,100%{opacity:.06} 50%{opacity:.12} }
+    @keyframes lantern { 0%,100%{opacity:.5} 50%{opacity:.9} }
+    .hstar{animation:star-twinkle ease-in-out infinite}
+    .hs1{animation-duration:3s;animation-delay:0s}
+    .hs2{animation-duration:4.2s;animation-delay:.7s}
+    .hs3{animation-duration:3.6s;animation-delay:1.4s}
+    .hs4{animation-duration:4.8s;animation-delay:.3s}
+    .hs5{animation-duration:3.2s;animation-delay:2s}
+    .hs6{animation-duration:4s;animation-delay:1s}
+    .hs7{animation-duration:3.8s;animation-delay:1.8s}
+    .hs8{animation-duration:4.4s;animation-delay:0.5s}
+    .hs9{animation-duration:3.4s;animation-delay:2.2s}
+    .wave-a{animation:wave-roll 6s linear infinite}
+    .wave-b{animation:wave-roll 8s linear infinite .5s}
+    .wave-c{animation:wave-roll 7s linear infinite 1s}
+    .ship-group{animation:ship-bob 3.5s ease-in-out infinite;transform-origin:400px 185px}
+    .compass-g{animation:compass-pulse 3s ease-in-out infinite;transform-origin:820px 80px}
+    .moon-g{animation:moon-glow 4s ease-in-out infinite}
+    .grid-lines{animation:grid-fade 5s ease-in-out infinite}
+    .lantern-g{animation:lantern 2s ease-in-out infinite}
+  </style>
+
+  <g clip-path="url(#heroClip)">
+    <!-- Sky / Ocean background -->
+    <rect width="920" height="260" fill="url(#ocean)"/>
+
+    <!-- Map grid lines (nautical chart aesthetic) -->
+    <g class="grid-lines" stroke="#88CCFF" stroke-width="0.6" opacity="0.08">
+      <line x1="0" y1="65" x2="920" y2="65"/>
+      <line x1="0" y1="130" x2="920" y2="130"/>
+      <line x1="0" y1="195" x2="920" y2="195"/>
+      <line x1="115" y1="0" x2="115" y2="260"/>
+      <line x1="230" y1="0" x2="230" y2="260"/>
+      <line x1="345" y1="0" x2="345" y2="260"/>
+      <line x1="460" y1="0" x2="460" y2="260"/>
+      <line x1="575" y1="0" x2="575" y2="260"/>
+      <line x1="690" y1="0" x2="690" y2="260"/>
+      <line x1="805" y1="0" x2="805" y2="260"/>
+    </g>
+
+    <!-- Moon glow -->
+    <circle class="moon-g" cx="820" cy="40" r="50" fill="url(#moonGlow)" filter="url(#softBlur)"/>
+    <circle cx="820" cy="38" r="18" fill="#FFF8DC" opacity="0.85"/>
+    <circle cx="827" cy="33" r="13" fill="url(#ocean)" opacity="0.3"/>
+
+    <!-- Stars -->
+    <circle class="hstar hs1" cx="60"  cy="22" r="1.5" fill="#fff"/>
+    <circle class="hstar hs2" cx="180" cy="14" r="1"   fill="#fff"/>
+    <circle class="hstar hs3" cx="310" cy="28" r="1.2" fill="#fff"/>
+    <circle class="hstar hs4" cx="480" cy="18" r="1"   fill="#fff"/>
+    <circle class="hstar hs5" cx="620" cy="32" r="1.4" fill="#fff"/>
+    <circle class="hstar hs6" cx="740" cy="12" r="1"   fill="#fff"/>
+    <circle class="hstar hs7" cx="130" cy="48" r="0.9" fill="#fff"/>
+    <circle class="hstar hs8" cx="550" cy="42" r="1.1" fill="#fff"/>
+    <circle class="hstar hs9" cx="660" cy="20" r="0.8" fill="#fff"/>
+
+    <!-- Americas coastline silhouette (right side, simplified) -->
+    <path d="M640,0 Q650,15 645,40 Q660,55 670,80 Q680,100 675,130
+             Q685,155 695,175 Q700,200 690,220 Q685,240 680,260
+             L920,260 L920,0 Z"
+          fill="url(#landGrad)" opacity="0.9"/>
+    <!-- Interior texture lines (suggests topography) -->
+    <path d="M680,50 Q690,60 700,75" stroke="#5a8a3a" stroke-width="1.5" fill="none" opacity="0.4"/>
+    <path d="M695,90 Q705,105 700,120" stroke="#5a8a3a" stroke-width="1.5" fill="none" opacity="0.4"/>
+    <!-- Mountain peaks on land -->
+    <polygon points="685,110 700,80 715,110" fill="#4a6a30" opacity="0.7"/>
+    <polygon points="705,125 718,98 731,125" fill="#4a6a30" opacity="0.6"/>
+    <!-- Tree dots -->
+    <circle cx="660" cy="155" r="5" fill="#3a6020" opacity="0.7"/>
+    <circle cx="670" cy="162" r="4" fill="#3a6020" opacity="0.6"/>
+    <circle cx="655" cy="165" r="5" fill="#3a6020" opacity="0.7"/>
+    <!-- Small river on land -->
+    <path d="M710,100 Q705,130 695,160 Q690,185 685,210" stroke="#4a9ab8" stroke-width="2" fill="none" opacity="0.5"/>
+
+    <!-- Ocean waves (animated) -->
+    <g class="wave-a" opacity="0.15">
+      <path d="M0,180 Q40,172 80,180 Q120,188 160,180 Q200,172 240,180 Q280,188 320,180 Q360,172 400,180 Q440,188 480,180 Q520,172 560,180 Q600,188 640,180"
+            stroke="url(#waveGrad)" stroke-width="2" fill="none"/>
+    </g>
+    <g class="wave-b" opacity="0.12">
+      <path d="M0,200 Q50,193 100,200 Q150,207 200,200 Q250,193 300,200 Q350,207 400,200 Q450,193 500,200 Q550,207 600,200"
+            stroke="url(#waveGrad)" stroke-width="2" fill="none"/>
+    </g>
+    <g class="wave-c" opacity="0.1">
+      <path d="M0,220 Q60,213 120,220 Q180,227 240,220 Q300,213 360,220 Q420,227 480,220"
+            stroke="url(#waveGrad)" stroke-width="2" fill="none"/>
+    </g>
+
+    <!-- Sailing Ship (animated bob) -->
+    <g class="ship-group">
+      <!-- Hull -->
+      <path d="M360,195 Q380,185 420,185 Q460,185 480,195 Q475,210 420,212 Q365,210 360,195Z"
+            fill="#6B4914" stroke="#3a2a08" stroke-width="1"/>
+      <!-- Deck details -->
+      <rect x="370" y="185" width="100" height="4" rx="2" fill="#8B6914" opacity="0.8"/>
+      <!-- Main mast -->
+      <rect x="418" y="140" width="4" height="50" fill="#8B5E14" rx="1"/>
+      <!-- Fore mast -->
+      <rect x="395" y="152" width="3" height="38" fill="#8B5E14" rx="1"/>
+      <!-- Main sail (billowing slightly) -->
+      <path d="M422,143 Q445,148 450,160 Q448,175 422,185 Z" fill="#F5E6C8" opacity="0.9" stroke="#C4B08A" stroke-width="0.8"/>
+      <!-- Fore sail -->
+      <path d="M398,154 Q414,159 416,170 Q413,180 398,185 Z" fill="#F5E6C8" opacity="0.85" stroke="#C4B08A" stroke-width="0.8"/>
+      <!-- Flag at top -->
+      <path d="M420,140 L435,134 L420,143 Z" fill="#C7922C"/>
+      <!-- Bowsprit -->
+      <line x1="370" y1="188" x2="345" y2="176" stroke="#8B5E14" stroke-width="2"/>
+      <!-- Lantern glow on ship -->
+      <circle class="lantern-g" cx="422" cy="155" r="4" fill="#FFD700" opacity="0.4" filter="url(#softBlur)"/>
+      <!-- Reflection in water -->
+      <path d="M380,213 Q420,218 470,213" stroke="#8B6914" stroke-width="1.5" fill="none" opacity="0.3"/>
+    </g>
+
+    <!-- Compass Rose (top right, animated) -->
+    <g class="compass-g">
+      <!-- Outer ring -->
+      <circle cx="820" cy="80" r="28" fill="none" stroke="#F5A623" stroke-width="1" opacity="0.5"/>
+      <circle cx="820" cy="80" r="22" fill="rgba(14,28,66,0.5)" stroke="#C7922C" stroke-width="1.5" opacity="0.8"/>
+      <!-- N arrow -->
+      <polygon points="820,55 816,75 820,70 824,75" fill="#FFD700" opacity="0.9"/>
+      <!-- S arrow -->
+      <polygon points="820,105 816,85 820,90 824,85" fill="#F5A623" opacity="0.7"/>
+      <!-- E arrow -->
+      <polygon points="845,80 825,76 830,80 825,84" fill="#F5A623" opacity="0.7"/>
+      <!-- W arrow -->
+      <polygon points="795,80 815,76 810,80 815,84" fill="#F5A623" opacity="0.7"/>
+      <!-- Center dot -->
+      <circle cx="820" cy="80" r="3" fill="#FFD700"/>
+      <!-- N label -->
+      <text x="820" y="52" text-anchor="middle" font-family="Nunito,sans-serif" font-size="9" font-weight="800" fill="#FFD700" opacity="0.9">N</text>
+    </g>
+
+    <!-- Small sea creature (old map decorative) -->
+    <g opacity="0.35" transform="translate(200,195)">
+      <path d="M0,0 Q10,-8 20,0 Q15,8 10,5 Q5,8 0,0Z" fill="#4a9ab8"/>
+      <circle cx="3" cy="-1" r="1.5" fill="#fff"/>
+    </g>
+    <g opacity="0.3" transform="translate(500,208)">
+      <path d="M0,0 Q8,-6 16,0 Q12,6 8,4 Q4,6 0,0Z" fill="#4a9ab8"/>
+    </g>
+
+    <!-- Banner at bottom -->
+    <rect x="0" y="242" width="920" height="18" fill="rgba(10,31,58,0.6)"/>
+    <text x="460" y="255" text-anchor="middle" font-family="Nunito,sans-serif" font-size="13" font-weight="800" fill="#F5A623" letter-spacing="3" opacity="0.9">CREATE A MAP OF THE &quot;NEW WORLD&quot;</text>
+  </g>
+</svg>
+</div>
+
+<!-- ═══════════ INFO STRIP ═══════════ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF7EE;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q1 &middot; Unit 1</div>
+      <div class="info-detail">Earth &amp; Space Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF3DC;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 4</div>
+      <div class="info-detail">Lesson 4.02 &mdash; Earth Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#F0EDF6;">✏️</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Cartography</div>
+      <div class="info-detail">Maps, Resources &amp; Ecosystems</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">NGSS 4-ESS2-2</div>
+      <div class="info-detail">Patterns of Earth&rsquo;s Features</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ INTRO 2-COL ═══════════ -->
+<div class="intro-2col">
+  <div class="card theme-earth scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">❓</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question for Today</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This&hellip;</div>
+          <div class="question">&ldquo;How did map-making help early explorers understand the location and abundance of natural resources and ecosystems?&rdquo;</div>
+        </div>
+      </div>
+      <p>Keep this question in your mind as you work through the lesson. By the end, you&rsquo;ll be able to answer it using real science vocabulary — just like a cartographer!</p>
+    </div>
+  </div>
+
+  <div class="card theme-sky scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#C7922C;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain how maps helped early explorers record and communicate information about natural resources and ecosystems.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#D4772C;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> identify and describe the key parts of a map, including the title, compass rose, legend, symbols, and labels.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#34B76F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> describe what biodiversity means and explain why explorers documented flora and fauna in the New World.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You&rsquo;ll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Colored pencils</span>
+  <span class="need-chip"><span>📏</span>Ruler</span>
+</div>
+
+<!-- ═══════════ TAB BAR ═══════════ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab" onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="lesson" onclick="switchTab('lesson')">📘 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="explore" onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+
+<!-- ══════════════════════════════════════ -->
+<!-- ═══ TAB 1: VOCABULARY ═══ -->
+<!-- ══════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction &middot; Welcome Video</div>
+        <div class="video-wrap-title">Welcome to Today&rsquo;s Lesson!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🎬</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 4-02-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 1: WARM-UP -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#E8636B;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Warm-Up: What Do You Already Know?</div>
+        <div class="act-subtitle">Activate your explorer instincts!</div>
+      </div>
+      <div class="act-time" style="background:#E8636B;">⏱ 5 min</div>
+    </div>
+    <div class="act-body">
+      <p>In your science notebook, draw a quick sketch of what you <em>think</em> a map looks like. Try to include at least <strong>three things</strong> you would put on a map. Don&rsquo;t worry about making it perfect — explorers always started with a rough sketch!</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Write &amp; Reflect</div>
+          <div class="question">&ldquo;Have you ever used a map — on a phone, on paper, or at a park? What was it trying to show you? What parts did it have?&rdquo;</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">⚓</span>
+        <p>There are no wrong answers here! Five hundred years ago, explorers crossed the Atlantic Ocean with nothing but hand-drawn maps and their courage. We&rsquo;ll come back to your sketch at the end of the lesson to see how much your map-making skills have improved!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOCABULARY CARD -->
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>These are the words scientists and explorers used when they mapped the New World. <strong>Tap each card to flip it</strong> and read the definition. You&rsquo;ll see these words throughout the lesson!</p>
+      <div class="vocab-grid">
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌿</div><div class="fc-word">Flora</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Flora</div><div class="fc-def">The plants that naturally grow in a specific area or environment.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🦜</div><div class="fc-word">Fauna</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Fauna</div><div class="fc-def">The animals that naturally live in a specific area or environment.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌎</div><div class="fc-word">Biodiversity</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Biodiversity</div><div class="fc-def">The variety of different kinds of living things — plants, animals, and more — found in a particular place.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">⛏️</div><div class="fc-word">Natural Resources</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Natural Resources</div><div class="fc-def">Useful materials found in nature, such as fresh water, timber, fertile soil, and minerals.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌳</div><div class="fc-word">Ecosystem</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Ecosystem</div><div class="fc-def">A community of living things — plants, animals, and tiny organisms — that interact with each other and with their environment.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🗺️</div><div class="fc-word">Cartography</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Cartography</div><div class="fc-def">The science and art of making maps. A person who makes maps is called a cartographer.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mind-blow">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Mind-Blowing Fact</div>
+      <div class="mind-blow-text">The oldest known map of the world was carved into a clay tablet nearly <strong>2,600 years ago</strong> in ancient Babylon (modern-day Iraq)! Even ancient civilizations understood that maps were the best way to share knowledge about the Earth. The whole known world fit on a tablet you could hold in your hands.</div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📘 The Lesson →</button>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════ -->
+<!-- ═══ TAB 2: THE LESSON ═══ -->
+<!-- ══════════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#D4772C;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📘 The Lesson: Maps as Tools for Discovery</div>
+        <div class="act-subtitle">See the world through an explorer&rsquo;s eyes!</div>
+      </div>
+      <div class="act-time" style="background:#D4772C;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="video-wrap">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">📘</span>
+          <div>
+            <div class="video-wrap-type">Activity 2 &middot; Lesson Explainer</div>
+            <div class="video-wrap-title">Let&rsquo;s Explore Maps as Tools for Science!</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">📘</div>
+            <div class="video-placeholder-text">Lesson explainer video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 4-02-lesson-explainer --></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PART 1 -->
+      <p style="font-size:18px;"><strong>Part 1 — What Is a Map, and Why Did It Matter?</strong></p>
+
+      <p>A <span class="vtip"><strong>map</strong><span class="vtip-box"><span class="vtip-word">Cartography</span>The science and art of making maps. A person who makes maps is called a cartographer.</span></span> is one of the most powerful tools humans ever invented. When European explorers set sail for the Americas in the late 1400s and 1500s, they were venturing into territory completely unknown to them. They had no GPS, no satellites — just wooden ships, the stars, and whatever maps they could make along the way.</p>
+
+      <p>These early maps were strategic tools. By recording the shapes of coastlines, the paths of rivers, the height of mountains, and the location of forests, explorers could answer critical survival questions: <em>Where is fresh water? Where can we farm? Where is timber to build shelters? Where do the rivers flow?</em></p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Stop &amp; Think</div>
+          <div class="question">&ldquo;Imagine you are an explorer who just landed on an unknown shore. You can&rsquo;t call anyone or look anything up online. What three things would you want to find out first — and how could a map help you?&rdquo;</div>
+        </div>
+      </div>
+
+      <p>Maps also helped explorers document the incredible <span class="vtip"><strong>biodiversity</strong><span class="vtip-box"><span class="vtip-word">Biodiversity</span>The variety of different kinds of living things — plants, animals, and more — found in a particular place.</span></span> of the Americas. By charting the <span class="vtip"><strong>flora</strong><span class="vtip-box"><span class="vtip-word">Flora</span>The plants that naturally grow in a specific area or environment.</span></span> (plants) and <span class="vtip"><strong>fauna</strong><span class="vtip-box"><span class="vtip-word">Fauna</span>The animals that naturally live in a specific area or environment.</span></span> (animals) they encountered, explorers created records that helped scientists back in Europe understand new <span class="vtip"><strong>ecosystems</strong><span class="vtip-box"><span class="vtip-word">Ecosystem</span>A community of living things that interact with each other and with their environment.</span></span> they had never imagined.</p>
+
+      <!-- PARTS OF A MAP DIAGRAM -->
+      <div class="diagram-wrap diagram-interactive">
+        <svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,sans-serif;">
+          <defs>
+            <linearGradient id="parchment" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#F5E9C8"/>
+              <stop offset="100%" stop-color="#ECD9A8"/>
+            </linearGradient>
+            <linearGradient id="oceanColor" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#B8D8F0"/>
+              <stop offset="100%" stop-color="#9AC8E8"/>
+            </linearGradient>
+            <linearGradient id="landColor" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#C8C88A"/>
+              <stop offset="100%" stop-color="#B0B870"/>
+            </linearGradient>
+            <filter id="mapShadow"><feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.2"/></filter>
+          </defs>
+
+          <!-- Map outer border & parchment -->
+          <rect x="10" y="10" width="700" height="400" rx="8" fill="url(#parchment)" stroke="#8B6914" stroke-width="3" filter="url(#mapShadow)"/>
+          <!-- Decorative double border -->
+          <rect x="18" y="18" width="684" height="384" rx="6" fill="none" stroke="#C7922C" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+          <!-- Ocean area (left ~40%) -->
+          <rect x="22" y="22" width="275" height="376" rx="5" fill="url(#oceanColor)" opacity="0.7"/>
+          <!-- Ocean label (italic) -->
+          <text x="115" y="200" text-anchor="middle" font-size="15" font-style="italic" font-weight="700" fill="#2a6090" opacity="0.7">MAR DEL SUR</text>
+          <text x="115" y="218" text-anchor="middle" font-size="11" font-style="italic" fill="#2a6090" opacity="0.5">(Southern Sea)</text>
+
+          <!-- Land area -->
+          <path d="M297,22 Q310,30 315,60 Q325,90 320,130 Q330,160 325,200 Q335,230 330,270 Q325,310 320,360 Q315,385 297,398 L698,398 L698,22 Z"
+                fill="url(#landColor)" opacity="0.8"/>
+
+          <!-- Coastline border -->
+          <path d="M297,22 Q310,30 315,60 Q325,90 320,130 Q330,160 325,200 Q335,230 330,270 Q325,310 320,360 Q315,385 297,398"
+                stroke="#8B7030" stroke-width="2" fill="none" opacity="0.7"/>
+
+          <!-- River (blue wavy path) -->
+          <path d="M540,60 Q530,100 520,140 Q505,180 490,210 Q475,240 460,270 Q445,305 430,330"
+                stroke="#4a90b8" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+          <!-- River label -->
+          <text x="570" y="180" font-size="10" font-style="italic" fill="#2a6090" opacity="0.75" font-weight="700">RÍO GRANDE</text>
+          <line x1="540" y1="175" x2="505" y2="190" stroke="#2a6090" stroke-width="0.8" opacity="0.5"/>
+
+          <!-- Mountain range (top right of land) -->
+          <polygon points="590,40 610,100 570,100" fill="#9a8050" opacity="0.85"/>
+          <polygon points="615,45 640,108 590,108" fill="#8a7040" opacity="0.8"/>
+          <polygon points="640,50 658,105 622,105" fill="#9a8050" opacity="0.75"/>
+          <!-- Snow caps -->
+          <polygon points="590,40 596,58 584,58" fill="#fff" opacity="0.7"/>
+          <polygon points="615,45 621,63 609,63" fill="#fff" opacity="0.65"/>
+          <polygon points="640,50 646,67 634,67" fill="#fff" opacity="0.6"/>
+          <!-- Mountain label -->
+          <text x="615" y="118" text-anchor="middle" font-size="10" font-weight="700" fill="#5a4020" opacity="0.8">SIERRA ALTA</text>
+
+          <!-- Forest cluster -->
+          <!-- Trees (simple circle-on-stick) -->
+          <g opacity="0.8">
+            <circle cx="370" cy="290" r="9" fill="#4a7a28"/>
+            <rect x="368" y="299" width="4" height="8" fill="#6B4914"/>
+            <circle cx="395" cy="285" r="8" fill="#5a8a30"/>
+            <rect x="393" y="293" width="4" height="8" fill="#6B4914"/>
+            <circle cx="382" cy="310" r="8" fill="#4a7a28"/>
+            <rect x="380" y="318" width="4" height="8" fill="#6B4914"/>
+            <circle cx="408" cy="305" r="7" fill="#3a6a20"/>
+            <rect x="406" y="312" width="4" height="7" fill="#6B4914"/>
+          </g>
+          <!-- Forest label -->
+          <text x="388" y="335" text-anchor="middle" font-size="10" font-style="italic" fill="#2a5010" opacity="0.8" font-weight="700">BOSQUE</text>
+
+          <!-- Settlement dot -->
+          <circle cx="480" cy="340" r="7" fill="#C7922C" stroke="#8B5E14" stroke-width="1.5"/>
+          <circle cx="480" cy="340" r="3" fill="#fff"/>
+          <text x="480" y="358" text-anchor="middle" font-size="10" font-weight="700" fill="#5a3010" opacity="0.85">NUEVA VILLA</text>
+
+          <!-- Small decorative ship in ocean -->
+          <g opacity="0.55" transform="translate(90,145)">
+            <path d="M0,12 Q12,6 24,12 Q20,20 12,21 Q4,20 0,12Z" fill="#8B6914"/>
+            <rect x="11" y="2" width="2" height="12" fill="#6B4914"/>
+            <path d="M13,2 Q21,5 22,10 Q21,14 13,12 Z" fill="#F5E6C8" opacity="0.8"/>
+          </g>
+
+          <!-- ─── MAP FURNITURE ─── -->
+
+          <!-- MAP TITLE BOX (top center of map area) -->
+          <rect x="200" y="25" width="318" height="38" rx="5" fill="#0E1C42" opacity="0.85"/>
+          <rect x="202" y="27" width="314" height="34" rx="4" fill="none" stroke="#F5A623" stroke-width="1"/>
+          <text x="359" y="49" text-anchor="middle" font-size="14" font-weight="900" fill="#FFD700" letter-spacing="1">MAPA DEL NUEVO MUNDO</text>
+
+          <!-- COMPASS ROSE (bottom right) -->
+          <g transform="translate(622,320)">
+            <circle r="30" fill="#F5E9C8" stroke="#C7922C" stroke-width="1.5"/>
+            <circle r="24" fill="none" stroke="#C7922C" stroke-width="0.8" opacity="0.5"/>
+            <!-- N/S points -->
+            <polygon points="0,-26 -5,-10 0,-16 5,-10" fill="#C7922C"/>
+            <polygon points="0,26 -5,10 0,16 5,10" fill="#8B7030"/>
+            <!-- E/W points -->
+            <polygon points="26,0 10,-5 16,0 10,5" fill="#8B7030"/>
+            <polygon points="-26,0 -10,-5 -16,0 -10,5" fill="#8B7030"/>
+            <!-- Diagonal points -->
+            <polygon points="18,-18 10,-8 8,-10" fill="#C7922C" opacity="0.5"/>
+            <polygon points="-18,-18 -10,-8 -8,-10" fill="#C7922C" opacity="0.5"/>
+            <polygon points="18,18 10,8 8,10" fill="#C7922C" opacity="0.5"/>
+            <polygon points="-18,18 -10,8 -8,10" fill="#C7922C" opacity="0.5"/>
+            <circle r="4" fill="#F5A623"/>
+            <text x="0" y="-32" text-anchor="middle" font-size="10" font-weight="800" fill="#0E1C42">N</text>
+            <text x="0" y="40" text-anchor="middle" font-size="10" font-weight="800" fill="#5A4D3E">S</text>
+            <text x="34" y="4" text-anchor="start" font-size="10" font-weight="800" fill="#5A4D3E">E</text>
+            <text x="-34" y="4" text-anchor="end" font-size="10" font-weight="800" fill="#5A4D3E">W</text>
+          </g>
+
+          <!-- MAP LEGEND (bottom left of map area) -->
+          <rect x="25" y="300" width="145" height="96" rx="5" fill="#F5E9C8" stroke="#C7922C" stroke-width="1.5"/>
+          <text x="98" y="318" text-anchor="middle" font-size="11" font-weight="800" fill="#0E1C42">LEGEND</text>
+          <line x1="35" y1="323" x2="162" y2="323" stroke="#C7922C" stroke-width="0.8"/>
+          <!-- Legend items -->
+          <polygon points="35,345 40,333 45,345" fill="#9a8050" opacity="0.85"/>
+          <text x="53" y="344" font-size="10" font-weight="600" fill="#2B1D12">= Mountains</text>
+          <circle cx="37" cy="360" r="5" fill="#4a7a28"/>
+          <text x="53" y="364" font-size="10" font-weight="600" fill="#2B1D12">= Forest</text>
+          <path d="M30,374 Q37,370 44,374" stroke="#4a90b8" stroke-width="2.5" fill="none"/>
+          <text x="53" y="378" font-size="10" font-weight="600" fill="#2B1D12">= River</text>
+          <circle cx="37" cy="388" r="4" fill="#C7922C" stroke="#8B5E14" stroke-width="1"/>
+          <text x="53" y="391" font-size="10" font-weight="600" fill="#2B1D12">= Settlement</text>
+
+          <!-- SCALE BAR (bottom center) -->
+          <g transform="translate(225,375)">
+            <rect x="0" y="0" width="20" height="8" fill="#0E1C42"/>
+            <rect x="20" y="0" width="20" height="8" fill="#F5E9C8" stroke="#0E1C42" stroke-width="0.8"/>
+            <rect x="40" y="0" width="20" height="8" fill="#0E1C42"/>
+            <rect x="60" y="0" width="20" height="8" fill="#F5E9C8" stroke="#0E1C42" stroke-width="0.8"/>
+            <line x1="0" y1="0" x2="80" y2="0" stroke="#0E1C42" stroke-width="1"/>
+            <text x="0" y="-2" font-size="8" fill="#0E1C42">0</text>
+            <text x="36" y="-2" text-anchor="middle" font-size="8" fill="#0E1C42">500</text>
+            <text x="82" y="-2" font-size="8" fill="#0E1C42">1,000 mi</text>
+          </g>
+
+          <!-- ─── CLICKABLE HOTSPOTS ─── -->
+          <!-- Title hotspot -->
+          <rect class="hotspot" data-part="map-title" data-info="The MAP TITLE tells you what the map is about and where it shows. 'Mapa del Nuevo Mundo' means 'Map of the New World' in Spanish — the name explorers used for the Americas. Always read the title first!" x="200" y="25" width="318" height="38" rx="5" fill="#FFD700"/>
+          <!-- Compass rose hotspot -->
+          <circle class="hotspot" data-part="compass-rose" data-info="The COMPASS ROSE shows directions — North (N), South (S), East (E), and West (W). Sailors and explorers used compass roses to navigate the seas and record which direction they were traveling." cx="622" cy="320" r="34" fill="#FFD700"/>
+          <!-- Legend hotspot -->
+          <rect class="hotspot" data-part="map-legend" data-info="The MAP LEGEND (or KEY) is like a secret codebook! It tells you what every symbol and color on the map means. Without it, you wouldn't know if a triangle means a mountain or a tent!" x="25" y="300" width="145" height="96" rx="5" fill="#FFD700"/>
+          <!-- Mountain symbol hotspot -->
+          <rect class="hotspot" data-part="map-symbols" data-info="MAP SYMBOLS are small pictures or shapes that represent real features. Here, triangles represent mountains. Explorers and cartographers agreed on standard symbols so that anyone — in Spain, England, or Portugal — could read the same map." x="565" y="30" width="120" height="90" rx="4" fill="#FFD700"/>
+          <!-- River hotspot -->
+          <rect class="hotspot" data-part="labels" data-info="LABELS are words written on the map that name important features. 'Río Grande' (Great River) and 'Sierra Alta' (High Mountains) are the names explorers gave to the land. Labels helped sailors and settlers know exactly what they were looking at." x="445" y="50" width="140" height="290" rx="4" fill="#FFD700"/>
+          <!-- Scale bar hotspot -->
+          <rect class="hotspot" data-part="scale-bar" data-info="The SCALE BAR shows how distances on the map compare to real distances on Earth. On this map, the bar represents 1,000 miles! Without a scale, a map could look accurate but be completely wrong about distances." x="220" y="368" width="200" height="30" rx="4" fill="#FFD700"/>
+        </svg>
+
+        <div style="background:linear-gradient(135deg,#FFF7EE,#FFF3DC);border:2px solid #F5E6C8;border-radius:14px;padding:12px 18px;margin-top:10px;display:flex;align-items:center;gap:12px;">
+          <span style="font-size:28px;flex-shrink:0;animation:mind-blow-bounce 2s ease-in-out infinite;">👆</span>
+          <p style="font-size:15px;color:#2B1D12;line-height:1.55;margin:0;font-weight:600;">Tap on any part of the map — the title, compass rose, legend, symbols, river, or scale bar — to learn what it does.</p>
+        </div>
+        <div class="diagram-info-panel" id="diagramPanel">
+          <span class="dip-word" id="diagramWord"></span>
+          <span id="diagramInfo"></span>
+        </div>
+      </div>
+
+      <div class="key-concept">
+        <div class="kc-label">🔑 Key Concept</div>
+        <p>A <span class="vtip"><strong>map</strong><span class="vtip-box"><span class="vtip-word">Cartography</span>The science and art of making maps.</span></span> is a visual record of information about Earth&rsquo;s surface. Every part has a purpose — the <strong>title</strong> tells you what, the <strong>compass rose</strong> tells you which way, the <strong>legend</strong> tells you what the symbols mean, and the <strong>scale</strong> tells you how big.</p>
+        <p>Think of it like a recipe: if any one part is missing, the whole thing is harder to use correctly!</p>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Stop &amp; Reason</div>
+          <div class="question">&ldquo;Why do you think explorers from different countries (Spain, Portugal, England, France) all agreed to use the same map parts — like compass roses and legends? Why does that shared system matter?&rdquo;</div>
+        </div>
+      </div>
+
+      <!-- PART 2: Types of Maps -->
+      <p style="font-size:18px; margin-top:20px;"><strong>Part 2 — Three Types of Explorer Maps</strong></p>
+      <p>Not all maps show the same information! Different types of maps helped explorers answer different questions. Here are three types that were especially important during the Age of Exploration:</p>
+
+      <div class="types-grid">
+        <!-- Physical Map -->
+        <div class="type-card tc-physical">
+          <svg viewBox="0 0 180 100" width="180" height="100" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="100" fill="#EEF8F0" rx="8"/>
+            <rect x="0" y="60" width="180" height="40" fill="#C4E5CC" rx="0"/>
+            <!-- Mountains -->
+            <polygon points="60,55 80,20 100,55" fill="#8B7040" opacity="0.85"/>
+            <polygon points="80,55 100,25 120,55" fill="#9a8050" opacity="0.8"/>
+            <!-- Snow -->
+            <polygon points="60,55 65,42 70,55" fill="#fff" opacity="0.7"/>
+            <polygon points="80,55 85,38 90,55" fill="#fff" opacity="0.65"/>
+            <!-- River -->
+            <path d="M100,38 Q115,55 130,68 Q145,80 160,90" stroke="#4a90b8" stroke-width="2.5" fill="none" opacity="0.8"/>
+            <!-- Sea -->
+            <text x="20" y="85" font-size="10" font-style="italic" fill="#2a6090" opacity="0.7" font-family="Nunito,sans-serif" font-weight="700">SEA</text>
+          </svg>
+          <div class="type-name">Physical Map</div>
+          <div class="type-desc">Shows natural landforms — mountains, rivers, valleys, and coastlines. Helped explorers navigate safely.</div>
+        </div>
+
+        <!-- Resource Map -->
+        <div class="type-card tc-resource">
+          <svg viewBox="0 0 180 100" width="180" height="100" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="100" fill="#FFF7EE" rx="8"/>
+            <rect x="10" y="20" width="160" height="70" rx="4" fill="#ECD9A8" opacity="0.4"/>
+            <!-- Tree symbol (timber) -->
+            <circle cx="45" cy="55" r="12" fill="#4a7a28"/>
+            <rect x="43" y="67" width="4" height="10" fill="#6B4914"/>
+            <text x="45" y="86" text-anchor="middle" font-size="8" fill="#2a5010" font-weight="700" font-family="Nunito,sans-serif">TIMBER</text>
+            <!-- Water drop (fresh water) -->
+            <path d="M95,40 Q90,55 95,65 Q100,55 95,40Z" fill="#4a90b8"/>
+            <text x="95" y="82" text-anchor="middle" font-size="8" fill="#2a6090" font-weight="700" font-family="Nunito,sans-serif">WATER</text>
+            <!-- Gold nugget (minerals) -->
+            <circle cx="145" cy="55" r="10" fill="#F5A623" stroke="#C7922C" stroke-width="1.5"/>
+            <text x="145" y="86" text-anchor="middle" font-size="8" fill="#8B5E14" font-weight="700" font-family="Nunito,sans-serif">MINERALS</text>
+          </svg>
+          <div class="type-name">Resource Map</div>
+          <div class="type-desc">Shows where natural resources like timber, fresh water, and minerals were located. Critical for planning settlements.</div>
+        </div>
+
+        <!-- Ecosystem Map -->
+        <div class="type-card tc-ecosystem">
+          <svg viewBox="0 0 180 100" width="180" height="100" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="100" fill="#EAF8FD" rx="8"/>
+            <!-- Biome zones -->
+            <rect x="10" y="18" width="48" height="68" rx="4" fill="#4a7a28" opacity="0.7"/>
+            <text x="34" y="57" text-anchor="middle" font-size="8" fill="#fff" font-weight="800" font-family="Nunito,sans-serif">FOREST</text>
+            <rect x="64" y="18" width="48" height="68" rx="4" fill="#C8C870" opacity="0.8"/>
+            <text x="88" y="57" text-anchor="middle" font-size="8" fill="#3a4010" font-weight="800" font-family="Nunito,sans-serif">GRASS-</text>
+            <text x="88" y="67" text-anchor="middle" font-size="8" fill="#3a4010" font-weight="800" font-family="Nunito,sans-serif">LAND</text>
+            <rect x="118" y="18" width="50" height="68" rx="4" fill="#4a90b8" opacity="0.7"/>
+            <text x="143" y="57" text-anchor="middle" font-size="8" fill="#fff" font-weight="800" font-family="Nunito,sans-serif">OCEAN</text>
+          </svg>
+          <div class="type-name">Ecosystem Map</div>
+          <div class="type-desc">Shows different habitats and biomes — forests, grasslands, wetlands, and ocean. Helped scientists understand biodiversity.</div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Observe &amp; Reason</div>
+          <div class="question">&ldquo;Imagine an explorer finds a physical map and a resource map of the same area. What could they learn from EACH one that the other doesn&rsquo;t show? Why would they need both?&rdquo;</div>
+        </div>
+      </div>
+
+      <div class="callout callout-think">
+        <span class="callout-icon">📜</span>
+        <p><strong>Real-World Connection:</strong> In 1507, a German cartographer named Martin Waldseemüller made a map that was the <strong>first in history to use the name &ldquo;America&rdquo;</strong> — named after explorer Amerigo Vespucci. That map was so valuable that the U.S. Library of Congress purchased it in 2003 for <strong>$10 million</strong>. It is now called America&rsquo;s &ldquo;birth certificate.&rdquo;</p>
+      </div>
+
+      <!-- MAP SCALE SPECTRUM SVG -->
+      <div class="scale-compare-wrap scroll-reveal">
+        <svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,sans-serif;">
+          <!-- Background -->
+          <rect width="680" height="200" fill="transparent"/>
+
+          <!-- Title -->
+          <text x="340" y="18" text-anchor="middle" font-size="13" font-weight="800" fill="#0E1C42">Maps Come in All Scales — From a Bedroom to the Whole World!</text>
+
+          <!-- Arrow showing scale progression -->
+          <line x1="30" y1="155" x2="650" y2="155" stroke="#C7922C" stroke-width="2" opacity="0.4"/>
+          <polygon points="650,150 665,155 650,160" fill="#C7922C" opacity="0.4"/>
+          <text x="340" y="172" text-anchor="middle" font-size="10" fill="#9A8E82" font-weight="700">BIGGER AREA, LESS DETAIL →</text>
+
+          <!-- Bedroom (tiny) -->
+          <rect x="20" y="75" width="28" height="22" rx="2" fill="#E8DDD2" stroke="#8B7040" stroke-width="1.5"/>
+          <rect x="22" y="77" width="10" height="8" rx="1" fill="#C4B09A" opacity="0.7"/><!-- bed -->
+          <rect x="35" y="80" width="6" height="6" rx="1" fill="#C4B09A" opacity="0.6"/><!-- desk -->
+          <text x="34" y="110" text-anchor="middle" font-size="9" font-weight="700" fill="#5A4D3E">Bedroom</text>
+          <text x="34" y="122" text-anchor="middle" font-size="8" fill="#9A8E82">1 in = 5 ft</text>
+
+          <!-- School -->
+          <rect x="90" y="62" width="40" height="32" rx="2" fill="#D6EEFB" stroke="#55C8E8" stroke-width="1.5"/>
+          <rect x="94" y="66" width="8" height="8" rx="1" fill="#55C8E8" opacity="0.5"/>
+          <rect x="106" y="66" width="8" height="8" rx="1" fill="#55C8E8" opacity="0.5"/>
+          <rect x="118" y="66" width="8" height="8" rx="1" fill="#55C8E8" opacity="0.5"/>
+          <rect x="94" y="78" width="30" height="12" rx="2" fill="#B8D8F0" opacity="0.6"/>
+          <text x="110" y="110" text-anchor="middle" font-size="9" font-weight="700" fill="#5A4D3E">School</text>
+          <text x="110" y="122" text-anchor="middle" font-size="8" fill="#9A8E82">1 in = 100 ft</text>
+
+          <!-- Neighborhood -->
+          <rect x="175" y="48" width="55" height="46" rx="2" fill="#EEF8F0" stroke="#34B76F" stroke-width="1.5"/>
+          <!-- Streets -->
+          <line x1="175" y1="71" x2="230" y2="71" stroke="#9A8E82" stroke-width="1.5"/>
+          <line x1="202" y1="48" x2="202" y2="94" stroke="#9A8E82" stroke-width="1.5"/>
+          <circle cx="188" cy="61" r="4" fill="#34B76F" opacity="0.6"/>
+          <circle cx="216" cy="81" r="4" fill="#34B76F" opacity="0.6"/>
+          <text x="202" y="110" text-anchor="middle" font-size="9" font-weight="700" fill="#5A4D3E">Neighborhood</text>
+          <text x="202" y="122" text-anchor="middle" font-size="8" fill="#9A8E82">1 in = 1 mile</text>
+
+          <!-- State -->
+          <rect x="272" y="32" width="72" height="58" rx="2" fill="#FFF7EE" stroke="#D4772C" stroke-width="1.5"/>
+          <path d="M285,45 Q295,40 310,50 Q325,60 330,75 Q325,85 308,88 Q292,88 285,75 Q280,63 285,45Z" fill="#F0DCC4" opacity="0.7"/>
+          <circle cx="308" cy="65" r="3" fill="#D4772C" opacity="0.7"/><!-- Capital -->
+          <text x="308" y="108" text-anchor="middle" font-size="9" font-weight="700" fill="#5A4D3E">State</text>
+          <text x="308" y="120" text-anchor="middle" font-size="8" fill="#9A8E82">1 in = 100 mi</text>
+
+          <!-- Americas (as if explorer made it) -->
+          <rect x="386" y="18" width="90" height="72" rx="2" fill="#EAF8FD" stroke="#55C8E8" stroke-width="1.5"/>
+          <path d="M408,25 Q415,28 418,40 Q422,55 420,65 Q418,78 412,85 L406,88 Q400,82 403,70 Q400,55 402,40 Q405,30 408,25Z" fill="#C8C88A" opacity="0.7"/>
+          <path d="M420,38 Q430,36 438,42 Q445,55 443,68 Q440,82 432,86 Q428,88 424,80 Q420,68 422,55 Q422,44 420,38Z" fill="#C8C88A" opacity="0.6"/>
+          <path d="M415,22 Q430,20 442,26 Q450,35 452,48 Q455,62 450,75 Q445,85 438,88 L462,75 Q465,60 465,50 Q463,35 455,26 Q448,20 435,18 L415,22Z" fill="#C8C88A" opacity="0.5"/>
+          <!-- Ocean blue fill -->
+          <rect x="388" y="20" width="86" height="68" rx="2" fill="#B8D8F0" opacity="0.3"/>
+          <text x="431" y="108" text-anchor="middle" font-size="9" font-weight="700" fill="#5A4D3E">The Americas</text>
+          <text x="431" y="120" text-anchor="middle" font-size="8" fill="#9A8E82">1 in = 1,000 mi</text>
+
+          <!-- World -->
+          <rect x="520" y="22" width="100" height="68" rx="4" fill="#B8D8F0" stroke="#0E1C42" stroke-width="1.5"/>
+          <!-- Simple continents -->
+          <ellipse cx="545" cy="52" rx="12" ry="18" fill="#C8C88A" opacity="0.75"/><!-- Americas -->
+          <ellipse cx="570" cy="48" rx="9" ry="15" fill="#C8C88A" opacity="0.7"/><!-- Europe/Africa -->
+          <ellipse cx="592" cy="48" rx="16" ry="14" fill="#C8C88A" opacity="0.65"/><!-- Asia/Aus -->
+          <text x="570" y="110" text-anchor="middle" font-size="9" font-weight="700" fill="#5A4D3E">World</text>
+          <text x="570" y="122" text-anchor="middle" font-size="8" fill="#9A8E82">1 in = 5,000+ mi</text>
+        </svg>
+        <div class="scale-compare-caption">The same place can look completely different depending on the scale of the map! Explorers needed maps at many different scales to understand both the big picture AND the fine details.</div>
+      </div>
+
+      <!-- GO DEEPER 1 -->
+      <details class="go-deeper scroll-reveal">
+        <summary>Curious? Go Deeper &mdash; How Maps Changed the World</summary>
+        <div class="gd-body">
+          <p>For thousands of years, most people believed the Earth was flat. Early maps were very inaccurate — they showed continents in the wrong shape, misplaced oceans, and left huge blank areas labeled <em>"Terra Incognita"</em> (Unknown Land).</p>
+          <p>Then, in 1569, a Flemish cartographer named Gerardus Mercator invented a new way to draw curved Earth onto flat paper called the <strong>Mercator Projection</strong>. His method was so useful for sailors — it made compass directions into straight lines — that it is still used in many maps and navigation systems today!</p>
+          <p>Every advance in cartography made it easier to find, use, and protect Earth&rsquo;s natural resources — which is why maps and science have always been inseparable.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════ -->
+<!-- ═══ TAB 3: EXPLORE ═══ -->
+<!-- ══════════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#55C8E8;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🔬 Guided Exploration: How Explorers Made Maps</div>
+        <div class="act-subtitle">Follow the footsteps of a real explorer — step by step!</div>
+      </div>
+      <div class="act-time" style="background:#55C8E8;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="video-wrap">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">🔬</span>
+          <div>
+            <div class="video-wrap-type">Activity 3 &middot; Guided Exploration</div>
+            <div class="video-wrap-title">Follow the Journey of a New World Explorer!</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">🔬</div>
+            <div class="video-placeholder-text">Guided exploration video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 4-02-exploration-explainer --></div>
+          </div>
+        </div>
+      </div>
+
+      <p>Let&rsquo;s trace the four steps an explorer would follow when mapping a new land for the first time. As you read each step, imagine you have just landed on an unknown shore in the year 1500&hellip;</p>
+
+      <!-- 4 STEPS -->
+      <div style="position:relative; margin:16px 0;">
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#0a2540,#1a4a7a);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(10,37,64,0.35);">1</div>
+          <div style="flex:1;background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>⚓ Observe the Coastline:</strong> European explorers approached the Americas by ship. The very first thing they could see from the water was the coastline — the shape of the shore. They sketched bays, peninsulas, and the mouths of rivers, which were the safest places to anchor their ships. This rough coastal outline became the starting frame for their entire map.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#D4772C,#F5A623);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(212,119,44,0.35);">2</div>
+          <div style="flex:1;background:#FFF7EE;border:2px solid #F0DCC4;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>✏️ Record Features with Symbols:</strong> As explorers ventured inland, they used symbols to record what they found — triangles for mountains, wavy lines for rivers, small shapes for forests and settlements. By using <span class="vtip"><strong>agreed-upon symbols</strong><span class="vtip-box"><span class="vtip-word">Cartography</span>The science and art of making maps.</span></span>, any cartographer back in Europe could read the map, even without visiting the land. It was like writing in a shared scientific language.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#C7922C,#FFD700);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(199,146,44,0.35);">3</div>
+          <div style="flex:1;background:#FFF3DC;border:2px solid #F5E6C8;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>⛏️ Identify Natural Resources:</strong> Explorers carefully noted where they found fresh water, fertile soil, large forests (for timber and building), and mineral deposits. These notes told future settlers where they could <em>survive and build communities</em>. A map that showed a region rich in <span class="vtip"><strong>natural resources</strong><span class="vtip-box"><span class="vtip-word">Natural Resources</span>Useful materials found in nature, such as fresh water, timber, fertile soil, and minerals.</span></span> was literally worth more than gold to the nations that sponsored the expeditions.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#34B76F,#2a9e5a);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(52,183,111,0.3);">4</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>🌿 Document Flora and Fauna:</strong> Perhaps the most <em>astonishing</em> part of exploring the New World was the life they discovered there. Explorers documented the <span class="vtip"><strong>flora</strong><span class="vtip-box"><span class="vtip-word">Flora</span>The plants that naturally grow in a specific area or environment.</span></span> (plants) and <span class="vtip"><strong>fauna</strong><span class="vtip-box"><span class="vtip-word">Fauna</span>The animals that naturally live in a specific area or environment.</span></span> (animals) carefully — drawing pictures, writing descriptions, and noting locations. This documentation revealed the incredible <span class="vtip"><strong>biodiversity</strong><span class="vtip-box"><span class="vtip-word">Biodiversity</span>The variety of different kinds of living things found in a particular place.</span></span> of the Americas and helped scientists back in Europe understand the <span class="vtip"><strong>ecosystems</strong><span class="vtip-box"><span class="vtip-word">Ecosystem</span>A community of living things that interact with each other and their environment.</span></span> of an entirely new world.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think Like a Scientist</div>
+          <div class="question">&ldquo;Two different explorers mapped the same stretch of coastline — but their maps look slightly different. What are three reasons their maps might NOT be exactly the same, even though they saw the same place?&rdquo;</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Mind-Blowing Fact</div>
+      <div class="mind-blow-text">When Spanish explorers first reached the Amazon Rainforest, they had stumbled into one of the most biodiverse places on Earth. Scientists today have found more <strong>species of trees in a single square mile of the Amazon</strong> than exist in all of Europe combined! Early explorer maps of that region showed only the edges — the true <strong>biodiversity</strong> took centuries more to understand.</div>
+    </div>
+  </div>
+
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper &mdash; How Scientists Map Ecosystems Today</summary>
+    <div class="gd-body">
+      <p>Today, scientists don&rsquo;t have to sail for months to map the Earth. They use <strong>satellites</strong> orbiting hundreds of miles above Earth to take pictures of forests, oceans, glaciers, and deserts. These satellite images are turned into incredibly detailed maps that can track changes over time.</p>
+      <p>For example, scientists use satellite maps to measure how fast the Amazon rainforest is shrinking each year due to deforestation. They can count trees, track animal migrations, and even measure the temperature of the ocean from space!</p>
+      <p>The same goal that drove 16th-century explorers &mdash; <em>understanding what lives where, and what resources exist there</em> &mdash; drives Earth scientists today. The tools have changed, but the mission is the same.</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════ -->
+<!-- ═══ TAB 4: SELF-CHECK QUIZ ═══ -->
+<!-- ══════════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div class="quiz-card scroll-reveal" style="margin-top:0;margin-bottom:18px;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#F5A623;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">⚡</div>
+      <div style="flex:1;">
+        <div style="font-size:19px;color:#0E1C42;font-weight:800;line-height:1.2;">🧠 Quick Self-Check</div>
+        <div style="font-size:12px;color:#9A8E82;">Not graded — just for you! See how much you remember before starting the assignment.</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+
+      <!-- Q1 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. What is the word for the variety of different kinds of living things found in a particular place?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Natural Resources</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Biodiversity</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Cartography</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌍 Exactly! Biodiversity describes the amazing variety of life — from tiny insects to towering rainforest trees — found in one place.</div>
+        <div class="quiz-feedback fb-wrong">Not quite! Think about the word itself: &ldquo;bio&rdquo; means life, and &ldquo;diversity&rdquo; means variety. Which word fits?</div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">2. Which part of a map tells you what each symbol and color means?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>The Compass Rose</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>The Map Title</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>The Map Key (Legend)</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🗺️ That&rsquo;s right! The legend is like a secret codebook that unlocks the meaning of every symbol on the map.</div>
+        <div class="quiz-feedback fb-wrong">Not quite! Think about which part explains what symbols mean — like a dictionary for the map&rsquo;s pictures.</div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-text">3. How did maps help early explorers decide where to build settlements in the New World?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Maps showed regions rich in natural resources like fresh water, forests, and fertile soil</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Maps predicted what the weather would be like in each season</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Maps counted how many animals lived in each area</div>
+        </div>
+        <div class="quiz-feedback fb-correct">⚓ Perfect! Maps helped explorers find water, timber, and farmland — everything people needed to survive and build a new community.</div>
+        <div class="quiz-feedback fb-wrong">Not quite! Think about what explorers needed to survive — water, food, building materials. Which kind of map would show where to find those?</div>
+      </div>
+
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum"></div>
+        <div class="quiz-score-label">out of 3 correct</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+        <div class="video-feedback" id="quizVideoCorrect">
+          <div class="video-wrap" style="margin-top:14px;text-align:left;">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">🗺️</span>
+              <div>
+                <div class="video-wrap-type">✅ Feedback &middot; Perfect Score</div>
+                <div class="video-wrap-title">Amazing work, explorer!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">⭐</div>
+                <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 4-02-quiz-perfect --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="video-feedback" id="quizVideoReview">
+          <div class="video-wrap" style="margin-top:14px;text-align:left;">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">💪</span>
+              <div>
+                <div class="video-wrap-type">📚 Feedback &middot; Keep Going</div>
+                <div class="video-wrap-title">You&rsquo;re getting there — let&rsquo;s review!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">🔄</div>
+                <div class="video-placeholder-text">Review encouragement video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 4-02-quiz-review --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════ -->
+<!-- ═══ TAB 5: ASSIGNMENT ═══ -->
+<!-- ══════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#34B76F;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment: Create Your Own Map</div>
+        <div class="act-subtitle">Time to become a cartographer!</div>
+      </div>
+      <div class="act-time" style="background:#34B76F;">⏱ 12 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="video-wrap">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">✍️</span>
+          <div>
+            <div class="video-wrap-type">Activity 4 &middot; Assignment Explainer</div>
+            <div class="video-wrap-title">Here&rsquo;s What to Do for Your Assignment!</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">✍️</div>
+            <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 4-02-assignment-explainer --></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PART A -->
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">🔍 Part A &mdash; Label the Map Parts</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use the word bank to fill in the correct label for each blank below. <strong>Word Bank: compass rose, map key (legend), biodiversity, flora</strong></p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#34B76F;">1</span>
+        <span class="pq-text">The part of a map that shows North, South, East, and West: ___________</span>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#34B76F;">2</span>
+        <span class="pq-text">The part of a map that explains what symbols and colors mean: ___________</span>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#34B76F;">3</span>
+        <span class="pq-text">The variety of different kinds of living things found in a place: ___________</span>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#34B76F;">4</span>
+        <span class="pq-text">The word for all the plants that grow in a specific area: ___________</span>
+      </div>
+
+      <!-- PART B -->
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🚀 Part B &mdash; Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer each question in <strong>complete sentences</strong>. Use your vocabulary words!</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#D4772C;">5</span>
+        <span class="pq-text">What is the difference between flora and fauna? Give one example of each that an explorer might have found in the Americas.</span>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#D4772C;">6</span>
+        <span class="pq-text">Explain in your own words: How did maps help early explorers make decisions about where to build settlements? Use the words <em>natural resources</em> and <em>ecosystem</em> in your answer.</span>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#D4772C;">7</span>
+        <span class="pq-text">A physical map shows rivers and mountains, but a resource map shows where timber and minerals are found. Why do you think an explorer would need BOTH types of maps? Explain your thinking.</span>
+      </div>
+
+      <!-- PART C -->
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C &mdash; Create Your Own Map</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">You are the cartographer! Follow the steps below in your science notebook.</p>
+
+      <div class="callout callout-submit" style="margin-bottom:14px;">
+        <span class="callout-icon">🗺️</span>
+        <p><strong>Step 1: Title Your Map.</strong> Write the title <strong>&ldquo;Map of [Your Chosen Area]&rdquo;</strong> at the top. Choose a place near your home &mdash; a park, your backyard, your street, or a familiar outdoor spot.</p>
+      </div>
+      <div class="callout callout-submit" style="margin-bottom:14px;">
+        <span class="callout-icon">✏️</span>
+        <p><strong>Step 2: Draw the Map.</strong> Sketch the outline of the area. Add important features: paths or sidewalks, trees or gardens, buildings or playgrounds, water features if any.</p>
+      </div>
+      <div class="callout callout-submit" style="margin-bottom:14px;">
+        <span class="callout-icon">🎨</span>
+        <p><strong>Step 3: Use Symbols &amp; Colors.</strong> Use at least <strong>three different symbols</strong> and colors to show each feature. Make it easy to read — like a real cartographer would!</p>
+      </div>
+      <div class="callout callout-submit" style="margin-bottom:14px;">
+        <span class="callout-icon">🧭</span>
+        <p><strong>Step 4: Add a Compass Rose.</strong> Draw a small compass rose showing North, South, East, and West.</p>
+      </div>
+      <div class="callout callout-submit" style="margin-bottom:14px;">
+        <span class="callout-icon">📋</span>
+        <p><strong>Step 5: Make a Map Key.</strong> Create a legend that explains what each symbol and color on your map means.</p>
+      </div>
+      <div class="callout callout-tip" style="margin-bottom:14px;">
+        <span class="callout-icon">🏷️</span>
+        <p><strong>Step 6: Label Land Use.</strong> Label places on your map to show how the land is used: <em>Play area (recreation)</em>, <em>Nature area (trees, gardens)</em>, <em>Buildings</em>, etc.</p>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Reflect</div>
+          <div class="question">&ldquo;Compare your first warm-up sketch to your finished map. What new parts did you add? How does your map help tell the story of that place to someone who has never been there?&rdquo;</div>
+        </div>
+      </div>
+
+      <!-- SUBMISSION CHECKLIST -->
+      <div style="background:#fff;border:2px solid #55C8E8;border-radius:18px;margin-top:20px;overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:10px;padding:14px 20px;background:#EAF8FD;border-bottom:2px solid #D6F2FB;">
+          <div style="width:42px;height:42px;border-radius:50%;background:#55C8E8;color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">📬</div>
+          <div>
+            <div style="font-size:10px;color:#9A8E82;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;">Time to Submit</div>
+            <div style="font-size:20px;color:#0E1C42;font-weight:800;line-height:1.2;">What to Turn In</div>
+          </div>
+        </div>
+        <div style="padding:18px 22px;">
+          <p style="font-size:16px;color:#5A4D3E;line-height:1.65;margin-bottom:14px;">When you have finished all three parts, submit your work through Canvas. Use the checklist below to make sure you have everything!</p>
+
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part A &mdash; Label the Map Parts:</strong> All four blanks filled in using words from the word bank.</span>
+          </div>
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part B &mdash; Short Answer:</strong> Questions 5, 6, and 7 answered in <em>complete sentences</em> using vocabulary words.</span>
+          </div>
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part C &mdash; Your Map:</strong> Completed map with a title, compass rose, at least three symbols, a legend, and land-use labels.</span>
+          </div>
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:16px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Essential Question Response:</strong> 2&ndash;3 sentence answer to the big question, using at least three vocabulary words.</span>
+          </div>
+
+          <div style="background:#FFF7EE;border:2px solid #F0DCC4;border-radius:14px;padding:14px 18px;">
+            <div style="font-size:13px;color:#C7922C;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;margin-bottom:8px;">📎 How to Submit</div>
+            <div style="font-size:15px;color:#2B1D12;line-height:1.7;">
+              You may submit your work in whichever way works best for you:<br/><br/>
+              <span style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px;">⌨️ <strong>Type it</strong> &mdash; Type your Part A and B answers directly into the Canvas assignment.</span><br/>
+              <span style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px;">📸 <strong>Photo</strong> &mdash; Take a clear picture of your notebook work (including your map) and upload it.</span><br/>
+              <span style="display:inline-flex;align-items:center;gap:8px;">🎥 <strong>Video</strong> &mdash; Record yourself explaining your map and short answers out loud.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RETURN TO ESSENTIAL QUESTION -->
+  <div class="card theme-earth scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">🔄</div>
+      <div>
+        <div class="card-head-label">Circle Back</div>
+        <div class="card-head-title">Revisit Our Essential Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Now You Know!</div>
+          <div class="question">&ldquo;How did map-making help early explorers understand the location and abundance of natural resources and ecosystems?&rdquo;</div>
+        </div>
+      </div>
+      <p>Now that you&rsquo;ve completed the lesson, write a <strong>2&ndash;3 sentence answer</strong> to this question in your science notebook. Try to use at least <strong>three vocabulary words</strong> — like <em>cartography, flora, fauna, biodiversity, natural resources,</em> or <em>ecosystem</em>.</p>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">⭐</span>
+        <p><strong>Excellent work today, scientist!</strong> You&rsquo;ve learned that <span class="vtip">cartography<span class="vtip-box"><span class="vtip-word">Cartography</span>The science and art of making maps.</span></span> is a scientific tool, that maps helped explorers find <span class="vtip">natural resources<span class="vtip-box"><span class="vtip-word">Natural Resources</span>Useful materials found in nature, such as fresh water, timber, fertile soil, and minerals.</span></span> and understand <span class="vtip">ecosystems<span class="vtip-box"><span class="vtip-word">Ecosystem</span>A community of living things that interact with each other and their environment.</span></span>, and that you now have the skills to create your own map! Next lesson, we&rsquo;ll dive deeper into Earth&rsquo;s natural systems — stay curious!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOSING VIDEO -->
+  <div class="video-wrap scroll-reveal" style="margin-bottom:0;">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🗺️</span>
+      <div>
+        <div class="video-wrap-type">Closing &middot; Lesson Wrap-Up</div>
+        <div class="video-wrap-title">Great Work Today &mdash; Here&rsquo;s What&rsquo;s Coming Next!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🗺️</div>
+        <div class="video-placeholder-text">Lesson closing &amp; next lesson preview video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 4-02-closing --></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- END TAB 5 -->
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <div class="footer-line1"><span>Optima Academy Online</span> &middot; Science &middot; Quarter 1 &middot; Student Lesson Page</div>
+  <div class="footer-line2">Lesson 4.02 &middot; Earth Science: Create a Map of the &ldquo;New World&rdquo;</div>
+  <div class="footer-line3">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div><!-- end page-wrap -->
+
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
+  <span style="font-size:20px;">🗺️</span> Back to Top
+</button>
+<canvas id="confettiCanvas"></canvas>
+
+<script>
+// ── Tab System ──
+var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];
+var tabsVisited = new Set(['vocab']);
+
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+  var panel = document.getElementById('tab-' + tabId);
+  var btn = document.querySelector('[data-tab="' + tabId + '"]');
+  if (panel) panel.classList.add('active');
+  if (btn) { btn.classList.add('active'); btn.classList.add('visited'); }
+  tabsVisited.add(tabId);
+  var pct = Math.round((tabsVisited.size / TAB_ORDER.length) * 100);
+  var fill = document.getElementById('progressFill');
+  var pctEl = document.getElementById('progressPct');
+  if (fill) fill.style.width = pct + '%';
+  if (pctEl) pctEl.textContent = pct + '%';
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c) {
+    if (tabId === 'vocab') { c.classList.remove('collapsed'); }
+    else { c.classList.add('collapsed'); }
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── Checklist ──
+document.querySelectorAll('.checklist-item').forEach(function(item) {
+  item.addEventListener('click', function() {
+    var icon = this.querySelector('.check-icon');
+    if (this.classList.contains('checked')) { icon.textContent = '🗺️'; }
+    else { icon.textContent = '☐'; }
+  });
+});
+
+// ── Clickable Diagram ──
+(function() {
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel = document.getElementById('diagramPanel');
+  var wordEl = document.getElementById('diagramWord');
+  var infoEl = document.getElementById('diagramInfo');
+  if (!panel) return;
+  hotspots.forEach(function(hs) {
+    hs.addEventListener('click', function(e) {
+      e.stopPropagation();
+      hotspots.forEach(function(h) { h.classList.remove('active'); });
+      hs.classList.add('active');
+      var part = hs.getAttribute('data-part').replace(/-/g,' ');
+      wordEl.textContent = part.charAt(0).toUpperCase() + part.slice(1);
+      infoEl.innerHTML = hs.getAttribute('data-info');
+      panel.classList.add('visible');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h) { h.classList.remove('active'); });
+    }
+  });
+})();
+
+// ── Self-Check Quiz ──
+var quizAnswered = 0;
+var quizCorrect = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen = optEl.getAttribute('data-val');
+  var opts = q.querySelectorAll('.quiz-opt');
+  opts.forEach(function(o) {
+    if (o.getAttribute('data-val') === correct) { o.classList.add('correct'); }
+    else { o.classList.add('disabled'); }
+  });
+  var fbCorrect = q.querySelector('.fb-correct');
+  var fbWrong = q.querySelector('.fb-wrong');
+  if (chosen === correct) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+  if (quizAnswered === 3) {
+    var scoreBox = document.getElementById('quizScore');
+    var scoreNum = document.getElementById('quizScoreNum');
+    var scoreMsg = document.getElementById('quizScoreMsg');
+    scoreNum.textContent = quizCorrect;
+    var vCorrect = document.getElementById('quizVideoCorrect');
+    var vReview = document.getElementById('quizVideoReview');
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '🗺️ Perfect! You\'re a certified cartographer!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '⚓ Great job! Almost there!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip) {
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function() {
+    var rect = tip.getBoundingClientRect();
+    var bw = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Back to Top ──
+(function() {
+  var btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() { btn.classList.toggle('show', window.pageYOffset > 400); });
+})();
+
+// ── Confetti ──
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#C7922C','#F5A623','#FFD700','#55C8E8','#34B76F','#8B6FC0','#E8636B','#D4772C'];
+  function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count) {
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i) {
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function() {
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── Hook confetti to checklist ──
+(function() {
+  var items = document.querySelectorAll('.checklist-item');
+  items.forEach(function(item) {
+    item.addEventListener('click', function() {
+      setTimeout(function() {
+        if (Array.from(items).every(function(it){ return it.classList.contains('checked'); }))
+          setTimeout(window.launchConfetti, 200);
+      }, 50);
+    });
+  });
+})();
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+
+// ── Intro card click-to-toggle ──
+document.querySelectorAll('.intro-2col .card').forEach(function(card) {
+  card.querySelector('.card-head').addEventListener('click', function() {
+    card.classList.toggle('collapsed');
+  });
+});
+</script>
+</body>
+</html>
