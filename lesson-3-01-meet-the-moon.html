@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Optima Academy Online – Meet the Moon!</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',Verdana,sans-serif;background:#F4F0EB;color:#2B1D12;line-height:1.6;-webkit-font-smoothing:antialiased}
+.page-wrap{max-width:920px;margin:0 auto;background:#FAF7F3;box-shadow:0 0 40px rgba(0,0,0,.07)}
+.header{background:linear-gradient(135deg,#060c1e 0%,#0E1C42 55%,#161440 100%);border-bottom:6px solid #7EC8E3;padding:22px 28px 24px;position:relative;overflow:hidden}
+.header::after{content:'';position:absolute;bottom:6px;left:0;right:0;height:3px;background:linear-gradient(90deg,#55C8E8,#8B6FC0,#55C8E8)}
+.header-brand{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.header-logo{width:52px;height:52px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.header-logo img{width:48px;height:38px}
+.header-org{font-size:22px;color:#fff;font-weight:800;line-height:1.15}
+.header-sub{font-size:11px;color:#55C8E8;letter-spacing:.5px}
+.header-title{font-size:30px;color:#fff;font-weight:900;line-height:1.15;margin-bottom:10px;text-shadow:0 2px 12px rgba(85,200,232,.3)}
+.header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(85,200,232,.15);border:1.5px solid rgba(85,200,232,.35);border-radius:28px;padding:6px 16px}
+.header-badge span:first-child{font-size:22px}
+.header-badge span:last-child{font-size:18px;color:#fff;font-weight:800}
+.hero-visual{background:#04081a;padding:0;border-bottom:3px solid #7EC8E3;overflow:hidden}
+.hero-visual svg{display:block;width:100%;height:auto}
+.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E8DDD2}
+.info-item{flex:1;min-width:150px;padding:12px 16px;border-right:1px solid #E8DDD2;display:flex;align-items:center;gap:10px}
+.info-item:last-child{border-right:none}
+.info-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.info-label{font-size:10px;color:#9A8E82;text-transform:uppercase;letter-spacing:.5px;font-weight:700}
+.info-value{font-size:16px;color:#0E1C42;font-weight:800;line-height:1.2}
+.info-detail{font-size:11px;color:#5A4D3E;line-height:1.3}
+.card{background:#fff;border:2px solid #E8DDD2;border-radius:18px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 12px rgba(43,29,18,.04)}
+.card-head{display:flex;align-items:center;gap:10px;padding:14px 20px;border-bottom:2px solid}
+.card-head-icon{width:42px;height:42px;border-radius:50%;color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.card-head-label{font-size:10px;color:#9A8E82;text-transform:uppercase;letter-spacing:.8px;font-weight:700}
+.card-head-title{font-size:20px;color:#0E1C42;font-weight:800;line-height:1.2}
+.card-body{padding:18px 22px}
+.card-body p{font-size:17px;color:#5A4D3E;line-height:1.75;margin-bottom:12px}
+.card-body p:last-child{margin-bottom:0}
+.theme-earth .card-head{background:#FFF7EE;border-color:#F0DCC4}.theme-earth .card-head-icon{background:#C7922C}
+.theme-sky .card-head{background:#EAF8FD;border-color:#D6F2FB}.theme-sky .card-head-icon{background:#55C8E8}
+.theme-rock .card-head{background:#F0EDF6;border-color:#D8D0E8}.theme-rock .card-head-icon{background:#8B6FC0}
+.activity-card{background:#fff;border:2px solid #E8DDD2;border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:0 2px 10px rgba(43,29,18,.04)}
+.activity-card.act-warmup{border-left:6px solid #E8636B}
+.activity-card.act-lesson{border-left:6px solid #D4772C}
+.activity-card.act-explore{border-left:6px solid #55C8E8}
+.activity-card.act-practice{border-left:6px solid #34B76F}
+.act-head{display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2}
+.act-num{width:38px;height:38px;border-radius:14px;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.act-title{font-size:19px;color:#0E1C42;font-weight:800;line-height:1.2}
+.act-subtitle{font-size:12px;color:#9A8E82}
+.act-time{display:inline-flex;align-items:center;gap:4px;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:700;color:#fff;white-space:nowrap;margin-left:auto;flex-shrink:0}
+.act-body{padding:18px 22px 18px 20px}
+.act-body p{font-size:17px;color:#5A4D3E;line-height:1.75;margin-bottom:12px}
+.callout{border-radius:14px;padding:16px 18px;display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
+.callout-icon{font-size:28px;flex-shrink:0;margin-top:2px}
+.callout p{font-size:16px;color:#2B1D12;line-height:1.65;margin:0}
+.callout-think{background:#FFF7EE;border:2px solid #F0DCC4}
+.callout-tip{background:#EEF8F0;border:2px solid #C4E5CC}
+.callout-moon{background:#EAF4FF;border:2px solid #C4D8EE}
+.socratic-q{background:linear-gradient(135deg,#EAF4FF,#E2EEFF);border:2px solid #B8D4F0;border-radius:16px;padding:16px 20px;margin:16px 0;display:flex;align-items:flex-start;gap:12px}
+.socratic-q .sq-icon{font-size:26px;flex-shrink:0;line-height:1}
+.socratic-q .label{font-size:11px;color:#3A6EA8;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:4px}
+.socratic-q .question{font-size:17px;color:#2B1D12;font-weight:700;line-height:1.6;font-style:italic}
+.key-concept{background:#EAF4FF;border:2px solid #C4D8EE;border-radius:14px;padding:18px 20px;margin:14px 0}
+.key-concept .kc-label{font-size:13px;color:#3A6EA8;text-transform:uppercase;letter-spacing:.5px;font-weight:800;margin-bottom:8px}
+.key-concept p{font-size:16px;color:#2B1D12;line-height:1.7;margin-bottom:8px}
+.key-concept p:last-child{margin-bottom:0}
+.pq{background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;padding:14px 18px;margin-bottom:12px}
+.pq-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;color:#fff;font-weight:800;font-size:14px;margin-right:8px;vertical-align:middle}
+.pq-text{font-size:17px;color:#2B1D12;line-height:1.65;margin-bottom:8px}
+.vocab-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+.flip-card{perspective:800px;height:160px;cursor:pointer}
+.flip-card-inner{position:relative;width:100%;height:100%;transition:transform .5s ease;transform-style:preserve-3d}
+.flip-card.flipped .flip-card-inner{transform:rotateY(180deg)}
+.flip-card-front,.flip-card-back{position:absolute;top:0;left:0;width:100%;height:100%;border-radius:16px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 20px;text-align:center;border:2px solid #E8DDD2;box-shadow:0 2px 10px rgba(43,29,18,.06)}
+.flip-card-front{background:#FAFAF6;border-top:5px solid}
+.flip-card-front .fc-emoji{font-size:32px;margin-bottom:8px}
+.flip-card-front .fc-word{font-size:18px;font-weight:800;color:#0E1C42;margin-bottom:6px}
+.flip-card-front .fc-tap{font-size:11px;color:#B0A698;font-weight:600}
+.flip-card-back{background:linear-gradient(145deg,#0E1C42,#1A2D5A);border-color:#0E1C42;transform:rotateY(180deg)}
+.flip-card-back .fc-def{font-size:15px;color:#fff;line-height:1.6;font-weight:600}
+.flip-card-back .fc-word-back{font-size:11px;color:#55C8E8;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:8px}
+.flip-card-back .fc-tap-back{font-size:11px;color:rgba(255,255,255,.4);margin-top:10px;font-weight:600}
+.fc-color-1 .flip-card-front{border-top-color:#7EC8E3}
+.fc-color-2 .flip-card-front{border-top-color:#8B6FC0}
+.fc-color-3 .flip-card-front{border-top-color:#D4772C}
+.fc-color-4 .flip-card-front{border-top-color:#55C8E8}
+.fc-color-5 .flip-card-front{border-top-color:#34B76F}
+.fc-color-6 .flip-card-front{border-top-color:#E8636B}
+.vtip{position:relative;color:#3A6EA8;font-weight:700;cursor:help;border-bottom:2px dotted rgba(58,110,168,.45);transition:color .15s}
+.vtip:hover{color:#1A4D7A}
+.vtip .vtip-box{position:fixed;background:#0E1C42;color:#fff;padding:12px 16px;border-radius:12px;font-size:14px;font-weight:600;font-style:normal;line-height:1.55;width:250px;text-align:center;opacity:0;visibility:hidden;transition:opacity .2s,transform .2s,visibility .2s;pointer-events:none;z-index:9999;box-shadow:0 6px 24px rgba(14,28,66,.35);border:1.5px solid rgba(85,200,232,.3);transform:translateY(6px)}
+.vtip .vtip-box::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:7px solid transparent;border-top-color:#0E1C42}
+.vtip .vtip-word{font-size:11px;color:#55C8E8;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:4px;display:block}
+.vtip:hover .vtip-box{opacity:1;visibility:visible;transform:translateY(0)}
+.go-deeper{background:linear-gradient(135deg,#F0EDF6,#E8E2F2);border:2px solid #D8D0E8;border-radius:16px;margin:16px 0;overflow:hidden}
+.go-deeper summary{padding:14px 18px;font-size:16px;font-weight:800;color:#0E1C42;cursor:pointer;display:flex;align-items:center;gap:10px;list-style:none}
+.go-deeper summary::-webkit-details-marker{display:none}
+.go-deeper summary::before{content:'🔭';font-size:22px}
+.go-deeper summary::after{content:'▸';margin-left:auto;font-size:18px;color:#8B6FC0;transition:transform .3s}
+.go-deeper[open] summary::after{transform:rotate(90deg)}
+.go-deeper .gd-body{padding:4px 18px 16px;font-size:15px;color:#5A4D3E;line-height:1.7;border-top:1.5px solid #D8D0E8}
+.go-deeper .gd-body p{margin-bottom:10px}
+.types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.type-card{border-radius:16px;padding:16px;text-align:center;border:2px solid;overflow:hidden}
+.type-card svg{display:block;margin:0 auto 10px}
+.type-name{font-size:16px;font-weight:800;color:#0E1C42;margin-bottom:4px}
+.type-desc{font-size:13px;color:#5A4D3E;line-height:1.5}
+.tc-rotate{background:#EAF8FD;border-color:#D6F2FB}
+.tc-revolve{background:#FFF7EE;border-color:#F0DCC4}
+.tc-travel{background:#F0EDF6;border-color:#D8D0E8}
+.size-compare-wrap{background:linear-gradient(180deg,#0a1230,#0E1C42);border:2px solid rgba(85,200,232,.25);border-radius:16px;padding:16px;margin:16px 0;text-align:center}
+.size-compare-wrap svg{max-width:100%;height:auto}
+.size-compare-caption{font-size:13px;color:rgba(255,255,255,.5);margin-top:10px;font-weight:600}
+.progress-wrap{position:sticky;top:0;z-index:200;background:#060c1e;padding:8px 20px 10px;border-bottom:2px solid rgba(85,200,232,.3);display:flex;align-items:center;gap:14px}
+.progress-label{font-size:12px;color:#55C8E8;font-weight:800;text-transform:uppercase;letter-spacing:.8px;white-space:nowrap}
+.progress-track{flex:1;height:10px;background:rgba(255,255,255,.1);border-radius:10px;overflow:hidden}
+.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,#55C8E8,#8B6FC0,#F5F0DC);border-radius:10px;transition:width .4s ease}
+.progress-pct{font-size:13px;color:#F5F0DC;font-weight:800;min-width:36px;text-align:right}
+.mind-blow{background:linear-gradient(135deg,#060c1e,#0E1C42);border:2px solid rgba(85,200,232,.3);border-radius:18px;padding:18px 22px;margin:18px 0;display:flex;align-items:flex-start;gap:14px;position:relative;overflow:hidden}
+.mind-blow::before{content:'';position:absolute;top:-30px;right:-30px;width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,rgba(85,200,232,.15),transparent)}
+.mind-blow-icon{font-size:36px;flex-shrink:0;animation:mbb 2s ease-in-out infinite}
+@keyframes mbb{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+.mind-blow-content{flex:1}
+.mind-blow-label{font-size:11px;color:#F5F0DC;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:4px}
+.mind-blow-text{font-size:16px;color:#fff;line-height:1.6;font-weight:600}
+.mind-blow-text strong{color:#55C8E8}
+.diagram-interactive{position:relative}
+.diagram-interactive .hotspot{cursor:pointer;opacity:0;transition:opacity .2s}
+.diagram-interactive .hotspot:hover{opacity:.25}
+.diagram-interactive .hotspot.active{opacity:.35}
+.diagram-info-panel{background:#0E1C42;color:#fff;padding:14px 20px;border-radius:14px;font-size:15px;line-height:1.55;font-weight:600;text-align:center;border:1.5px solid rgba(85,200,232,.3);box-shadow:0 4px 16px rgba(0,0,0,.2);margin:10px 0 0;display:none}
+.diagram-info-panel.visible{display:block}
+.diagram-info-panel .dip-word{font-size:11px;color:#F5F0DC;text-transform:uppercase;letter-spacing:1px;font-weight:800;display:block;margin-bottom:3px}
+.quiz-card{background:#fff;border:2px solid #E8DDD2;border-left:6px solid #8B6FC0;border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:0 2px 10px rgba(43,29,18,.04)}
+.quiz-q{background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;padding:16px 18px;margin-bottom:14px}
+.quiz-q-text{font-size:17px;color:#2B1D12;font-weight:700;line-height:1.6;margin-bottom:12px}
+.quiz-options{display:flex;flex-direction:column;gap:8px}
+.quiz-opt{padding:10px 16px;border-radius:12px;border:2px solid #E8DDD2;background:#fff;font-size:15px;font-weight:700;color:#2B1D12;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:10px;user-select:none}
+.quiz-opt:hover{background:#EAF4FF;border-color:#7EC8E3}
+.quiz-opt.correct{background:#EEF8F0!important;border-color:#34B76F!important;color:#1a6b35!important}
+.quiz-opt.wrong{background:#FFF0EC!important;border-color:#E8636B!important;color:#a33!important}
+.quiz-opt.disabled{pointer-events:none;opacity:.6}
+.quiz-opt .opt-letter{width:28px;height:28px;border-radius:50%;background:#E8DDD2;color:#5A4D3E;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.quiz-opt.correct .opt-letter{background:#34B76F;color:#fff}
+.quiz-opt.wrong .opt-letter{background:#E8636B;color:#fff}
+.quiz-feedback{font-size:14px;padding:10px 14px;border-radius:10px;margin-top:10px;display:none;font-weight:600;line-height:1.5}
+.quiz-feedback.show{display:block}
+.quiz-feedback.fb-correct{background:#EEF8F0;color:#1a6b35;border:1.5px solid #B8E8CF}
+.quiz-feedback.fb-wrong{background:#FFF0EC;color:#8a3030;border:1.5px solid #F5C4BA}
+.quiz-score{text-align:center;padding:16px;background:linear-gradient(135deg,#EAF4FF,#E2EEFF);border:2px solid #C4D8EE;border-radius:14px;margin-top:8px;display:none}
+.quiz-score.show{display:block}
+.quiz-score-num{font-size:36px;font-weight:900;color:#0E1C42}
+.quiz-score-label{font-size:14px;color:#9A8E82;font-weight:700}
+.quiz-score-msg{font-size:16px;color:#2B1D12;font-weight:700;margin-top:6px}
+.video-feedback{display:none}
+.video-feedback.show{display:block}
+.video-wrap{border-radius:18px;overflow:hidden;border:2px solid #E8DDD2;box-shadow:0 4px 20px rgba(43,29,18,.08);background:#000;margin:0 0 22px}
+.video-wrap-header{display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#060c1e,#0E1C42);border-bottom:2px solid rgba(85,200,232,.2)}
+.video-wrap-type{font-size:10px;color:#55C8E8;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:2px}
+.video-wrap-title{font-size:16px;color:#fff;font-weight:800;line-height:1.2}
+.video-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}
+.video-ratio iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.video-placeholder{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#060c1e,#0E1C42);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}
+.video-placeholder-icon{font-size:44px;margin-bottom:10px;opacity:.55}
+.video-placeholder-text{font-size:14px;color:rgba(255,255,255,.45);font-weight:600;line-height:1.5;font-family:'Nunito',sans-serif}
+.video-placeholder-id{font-size:11px;color:rgba(85,200,232,.4);font-family:monospace;margin-top:6px;letter-spacing:.5px}
+.checklist-item:hover{background:#F0EDE8!important}
+.checklist-item.checked{background:#EEF8F0!important;border-color:#B8E8CF!important}
+.checklist-item.checked .check-icon{border-color:transparent!important;background:transparent!important;font-size:22px!important}
+.intro-2col .card .card-head{cursor:pointer;user-select:none;position:relative}
+.intro-2col .card .card-head::after{content:'▾';position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:16px;color:#9A8E82;transition:transform .25s}
+.intro-2col .card.collapsed .card-head::after{transform:translateY(-50%) rotate(-90deg)}
+.intro-2col .card.collapsed .card-body{display:none}
+.tab-bar{position:sticky;top:44px;z-index:100;background:#FAF7F3;border-bottom:3px solid #E8DDD2;display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tab-bar::-webkit-scrollbar{display:none}
+.tab-btn{flex:1;min-width:130px;padding:12px 8px 11px;background:transparent;border:none;border-bottom:4px solid transparent;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;color:#9A8E82;cursor:pointer;transition:all .2s;white-space:nowrap;line-height:1.3;text-align:center}
+.tab-btn:hover{color:#0E1C42;background:#F0EDE8}
+.tab-btn.active{color:#0E1C42;border-bottom-color:#7EC8E3;background:#fff}
+.tab-btn .tab-check{display:none;font-size:12px;color:#34B76F;margin-left:4px;font-weight:800}
+.tab-btn.visited .tab-check{display:inline}
+.tab-panel{display:none;padding:24px 28px 36px}
+.tab-panel.active{display:block}
+.scroll-reveal{opacity:1!important;transform:none!important;transition:none!important}
+.intro-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 28px 0}
+.intro-2col .card{margin-bottom:0}
+.need-strip{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:12px 28px 16px}
+.need-strip-label{font-size:13px;color:#5A4D3E;font-weight:700;white-space:nowrap}
+.need-chip{display:inline-flex;align-items:center;gap:5px;background:#EAF4FF;border:1.5px solid #C4D8EE;border-radius:20px;padding:5px 12px;font-size:13px;color:#0E1C42;font-weight:700}
+.tab-next-wrap{text-align:center;padding:24px 0 8px}
+.tab-next-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;background:linear-gradient(135deg,#3A6EA8,#8B6FC0);color:#fff;border:none;border-radius:28px;font-family:'Nunito',sans-serif;font-size:16px;font-weight:800;cursor:pointer;box-shadow:0 4px 16px rgba(58,110,168,.3);transition:transform .2s,box-shadow .2s}
+.tab-next-btn:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(58,110,168,.4)}
+.back-to-top{position:fixed;bottom:28px;right:28px;height:44px;padding:0 18px 0 14px;border-radius:22px;background:linear-gradient(135deg,#3A6EA8,#8B6FC0);color:#fff;border:none;font-size:14px;font-weight:800;font-family:'Nunito',sans-serif;cursor:pointer;box-shadow:0 4px 18px rgba(58,110,168,.4);display:flex;align-items:center;gap:6px;opacity:0;visibility:hidden;transform:translateY(20px);transition:opacity .3s,visibility .3s,transform .3s;z-index:500}
+.back-to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.back-to-top:hover{transform:translateY(-3px)}
+#confettiCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:10000}
+.footer{background:#0E1C42;border-top:4px solid #7EC8E3;padding:18px 28px;text-align:center}
+.footer-line1{font-size:15px;color:#fff;margin-bottom:4px}
+.footer-line1 span{color:#55C8E8;font-weight:700}
+.footer-line2{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:2px}
+.footer-line3{font-size:12px;color:rgba(255,255,255,.4)}
+strong{color:#0E1C42}
+em{color:#5A4D3E}
+@media(max-width:620px){.intro-2col{grid-template-columns:1fr}.tab-btn{min-width:100px;font-size:11px;padding:10px 4px}.types-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+<div class="progress-wrap">
+  <span class="progress-label">🌙 Lesson Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy"/></div>
+    <div><div class="header-org">Optima Academy Online</div><div class="header-sub">An Education Experience Company</div></div>
+  </div>
+  <div class="header-title">Meet the Moon!</div>
+  <div class="header-badge"><span>🔬</span><span>SCIENCE &middot; EARTH &amp; SPACE</span></div>
+</div>
+
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="spaceBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#04081a"/><stop offset="100%" stop-color="#0a1535"/></linearGradient>
+    <radialGradient id="earthG" cx=".35" cy=".3" r=".7"><stop offset="0%" stop-color="#5BB8F5"/><stop offset="50%" stop-color="#2B7FCA"/><stop offset="100%" stop-color="#1A4870"/></radialGradient>
+    <radialGradient id="moonG" cx=".35" cy=".3" r=".7"><stop offset="0%" stop-color="#F5F2E8"/><stop offset="60%" stop-color="#DDD9C8"/><stop offset="100%" stop-color="#B5B2A2"/></radialGradient>
+    <radialGradient id="mHalo" cx=".5" cy=".5" r=".5"><stop offset="0%" stop-color="#F5F0DC" stop-opacity=".35"/><stop offset="100%" stop-color="#F5F0DC" stop-opacity="0"/></radialGradient>
+    <filter id="gf"><feGaussianBlur stdDeviation="5"/></filter>
+  </defs>
+  <style>
+    @keyframes twk{0%,100%{opacity:.1}50%{opacity:.9}}
+    @keyframes mpulse{0%,100%{opacity:.3}50%{opacity:.55}}
+    @keyframes pf{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+    .st{animation:twk ease-in-out infinite}
+    .s1{animation-duration:3s;animation-delay:0s}.s2{animation-duration:4.2s;animation-delay:.7s}.s3{animation-duration:3.5s;animation-delay:1.4s}
+    .s4{animation-duration:2.8s;animation-delay:.3s}.s5{animation-duration:4.5s;animation-delay:1.9s}.s6{animation-duration:3.8s;animation-delay:.9s}
+    .s7{animation-duration:3.2s;animation-delay:2.2s}.s8{animation-duration:4.8s;animation-delay:.5s}.s9{animation-duration:3.1s;animation-delay:1.1s}
+    .s10{animation-duration:2.9s;animation-delay:2.6s}.s11{animation-duration:4.1s;animation-delay:.2s}.s12{animation-duration:3.7s;animation-delay:1.6s}
+    .mh{animation:mpulse 3.5s ease-in-out infinite}
+    .p1{animation:pf 3s ease-in-out infinite;animation-delay:0s}.p2{animation:pf 3s ease-in-out infinite;animation-delay:.35s}
+    .p3{animation:pf 3s ease-in-out infinite;animation-delay:.7s}.p4{animation:pf 3s ease-in-out infinite;animation-delay:1.05s}
+    .p5{animation:pf 3s ease-in-out infinite;animation-delay:1.4s}.p6{animation:pf 3s ease-in-out infinite;animation-delay:1.75s}
+    .p7{animation:pf 3s ease-in-out infinite;animation-delay:2.1s}.p8{animation:pf 3s ease-in-out infinite;animation-delay:2.45s}
+  </style>
+  <rect width="920" height="260" fill="url(#spaceBg)"/>
+  <circle class="st s1" cx="42" cy="18" r="1.5" fill="#fff"/>
+  <circle class="st s2" cx="118" cy="44" r="1" fill="#fff"/>
+  <circle class="st s3" cx="195" cy="12" r="1.3" fill="#fff"/>
+  <circle class="st s4" cx="310" cy="28" r=".9" fill="#FFD700"/>
+  <circle class="st s5" cx="430" cy="16" r="1.1" fill="#fff"/>
+  <circle class="st s6" cx="520" cy="38" r=".8" fill="#fff"/>
+  <circle class="st s7" cx="600" cy="20" r="1.4" fill="#fff"/>
+  <circle class="st s8" cx="680" cy="48" r="1" fill="#FFD700"/>
+  <circle class="st s9" cx="780" cy="18" r="1.2" fill="#fff"/>
+  <circle class="st s10" cx="852" cy="36" r=".8" fill="#fff"/>
+  <circle class="st s11" cx="148" cy="78" r="1" fill="#fff"/>
+  <circle class="st s12" cx="478" cy="68" r="1.3" fill="#FFD700"/>
+  <circle class="st s1" cx="755" cy="72" r=".9" fill="#fff"/>
+  <circle class="st s3" cx="895" cy="52" r="1.1" fill="#fff"/>
+  <circle class="st s5" cx="368" cy="62" r=".8" fill="#fff"/>
+  <circle class="st s7" cx="88" cy="108" r="1" fill="#fff"/>
+  <circle class="st s9" cx="242" cy="92" r="1.2" fill="#fff"/>
+  <circle cx="242" cy="128" r="65" fill="#4BA3E8" opacity=".12" filter="url(#gf)"/>
+  <circle cx="242" cy="128" r="52" fill="url(#earthG)"/>
+  <path d="M225,100 Q235,94 244,102 Q252,95 260,100 Q266,112 258,118 Q246,113 232,116 Z" fill="#34B76F" opacity=".65"/>
+  <path d="M215,122 Q224,116 228,126 Q222,134 214,130 Z" fill="#34B76F" opacity=".55"/>
+  <ellipse cx="232" cy="107" rx="16" ry="6" fill="#fff" opacity=".22"/>
+  <ellipse cx="254" cy="138" rx="12" ry="4" fill="#fff" opacity=".18"/>
+  <text x="242" y="200" text-anchor="middle" font-family="Nunito,sans-serif" font-size="11" font-weight="800" fill="#55C8E8" letter-spacing="2" opacity=".85">🌍 EARTH</text>
+  <path d="M284,88 Q420,22 610,80" stroke="rgba(245,240,220,.2)" stroke-width="1.5" stroke-dasharray="6,7" fill="none"/>
+  <circle class="mh" cx="700" cy="105" r="88" fill="url(#mHalo)" filter="url(#gf)"/>
+  <circle cx="700" cy="105" r="56" fill="url(#moonG)"/>
+  <circle cx="685" cy="93" r="7" fill="#C8C4B0" opacity=".55"/>
+  <circle cx="714" cy="112" r="5" fill="#C0BCA8" opacity=".5"/>
+  <circle cx="696" cy="120" r="6" fill="#C8C4B0" opacity=".52"/>
+  <circle cx="722" cy="91" r="4" fill="#C0BCA8" opacity=".42"/>
+  <ellipse cx="685" cy="87" rx="15" ry="10" fill="rgba(255,255,255,.28)" opacity=".7"/>
+  <text x="700" y="180" text-anchor="middle" font-family="Nunito,sans-serif" font-size="11" font-weight="800" fill="#F5F0DC" letter-spacing="2" opacity=".9">🌕 THE MOON</text>
+  <rect x="0" y="220" width="920" height="40" fill="rgba(255,255,255,.025)"/>
+  <g class="p1" transform="translate(52,240)"><circle r="11" fill="#1a1a2e" stroke="#3a3a5a" stroke-width="1"/></g>
+  <g class="p2" transform="translate(167,240)"><circle r="11" fill="#1a1a2e"/><path d="M0,-11 A11,11 0 0,1 0,11 A4,11 0 0,0 0,-11 Z" fill="#F5F0DC"/></g>
+  <g class="p3" transform="translate(282,240)"><circle r="11" fill="#1a1a2e"/><path d="M0,-11 A11,11 0 0,1 0,11 L0,-11 Z" fill="#F5F0DC"/></g>
+  <g class="p4" transform="translate(397,240)"><circle r="11" fill="#F5F0DC"/><path d="M0,-11 A11,11 0 0,0 0,11 A4,11 0 0,1 0,-11 Z" fill="#1a1a2e"/></g>
+  <g class="p5" transform="translate(512,240)"><circle r="13" fill="#F5F0DC" opacity=".3" filter="url(#gf)"/><circle r="11" fill="#F5F0DC"/></g>
+  <g class="p6" transform="translate(627,240)"><circle r="11" fill="#F5F0DC"/><path d="M0,-11 A11,11 0 0,1 0,11 A4,11 0 0,0 0,-11 Z" fill="#1a1a2e"/></g>
+  <g class="p7" transform="translate(742,240)"><circle r="11" fill="#1a1a2e"/><path d="M0,-11 A11,11 0 0,0 0,11 L0,-11 Z" fill="#F5F0DC"/></g>
+  <g class="p8" transform="translate(857,240)"><circle r="11" fill="#1a1a2e"/><path d="M0,-11 A11,11 0 0,0 0,11 A4,11 0 0,1 0,-11 Z" fill="#F5F0DC"/></g>
+  <text x="52"  y="257" text-anchor="middle" font-family="Nunito,sans-serif" font-size="7.5" fill="rgba(245,240,220,.45)">New</text>
+  <text x="167" y="257" text-anchor="middle" font-family="Nunito,sans-serif" font-size="7.5" fill="rgba(245,240,220,.45)">Wax. Cres.</text>
+  <text x="282" y="257" text-anchor="middle" font-family="Nunito,sans-serif" font-size="7.5" fill="rgba(245,240,220,.45)">1st Qtr.</text>
+  <text x="397" y="257" text-anchor="middle" font-family="Nunito,sans-serif" font-size="7.5" fill="rgba(245,240,220,.45)">Wax. Gib.</text>
+  <text x="512" y="257" text-anchor="middle" font-family="Nunito,sans-serif" font-size="7.5" fill="rgba(245,240,220,.45)">Full</text>
+  <text x="627" y="257" text-anchor="middle" font-family="Nunito,sans-serif" font-size="7.5" fill="rgba(245,240,220,.45)">Wan. Gib.</text>
+  <text x="742" y="257" text-anchor="middle" font-family="Nunito,sans-serif" font-size="7.5" fill="rgba(245,240,220,.45)">Last Qtr.</text>
+  <text x="857" y="257" text-anchor="middle" font-family="Nunito,sans-serif" font-size="7.5" fill="rgba(245,240,220,.45)">Wan. Cres.</text>
+  <text x="460" y="214" text-anchor="middle" font-family="Nunito,sans-serif" font-size="15" font-weight="900" fill="#F5F0DC" letter-spacing="4" opacity=".85">MEET THE MOON!</text>
+</svg>
+</div>
+
+<div class="info-strip">
+  <div class="info-item"><div class="info-icon" style="background:#EAF4FF;">📅</div><div><div class="info-label">Quarter / Unit</div><div class="info-value">Q1 &middot; Unit 3</div><div class="info-detail">Earth &amp; Space Science</div></div></div>
+  <div class="info-item"><div class="info-icon" style="background:#F0EDF6;">📖</div><div><div class="info-label">Week / Lesson</div><div class="info-value">Week 3</div><div class="info-detail">Lesson 3.01 — Earth &amp; Space</div></div></div>
+  <div class="info-item"><div class="info-icon" style="background:#FFF7EE;">✏️</div><div><div class="info-label">Science Focus</div><div class="info-value">The Moon</div><div class="info-detail">Movement &amp; Phases</div></div></div>
+  <div class="info-item"><div class="info-icon" style="background:#EEF8F0;">🌍</div><div><div class="info-label">Standard</div><div class="info-value">NGSS ESS1.A</div><div class="info-detail">Earth's Place in the Universe</div></div></div>
+</div>
+
+<div class="intro-2col">
+  <div class="card theme-earth"><div class="card-head"><div class="card-head-icon">❓</div><div><div class="card-head-label">Essential Question</div><div class="card-head-title">Our Big Question for Today</div></div></div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;"><span class="sq-icon">🤔</span><div><div class="label">Think About This…</div><div class="question">"If the moon doesn't make its own light, why does it look so bright in the night sky — and why does its shape seem to change every single night?"</div></div></div>
+      <p>Keep this question in your mind as you work through today's lesson. By the end, you'll be able to answer it using real science!</p>
+    </div>
+  </div>
+  <div class="card theme-sky"><div class="card-head"><div class="card-head-icon">🎯</div><div><div class="card-head-label">Objectives</div><div class="card-head-title">I Can Statements</div></div></div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;"><div style="width:34px;height:34px;border-radius:50%;background:#E8636B;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div><div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain how the moon moves — rotating and revolving — and why we always see the same side.</div></div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;"><div style="width:34px;height:34px;border-radius:50%;background:#D4772C;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div><div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> name and describe all eight phases of the moon in order.</div></div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;"><div style="width:34px;height:34px;border-radius:50%;background:#34B76F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div><div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain how people used the lunar cycle to track time before modern calendars.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Colored pencils</span>
+  <span class="need-chip"><span>🌙</span>Moon phases worksheet</span>
+</div>
+
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab" onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="lesson" onclick="switchTab('lesson')">📘 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="explore" onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+<!-- TAB 1: VOCABULARY -->
+<div class="tab-panel active" id="tab-vocab">
+  <div class="video-wrap"><div class="video-wrap-header"><span style="font-size:20px;">🎬</span><div><div class="video-wrap-type">Introduction · Welcome Video</div><div class="video-wrap-title">Welcome to Today's Lesson!</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🌙</div><div class="video-placeholder-text">Teacher introduction video coming soon</div><div class="video-placeholder-id"><!-- slot: 3-01-welcome --></div></div></div></div>
+
+  <div class="activity-card act-warmup">
+    <div class="act-head"><div class="act-num" style="background:#E8636B;">1</div><div style="flex:1;"><div class="act-title">🌅 Warm-Up: What Do You Already Know?</div><div class="act-subtitle">Activate your prior knowledge!</div></div><div class="act-time" style="background:#E8636B;">⏱ 5 min</div></div>
+    <div class="act-body">
+      <p>In your science notebook, draw a quick sketch of what you <em>think</em> the moon looks like from Earth over the course of a month. Does it always look the same, or does it change? Label anything you can.</p>
+      <div class="socratic-q"><span class="sq-icon">🤔</span><div><div class="label">Write &amp; Reflect</div><div class="question">"Have you ever noticed the moon looking different shapes on different nights — sometimes a thin sliver, sometimes a big round circle? What questions does that raise in your mind?"</div></div></div>
+      <div class="callout callout-tip"><span class="callout-icon">💡</span><p>There are no wrong answers here! Scientists always start by noticing and wondering. We'll come back to your sketch at the end of the lesson to see how much you've learned.</p></div>
+    </div>
+  </div>
+
+  <div class="card theme-rock">
+    <div class="card-head"><div class="card-head-icon">📚</div><div><div class="card-head-label">Word Wall</div><div class="card-head-title">Key Vocabulary</div></div></div>
+    <div class="card-body">
+      <p>These are the science words you'll use today. <strong>Tap each card to flip it</strong> and read the definition. You'll see these words throughout the lesson!</p>
+      <div class="vocab-grid">
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🌓</div><div class="fc-word">Moon Phase</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Moon Phase</div><div class="fc-def">The shape of the lit part of the moon that we can see from Earth. The phase changes every night!</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🔄</div><div class="fc-word">Lunar Cycle</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Lunar Cycle</div><div class="fc-def">The repeating pattern of all 8 moon phases from New Moon back to New Moon — takes about 29.5 days.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🌍</div><div class="fc-word">Revolve</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Revolve</div><div class="fc-def">To travel in a curved path around another object. The moon revolves around Earth once every 29.5 days!</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🌀</div><div class="fc-word">Rotate</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Rotate</div><div class="fc-def">To spin on an axis, like a top. The moon rotates once for every trip it makes around Earth.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">📈</div><div class="fc-word">Waxing</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Waxing</div><div class="fc-def">When the lit part of the moon appears to grow larger each night — we are heading toward a Full Moon!</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">📉</div><div class="fc-word">Waning</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Waning</div><div class="fc-def">When the lit part of the moon appears to shrink each night — we are heading back toward a New Moon.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mind-blow"><div class="mind-blow-icon">🤯</div><div class="mind-blow-content"><div class="mind-blow-label">Mind-Blowing Fact</div><div class="mind-blow-text">The moon is slowly <strong>moving away from Earth</strong> — about <strong>3.8 centimeters farther every year!</strong> That's about the speed your fingernails grow. In a billion years, it will be so far away that total solar eclipses won't be possible anymore!</div></div></div>
+
+  <div class="tab-next-wrap"><button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📘 The Lesson →</button></div>
+</div>
+
+<!-- TAB 2: THE LESSON -->
+<div class="tab-panel" id="tab-lesson">
+  <div class="activity-card act-lesson">
+    <div class="act-head"><div class="act-num" style="background:#D4772C;">2</div><div style="flex:1;"><div class="act-title">📘 The Lesson: How the Moon Moves</div><div class="act-subtitle">Discover the moon's amazing triple motion!</div></div><div class="act-time" style="background:#D4772C;">⏱ 15 min</div></div>
+    <div class="act-body">
+      <div class="video-wrap"><div class="video-wrap-header"><span style="font-size:20px;">📘</span><div><div class="video-wrap-type">Activity 2 · Lesson Explainer</div><div class="video-wrap-title">Let's Explore How the Moon Moves!</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🌙</div><div class="video-placeholder-text">Lesson explainer video coming soon</div><div class="video-placeholder-id"><!-- slot: 3-01-lesson-explainer --></div></div></div></div>
+
+      <p style="font-size:18px;"><strong>Part 1 — Three Amazing Things the Moon Does</strong></p>
+      <p>Have you ever walked outside at night and noticed how bright the moon is? Long before streetlights and flashlights, people used moonlight to see in the dark, track time, and find their way. To understand how the moon helps us, we need to understand how it <em>moves</em> — and the answer is surprisingly amazing!</p>
+      <p>The moon is moving in <strong>three ways at the same time:</strong></p>
+
+      <div class="types-grid">
+        <div class="type-card tc-rotate">
+          <svg viewBox="0 0 180 100" width="180" height="100" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="100" fill="#060c1e" rx="8"/>
+            <circle cx="90" cy="50" r="26" fill="#D8D4C0"/>
+            <circle cx="80" cy="43" r="4" fill="#B8B4A0" opacity=".5"/>
+            <circle cx="97" cy="56" r="3" fill="#B0ACA0" opacity=".4"/>
+            <path d="M72,18 A38,38 0 0,1 118,36" stroke="#55C8E8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <polygon points="118,36 110,28 122,27" fill="#55C8E8"/>
+            <path d="M108,82 A38,38 0 0,1 62,64" stroke="#55C8E8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <polygon points="62,64 70,72 58,73" fill="#55C8E8"/>
+            <circle cx="90" cy="50" r="2.5" fill="#FFD700" opacity=".7"/>
+          </svg>
+          <div class="type-name">The Moon Rotates</div>
+          <div class="type-desc">Spins on its own axis — one full spin every 27 days!</div>
+        </div>
+        <div class="type-card tc-revolve">
+          <svg viewBox="0 0 180 100" width="180" height="100" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="100" fill="#060c1e" rx="8"/>
+            <circle cx="90" cy="50" r="17" fill="#2B7FCA"/>
+            <path d="M80,40 Q87,33 95,40 Q101,34 108,40 Q110,49 103,54 Q91,49 78,51 Z" fill="#34B76F" opacity=".6"/>
+            <ellipse cx="90" cy="50" rx="64" ry="34" stroke="rgba(245,240,220,.25)" stroke-width="1.2" fill="none" stroke-dasharray="4,5"/>
+            <circle cx="90" cy="16" r="9" fill="#D8D4C0"/>
+            <circle cx="85" cy="13" r="2" fill="#B8B4A0" opacity=".4"/>
+            <path d="M120,42 Q132,30 124,20" stroke="#55C8E8" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <polygon points="124,20 115,22 121,31" fill="#55C8E8"/>
+          </svg>
+          <div class="type-name">The Moon Revolves</div>
+          <div class="type-desc">Orbits (travels around) Earth once every 29.5 days.</div>
+        </div>
+        <div class="type-card tc-travel">
+          <svg viewBox="0 0 180 100" width="180" height="100" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="100" fill="#060c1e" rx="8"/>
+            <circle cx="12" cy="50" r="22" fill="#F5A623" opacity=".9"/>
+            <ellipse cx="12" cy="50" rx="130" ry="60" stroke="#F5A623" stroke-width="1" fill="none" stroke-dasharray="4,6" opacity=".3"/>
+            <circle cx="132" cy="38" r="13" fill="#2B7FCA"/>
+            <path d="M126,32 Q131,27 136,32 Q140,38 135,42 Q128,40 124,38 Z" fill="#34B76F" opacity=".55"/>
+            <ellipse cx="132" cy="38" rx="22" ry="12" stroke="rgba(245,240,220,.3)" stroke-width="1" fill="none" stroke-dasharray="3,4"/>
+            <circle cx="132" cy="26" r="6" fill="#D8D4C0"/>
+            <path d="M152,32 L165,26 L165,40" stroke="#F5A623" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </svg>
+          <div class="type-name">They Travel Together</div>
+          <div class="type-desc">Earth and the Moon move together around the Sun as a team!</div>
+        </div>
+      </div>
+
+      <div class="key-concept"><div class="kc-label">🔑 Key Concept</div>
+        <p>You might think the moon never spins because it always shows us the same face. But here's the amazing truth: the moon <em>does</em> <span class="vtip"><strong>rotate</strong><span class="vtip-box"><span class="vtip-word">Rotate</span>To spin on an axis, like a top. The moon rotates once for every trip around Earth.</span></span> — it just spins at exactly the right speed so we always see the same side!</p>
+        <p><strong>Try this:</strong> Ask a friend to stand still (they're Earth). Now walk in a slow circle around them, but always keep your face pointed toward them. Notice that you had to turn your body as you walked? That's exactly how the moon moves — <span class="vtip"><strong>rotating</strong><span class="vtip-box"><span class="vtip-word">Rotate</span>To spin on an axis. The moon rotates once per orbit.</span></span> while it <span class="vtip"><strong>revolves</strong><span class="vtip-box"><span class="vtip-word">Revolve</span>To travel in a curved path around another object.</span></span>!</p>
+      </div>
+
+      <div class="socratic-q"><span class="sq-icon">🤔</span><div><div class="label">Stop &amp; Reason</div><div class="question">"Why is it helpful to compare the moon's movement to walking around a friend while facing them? In what ways is that comparison accurate — and in what ways is it different from the real thing?"</div></div></div>
+
+      <p style="font-size:18px;margin-top:20px;"><strong>Part 2 — The Eight Phases of the Moon</strong></p>
+      <p>Even though we can't see the moon spinning, we <em>can</em> observe its <span class="vtip"><strong>phases</strong><span class="vtip-box"><span class="vtip-word">Moon Phase</span>The shape of the lit part of the moon we can see from Earth each night.</span></span> as it <span class="vtip"><strong>revolves</strong><span class="vtip-box"><span class="vtip-word">Revolve</span>To travel in a curved path around another object.</span></span> around Earth. One full <span class="vtip"><strong>lunar cycle</strong><span class="vtip-box"><span class="vtip-word">Lunar Cycle</span>The 29.5-day repeating pattern of all 8 moon phases.</span></span> takes about 29.5 days — almost exactly one month! Long before calendars were invented, people counted months by watching the moon.</p>
+      <p>There are <strong>eight phases</strong> in every lunar cycle. The Sun is always shining — but from Earth, we see different amounts of the moon's lit side depending on where it is in its orbit. <strong>Tap any moon in the diagram below to explore each phase!</strong></p>
+
+      <!-- ORBITAL DIAGRAM -->
+      <div style="background:#080E22;border:2px solid rgba(85,200,232,.25);border-radius:16px;padding:16px;margin:16px 0;" class="diagram-interactive">
+        <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,sans-serif;max-width:100%;height:auto;">
+          <defs>
+            <radialGradient id="obg" cx=".5" cy=".5" r=".5"><stop offset="0%" stop-color="#0d1a3a"/><stop offset="100%" stop-color="#04081a"/></radialGradient>
+            <radialGradient id="eg" cx=".35" cy=".3" r=".7"><stop offset="0%" stop-color="#5BB8F5"/><stop offset="50%" stop-color="#2B7FCA"/><stop offset="100%" stop-color="#1A4870"/></radialGradient>
+            <radialGradient id="sg" cx=".4" cy=".4" r=".6"><stop offset="0%" stop-color="#FFE680"/><stop offset="100%" stop-color="#F5A623"/></radialGradient>
+            <filter id="df"><feGaussianBlur stdDeviation="4"/></filter>
+          </defs>
+          <rect width="720" height="440" fill="url(#obg)"/>
+          <!-- Background stars -->
+          <circle cx="30" cy="25" r=".8" fill="#fff" opacity=".5"/><circle cx="80" cy="60" r=".6" fill="#fff" opacity=".4"/><circle cx="145" cy="30" r=".9" fill="#FFD700" opacity=".5"/><circle cx="580" cy="30" r=".8" fill="#fff" opacity=".5"/><circle cx="650" cy="60" r=".7" fill="#FFD700" opacity=".4"/><circle cx="40" cy="380" r=".7" fill="#fff" opacity=".4"/><circle cx="640" cy="390" r=".8" fill="#fff" opacity=".4"/><circle cx="25" cy="220" r=".7" fill="#fff" opacity=".4"/>
+          <!-- Orbit ring -->
+          <circle cx="360" cy="220" r="150" stroke="rgba(245,240,220,.18)" stroke-width="1.2" fill="none" stroke-dasharray="5,7"/>
+          <!-- Sun (far right) -->
+          <circle cx="692" cy="220" r="18" fill="url(#sg)" opacity=".9"/>
+          <line x1="668" y1="220" x2="650" y2="220" stroke="#FFD700" stroke-width="1.5" opacity=".6"/>
+          <line x1="680" y1="198" x2="672" y2="184" stroke="#FFD700" stroke-width="1.2" opacity=".55"/>
+          <line x1="680" y1="242" x2="672" y2="256" stroke="#FFD700" stroke-width="1.2" opacity=".55"/>
+          <text x="692" y="250" text-anchor="middle" font-size="8" font-weight="700" fill="#FFD700" opacity=".7">SUN</text>
+          <!-- Orbit direction hint -->
+          <path d="M316,76 Q295,68 278,82" stroke="rgba(245,240,220,.4)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <polygon points="278,82 287,72 291,84" fill="rgba(245,240,220,.4)"/>
+          <text x="275" y="62" text-anchor="middle" font-size="9" fill="rgba(245,240,220,.35)" font-weight="600">← orbit direction</text>
+          <!-- Earth -->
+          <circle cx="360" cy="220" r="30" fill="#1A4870" opacity=".4" filter="url(#df)"/>
+          <circle cx="360" cy="220" r="24" fill="url(#eg)"/>
+          <path d="M350,207 Q357,201 364,207 Q370,201 376,207 Q379,215 372,220 Q362,216 348,218 Z" fill="#34B76F" opacity=".65"/>
+          <ellipse cx="355" cy="212" rx="10" ry="4" fill="rgba(255,255,255,.2)"/>
+          <text x="360" y="258" text-anchor="middle" font-size="10" font-weight="700" fill="#55C8E8" opacity=".8">EARTH</text>
+
+          <!-- 1. NEW MOON (510,220) -->
+          <g transform="translate(510,220)"><circle r="15" fill="#1a1a2e" stroke="#2a2a4a" stroke-width="1.5"/></g>
+          <text x="510" y="248" text-anchor="middle" font-size="9.5" font-weight="700" fill="rgba(245,240,220,.6)">New Moon</text>
+
+          <!-- 2. WAXING CRESCENT (469,113) -->
+          <g transform="translate(469,113)"><circle r="15" fill="#1a1a2e"/><path d="M0,-15 A15,15 0 0,1 0,15 A5,15 0 0,0 0,-15 Z" fill="#F5F0DC"/></g>
+          <text x="500" y="105" text-anchor="middle" font-size="9.5" font-weight="700" fill="rgba(245,240,220,.6)">Waxing Crescent</text>
+
+          <!-- 3. FIRST QUARTER (360,70) -->
+          <g transform="translate(360,70)"><circle r="15" fill="#1a1a2e"/><path d="M0,-15 A15,15 0 0,1 0,15 L0,-15 Z" fill="#F5F0DC"/></g>
+          <text x="360" y="40" text-anchor="middle" font-size="9.5" font-weight="700" fill="rgba(245,240,220,.6)">First Quarter</text>
+
+          <!-- 4. WAXING GIBBOUS (251,113) -->
+          <g transform="translate(251,113)"><circle r="15" fill="#F5F0DC"/><path d="M0,-15 A15,15 0 0,0 0,15 A5,15 0 0,1 0,-15 Z" fill="#1a1a2e"/></g>
+          <text x="220" y="105" text-anchor="middle" font-size="9.5" font-weight="700" fill="rgba(245,240,220,.6)">Waxing Gibbous</text>
+
+          <!-- 5. FULL MOON (210,220) -->
+          <circle cx="210" cy="220" r="20" fill="#F5F0DC" opacity=".18" filter="url(#df)"/>
+          <g transform="translate(210,220)"><circle r="15" fill="#F5F0DC"/><circle r="15" fill="none" stroke="#FFD700" stroke-width="1.5" opacity=".4"/></g>
+          <text x="162" y="224" text-anchor="middle" font-size="9.5" font-weight="700" fill="rgba(245,240,220,.6)">Full Moon</text>
+
+          <!-- 6. WANING GIBBOUS (251,327) -->
+          <g transform="translate(251,327)"><circle r="15" fill="#F5F0DC"/><path d="M0,-15 A15,15 0 0,1 0,15 A5,15 0 0,0 0,-15 Z" fill="#1a1a2e"/></g>
+          <text x="220" y="356" text-anchor="middle" font-size="9.5" font-weight="700" fill="rgba(245,240,220,.6)">Waning Gibbous</text>
+
+          <!-- 7. LAST QUARTER (360,370) -->
+          <g transform="translate(360,370)"><circle r="15" fill="#1a1a2e"/><path d="M0,-15 A15,15 0 0,0 0,15 L0,-15 Z" fill="#F5F0DC"/></g>
+          <text x="360" y="402" text-anchor="middle" font-size="9.5" font-weight="700" fill="rgba(245,240,220,.6)">Last Quarter</text>
+
+          <!-- 8. WANING CRESCENT (469,327) -->
+          <g transform="translate(469,327)"><circle r="15" fill="#1a1a2e"/><path d="M0,-15 A15,15 0 0,0 0,15 A5,15 0 0,1 0,-15 Z" fill="#F5F0DC"/></g>
+          <text x="500" y="356" text-anchor="middle" font-size="9.5" font-weight="700" fill="rgba(245,240,220,.6)">Waning Crescent</text>
+
+          <!-- HOTSPOTS -->
+          <circle class="hotspot" data-part="New Moon" data-info="The moon is between Earth and the Sun. The lit side faces AWAY from us so the moon looks completely dark from Earth. This is where the lunar cycle begins!" cx="510" cy="220" r="24" fill="#FFD700"/>
+          <circle class="hotspot" data-part="Waxing Crescent" data-info="A thin sliver of light appears on the right side. The lit area is growing — that is what WAXING means. It grows a little bigger each night as we head toward First Quarter!" cx="469" cy="113" r="24" fill="#FFD700"/>
+          <circle class="hotspot" data-part="First Quarter" data-info="About one week into the cycle! The right half of the moon is lit. We call it a quarter because we are one-quarter of the way through the full 29.5-day lunar cycle." cx="360" cy="70" r="24" fill="#FFD700"/>
+          <circle class="hotspot" data-part="Waxing Gibbous" data-info="More than half the moon is lit and still growing. GIBBOUS means hump-shaped and rounded. We are almost to a Full Moon — just a few nights away!" cx="251" cy="113" r="24" fill="#FFD700"/>
+          <circle class="hotspot" data-part="Full Moon" data-info="The moon is opposite Earth from the Sun so the entire lit side faces us. This is the BRIGHTEST night of the cycle! A Full Moon rises at sunset and sets at sunrise." cx="210" cy="220" r="24" fill="#FFD700"/>
+          <circle class="hotspot" data-part="Waning Gibbous" data-info="After the Full Moon the lit area starts to shrink — that is WANING. It is still more than half lit but getting a little smaller each night as we head back toward New Moon." cx="251" cy="327" r="24" fill="#FFD700"/>
+          <circle class="hotspot" data-part="Last Quarter" data-info="The LEFT half of the moon is lit now. We are three-quarters of the way through the cycle — just one more week until the New Moon starts everything over again!" cx="360" cy="370" r="24" fill="#FFD700"/>
+          <circle class="hotspot" data-part="Waning Crescent" data-info="A thin sliver on the left side is all that remains. It is the last phase before the New Moon. In just a few days the cycle starts fresh and the pattern repeats!" cx="469" cy="327" r="24" fill="#FFD700"/>
+
+          <text x="360" y="215" text-anchor="middle" font-size="10" font-weight="700" fill="rgba(85,200,232,.5)">← tap any moon! →</text>
+        </svg>
+        <div style="background:linear-gradient(135deg,#EAF4FF,#E2EEFF);border:2px solid #C4D8EE;border-radius:14px;padding:12px 18px;margin-top:10px;display:flex;align-items:center;gap:12px;">
+          <span style="font-size:28px;flex-shrink:0;animation:mbb 2s ease-in-out infinite;">👆</span>
+          <p style="font-size:15px;color:#2B1D12;line-height:1.55;margin:0;font-weight:600;">Tap on any of the <strong>8 moon phases</strong> to see its name and what's happening in the lunar cycle at that moment!</p>
+        </div>
+        <div class="diagram-info-panel" id="diagramPanel"><span class="dip-word" id="diagramWord"></span><span id="diagramInfo"></span></div>
+      </div>
+
+      <div class="callout callout-think"><span class="callout-icon">🌙</span><p><strong>Real-World Connection:</strong> The word <strong>"month"</strong> comes directly from the word <strong>"moon"</strong> — a month is one lunar cycle! Many cultures still use lunar calendars today. The <strong>Chinese Lunar New Year</strong> and the Islamic holy month of <strong>Ramadan</strong> are both set by moon phases, which is why their dates shift each year on our solar calendar.</p></div>
+
+      <!-- SIZE COMPARISON -->
+      <div class="size-compare-wrap">
+        <svg viewBox="0 0 680 185" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,sans-serif;">
+          <defs>
+            <radialGradient id="esc" cx=".35" cy=".3" r=".7"><stop offset="0%" stop-color="#5BB8F5"/><stop offset="50%" stop-color="#2B7FCA"/><stop offset="100%" stop-color="#1A4870"/></radialGradient>
+            <radialGradient id="msc" cx=".35" cy=".3" r=".7"><stop offset="0%" stop-color="#F0EDE0"/><stop offset="60%" stop-color="#D8D4C0"/><stop offset="100%" stop-color="#B8B4A0"/></radialGradient>
+            <filter id="glsc"><feGaussianBlur stdDeviation="4"/></filter>
+          </defs>
+          <circle cx="155" cy="88" r="22" fill="#D8D4C0" opacity=".18" filter="url(#glsc)"/>
+          <circle cx="155" cy="88" r="18" fill="url(#msc)"/>
+          <circle cx="149" cy="84" r="3" fill="#B8B4A0" opacity=".4"/>
+          <circle cx="161" cy="94" r="2" fill="#B0ACA0" opacity=".35"/>
+          <text x="155" y="120" text-anchor="middle" font-size="11" font-weight="800" fill="#F5F0DC">The Moon</text>
+          <text x="155" y="133" text-anchor="middle" font-size="9" fill="rgba(245,240,220,.5)">3,474 km wide</text>
+          <text x="280" y="62" text-anchor="middle" font-size="12" font-weight="700" fill="rgba(85,200,232,.75)">If Earth were a</text>
+          <text x="280" y="80" text-anchor="middle" font-size="15" font-weight="900" fill="#55C8E8">🏀 basketball,</text>
+          <text x="280" y="100" text-anchor="middle" font-size="12" font-weight="700" fill="rgba(245,240,220,.7)">the Moon would be a</text>
+          <text x="280" y="118" text-anchor="middle" font-size="15" font-weight="900" fill="#F5F0DC">🎾 tennis ball!</text>
+          <circle cx="540" cy="88" r="70" fill="#2B7FCA" opacity=".12" filter="url(#glsc)"/>
+          <circle cx="540" cy="88" r="65" fill="url(#esc)"/>
+          <path d="M524,66 Q532,58 541,66 Q550,58 558,66 Q563,78 555,86 Q542,81 522,83 Z" fill="#34B76F" opacity=".6"/>
+          <path d="M510,86 Q520,78 526,90 Q518,100 508,94 Z" fill="#34B76F" opacity=".55"/>
+          <ellipse cx="532" cy="71" rx="16" ry="6" fill="rgba(255,255,255,.2)"/>
+          <text x="540" y="168" text-anchor="middle" font-size="11" font-weight="800" fill="#55C8E8">Earth</text>
+          <text x="540" y="181" text-anchor="middle" font-size="9" fill="rgba(85,200,232,.5)">12,742 km wide</text>
+        </svg>
+        <div class="size-compare-caption">Earth is about 3.7 times wider than the Moon — but the Moon still looks enormous in our sky because it's so much closer than anything else!</div>
+      </div>
+
+      <details class="go-deeper">
+        <summary>Curious? Go Deeper — Why Is There Always a "Far Side" of the Moon?</summary>
+        <div class="gd-body">
+          <p>You may have heard people talk about the "dark side" or "far side" of the moon. Here's the amazing truth: we always see the <strong>same side</strong> of the moon because the moon rotates at exactly the same speed it revolves around Earth. Scientists call this <strong>synchronous rotation</strong>.</p>
+          <p>But the far side is <strong>NOT always dark</strong> — it gets just as much sunlight as the near side. We just can never see it from Earth! The first photo of the far side was taken in <strong>1959</strong> by a Soviet spacecraft. The first humans to see the far side with their own eyes were the <strong>Apollo 8</strong> astronauts in 1968.</p>
+          <p>Fun fact: The far side looks different — it has fewer of the dark flat areas (called <em>maria</em>, or "seas") that you see on the near side. Scientists are still studying why!</p>
+        </div>
+      </details>
+    </div>
+  </div>
+  <div class="tab-next-wrap"><button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button></div>
+</div>
+
+<!-- TAB 3: EXPLORE -->
+<div class="tab-panel" id="tab-explore">
+  <div class="activity-card act-explore">
+    <div class="act-head"><div class="act-num" style="background:#55C8E8;">3</div><div style="flex:1;"><div class="act-title">🔬 Guided Exploration: Why Do Phases Happen?</div><div class="act-subtitle">Follow the journey of moonlight step by step!</div></div><div class="act-time" style="background:#55C8E8;">⏱ 8 min</div></div>
+    <div class="act-body">
+      <div class="video-wrap"><div class="video-wrap-header"><span style="font-size:20px;">🔬</span><div><div class="video-wrap-type">Activity 3 · Guided Exploration</div><div class="video-wrap-title">Follow the Science of Moon Phases!</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🌑</div><div class="video-placeholder-text">Guided exploration video coming soon</div><div class="video-placeholder-id"><!-- slot: 3-01-exploration-explainer --></div></div></div></div>
+
+      <p>Now that we know what the 8 phases look like, let's understand <strong>why</strong> they happen. Follow the steps and picture the orbital diagram in your mind as you read!</p>
+
+      <div style="position:relative;margin:16px 0;">
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F5A623,#FFD700);color:#0E1C42;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(245,166,35,.3);">1</div>
+          <div style="flex:1;background:#EAF4FF;border:2px solid #C4D8EE;border-radius:14px;padding:14px 16px;"><p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>🌞 The Sun is the Light Source:</strong> The moon doesn't glow on its own — it <em>reflects</em> sunlight, just like a mirror. That reflected light is what we call moonlight. At any moment, exactly <strong>half</strong> of the moon's surface is lit by the Sun, and the other half is in darkness.</p></div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#3A6EA8,#55C8E8);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(58,110,168,.3);">2</div>
+          <div style="flex:1;background:#F0EDF6;border:2px solid #D8D0E8;border-radius:14px;padding:14px 16px;"><p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>🌍 The Moon Orbits Earth:</strong> As the moon <span class="vtip"><strong>revolves</strong><span class="vtip-box"><span class="vtip-word">Revolve</span>To travel in a curved path around another object.</span></span> around Earth, we see different amounts of its lit half from our point of view. When we see <em>more</em> lit area each night, the moon is <span class="vtip"><strong>waxing</strong><span class="vtip-box"><span class="vtip-word">Waxing</span>When the lit part of the moon appears to grow larger each night.</span></span>. When we see <em>less</em>, it's <span class="vtip"><strong>waning</strong><span class="vtip-box"><span class="vtip-word">Waning</span>When the lit part of the moon appears to shrink each night.</span></span>.</p></div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#8B6FC0,#A88BD4);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(139,111,192,.3);">3</div>
+          <div style="flex:1;background:#FFF7EE;border:2px solid #F0DCC4;border-radius:14px;padding:14px 16px;"><p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>📅 One Orbit = One Lunar Cycle:</strong> The moon takes about <strong>29.5 days</strong> to travel all the way around Earth — almost exactly one month! During that trip we see all 8 <span class="vtip"><strong>moon phases</strong><span class="vtip-box"><span class="vtip-word">Moon Phase</span>The shape of the lit part of the moon we can see from Earth each night.</span></span> in order. This is one complete <span class="vtip"><strong>lunar cycle</strong><span class="vtip-box"><span class="vtip-word">Lunar Cycle</span>The 29.5-day repeating pattern of all 8 moon phases.</span></span>.</p></div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#34B76F,#5AC88A);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(52,183,111,.3);">4</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;"><p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>🔄 The Pattern Repeats — Perfectly:</strong> Every single month, the same 8 phases appear in the exact same order without fail. This predictable pattern is so reliable that ancient farmers, sailors, and astronomers used it as a calendar for thousands of years. In fact, the word <strong>"month"</strong> literally comes from the word <strong>"moon"!</strong></p></div>
+        </div>
+      </div>
+
+      <div class="socratic-q"><span class="sq-icon">🤔</span><div><div class="label">Think Like a Scientist</div><div class="question">"Why do you think people long ago used the moon to tell time and find their way at night? Imagine the sky without electric lights — how valuable would a predictable, reliable pattern in the sky be to farmers, sailors, or travelers?"</div></div></div>
+    </div>
+  </div>
+
+  <div class="mind-blow"><div class="mind-blow-icon">🤯</div><div class="mind-blow-content"><div class="mind-blow-label">Mind-Blowing Fact</div><div class="mind-blow-text">The full moon in autumn is called the <strong>Harvest Moon</strong> — and for several nights in a row it rises so early and so brightly that farmers could work in their fields <strong>after sunset!</strong> For thousands of years this single moon phase told farmers exactly when to bring in their crops. Without it, much of the harvest might have been lost to frost!</div></div></div>
+
+  <details class="go-deeper">
+    <summary>Curious? Go Deeper — Moon Calendars Around the World</summary>
+    <div class="gd-body">
+      <p>Ancient people <em>all over the world</em> discovered that the moon's cycle lasted about 29.5 days and used it to count months and plan their lives.</p>
+      <p>The <strong>Islamic calendar</strong> is a pure lunar calendar — months begin when a thin waxing crescent moon is spotted after a New Moon. This is why the crescent moon is an important symbol in Islamic culture, and why Islamic holidays like Ramadan fall on different dates each year on our solar calendar.</p>
+      <p>The <strong>Chinese calendar</strong> uses a lunar system, which is why the Lunar New Year falls on a different date each year! Many Native American nations named each Full Moon after the season: the <em>Flower Moon</em> (May), the <em>Harvest Moon</em> (September), the <em>Beaver Moon</em> (November).</p>
+      <p>The moon wasn't just a light in the sky — it was the world's first calendar, shared by all of humanity!</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap"><button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button></div>
+</div>
+
+<!-- TAB 4: QUIZ -->
+<div class="tab-panel" id="tab-quiz">
+  <div class="quiz-card" style="margin-top:0;margin-bottom:18px;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#8B6FC0;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">⚡</div>
+      <div style="flex:1;"><div style="font-size:19px;color:#0E1C42;font-weight:800;line-height:1.2;">🧠 Quick Self-Check</div><div style="font-size:12px;color:#9A8E82;">Not graded — just for you! See how much you remember before starting the assignment.</div></div>
+    </div>
+    <div style="padding:18px 22px;">
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. Why do we always see the same side of the moon from Earth?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>The moon doesn't spin at all</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>The moon rotates once for every trip it makes around Earth</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Earth's gravity holds the moon's face in place</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌕 Exactly right! The moon's rotation and revolution are perfectly synchronized — scientists call this synchronous rotation.</div>
+        <div class="quiz-feedback fb-wrong">Not quite! Remember the activity of walking around a friend while always facing them? You were spinning — just slowly! That's the moon.</div>
+      </div>
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-text">2. The lit part of the moon is getting bigger each night. This is called —</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Waxing</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Waning</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Revolving</div>
+        </div>
+        <div class="quiz-feedback fb-correct">📈 Correct! Waxing = growing larger. Think of it like waxing a car — you're adding more and more shine!</div>
+        <div class="quiz-feedback fb-wrong">Not quite! Remember: waxing = growing, waning = shrinking. Which one fits a moon that's getting bigger?</div>
+      </div>
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">3. About how long does one complete lunar cycle take?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>About one week</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>About 29.5 days (roughly one month)</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Exactly one year</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌙 Perfect! 29.5 days — almost exactly one month. That's why the word "month" comes from the word "moon."</div>
+        <div class="quiz-feedback fb-wrong">Not quite! One lunar cycle takes almost one full month — 29.5 days from New Moon back to New Moon.</div>
+      </div>
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum"></div>
+        <div class="quiz-score-label">out of 3 correct</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+        <div class="video-feedback" id="quizVideoCorrect"><div class="video-wrap" style="margin-top:14px;text-align:left;"><div class="video-wrap-header"><span style="font-size:20px;">🌕</span><div><div class="video-wrap-type">✅ Feedback · Perfect Score</div><div class="video-wrap-title">Amazing work, scientist!</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">⭐</div><div class="video-placeholder-text">Perfect score celebration video coming soon</div><div class="video-placeholder-id"><!-- slot: 3-01-quiz-perfect --></div></div></div></div></div>
+        <div class="video-feedback" id="quizVideoReview"><div class="video-wrap" style="margin-top:14px;text-align:left;"><div class="video-wrap-header"><span style="font-size:20px;">💪</span><div><div class="video-wrap-type">📚 Feedback · Keep Going</div><div class="video-wrap-title">You're getting there — let's review!</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🔄</div><div class="video-placeholder-text">Review encouragement video coming soon</div><div class="video-placeholder-id"><!-- slot: 3-01-quiz-review --></div></div></div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-next-wrap"><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button></div>
+</div>
+
+<!-- TAB 5: ASSIGNMENT -->
+<div class="tab-panel" id="tab-assignment">
+  <div class="activity-card act-practice">
+    <div class="act-head"><div class="act-num" style="background:#34B76F;">4</div><div style="flex:1;"><div class="act-title">✍️ Assignment: Show What You Know</div><div class="act-subtitle">Now it's your turn, scientist!</div></div><div class="act-time" style="background:#34B76F;">⏱ 12 min</div></div>
+    <div class="act-body">
+      <div class="video-wrap"><div class="video-wrap-header"><span style="font-size:20px;">✍️</span><div><div class="video-wrap-type">Activity 4 · Assignment Explainer</div><div class="video-wrap-title">Here's What to Do for Your Assignment!</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🌙</div><div class="video-placeholder-text">Assignment explainer video coming soon</div><div class="video-placeholder-id"><!-- slot: 3-01-assignment-explainer --></div></div></div></div>
+
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">🔍 Part A — Match the Phase</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Write the correct moon phase name next to each description. <strong>Word Bank: New Moon &nbsp;·&nbsp; Full Moon &nbsp;·&nbsp; First Quarter &nbsp;·&nbsp; Waning Crescent</strong></p>
+      <div class="pq"><span class="pq-num" style="background:#34B76F;">1</span><span class="pq-text">The moon is completely dark and not visible from Earth: ___________</span></div>
+      <div class="pq"><span class="pq-num" style="background:#34B76F;">2</span><span class="pq-text">The entire lit side of the moon faces us — the brightest night of the cycle: ___________</span></div>
+      <div class="pq"><span class="pq-num" style="background:#34B76F;">3</span><span class="pq-text">Exactly half of the moon is lit (the right side); we're one week into the cycle: ___________</span></div>
+      <div class="pq"><span class="pq-num" style="background:#34B76F;">4</span><span class="pq-text">A thin sliver of light on the LEFT side — the cycle is almost complete: ___________</span></div>
+
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:22px;">🚀 Part B — Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer each question in <strong>complete sentences</strong> using your vocabulary words!</p>
+      <div class="pq"><span class="pq-num" style="background:#D4772C;">5</span><span class="pq-text">Why do you think people long ago used the moon to tell time or find their way at night?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#D4772C;">6</span><span class="pq-text">The moon rotates (spins), but we always see the same side from Earth. Can you explain how that's possible?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#D4772C;">7</span><span class="pq-text">What is something surprising you learned today about how the moon moves or what it does?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#D4772C;">8</span><span class="pq-text">In the lesson, we compared the moon's movement to walking in a circle around a friend while always facing them. Why is that comparison helpful? How is it different from the real moon?</span></div>
+
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:22px;">🎨 Part C — Draw the Lunar Cycle</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Draw all <strong>8 moon phases in order</strong> arranged in a circle (like a clock face) with Earth in the center. Label each phase. Color or shade the lit and dark portions as accurately as you can!</p>
+      <div class="socratic-q"><span class="sq-icon">🤔</span><div><div class="label">Reflect</div><div class="question">"Compare your warm-up sketch to your new lunar cycle diagram. What did you add? What changed about how you understand the moon? What's one thing that still amazes you?"</div></div></div>
+
+      <div style="background:#fff;border:2px solid #55C8E8;border-radius:18px;margin-top:20px;overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:10px;padding:14px 20px;background:linear-gradient(135deg,#EAF8FD,#E0F4FB);border-bottom:2px solid #D6F2FB;"><div style="width:42px;height:42px;border-radius:50%;background:#55C8E8;color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">📬</div><div><div style="font-size:10px;color:#9A8E82;text-transform:uppercase;letter-spacing:.8px;font-weight:700;">Time to Submit</div><div style="font-size:20px;color:#0E1C42;font-weight:800;line-height:1.2;">What to Turn In</div></div></div>
+        <div style="padding:18px 22px;">
+          <p style="font-size:16px;color:#5A4D3E;line-height:1.65;margin-bottom:14px;">When you've finished all three parts, submit your work in Canvas. Use the checklist to make sure you have everything!</p>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s;user-select:none;"><span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;">☐</span><span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part A — Match the Phase:</strong> All four phase names filled in from the word bank.</span></div>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s;user-select:none;"><span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;">☐</span><span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part B — Short Answer:</strong> Questions 5–8 answered in complete sentences with vocabulary words.</span></div>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s;user-select:none;"><span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;">☐</span><span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part C — Lunar Cycle Diagram:</strong> All 8 phases drawn in order around Earth, labeled, and colored in.</span></div>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:16px;cursor:pointer;transition:background .2s;user-select:none;"><span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;">☐</span><span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Essential Question Response:</strong> 2–3 sentences using at least three vocabulary words.</span></div>
+          <div style="background:#FFF7EE;border:2px solid #F0DCC4;border-radius:14px;padding:14px 18px;">
+            <div style="font-size:13px;color:#C7922C;text-transform:uppercase;letter-spacing:.5px;font-weight:800;margin-bottom:8px;">📎 How to Submit</div>
+            <div style="font-size:15px;color:#2B1D12;line-height:1.7;">⌨️ <strong>Type it</strong> — Type your answers directly into the Canvas assignment.<br/><br/>📸 <strong>Photo</strong> — Take a clear picture of your handwritten work and upload it.<br/><br/>🎥 <strong>Video</strong> — Record a short video explaining your answers and showing your diagram.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card theme-earth">
+    <div class="card-head"><div class="card-head-icon">🔄</div><div><div class="card-head-label">Circle Back</div><div class="card-head-title">Revisit Our Essential Question</div></div></div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;"><span class="sq-icon">🤔</span><div><div class="label">Now You Know!</div><div class="question">"If the moon doesn't make its own light, why does it look so bright in the night sky — and why does its shape seem to change every single night?"</div></div></div>
+      <p>Now that you've completed the lesson, write a <strong>2–3 sentence answer</strong> to this question in your science notebook. Try to use at least <strong>three vocabulary words</strong> from today!</p>
+      <div class="callout callout-tip"><span class="callout-icon">⭐</span><p><strong>Excellent work today, scientist!</strong> You've learned that the moon reflects sunlight, that its <span class="vtip">phases<span class="vtip-box"><span class="vtip-word">Moon Phase</span>The shape of the lit part of the moon we can see from Earth each night.</span></span> change because of its <span class="vtip">revolution<span class="vtip-box"><span class="vtip-word">Revolve</span>To travel in a curved path around another object.</span></span> around Earth, and that the predictable <span class="vtip">lunar cycle<span class="vtip-box"><span class="vtip-word">Lunar Cycle</span>The 29.5-day repeating pattern of all 8 moon phases.</span></span> has helped people track time for thousands of years. Next lesson, we'll explore where the Moon came from and what the Apollo astronauts discovered when they walked on it!</p></div>
+    </div>
+  </div>
+
+  <div class="video-wrap" style="margin-bottom:0;"><div class="video-wrap-header"><span style="font-size:20px;">🌙</span><div><div class="video-wrap-type">Closing · Lesson Wrap-Up</div><div class="video-wrap-title">Great Work Today — Here's What's Coming Next!</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🌕</div><div class="video-placeholder-text">Lesson closing &amp; next lesson preview coming soon</div><div class="video-placeholder-id"><!-- slot: 3-01-closing --></div></div></div></div>
+</div>
+
+<div class="footer">
+  <div class="footer-line1"><span>Optima Academy Online</span> &middot; Science &middot; Quarter 1 &middot; Student Lesson Page</div>
+  <div class="footer-line2">Lesson 3.01 &middot; Earth &amp; Space Science: Meet the Moon!</div>
+  <div class="footer-line3">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><span style="font-size:20px;">🌙</span> Back to Top</button>
+<canvas id="confettiCanvas"></canvas>
+<script>
+// ── Tab System ──
+var TAB_ORDER=['vocab','lesson','explore','quiz','assignment'];
+var tabsVisited=new Set(['vocab']);
+function switchTab(id){
+  document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
+  var panel=document.getElementById('tab-'+id);
+  var btn=document.querySelector('[data-tab="'+id+'"]');
+  if(panel)panel.classList.add('active');
+  if(btn){btn.classList.add('active');btn.classList.add('visited')}
+  tabsVisited.add(id);
+  var pct=Math.round(tabsVisited.size/TAB_ORDER.length*100);
+  document.getElementById('progressFill').style.width=pct+'%';
+  document.getElementById('progressPct').textContent=pct+'%';
+  document.querySelectorAll('.intro-2col .card').forEach(function(c){
+    if(id==='vocab'){c.classList.remove('collapsed')}else{c.classList.add('collapsed')}
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ── Checklist ──
+function toggleCheck(item){
+  item.classList.toggle('checked');
+  var icon=item.querySelector('.check-icon');
+  icon.textContent=item.classList.contains('checked')?'🌙':'☐';
+  var items=document.querySelectorAll('.checklist-item');
+  if(Array.from(items).every(function(it){return it.classList.contains('checked')}))setTimeout(window.launchConfetti,200);
+}
+
+// ── Clickable Diagram ──
+(function(){
+  var hotspots=document.querySelectorAll('.hotspot');
+  var panel=document.getElementById('diagramPanel');
+  var wordEl=document.getElementById('diagramWord');
+  var infoEl=document.getElementById('diagramInfo');
+  if(!panel)return;
+  hotspots.forEach(function(hs){
+    hs.addEventListener('click',function(e){
+      e.stopPropagation();
+      hotspots.forEach(function(h){h.classList.remove('active')});
+      hs.classList.add('active');
+      var part=hs.getAttribute('data-part');
+      wordEl.textContent=part;
+      infoEl.innerHTML=hs.getAttribute('data-info');
+      panel.classList.add('visible');
+      panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+    });
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.classList.contains('hotspot')){
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h){h.classList.remove('active')});
+    }
+  });
+})();
+
+// ── Quiz ──
+var quizAnswered=0,quizCorrect=0;
+function checkQuiz(optEl){
+  var q=optEl.closest('.quiz-q');
+  if(q.classList.contains('answered'))return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct=q.getAttribute('data-answer');
+  var chosen=optEl.getAttribute('data-val');
+  q.querySelectorAll('.quiz-opt').forEach(function(o){
+    if(o.getAttribute('data-val')===correct)o.classList.add('correct');
+    else o.classList.add('disabled');
+  });
+  var fbC=q.querySelector('.fb-correct'),fbW=q.querySelector('.fb-wrong');
+  if(chosen===correct){quizCorrect++;optEl.classList.add('correct');if(fbC)fbC.classList.add('show')}
+  else{optEl.classList.add('wrong');if(fbW)fbW.classList.add('show')}
+  if(quizAnswered===3){
+    var scoreBox=document.getElementById('quizScore');
+    document.getElementById('quizScoreNum').textContent=quizCorrect;
+    var vC=document.getElementById('quizVideoCorrect'),vR=document.getElementById('quizVideoReview');
+    if(quizCorrect===3){document.getElementById('quizScoreMsg').textContent='🌕 Perfect! You\'re a moon expert!';if(vC)vC.classList.add('show');setTimeout(window.launchConfetti,300)}
+    else if(quizCorrect===2){document.getElementById('quizScoreMsg').textContent='🌙 Great job! Almost perfect!';if(vR)vR.classList.add('show')}
+    else{document.getElementById('quizScoreMsg').textContent='👍 Good effort! Review the lesson and try again.';if(vR)vR.classList.add('show')}
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip){
+  var box=tip.querySelector('.vtip-box');
+  if(!box)return;
+  tip.addEventListener('mouseenter',function(){
+    var rect=tip.getBoundingClientRect();
+    var bw=250;
+    var left=rect.left+rect.width/2-bw/2;
+    if(left<8)left=8;
+    if(left+bw>window.innerWidth-8)left=window.innerWidth-bw-8;
+    box.style.left=left+'px';
+    var topPos=rect.top-140;
+    if(topPos<8)topPos=rect.bottom+10;
+    box.style.top=topPos+'px';
+  });
+});
+
+// ── Back to Top ──
+window.addEventListener('scroll',function(){
+  document.getElementById('backToTop').classList.toggle('show',window.pageYOffset>400);
+});
+
+// ── Confetti ──
+(function(){
+  var canvas=document.getElementById('confettiCanvas');
+  var ctx=canvas.getContext('2d');
+  var particles=[],animating=false;
+  var colors=['#55C8E8','#8B6FC0','#F5F0DC','#34B76F','#E8636B','#F5A623','#FFD700','#3A6EA8'];
+  function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight}
+  window.addEventListener('resize',resize);resize();
+  function Particle(x,y){
+    this.x=x;this.y=y;this.vx=(Math.random()-.5)*16;this.vy=Math.random()*-18-4;
+    this.gravity=.45;this.drag=.98;this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360;this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1;this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){
+    for(var i=0;i<count;i++)particles.push(new Particle(x,y));
+    if(!animating){animating=true;animate()}
+  }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for(var i=particles.length-1;i>=0;i--){
+      var p=particles[i];
+      p.vy+=p.gravity;p.vx*=p.drag;p.x+=p.vx;p.y+=p.vy;
+      p.rotation+=p.rotSpeed;p.opacity-=.008;
+      if(p.opacity<=0){particles.splice(i,1);continue}
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity;ctx.fillStyle=p.color;
+      if(p.shape==='rect')ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6);
+      else{ctx.beginPath();ctx.arc(0,0,p.size/2,0,Math.PI*2);ctx.fill()}
+      ctx.restore();
+    }
+    if(particles.length>0)requestAnimationFrame(animate);
+    else{animating=false;ctx.clearRect(0,0,canvas.width,canvas.height)}
+  }
+  window.launchConfetti=function(){
+    var cx=window.innerWidth/2;
+    burst(cx-100,window.innerHeight*.45,50);
+    burst(cx,window.innerHeight*.35,60);
+    burst(cx+100,window.innerHeight*.45,50);
+  };
+})();
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+document.getElementById('progressFill').style.width='20%';
+document.getElementById('progressPct').textContent='20%';
+
+// ── Intro card click-to-toggle ──
+document.querySelectorAll('.intro-2col .card').forEach(function(card){
+  card.querySelector('.card-head').addEventListener('click',function(){card.classList.toggle('collapsed')});
+});
+</script>
+</body>
+</html>
