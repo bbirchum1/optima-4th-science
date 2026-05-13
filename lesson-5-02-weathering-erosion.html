@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – Weathering and Erosion: Earth's Slow Sculptors</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+    background: #F4F0EB url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    color: #2B1D12;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page-wrap { max-width: 920px; margin: 0 auto; background: #FAF7F3; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+  /* ── Header ── */
+  .header {
+    background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%);
+    border-bottom: 6px solid #C7922C;
+    padding: 22px 28px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 6px; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #C7922C, #8B6B45, #C7922C);
+  }
+  .header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .header-logo {
+    width: 52px; height: 52px; border-radius: 50%; background: #fff;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .header-logo img { width: 48px; height: 38px; }
+  .header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+  .header-sub { font-size: 11px; color: #C7922C; letter-spacing: 0.5px; }
+  .header-title {
+    font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+    text-shadow: 0 2px 12px rgba(199,146,44,0.3);
+  }
+  .header-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(199,146,44,0.15); border: 1.5px solid rgba(199,146,44,0.35);
+    border-radius: 28px; padding: 6px 16px;
+  }
+  .header-badge span:first-child { font-size: 22px; }
+  .header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+  /* ── Hero Visual ── */
+  .hero-visual {
+    background: linear-gradient(180deg, #2a3a4a 0%, #4a3a2a 50%, #6b5030 100%);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #C7922C;
+  }
+  .hero-visual svg { display: block; width: 100%; height: auto; }
+
+  /* ── Info Strip ── */
+  .info-strip {
+    display: flex; flex-wrap: wrap; background: #fff;
+    border-bottom: 2px solid #E8DDD2;
+  }
+  .info-item {
+    flex: 1; min-width: 150px; padding: 12px 16px;
+    border-right: 1px solid #E8DDD2;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .info-item:last-child { border-right: none; }
+  .info-icon {
+    width: 40px; height: 40px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+  .info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+  .info-value { font-size: 16px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+  .info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+  /* ── Card System ── */
+  .card {
+    background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+    margin-bottom: 22px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(43,29,18,0.04);
+  }
+  .card-head {
+    display: flex; align-items: center; gap: 10px;
+    padding: 14px 20px; border-bottom: 2px solid;
+  }
+  .card-head-icon {
+    width: 42px; height: 42px; border-radius: 50%; color: #fff;
+    font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+  .card-head-title { font-size: 20px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+  .card-body { padding: 18px 22px; }
+  .card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+  .card-body p:last-child { margin-bottom: 0; }
+
+  /* ── Color Themes ── */
+  .theme-lava .card-head { background: #FFF0EC; border-color: #F5C4BA; }
+  .theme-lava .card-head-icon { background: #E8636B; }
+  .theme-earth .card-head { background: #FFF7EE; border-color: #F0DCC4; }
+  .theme-earth .card-head-icon { background: #C7922C; }
+  .theme-sky .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+  .theme-sky .card-head-icon { background: #55C8E8; }
+  .theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+  .theme-forest .card-head-icon { background: #34B76F; }
+  .theme-rock .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+  .theme-rock .card-head-icon { background: #8B6FC0; }
+  .theme-magma .card-head { background: #FFF3DC; border-color: #F5E6C8; }
+  .theme-magma .card-head-icon { background: #D4772C; }
+
+  /* ── Activity Cards ── */
+  .activity-card {
+    background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+    margin-bottom: 18px; overflow: hidden;
+    box-shadow: 0 2px 10px rgba(43,29,18,0.04);
+  }
+  .activity-card.act-warmup  { border-left: 6px solid #E8636B; }
+  .activity-card.act-lesson  { border-left: 6px solid #D4772C; }
+  .activity-card.act-explore { border-left: 6px solid #55C8E8; }
+  .activity-card.act-practice{ border-left: 6px solid #34B76F; }
+  .activity-card.act-check   { border-left: 6px solid #8B6FC0; }
+
+  .act-head {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 20px 14px 18px;
+    border-bottom: 1.5px solid #E8DDD2;
+  }
+  .act-num {
+    width: 38px; height: 38px; border-radius: 14px; color: #fff;
+    font-size: 18px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .act-title { font-size: 19px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+  .act-subtitle { font-size: 12px; color: #9A8E82; }
+  .act-time {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 4px 12px; border-radius: 20px;
+    font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap;
+    margin-left: auto; flex-shrink: 0;
+  }
+  .act-body { padding: 18px 22px 18px 20px; }
+  .act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+  /* ── Callout Boxes ── */
+  .callout {
+    border-radius: 14px; padding: 16px 18px;
+    display: flex; align-items: flex-start; gap: 12px;
+    margin-bottom: 14px;
+  }
+  .callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+  .callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+  .callout-earth  { background: #FFF7EE; border: 2px solid #F0DCC4; }
+  .callout-think  { background: #FFF7EE; border: 2px solid #F0DCC4; }
+  .callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+  .callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+  .callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+
+  /* ── Socratic Questions ── */
+  .socratic-q {
+    background: linear-gradient(135deg, #FFF7EE, #FFF3E0);
+    border: 2px solid #E8C88A;
+    border-radius: 16px; padding: 16px 20px;
+    margin: 16px 0;
+    display: flex; align-items: flex-start; gap: 12px;
+  }
+  .socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+  .socratic-q .label {
+    font-size: 11px; color: #C7922C; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; margin-bottom: 4px;
+  }
+  .socratic-q .question {
+    font-size: 17px; color: #2B1D12; font-weight: 700;
+    line-height: 1.6; font-style: italic;
+  }
+
+  /* ── Diagram Containers ── */
+  .diagram-wrap {
+    background: #fff; border: 2px solid #E8DDD2;
+    border-radius: 16px; padding: 16px; margin: 16px 0;
+    text-align: center;
+  }
+  .diagram-wrap svg { max-width: 100%; height: auto; }
+  .diagram-caption {
+    font-size: 13px; color: #9A8E82; margin-top: 10px;
+    font-weight: 600; text-align: center;
+  }
+
+  /* ── Key Concept Box ── */
+  .key-concept {
+    background: #FFF3DC; border: 2px solid #F5E6C8;
+    border-radius: 14px; padding: 18px 20px; margin: 14px 0;
+  }
+  .key-concept .kc-label {
+    font-size: 13px; color: #C7922C; text-transform: uppercase;
+    letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px;
+  }
+  .key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+  .key-concept p:last-child { margin-bottom: 0; }
+
+  /* ── Practice Questions ── */
+  .pq {
+    background: #FAFAF6; border: 2px solid #E8DDD2;
+    border-radius: 14px; padding: 14px 18px; margin-bottom: 12px;
+  }
+  .pq-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px; border-radius: 50%;
+    color: #fff; font-weight: 800; font-size: 14px;
+    margin-right: 8px; vertical-align: middle;
+  }
+  .pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+
+  /* ── Vocab Flashcards ── */
+  .vocab-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 14px; margin: 14px 0;
+  }
+  .flip-card { perspective: 800px; height: 160px; cursor: pointer; }
+  .flip-card-inner {
+    position: relative; width: 100%; height: 100%;
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+  }
+  .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+  .flip-card-front, .flip-card-back {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    border-radius: 16px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 18px 20px; text-align: center;
+    border: 2px solid #E8DDD2;
+    box-shadow: 0 2px 10px rgba(43,29,18,0.06);
+  }
+  .flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+  .flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+  .flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #0E1C42; margin-bottom: 6px; }
+  .flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+  .flip-card-back {
+    background: linear-gradient(145deg, #0E1C42, #1A2D5A);
+    border-color: #0E1C42;
+    transform: rotateY(180deg);
+  }
+  .flip-card-back .fc-def { font-size: 15px; color: #fff; line-height: 1.6; font-weight: 600; }
+  .flip-card-back .fc-word-back {
+    font-size: 11px; color: #C7922C; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; margin-bottom: 8px;
+  }
+  .flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 10px; font-weight: 600; }
+  .fc-color-1 .flip-card-front { border-top-color: #E8636B; }
+  .fc-color-2 .flip-card-front { border-top-color: #D4772C; }
+  .fc-color-3 .flip-card-front { border-top-color: #C7922C; }
+  .fc-color-4 .flip-card-front { border-top-color: #55C8E8; }
+  .fc-color-5 .flip-card-front { border-top-color: #34B76F; }
+  .fc-color-6 .flip-card-front { border-top-color: #8B6FC0; }
+
+  /* ── Vocab Tooltips ── */
+  .vtip {
+    position: relative; color: #8B6FC0; font-weight: 700;
+    cursor: help; border-bottom: 2px dotted rgba(139,111,192,0.45);
+    transition: color 0.15s;
+  }
+  .vtip:hover { color: #6B4FA0; }
+  .vtip .vtip-box {
+    position: fixed; background: #0E1C42; color: #fff;
+    padding: 12px 16px; border-radius: 12px;
+    font-size: 14px; font-weight: 600; font-style: normal; line-height: 1.55;
+    width: 250px; text-align: center;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    pointer-events: none; z-index: 9999;
+    box-shadow: 0 6px 24px rgba(14,28,66,0.35);
+    border: 1.5px solid rgba(199,146,44,0.3);
+    transform: translateY(6px);
+  }
+  .vtip .vtip-box::after {
+    content: ''; position: absolute; top: 100%; left: 50%;
+    transform: translateX(-50%);
+    border: 7px solid transparent; border-top-color: #0E1C42;
+  }
+  .vtip .vtip-word {
+    font-size: 11px; color: #C7922C; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block;
+  }
+  .vtip:hover .vtip-box { opacity: 1; visibility: visible; transform: translateY(0); }
+
+  /* ── Details / Go Deeper ── */
+  details {
+    background: #fff; border: 2px solid #E8DDD2;
+    border-left: 5px solid #8B6FC0;
+    border-radius: 14px; margin-bottom: 12px; overflow: hidden;
+  }
+  details summary { padding: 12px 18px; font-size: 16px; font-weight: 700; color: #0E1C42; cursor: pointer; }
+  details summary:hover { background: #FAFAF6; }
+  details > div { padding: 12px 18px 14px; font-size: 16px; color: #5A4D3E; line-height: 1.65; border-top: 1.5px solid #E8DDD2; }
+
+  .go-deeper {
+    background: linear-gradient(135deg, #F0EDF6, #E8E2F2);
+    border: 2px solid #D8D0E8; border-radius: 16px; margin: 16px 0; overflow: hidden;
+  }
+  .go-deeper summary {
+    padding: 14px 18px; font-size: 16px; font-weight: 800; color: #0E1C42; cursor: pointer;
+    display: flex; align-items: center; gap: 10px; list-style: none;
+  }
+  .go-deeper summary::-webkit-details-marker { display: none; }
+  .go-deeper summary::before { content: '🔭'; font-size: 22px; }
+  .go-deeper summary::after { content: '▸'; margin-left: auto; font-size: 18px; color: #8B6FC0; transition: transform 0.3s; }
+  .go-deeper[open] summary::after { transform: rotate(90deg); }
+  .go-deeper .gd-body { padding: 4px 18px 16px; font-size: 15px; color: #5A4D3E; line-height: 1.7; border-top: 1.5px solid #D8D0E8; }
+  .go-deeper .gd-body p { margin-bottom: 10px; }
+
+  /* ── Mind-Blowing Fact ── */
+  .mind-blow {
+    background: linear-gradient(135deg, #1a2a4a, #0E1C42);
+    border: 2px solid rgba(199,146,44,0.3);
+    border-radius: 18px; padding: 18px 22px; margin: 18px 0;
+    display: flex; align-items: flex-start; gap: 14px;
+    position: relative; overflow: hidden;
+  }
+  .mind-blow::before {
+    content: ''; position: absolute; top: -30px; right: -30px;
+    width: 100px; height: 100px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(199,146,44,0.15), transparent);
+  }
+  .mind-blow-icon { font-size: 36px; flex-shrink: 0; animation: mind-blow-bounce 2s ease-in-out infinite; }
+  @keyframes mind-blow-bounce { 0%,100%{transform:scale(1)} 50%{transform:scale(1.12)} }
+  .mind-blow-content { flex: 1; }
+  .mind-blow-label { font-size: 11px; color: #FFD700; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 4px; }
+  .mind-blow-text { font-size: 16px; color: #fff; line-height: 1.6; font-weight: 600; }
+  .mind-blow-text strong { color: #C7922C; }
+
+  /* ── Clickable Diagram ── */
+  .diagram-interactive { position: relative; }
+  .diagram-interactive .hotspot { cursor: pointer; opacity: 0; transition: opacity 0.2s; }
+  .diagram-interactive .hotspot:hover { opacity: 0.25; }
+  .diagram-interactive .hotspot.active { opacity: 0.35; }
+  .diagram-info-panel {
+    background: #0E1C42; color: #fff;
+    padding: 14px 20px; border-radius: 14px;
+    font-size: 15px; line-height: 1.55; font-weight: 600; text-align: center;
+    border: 1.5px solid rgba(199,146,44,0.3);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    margin: 10px 0 0; display: none;
+  }
+  .diagram-info-panel.visible { display: block; }
+  .diagram-info-panel .dip-word {
+    font-size: 11px; color: #FFD700; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; display: block; margin-bottom: 3px;
+  }
+
+  /* ── Types Grid ── */
+  .types-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; }
+  .type-card { border-radius: 16px; padding: 16px; text-align: center; border: 2px solid; position: relative; overflow: hidden; }
+  .type-card svg { display: block; margin: 0 auto 10px; }
+  .type-name { font-size: 16px; font-weight: 800; color: #0E1C42; margin-bottom: 4px; }
+  .type-desc { font-size: 13px; color: #5A4D3E; line-height: 1.5; }
+  .tc-water   { background: #EAF8FD; border-color: #D6F2FB; }
+  .tc-wind    { background: #FFF7EE; border-color: #F0DCC4; }
+  .tc-ice     { background: #F0EDF6; border-color: #D8D0E8; }
+
+  /* ── Size Comparison ── */
+  .size-compare-wrap {
+    background: linear-gradient(180deg, #D6EEFB, #EAF8FD);
+    border: 2px solid #D6F2FB; border-radius: 16px;
+    padding: 16px; margin: 16px 0; text-align: center;
+  }
+  .size-compare-wrap svg { max-width: 100%; height: auto; }
+  .size-compare-caption { font-size: 13px; color: #9A8E82; margin-top: 10px; font-weight: 600; text-align: center; }
+
+  /* ── Self-Check Quiz ── */
+  .quiz-card {
+    background: #fff; border: 2px solid #E8DDD2;
+    border-left: 6px solid #F5A623;
+    border-radius: 18px; margin-bottom: 18px; overflow: hidden;
+    box-shadow: 0 2px 10px rgba(43,29,18,0.04);
+  }
+  .quiz-q { background: #FAFAF6; border: 2px solid #E8DDD2; border-radius: 14px; padding: 16px 18px; margin-bottom: 14px; }
+  .quiz-q-text { font-size: 17px; color: #2B1D12; font-weight: 700; line-height: 1.6; margin-bottom: 12px; }
+  .quiz-options { display: flex; flex-direction: column; gap: 8px; }
+  .quiz-opt {
+    padding: 10px 16px; border-radius: 12px;
+    border: 2px solid #E8DDD2; background: #fff;
+    font-size: 15px; font-weight: 700; color: #2B1D12;
+    cursor: pointer; transition: all 0.2s;
+    display: flex; align-items: center; gap: 10px; user-select: none;
+  }
+  .quiz-opt:hover { background: #FFF7EE; border-color: #F5A623; }
+  .quiz-opt.correct { background: #EEF8F0 !important; border-color: #34B76F !important; color: #1a6b35 !important; }
+  .quiz-opt.wrong   { background: #FFF0EC !important; border-color: #E8636B !important; color: #a33 !important; }
+  .quiz-opt.disabled { pointer-events: none; opacity: 0.6; }
+  .quiz-opt .opt-letter {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: #E8DDD2; color: #5A4D3E;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s;
+  }
+  .quiz-opt.correct .opt-letter { background: #34B76F; color: #fff; }
+  .quiz-opt.wrong   .opt-letter { background: #E8636B; color: #fff; }
+  .quiz-feedback { font-size: 14px; padding: 10px 14px; border-radius: 10px; margin-top: 10px; display: none; font-weight: 600; line-height: 1.5; }
+  .quiz-feedback.show { display: block; }
+  .quiz-feedback.fb-correct { background: #EEF8F0; color: #1a6b35; border: 1.5px solid #B8E8CF; }
+  .quiz-feedback.fb-wrong   { background: #FFF0EC; color: #8a3030; border: 1.5px solid #F5C4BA; }
+  .quiz-score {
+    text-align: center; padding: 16px; background: linear-gradient(135deg, #FFF7EE, #FFF3DC);
+    border: 2px solid #F5E6C8; border-radius: 14px; margin-top: 8px; display: none;
+  }
+  .quiz-score.show { display: block; }
+  .quiz-score-num { font-size: 36px; font-weight: 900; color: #0E1C42; }
+  .quiz-score-label { font-size: 14px; color: #9A8E82; font-weight: 700; }
+  .quiz-score-msg { font-size: 16px; color: #2B1D12; font-weight: 700; margin-top: 6px; }
+
+  /* ── Progress Bar ── */
+  .progress-wrap {
+    position: sticky; top: 0; z-index: 200;
+    background: #0E1C42; padding: 8px 20px 10px;
+    border-bottom: 2px solid rgba(199,146,44,0.3);
+    display: flex; align-items: center; gap: 14px;
+  }
+  .progress-label { font-size: 12px; color: #C7922C; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+  .progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+  .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #C7922C, #F5A623, #FFD700); border-radius: 10px; transition: width 0.4s ease; }
+  .progress-pct { font-size: 13px; color: #FFD700; font-weight: 800; min-width: 36px; text-align: right; }
+
+  /* ── Tab Bar ── */
+  .tab-bar {
+    position: sticky; top: 44px; z-index: 100;
+    background: #FAF7F3; border-bottom: 3px solid #E8DDD2;
+    display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .tab-bar::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex: 1; min-width: 130px; padding: 12px 8px 11px;
+    background: transparent; border: none; border-bottom: 4px solid transparent;
+    font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700;
+    color: #9A8E82; cursor: pointer; transition: all 0.2s;
+    white-space: nowrap; line-height: 1.3; text-align: center;
+  }
+  .tab-btn:hover { color: #0E1C42; background: #F0EDE8; }
+  .tab-btn.active { color: #0E1C42; border-bottom-color: #C7922C; background: #fff; }
+  .tab-btn .tab-check { display: none; font-size: 12px; color: #34B76F; margin-left: 4px; font-weight: 800; }
+  .tab-btn.visited .tab-check { display: inline; }
+
+  /* ── Tab Panels ── */
+  .tab-panel { display: none; padding: 24px 28px 36px; }
+  .tab-panel.active { display: block; }
+  .scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+  /* ── Intro 2-col ── */
+  .intro-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px 28px 0; }
+  .intro-2col .card { margin-bottom: 0; }
+  .intro-2col .card .card-head { cursor: pointer; user-select: none; position: relative; }
+  .intro-2col .card .card-head::after { content: '▾'; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #9A8E82; transition: transform 0.25s ease; }
+  .intro-2col .card.collapsed .card-head::after { transform: translateY(-50%) rotate(-90deg); }
+  .intro-2col .card.collapsed .card-body { display: none; }
+
+  /* ── Need Strip ── */
+  .need-strip { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 28px 16px; }
+  .need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 700; white-space: nowrap; }
+  .need-chip {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: #EEF8F0; border: 1.5px solid #C4E5CC;
+    border-radius: 20px; padding: 5px 12px;
+    font-size: 13px; color: #0E1C42; font-weight: 700;
+  }
+
+  /* ── Tab Next Button ── */
+  .tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+  .tab-next-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 30px; background: linear-gradient(135deg, #C7922C, #D4772C);
+    color: #fff; border: none; border-radius: 28px;
+    font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800;
+    cursor: pointer; box-shadow: 0 4px 16px rgba(199,146,44,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(199,146,44,0.4); }
+
+  /* ── Footer ── */
+  .footer { background: #0E1C42; border-top: 4px solid #C7922C; padding: 18px 28px; text-align: center; }
+  .footer-line1 { font-size: 15px; color: #fff; margin-bottom: 4px; }
+  .footer-line1 span { color: #C7922C; font-weight: 700; }
+  .footer-line2 { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+  .footer-line3 { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+  /* ── Checklist ── */
+  .checklist-item:hover { background: #F0EDE8 !important; }
+  .checklist-item.checked { background: #EEF8F0 !important; border-color: #B8E8CF !important; }
+  .checklist-item.checked .check-icon { border-color: transparent !important; background: transparent !important; font-size: 22px !important; }
+  .checklist-item.checked span:last-child { color: #5A4D3E; }
+
+  /* ── Back to Top ── */
+  .back-to-top {
+    position: fixed; bottom: 28px; right: 28px; height: 44px;
+    padding: 0 18px 0 14px; border-radius: 22px;
+    background: linear-gradient(135deg, #C7922C, #D4772C);
+    color: #fff; border: none; font-size: 14px; font-weight: 800;
+    font-family: 'Nunito', sans-serif; cursor: pointer;
+    box-shadow: 0 4px 18px rgba(199,146,44,0.35);
+    display: flex; align-items: center; gap: 6px;
+    opacity: 0; visibility: hidden; transform: translateY(20px);
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.2s;
+    z-index: 500; letter-spacing: 0.3px;
+  }
+  .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+  .back-to-top:hover { box-shadow: 0 6px 24px rgba(199,146,44,0.5); transform: translateY(-3px); }
+
+  /* ── Confetti Canvas ── */
+  #confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000; }
+
+  /* ── Assignment Table ── */
+  .assignment-table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+  .assignment-table th, .assignment-table td {
+    border: 2px solid #E8DDD2; padding: 10px 14px;
+    font-size: 15px; text-align: left;
+  }
+  .assignment-table th { background: #FFF3DC; color: #0E1C42; font-weight: 800; font-size: 14px; }
+  .assignment-table td { background: #FAFAF6; color: #2B1D12; }
+  .assignment-table tr:hover td { background: #FFF7EE; }
+
+  strong { color: #0E1C42; }
+  em { color: #5A4D3E; }
+
+  @media (max-width: 620px) {
+    .intro-2col { grid-template-columns: 1fr; }
+    .types-grid { grid-template-columns: 1fr; }
+    .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 4px; }
+  }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+<!-- ═══ PROGRESS BAR ═══ -->
+<div class="progress-wrap">
+  <span class="progress-label">🪨 Lesson Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══ HEADER ═══ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" /></div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">Weathering and Erosion: Earth's Slow Sculptors</div>
+  <div class="header-badge">
+    <span>🔬</span>
+    <span>SCIENCE &middot; EARTH &amp; SPACE</span>
+  </div>
+</div>
+
+<!-- ═══ HERO SVG ═══ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="stormSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a3a4a"/>
+      <stop offset="55%" stop-color="#3a4a5a"/>
+      <stop offset="100%" stop-color="#5c3a18"/>
+    </linearGradient>
+    <linearGradient id="canyonFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8B6B45"/>
+      <stop offset="25%" stop-color="#C4A15A"/>
+      <stop offset="50%" stop-color="#8B7355"/>
+      <stop offset="75%" stop-color="#6B5040"/>
+      <stop offset="100%" stop-color="#4a3525"/>
+    </linearGradient>
+    <linearGradient id="riverFlowGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3A7AB8"/>
+      <stop offset="50%" stop-color="#55A8D8"/>
+      <stop offset="100%" stop-color="#3A7AB8"/>
+    </linearGradient>
+    <linearGradient id="soilTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a8a35"/>
+      <stop offset="100%" stop-color="#8B6B45"/>
+    </linearGradient>
+  </defs>
+  <style>
+    @keyframes rain-fall { 0%{transform:translateY(-15px);opacity:0} 20%{opacity:0.65} 80%{opacity:0.65} 100%{transform:translateY(25px);opacity:0} }
+    @keyframes wind-line { 0%{transform:translateX(-15px);opacity:0} 30%{opacity:0.45} 70%{opacity:0.45} 100%{transform:translateX(25px);opacity:0} }
+    @keyframes river-pulse { 0%,100%{opacity:0.55} 50%{opacity:0.85} }
+    @keyframes dust-drift { 0%,100%{transform:translate(0,0);opacity:0.2} 50%{transform:translate(10px,-8px);opacity:0.5} }
+    @keyframes cloud-float { 0%,100%{transform:translateX(0)} 50%{transform:translateX(6px)} }
+    @keyframes glow-soil { 0%,100%{opacity:0.7} 50%{opacity:1} }
+    .r1{animation:rain-fall 1.9s linear infinite 0s}
+    .r2{animation:rain-fall 1.9s linear infinite 0.25s}
+    .r3{animation:rain-fall 1.9s linear infinite 0.5s}
+    .r4{animation:rain-fall 1.9s linear infinite 0.75s}
+    .r5{animation:rain-fall 1.9s linear infinite 1.0s}
+    .r6{animation:rain-fall 1.9s linear infinite 1.25s}
+    .r7{animation:rain-fall 1.9s linear infinite 1.5s}
+    .r8{animation:rain-fall 1.9s linear infinite 1.75s}
+    .w1{animation:wind-line 3.5s ease-in-out infinite 0s}
+    .w2{animation:wind-line 3.5s ease-in-out infinite 1.2s}
+    .w3{animation:wind-line 3.5s ease-in-out infinite 2.4s}
+    .river-anim{animation:river-pulse 2.5s ease-in-out infinite}
+    .d1{animation:dust-drift 4.5s ease-in-out infinite 0s}
+    .d2{animation:dust-drift 4.5s ease-in-out infinite 1.5s}
+    .d3{animation:dust-drift 4.5s ease-in-out infinite 3s}
+    .cloud-a{animation:cloud-float 7s ease-in-out infinite}
+    .cloud-b{animation:cloud-float 9s ease-in-out infinite 3s}
+  </style>
+
+  <!-- Sky -->
+  <rect width="920" height="260" fill="url(#stormSky)"/>
+
+  <!-- Storm clouds -->
+  <g class="cloud-a">
+    <ellipse cx="180" cy="52" rx="88" ry="26" fill="#2e3e50" opacity="0.9"/>
+    <ellipse cx="150" cy="58" rx="58" ry="20" fill="#2e3e50" opacity="0.75"/>
+    <ellipse cx="220" cy="55" rx="52" ry="18" fill="#2e3e50" opacity="0.7"/>
+  </g>
+  <g class="cloud-b">
+    <ellipse cx="620" cy="42" rx="95" ry="24" fill="#2e3e50" opacity="0.85"/>
+    <ellipse cx="588" cy="48" rx="62" ry="19" fill="#2e3e50" opacity="0.7"/>
+    <ellipse cx="660" cy="46" rx="55" ry="17" fill="#2e3e50" opacity="0.65"/>
+  </g>
+  <ellipse cx="390" cy="68" rx="55" ry="16" fill="#2e3e50" opacity="0.55"/>
+
+  <!-- Rain streaks -->
+  <line class="r1" x1="130" y1="78"  x2="124" y2="108" stroke="#7aaec4" stroke-width="1.5"/>
+  <line class="r2" x1="165" y1="70"  x2="159" y2="100" stroke="#7aaec4" stroke-width="1"/>
+  <line class="r3" x1="200" y1="82"  x2="194" y2="112" stroke="#7aaec4" stroke-width="1.5"/>
+  <line class="r4" x1="240" y1="74"  x2="234" y2="104" stroke="#7aaec4" stroke-width="1"/>
+  <line class="r5" x1="560" y1="65"  x2="554" y2="95"  stroke="#7aaec4" stroke-width="1.5"/>
+  <line class="r6" x1="600" y1="58"  x2="594" y2="88"  stroke="#7aaec4" stroke-width="1"/>
+  <line class="r7" x1="640" y1="70"  x2="634" y2="100" stroke="#7aaec4" stroke-width="1.5"/>
+  <line class="r8" x1="680" y1="62"  x2="674" y2="92"  stroke="#7aaec4" stroke-width="1"/>
+
+  <!-- Wind lines (mid-air) -->
+  <path class="w1" d="M60,155 Q120,150 180,158" stroke="#aac8d8" stroke-width="1.5" fill="none" opacity="0.4" stroke-dasharray="10,6"/>
+  <path class="w2" d="M700,148 Q780,143 860,151" stroke="#aac8d8" stroke-width="1.5" fill="none" opacity="0.4" stroke-dasharray="10,6"/>
+  <path class="w3" d="M300,170 Q400,164 500,172" stroke="#aac8d8" stroke-width="1.2" fill="none" opacity="0.3" stroke-dasharray="8,5"/>
+
+  <!-- ── LEFT CANYON WALL (layered strata) ── -->
+  <!-- Soil/grass cap -->
+  <polygon points="0,260 0,95 280,185 280,260" fill="url(#canyonFill)"/>
+  <!-- Individual strata bands -->
+  <polygon points="0,95  280,185 280,200 0,110"  fill="#C4A15A" opacity="0.45"/>
+  <polygon points="0,110 280,200 280,215 0,126"  fill="#8B7355" opacity="0.4"/>
+  <polygon points="0,126 280,215 280,228 0,140"  fill="#6B5545" opacity="0.35"/>
+  <polygon points="0,140 280,228 280,244 0,154"  fill="#B0A068" opacity="0.3"/>
+  <!-- Green topsoil cap -->
+  <polygon points="0,90  280,180 280,192 0,103"  fill="#6a8a45" opacity="0.6"/>
+  <!-- Crack lines showing weathering -->
+  <line x1="60"  y1="108" x2="55"  y2="125" stroke="#3a2a18" stroke-width="1.5" opacity="0.5"/>
+  <line x1="100" y1="115" x2="108" y2="132" stroke="#3a2a18" stroke-width="1.5" opacity="0.5"/>
+  <line x1="140" y1="120" x2="136" y2="140" stroke="#3a2a18" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- ── RIGHT CANYON WALL (layered strata) ── -->
+  <polygon points="920,260 920,100 640,188 640,260" fill="url(#canyonFill)"/>
+  <polygon points="920,100 640,188 640,202 920,115" fill="#C4A15A" opacity="0.45"/>
+  <polygon points="920,115 640,202 640,217 920,130" fill="#8B7355" opacity="0.4"/>
+  <polygon points="920,130 640,217 640,230 920,145" fill="#6B5545" opacity="0.35"/>
+  <polygon points="920,145 640,230 640,244 920,160" fill="#B0A068" opacity="0.3"/>
+  <polygon points="920,95  640,183 640,196 920,110" fill="#6a8a45" opacity="0.6"/>
+  <!-- Crack lines right wall -->
+  <line x1="855" y1="112" x2="860" y2="129" stroke="#3a2a18" stroke-width="1.5" opacity="0.5"/>
+  <line x1="810" y1="120" x2="802" y2="138" stroke="#3a2a18" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- ── RIVER at bottom ── -->
+  <ellipse class="river-anim" cx="460" cy="248" rx="185" ry="10" fill="url(#riverFlowGrad)"/>
+  <ellipse cx="420" cy="248" rx="18" ry="3" fill="#fff" opacity="0.15"/>
+  <ellipse cx="500" cy="249" rx="14" ry="2.5" fill="#fff" opacity="0.12"/>
+
+  <!-- Sediment particles floating -->
+  <circle class="d1" cx="360" cy="215" r="2.5" fill="#C4A15A" opacity="0.35"/>
+  <circle class="d2" cx="460" cy="225" r="2"   fill="#8B7355" opacity="0.3"/>
+  <circle class="d3" cx="550" cy="210" r="2.5" fill="#C4A15A" opacity="0.35"/>
+
+  <!-- Small plant on left wall -->
+  <ellipse cx="88" cy="92" rx="12" ry="6" fill="#5a8a35" opacity="0.7"/>
+  <ellipse cx="100" cy="90" rx="9"  ry="5" fill="#4a7a28" opacity="0.6"/>
+
+  <!-- Label -->
+  <text x="460" y="250" text-anchor="middle" font-family="Nunito,sans-serif" font-size="13" font-weight="800" fill="#FFD700" letter-spacing="2.5" opacity="0.85">WEATHERING &amp; EROSION: EARTH'S SLOW SCULPTORS</text>
+</svg>
+</div>
+
+<!-- ═══ INFO STRIP ═══ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF7EE;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q1 &middot; Unit 5</div>
+      <div class="info-detail">Dynamic Earth</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF3DC;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 5</div>
+      <div class="info-detail">Lesson 5.02 &mdash; Earth Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">✏️</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Weathering &amp; Erosion</div>
+      <div class="info-detail">Forces That Shape the Land</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">NGSS 4-ESS2-1</div>
+      <div class="info-detail">Earth's Changing Surface</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ INTRO 2-COL ═══ -->
+<div class="intro-2col">
+  <div class="card theme-earth scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">❓</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question for Today</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This&hellip;</div>
+          <div class="question">"The Grand Canyon is over a mile deep &mdash; but it's made of solid rock. How could something as simple as water carve through miles of rock over millions of years?"</div>
+        </div>
+      </div>
+      <p>Hold that question in mind as you work through today's lesson. By the end, you should be able to answer it using scientific vocabulary!</p>
+    </div>
+  </div>
+
+  <div class="card theme-sky scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#E8636B;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain what weathering is and describe at least three causes of weathering.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#D4772C;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain what erosion is and describe how wind, water, ice, and plants affect it.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#34B76F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> connect weathering and erosion to real-world changes in Earth's surface and to how early explorers used this knowledge.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Colored pencils</span>
+  <span class="need-chip"><span>📐</span>Ruler (for the chart)</span>
+</div>
+
+<!-- ═══ TAB BAR ═══ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📘 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+<!-- ═══════════════════════════════
+     TAB 1 — VOCABULARY
+═══════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <!-- VIDEO SLOT: Welcome -->
+  <div style="background:#fff;border:2px solid #E8DDD2;border-radius:18px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 10px rgba(43,29,18,0.04);">
+    <div style="display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);border-bottom:2px solid rgba(199,146,44,0.2);">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div style="font-size:10px;color:#C7922C;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;">Introduction · Welcome Video</div>
+        <div style="font-size:16px;color:#fff;font-weight:800;line-height:1.2;">Welcome to Today's Lesson!</div>
+      </div>
+    </div>
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#1a2a4a,#0E1C42);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;">
+        <div style="font-size:44px;margin-bottom:10px;opacity:0.55;">🎬</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.45);font-weight:600;line-height:1.5;">Teacher introduction video coming soon</div>
+        <div style="font-size:11px;color:rgba(199,146,44,0.4);font-family:monospace;margin-top:6px;"><!-- slot: 5-02-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 1: WARM-UP -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#E8636B;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Warm-Up: What Do You Already Know?</div>
+        <div class="act-subtitle">Activate your prior knowledge!</div>
+      </div>
+      <div class="act-time" style="background:#E8636B;">⏱ 5 min</div>
+    </div>
+    <div class="act-body">
+      <p>In your science notebook, draw a quick sketch of a rocky hillside or cliff. What do you think it looks like on the <strong>outside</strong>? What might be happening to the rock over time? Label anything you can &mdash; don't worry about getting it perfect!</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Write &amp; Reflect</div>
+          <div class="question">"Have you ever seen a crumbling wall, a muddy river, or sand being blown around? What do you think caused those changes? What questions does it raise in your mind?"</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>There are no wrong answers here! Scientists always start by asking questions and making observations. We'll come back to your sketch at the end of the lesson to see how much you've learned.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOCAB FLIP CARDS -->
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Before we explore, let's learn the words scientists use when they talk about how Earth's surface changes. <strong>Tap each card to flip it</strong> and read the definition. You'll see these words throughout the lesson!</p>
+      <div class="vocab-grid">
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌧️</div><div class="fc-word">Weathering</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Weathering</div><div class="fc-def">The breaking down of rocks and other materials on Earth's surface by wind, water, ice, or temperature changes.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">💨</div><div class="fc-word">Erosion</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Erosion</div><div class="fc-def">The movement of weathered rock and soil from one place to another by wind, water, or ice.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🧊</div><div class="fc-word">Glacier</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Glacier</div><div class="fc-def">A slow-moving, massive sheet of ice that grinds and scrapes rock as it moves across the land.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🏖️</div><div class="fc-word">Sediment</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Sediment</div><div class="fc-def">Tiny pieces of rock and soil that have been broken off and carried away by natural forces like wind or water.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">⬇️</div><div class="fc-word">Deposition</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Deposition</div><div class="fc-def">When sediment slows down and settles in a new place, building up new landforms over time.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌊</div><div class="fc-word">Runoff</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Runoff</div><div class="fc-def">Water that flows over the surface of the land after rain, picking up and carrying sediment as it moves.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mind-blow">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Mind-Blowing Fact</div>
+      <div class="mind-blow-text">The Colorado River has been carving the Grand Canyon for about <strong>5 to 6 million years</strong>. All that time, water &mdash; drop by drop &mdash; carved a canyon that is <strong>over a mile deep</strong> and 277 miles long. That's the power of erosion!</div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📘 The Lesson →</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════
+     TAB 2 — THE LESSON
+═══════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+
+  <!-- ACTIVITY 2: THE LESSON -->
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#D4772C;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📘 The Lesson: Weathering &amp; Erosion</div>
+        <div class="act-subtitle">Discover how natural forces slowly reshape the land!</div>
+      </div>
+      <div class="act-time" style="background:#D4772C;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- VIDEO SLOT: Lesson Explainer -->
+      <div style="background:#fff;border:2px solid #E8DDD2;border-radius:18px;margin-bottom:22px;overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);border-bottom:2px solid rgba(199,146,44,0.2);">
+          <span style="font-size:20px;">📘</span>
+          <div>
+            <div style="font-size:10px;color:#C7922C;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;">Activity 2 · Lesson Explainer</div>
+            <div style="font-size:16px;color:#fff;font-weight:800;line-height:1.2;">Let's Explore Weathering and Erosion!</div>
+          </div>
+        </div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#1a2a4a,#0E1C42);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;">
+            <div style="font-size:44px;margin-bottom:10px;opacity:0.55;">📘</div>
+            <div style="font-size:14px;color:rgba(255,255,255,0.45);font-weight:600;line-height:1.5;">Lesson explainer video coming soon</div>
+            <div style="font-size:11px;color:rgba(199,146,44,0.4);font-family:monospace;margin-top:6px;"><!-- slot: 5-02-lesson-explainer --></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTRODUCTION -->
+      <p><span class="vtip"><strong>Weathering</strong><span class="vtip-box"><span class="vtip-word">Weathering</span>The breaking down of rocks by wind, water, ice, or temperature changes.</span></span> and <span class="vtip"><strong>erosion</strong><span class="vtip-box"><span class="vtip-word">Erosion</span>The movement of broken rock and soil from one place to another.</span></span> are natural forces that slowly change the land. They help break rocks into smaller pieces, move dirt and sand around, and even help make soil. This soil is important for growing food. Long ago, explorers and settlers noticed these changes and used what they learned to find good land for farming and places to search for valuable rocks and minerals.</p>
+
+      <!-- PART 1: WEATHERING -->
+      <p style="font-size:18px;margin-top:18px;"><strong>Part 1 — What Is Weathering?</strong></p>
+      <p><span class="vtip"><strong>Weathering</strong><span class="vtip-box"><span class="vtip-word">Weathering</span>The breaking down of rocks by wind, water, ice, or temperature changes.</span></span> means breaking rocks into smaller pieces. This can happen in different ways:</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Stop &amp; Think</div>
+          <div class="question">"If you leave a metal bike outside in the rain for a whole year, what happens to it? How is that similar to what happens to a rock? What's doing the 'breaking down' in each case?"</div>
+        </div>
+      </div>
+
+      <!-- TYPES OF WEATHERING GRID -->
+      <div class="types-grid">
+        <div class="type-card tc-water">
+          <svg viewBox="0 0 180 100" width="180" height="100" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="100" fill="#EAF8FD" rx="8"/>
+            <!-- Rock -->
+            <polygon points="40,80 80,55 120,60 140,80" fill="#8B7355" stroke="#6B5545" stroke-width="1.5"/>
+            <!-- Cracks in rock -->
+            <line x1="70" y1="60" x2="65" y2="74" stroke="#4a3525" stroke-width="1.5"/>
+            <line x1="95" y1="58" x2="100" y2="72" stroke="#4a3525" stroke-width="1.5"/>
+            <!-- Water drops falling -->
+            <ellipse cx="60"  cy="30" rx="5" ry="7" fill="#55C8E8" opacity="0.7"/>
+            <ellipse cx="90"  cy="20" rx="5" ry="7" fill="#55C8E8" opacity="0.8"/>
+            <ellipse cx="120" cy="28" rx="5" ry="7" fill="#55C8E8" opacity="0.7"/>
+            <!-- Splash marks -->
+            <line x1="60" y1="55" x2="55" y2="50" stroke="#55C8E8" stroke-width="1"/>
+            <line x1="60" y1="55" x2="65" y2="50" stroke="#55C8E8" stroke-width="1"/>
+          </svg>
+          <div class="type-name">Water Weathering</div>
+          <div class="type-desc">Water gets into cracks in rock. When it freezes, it expands and breaks the rock apart.</div>
+        </div>
+
+        <div class="type-card tc-wind">
+          <svg viewBox="0 0 180 100" width="180" height="100" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="100" fill="#FFF7EE" rx="8"/>
+            <!-- Rock -->
+            <polygon points="50,80 100,50 140,58 155,80" fill="#8B7355" stroke="#6B5545" stroke-width="1.5"/>
+            <!-- Wind lines -->
+            <path d="M10,40 Q40,35 70,42" stroke="#D4772C" stroke-width="2" fill="none" opacity="0.6" stroke-dasharray="8,4"/>
+            <path d="M8,55  Q35,49 65,57" stroke="#D4772C" stroke-width="1.5" fill="none" opacity="0.5" stroke-dasharray="6,4"/>
+            <path d="M12,70 Q38,64 68,71" stroke="#D4772C" stroke-width="1.5" fill="none" opacity="0.45" stroke-dasharray="5,4"/>
+            <!-- Sand particles blowing off rock -->
+            <circle cx="145" cy="52" r="2"   fill="#C4A15A" opacity="0.7"/>
+            <circle cx="158" cy="48" r="1.5" fill="#C4A15A" opacity="0.6"/>
+            <circle cx="166" cy="44" r="1.5" fill="#C4A15A" opacity="0.5"/>
+            <circle cx="170" cy="58" r="1.5" fill="#C4A15A" opacity="0.6"/>
+          </svg>
+          <div class="type-name">Wind Weathering</div>
+          <div class="type-desc">Wind blows tiny bits of sand that slowly wear down and sand-blast rocks over time.</div>
+        </div>
+
+        <div class="type-card tc-ice">
+          <svg viewBox="0 0 180 100" width="180" height="100" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="100" fill="#F0EDF6" rx="8"/>
+            <!-- Mountain background -->
+            <polygon points="20,85 80,30 140,85" fill="#6B5545" opacity="0.3"/>
+            <!-- Glacier shape -->
+            <polygon points="50,32 110,32 125,65 35,65" fill="#B8D8F0" stroke="#88B8D8" stroke-width="1.5" opacity="0.85"/>
+            <!-- Ice crevasse lines -->
+            <line x1="65" y1="35" x2="60" y2="62" stroke="#88B8D8" stroke-width="1" opacity="0.5"/>
+            <line x1="90" y1="34" x2="88" y2="62" stroke="#88B8D8" stroke-width="1" opacity="0.5"/>
+            <!-- Grind marks on rock below -->
+            <line x1="38" y1="67" x2="122" y2="67" stroke="#6B5545" stroke-width="2" stroke-dasharray="6,3" opacity="0.5"/>
+            <!-- Ice label mark -->
+            <text x="90" y="55" text-anchor="middle" font-family="Nunito,sans-serif" font-size="9" font-weight="800" fill="#3a6a90" opacity="0.8">GLACIER</text>
+          </svg>
+          <div class="type-name">Ice / Glaciers</div>
+          <div class="type-desc">Big glaciers slide slowly across land and grind up rock beneath them like giant sandpaper.</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip" style="margin-top:6px;">
+        <span class="callout-icon">🌿</span>
+        <p><strong>Plants, too!</strong> Plant roots grow into tiny cracks in rocks and break them apart as the roots get bigger &mdash; like a tree root lifting a sidewalk, but happening to solid rock!</p>
+      </div>
+
+      <!-- INTERACTIVE CROSS-SECTION DIAGRAM -->
+      <p style="font-size:18px;margin-top:20px;"><strong>Part 2 — What Is Erosion?</strong></p>
+      <p><span class="vtip"><strong>Erosion</strong><span class="vtip-box"><span class="vtip-word">Erosion</span>The movement of broken rock and soil from one place to another.</span></span> is when those broken pieces of rock and soil are moved to new places. <span class="vtip"><strong>Runoff</strong><span class="vtip-box"><span class="vtip-word">Runoff</span>Water flowing over land that picks up and carries sediment.</span></span> &mdash; rainwater flowing over the ground &mdash; is one of the biggest causes. Tap on the diagram below to explore how erosion happens on a hillside!</p>
+
+      <div class="diagram-wrap diagram-interactive">
+        <svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,sans-serif;">
+          <defs>
+            <linearGradient id="dSky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#C8ECFB"/><stop offset="100%" stop-color="#E8F6FC"/>
+            </linearGradient>
+            <linearGradient id="dGrass" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#82C85A"/><stop offset="100%" stop-color="#96B63C"/>
+            </linearGradient>
+            <linearGradient id="dSoil" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#A8783A"/><stop offset="60%" stop-color="#8B6040"/>
+              <stop offset="100%" stop-color="#6B4A2A"/>
+            </linearGradient>
+            <linearGradient id="dRock" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#7A6A58"/><stop offset="100%" stop-color="#5A4A38"/>
+            </linearGradient>
+            <linearGradient id="dStream" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#6AB8E8"/><stop offset="100%" stop-color="#4A9AD8"/>
+            </linearGradient>
+            <radialGradient id="dSed" cx="0.5" cy="0.35" r="0.65">
+              <stop offset="0%" stop-color="#EAC870"/><stop offset="100%" stop-color="#B89040"/>
+            </radialGradient>
+          </defs>
+
+          <!-- SKY -->
+          <rect width="720" height="420" fill="url(#dSky)"/>
+
+          <!-- RAIN CLOUD -->
+          <ellipse cx="572" cy="62" rx="74" ry="26" fill="#B8C8D8"/>
+          <ellipse cx="540" cy="71" rx="52" ry="21" fill="#C8D8E8"/>
+          <ellipse cx="614" cy="69" rx="45" ry="20" fill="#C8D8E8"/>
+          <ellipse cx="574" cy="53" rx="37" ry="22" fill="#D4E2EE"/>
+          <line x1="547" y1="90" x2="542" y2="112" stroke="#68B8E8" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="565" y1="92" x2="560" y2="114" stroke="#68B8E8" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="583" y1="90" x2="578" y2="112" stroke="#68B8E8" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="601" y1="92" x2="596" y2="114" stroke="#68B8E8" stroke-width="2.5" stroke-linecap="round"/>
+
+          <!--
+            TERRAIN DESIGN  (academically accurate):
+            - Hill/slope: x=0 to x=480, surface line y = 135 + (x/480)*155
+              At x=0: surface y=135   At x=480: surface y=290
+            - Valley floor: x=480 to x=720, flat at y=290
+            - Grass cap: 28px thick on both slope and valley
+            - Rock zone: 90px below surface (parallel to slope)
+
+            WATER PATH (on surface, not underground):
+            - Stream starts at the weathered rock (x=400, surface y=264)
+            - Flows DOWN the slope surface to the hill-valley junction (x=480, y=290)
+            - Flows across the valley floor at y=290 to the sediment deposit (x=558)
+            - Sediment deposit MOUNDS UPWARD from the valley floor surface
+          -->
+
+          <!-- ROCK ZONE (deepest, darkest) -->
+          <polygon points="0,225 480,380 720,375 720,420 0,420" fill="url(#dRock)"/>
+
+          <!-- SOIL BODY -->
+          <polygon points="0,163 480,318 720,318 720,420 0,420" fill="url(#dSoil)"/>
+
+          <!-- GRASS CAP on slope -->
+          <polygon points="0,135 480,290 480,318 0,163" fill="url(#dGrass)"/>
+          <!-- GRASS CAP on valley floor -->
+          <rect x="480" y="290" width="240" height="28" fill="url(#dGrass)"/>
+
+          <!-- Rock layer divider hint lines -->
+          <line x1="0" y1="226" x2="480" y2="381" stroke="#3A2A18" stroke-width="1.2" opacity="0.18"/>
+          <line x1="480" y1="378" x2="720" y2="375" stroke="#3A2A18" stroke-width="1.2" opacity="0.18"/>
+
+          <!-- GRASS BLADES on slope -->
+          <g stroke="#5AAA28" stroke-width="2" stroke-linecap="round" fill="none">
+            <path d="M 46,131 Q 42,118 49,110"/>  <path d="M 46,131 Q 50,119 57,112"/>
+            <path d="M 68,134 Q 64,121 71,113"/>  <path d="M 68,134 Q 73,122 79,115"/>
+            <path d="M 92,138 Q 88,125 95,117"/>  <path d="M 92,138 Q 96,126 102,119"/>
+            <path d="M 116,142 Q 112,129 119,121"/> <path d="M 116,142 Q 120,130 126,123"/>
+            <path d="M 234,162 Q 230,149 237,141"/> <path d="M 234,162 Q 238,150 244,143"/>
+            <path d="M 256,166 Q 252,153 259,145"/> <path d="M 256,166 Q 260,154 266,147"/>
+            <path d="M 278,170 Q 274,157 281,149"/> <path d="M 278,170 Q 282,158 288,151"/>
+          </g>
+          <!-- GRASS BLADES on valley floor -->
+          <g stroke="#5AAA28" stroke-width="2" stroke-linecap="round" fill="none">
+            <path d="M 620,286 Q 616,273 623,265"/> <path d="M 620,286 Q 624,274 630,267"/>
+            <path d="M 650,286 Q 646,273 653,265"/> <path d="M 650,286 Q 654,274 660,267"/>
+            <path d="M 694,286 Q 690,273 697,265"/> <path d="M 694,286 Q 698,274 704,267"/>
+          </g>
+
+          <!-- TREE (x=155, base at slope surface y≈185) -->
+          <rect x="148" y="145" width="14" height="42" rx="5" fill="#7A5030"/>
+          <ellipse cx="155" cy="128" rx="38" ry="30" fill="#58A82A"/>
+          <ellipse cx="136" cy="143" rx="26" ry="19" fill="#68BE38"/>
+          <ellipse cx="175" cy="140" rx="24" ry="18" fill="#68BE38"/>
+          <ellipse cx="155" cy="114" rx="24" ry="18" fill="#7ACA40"/>
+          <!-- Roots into soil -->
+          <path d="M 149,185 Q 132,201 120,219" stroke="#7A5030" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <path d="M 155,185 Q 150,203 149,223" stroke="#7A5030" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <path d="M 162,185 Q 178,201 190,219" stroke="#7A5030" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <path d="M 120,219 Q 110,235 107,252" stroke="#7A5030" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M 149,223 Q 145,240 142,257" stroke="#7A5030" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M 190,219 Q 199,235 202,253" stroke="#7A5030" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+          <!-- STREAM ON SLOPE SURFACE then across VALLEY FLOOR
+               Starts at x=400 on slope surface (y≈264), follows slope down
+               to valley junction (480,290), then flows across valley at y=290.
+               Drawn OVER terrain so it sits visibly ON the surface. -->
+          <!-- Stream -->
+          <path d="M 402,264 Q 434,278 458,288 Q 470,292 480,291 L 558,291"
+                stroke="url(#dStream)" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <!-- White shimmer -->
+          <path d="M 402,264 Q 434,278 458,288 Q 470,292 480,291 L 558,291"
+                stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round"
+                opacity="0.42" stroke-dasharray="13,11"/>
+
+          <!-- WEATHERED ROCK (x=355, slope surface y≈250) — drawn AFTER stream -->
+          <polygon points="338,242 360,234 387,238 394,252 380,263 353,265 336,255"
+                   fill="#C8A258" stroke="#9A7A38" stroke-width="2"/>
+          <line x1="347" y1="246" x2="342" y2="261" stroke="#7A5A28" stroke-width="2" stroke-linecap="round"/>
+          <line x1="363" y1="238" x2="366" y2="255" stroke="#7A5A28" stroke-width="2" stroke-linecap="round"/>
+          <line x1="379" y1="241" x2="373" y2="257" stroke="#7A5A28" stroke-width="2" stroke-linecap="round"/>
+          <polygon points="387,238 398,232 403,245 391,250" fill="#D8B268" stroke="#9A7A38" stroke-width="1.5"/>
+
+          <!-- SEDIMENT DEPOSIT / ALLUVIAL FAN
+               Mounded upward from valley floor (y=290). Academically correct: fine particles
+               deposited where water slows on the flat valley floor. -->
+          <ellipse cx="538" cy="284" rx="90" ry="19" fill="url(#dSed)" stroke="#A88030" stroke-width="1.5"/>
+          <ellipse cx="538" cy="276" rx="70" ry="13" fill="#D8B860" opacity="0.65"/>
+          <ellipse cx="538" cy="270" rx="46" ry="9"  fill="#E8C870" opacity="0.55"/>
+
+          <!-- LABELS -->
+          <!-- Soil Layer -->
+          <line x1="60" y1="112" x2="82" y2="146" stroke="#1A2A42" stroke-width="1.8"/>
+          <rect x="14" y="96" width="94" height="28" rx="8" fill="#C8E8A8" stroke="#90C868" stroke-width="1.8"/>
+          <text x="61" y="115" text-anchor="middle" font-size="13" font-weight="800" fill="#2A6018">Soil Layer</text>
+
+          <!-- Plant Roots -->
+          <line x1="108" y1="262" x2="142" y2="226" stroke="#1A2A42" stroke-width="1.8"/>
+          <rect x="14" y="250" width="104" height="28" rx="8" fill="#C8E8A8" stroke="#90C868" stroke-width="1.8"/>
+          <text x="66" y="269" text-anchor="middle" font-size="13" font-weight="800" fill="#2A6018">Plant Roots</text>
+
+          <!-- Rock Layers -->
+          <line x1="108" y1="344" x2="150" y2="318" stroke="#1A2A42" stroke-width="1.8"/>
+          <rect x="14" y="332" width="100" height="28" rx="8" fill="#F0D880" stroke="#C8B040" stroke-width="1.8"/>
+          <text x="64" y="351" text-anchor="middle" font-size="13" font-weight="800" fill="#7A5A10">Rock Layers</text>
+
+          <!-- Running Water — points to stream on valley floor -->
+          <line x1="528" y1="192" x2="520" y2="286" stroke="#1A2A42" stroke-width="1.8"/>
+          <rect x="528" y="180" width="126" height="28" rx="8" fill="#B8E4F8" stroke="#78C0E8" stroke-width="1.8"/>
+          <text x="591" y="199" text-anchor="middle" font-size="13" font-weight="800" fill="#185888">Running Water</text>
+
+          <!-- Weathered Rock — points left to rock chunk -->
+          <line x1="436" y1="250" x2="396" y2="250" stroke="#1A2A42" stroke-width="1.8"/>
+          <rect x="436" y="236" width="130" height="28" rx="8" fill="#F8CC80" stroke="#D8A840" stroke-width="1.8"/>
+          <text x="501" y="255" text-anchor="middle" font-size="13" font-weight="800" fill="#7A4A10">Weathered Rock</text>
+
+          <!-- Sediment Deposit — points DOWN to mound on valley floor -->
+          <line x1="534" y1="332" x2="536" y2="303" stroke="#1A2A42" stroke-width="1.8"/>
+          <rect x="488" y="332" width="140" height="28" rx="8" fill="#F8C0B8" stroke="#E09080" stroke-width="1.8"/>
+          <text x="558" y="351" text-anchor="middle" font-size="13" font-weight="800" fill="#882018">Sediment Deposit</text>
+
+          <!-- INVISIBLE HOTSPOTS -->
+          <polygon class="hotspot" data-part="soil-layer"
+            data-info="The dark upper layer of Earth&apos;s surface, made from tiny pieces of weathered rock mixed with decayed plants and animals. Weathering breaks rock into soil over thousands of years!"
+            points="0,135 480,290 480,318 0,163" fill="#34B76F"/>
+          <polygon class="hotspot" data-part="weathered-rock"
+            data-info="You can see cracks forming in this rock! Water seeps into cracks, freezes, and expands — splitting rock into pieces. This is the START of weathering."
+            points="328,228 408,228 408,270 328,270" fill="#D4772C"/>
+          <ellipse class="hotspot" data-part="plant-roots"
+            data-info="Plant roots grip the soil and hold it in place — helping PREVENT erosion. But roots also push into rock cracks and widen them, causing weathering. Plants do both!"
+            cx="155" cy="195" rx="72" ry="72" fill="#34B76F"/>
+          <path class="hotspot" data-part="running-water"
+            data-info="Water flowing downhill picks up loose sediment and carries it away — that&apos;s erosion in action! Steep hills make water flow faster, which causes MORE erosion."
+            d="M 394,258 Q 428,274 454,285 Q 470,291 480,290 L 566,290 L 566,298 Q 480,298 476,296 Q 454,294 426,284 Q 392,271 392,265 Z"
+            fill="#3A7AB8"/>
+          <ellipse class="hotspot" data-part="sediment-deposit"
+            data-info="When running water slows down on the flat valley floor, it can no longer carry heavy sediment. The particles drop and pile up — this is DEPOSITION, forming features like alluvial fans and river deltas!"
+            cx="538" cy="282" rx="94" ry="26" fill="#C7922C"/>
+        </svg>
+
+        <div style="background:linear-gradient(135deg,#FFF7EE,#FFF3DC);border:2px solid #F5E6C8;border-radius:14px;padding:12px 18px;margin-top:10px;display:flex;align-items:center;gap:12px;">
+          <span style="font-size:28px;flex-shrink:0;animation:mind-blow-bounce 2s ease-in-out infinite;">👆</span>
+          <p style="font-size:15px;color:#2B1D12;line-height:1.55;margin:0;font-weight:600;">Tap on any part of the hillside &mdash; the soil, the cracked rock, the plant roots, the stream, or the sediment pile &mdash; to learn what's happening there.</p>
+        </div>
+        <div class="diagram-info-panel" id="diagramPanel">
+          <span class="dip-word" id="diagramWord"></span>
+          <span id="diagramInfo"></span>
+        </div>
+      </div>
+
+      <!-- KEY CONCEPT -->
+      <div class="key-concept">
+        <div class="kc-label">🔑 Key Concept</div>
+        <p><span class="vtip"><strong>Weathering</strong><span class="vtip-box"><span class="vtip-word">Weathering</span>The breaking down of rocks by natural forces.</span></span> and <span class="vtip"><strong>erosion</strong><span class="vtip-box"><span class="vtip-word">Erosion</span>The movement of broken rock and soil.</span></span> are a two-step team: <strong>weathering breaks rock apart first</strong>, and then <strong>erosion carries those pieces away</strong>. One can't really do its job without the other!</p>
+        <p>Think of it like making a smoothie: weathering is the blender breaking the fruit into small pieces, and erosion is pouring the smoothie into a new container.</p>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Stop &amp; Reason</div>
+          <div class="question">"Why do you think erosion is worse on a steep hill than on flat ground? And why would a hill covered in grass erode less than a bare, rocky hill with no plants?"</div>
+        </div>
+      </div>
+
+      <!-- REAL-WORLD CONNECTION -->
+      <div class="callout callout-think">
+        <span class="callout-icon">🏺</span>
+        <p><strong>Why It Mattered in History:</strong> Early explorers and farmers watched how the land changed. They used this knowledge to find <strong>good places to grow crops</strong> (where erosion had built up rich soil) and where to <strong>dig for gold, silver, or other minerals</strong>. Miners even learned to copy nature's ways of breaking down rock to get what they needed more quickly.</p>
+      </div>
+
+      <!-- SIZE COMPARISON: Grand Canyon -->
+      <div class="size-compare-wrap scroll-reveal">
+        <svg viewBox="0 0 680 210" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,sans-serif;">
+          <defs>
+            <linearGradient id="canyonDepth" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#C4A15A"/>
+              <stop offset="30%" stop-color="#8B7355"/>
+              <stop offset="60%" stop-color="#6B5545"/>
+              <stop offset="100%" stop-color="#4a3525"/>
+            </linearGradient>
+          </defs>
+          <!-- Ground line -->
+          <rect x="0" y="150" width="680" height="4" fill="#8B7355"/>
+          <rect x="0" y="154" width="680" height="56" fill="#C4A15A" opacity="0.3"/>
+
+          <!-- Person (~1.8m → ~1px at scale where 1,600m = 150px) -->
+          <!-- Scale: 150px = 1,600m → 1m = 0.094px → 1.8m ≈ 0.17px (too small) -->
+          <!-- Let's use a different visual approach: a bar chart showing relative heights -->
+
+          <!-- Bar 1: Person (1.8m) — shown at a minimum symbolic height -->
+          <rect x="40" y="142" width="50" height="8" rx="3" fill="#E8636B"/>
+          <!-- Person stick figure -->
+          <circle cx="65" cy="132" r="7" fill="#E8636B"/>
+          <line  x1="65" y1="139" x2="65" y2="152" stroke="#E8636B" stroke-width="2.5"/>
+          <line  x1="65" y1="143" x2="56" y2="149" stroke="#E8636B" stroke-width="2"/>
+          <line  x1="65" y1="143" x2="74" y2="149" stroke="#E8636B" stroke-width="2"/>
+          <text x="65" y="170" text-anchor="middle" font-size="10" font-weight="700" fill="#5A4D3E">Person</text>
+          <text x="65" y="182" text-anchor="middle" font-size="9" fill="#9A8E82">1.8m</text>
+
+          <!-- Bar 2: School Building (~12m → ~1px — still symbolic) -->
+          <rect x="140" y="110" width="55" height="40" rx="3" fill="#D4772C"/>
+          <!-- Windows -->
+          <rect x="147" y="116" width="9" height="8" rx="1" fill="#fff" opacity="0.6"/>
+          <rect x="162" y="116" width="9" height="8" rx="1" fill="#fff" opacity="0.6"/>
+          <rect x="177" y="116" width="9" height="8" rx="1" fill="#fff" opacity="0.6"/>
+          <rect x="147" y="130" width="9" height="8" rx="1" fill="#fff" opacity="0.6"/>
+          <rect x="162" y="130" width="9" height="8" rx="1" fill="#fff" opacity="0.6"/>
+          <rect x="177" y="130" width="9" height="8" rx="1" fill="#fff" opacity="0.6"/>
+          <text x="168" y="170" text-anchor="middle" font-size="10" font-weight="700" fill="#5A4D3E">School</text>
+          <text x="168" y="182" text-anchor="middle" font-size="9" fill="#9A8E82">~12m</text>
+
+          <!-- Bar 3: Statue of Liberty (93m → ~9px) -->
+          <rect x="265" y="62" width="50" height="88" rx="2" fill="#6BA89A" opacity="0.85"/>
+          <rect x="260" y="57" width="60" height="10" rx="2" fill="#55917F"/>
+          <polygon points="290,57 283,38 297,38" fill="#6BA89A"/>
+          <line x1="290" y1="38" x2="278" y2="24" stroke="#6BA89A" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="278" cy="22" r="4" fill="#FFD700"/>
+          <text x="290" y="170" text-anchor="middle" font-size="10" font-weight="700" fill="#5A4D3E">Statue of</text>
+          <text x="290" y="182" text-anchor="middle" font-size="10" font-weight="700" fill="#5A4D3E">Liberty</text>
+          <text x="290" y="194" text-anchor="middle" font-size="9" fill="#9A8E82">93m</text>
+
+          <!-- Bar 4: Grand Canyon depth (1,600m — shown as canyon) -->
+          <!-- Left canyon wall -->
+          <polygon points="390,154 420,154 430,8 395,8" fill="url(#canyonDepth)"/>
+          <!-- Strata lines in left wall -->
+          <line x1="390" y1="70"  x2="430" y2="68"  stroke="#C4A15A" stroke-width="2" opacity="0.5"/>
+          <line x1="390" y1="95"  x2="430" y2="93"  stroke="#8B7355" stroke-width="2" opacity="0.45"/>
+          <line x1="390" y1="118" x2="430" y2="116" stroke="#6B5545" stroke-width="2" opacity="0.4"/>
+          <line x1="390" y1="138" x2="430" y2="136" stroke="#4a3525" stroke-width="2" opacity="0.35"/>
+          <!-- Right canyon wall -->
+          <polygon points="590,154 620,154 625,8 580,8" fill="url(#canyonDepth)"/>
+          <line x1="580" y1="70"  x2="625" y2="68"  stroke="#C4A15A" stroke-width="2" opacity="0.5"/>
+          <line x1="580" y1="95"  x2="625" y2="93"  stroke="#8B7355" stroke-width="2" opacity="0.45"/>
+          <line x1="580" y1="118" x2="625" y2="116" stroke="#6B5545" stroke-width="2" opacity="0.4"/>
+          <line x1="580" y1="138" x2="625" y2="136" stroke="#4a3525" stroke-width="2" opacity="0.35"/>
+          <!-- River at canyon bottom -->
+          <ellipse cx="505" cy="153" rx="75" ry="6" fill="#3A7AB8" opacity="0.7"/>
+          <!-- Depth arrow -->
+          <line x1="505" y1="12"  x2="505" y2="148" stroke="#0E1C42" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.5"/>
+          <polygon points="505,148 500,136 510,136" fill="#0E1C42" opacity="0.5"/>
+          <polygon points="505,12  500,24  510,24"  fill="#0E1C42" opacity="0.5"/>
+          <!-- Depth label -->
+          <rect x="455" y="70" width="100" height="24" rx="6" fill="#0E1C42" opacity="0.75"/>
+          <text x="505" y="87" text-anchor="middle" font-size="11" font-weight="800" fill="#FFD700">1,600m deep</text>
+          <text x="505" y="170" text-anchor="middle" font-size="10" font-weight="700" fill="#5A4D3E">Grand Canyon</text>
+          <text x="505" y="182" text-anchor="middle" font-size="9" fill="#9A8E82">carved by erosion</text>
+          <text x="505" y="194" text-anchor="middle" font-size="9" fill="#9A8E82">over 5–6 million years</text>
+
+          <!-- Scale note -->
+          <text x="340" y="13" text-anchor="middle" font-size="9" fill="#9A8E82" font-style="italic">* not to scale — shows relative sizes</text>
+        </svg>
+        <div class="size-compare-caption">The Grand Canyon is 1,600 meters deep — carved entirely by the slow, patient work of the Colorado River. That's erosion at its most powerful!</div>
+      </div>
+
+      <!-- GO DEEPER 1 -->
+      <details class="go-deeper scroll-reveal">
+        <summary>Curious? Go Deeper &mdash; How Weathering Creates Soil</summary>
+        <div class="gd-body">
+          <p>Soil doesn't just appear out of nowhere &mdash; it's actually made through weathering! Over thousands of years, rocks are broken into smaller and smaller pieces by water, wind, ice, and plant roots. The tiniest pieces mix with decayed leaves and animals to form <strong>soil</strong>.</p>
+          <p>Good soil takes an incredibly long time to form &mdash; about <strong>500 years to make just one inch of topsoil</strong>. That means the soil in your garden is ancient history! This is why protecting soil from erosion is so important: once it's washed away, it's very hard to replace.</p>
+          <p>Early explorers knew this. When they found land with thick, dark soil near rivers, they knew erosion had been depositing rich sediment there for centuries &mdash; perfect for farming!</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════
+     TAB 3 — GUIDED EXPLORATION
+═══════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#55C8E8;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🔬 Guided Exploration: Following a Rock's Journey</div>
+        <div class="act-subtitle">Trace the path from solid rock to faraway sediment!</div>
+      </div>
+      <div class="act-time" style="background:#55C8E8;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- VIDEO SLOT: Exploration Explainer -->
+      <div style="background:#fff;border:2px solid #E8DDD2;border-radius:18px;margin-bottom:22px;overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);border-bottom:2px solid rgba(199,146,44,0.2);">
+          <span style="font-size:20px;">🔬</span>
+          <div>
+            <div style="font-size:10px;color:#C7922C;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;">Activity 3 · Guided Exploration</div>
+            <div style="font-size:16px;color:#fff;font-weight:800;line-height:1.2;">Follow the Journey of a Rock!</div>
+          </div>
+        </div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#1a2a4a,#0E1C42);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;">
+            <div style="font-size:44px;margin-bottom:10px;opacity:0.55;">🔬</div>
+            <div style="font-size:14px;color:rgba(255,255,255,0.45);font-weight:600;line-height:1.5;">Guided exploration video coming soon</div>
+            <div style="font-size:11px;color:rgba(199,146,44,0.4);font-family:monospace;margin-top:6px;"><!-- slot: 5-02-exploration-explainer --></div>
+          </div>
+        </div>
+      </div>
+
+      <p>Let's trace what happens to a piece of rock from the moment it starts to break apart to when it ends up somewhere completely new. Follow the journey <strong>step by step</strong>:</p>
+
+      <!-- 4-STEP PROCESS -->
+      <div style="margin:16px 0;">
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#6B5040,#8B7355);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(107,80,64,0.3);">1</div>
+          <div style="flex:1;background:#FFF7EE;border:2px solid #F0DCC4;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Weathering Begins:</strong> A solid rock on a hillside starts to change. Water seeps into a tiny crack and freezes overnight. The ice expands &mdash; like magic &mdash; making the crack a little wider. Wind blows sand grains against the rock's surface, slowly grinding it down. Over years, <span class="vtip"><strong>weathering</strong><span class="vtip-box"><span class="vtip-word">Weathering</span>The breaking down of rocks by natural forces.</span></span> chips off small pieces of rock.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#C7922C,#D4772C);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(199,146,44,0.3);">2</div>
+          <div style="flex:1;background:#FFF3DC;border:2px solid #F5E6C8;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Pieces Break Loose:</strong> The rock chips break off and become loose <span class="vtip"><strong>sediment</strong><span class="vtip-box"><span class="vtip-word">Sediment</span>Tiny pieces of rock and soil carried by natural forces.</span></span> &mdash; small grains of sand, pebbles, or grit. They sit on the soil surface, ready to be moved.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#3A7AB8,#55A8D8);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(58,122,184,0.3);">3</div>
+          <div style="flex:1;background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Erosion Carries Them Away:</strong> Rain falls and <span class="vtip"><strong>runoff</strong><span class="vtip-box"><span class="vtip-word">Runoff</span>Water flowing over land that picks up and carries sediment.</span></span> flows downhill, picking up the loose sediment. Faster water carries more &mdash; just like a fast-moving river can carry boulders, but a slow stream only carries sand. This is <span class="vtip"><strong>erosion</strong><span class="vtip-box"><span class="vtip-word">Erosion</span>The movement of broken rock and soil from one place to another.</span></span> in action!</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#34B76F,#2a9a5a);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(52,183,111,0.3);">4</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Deposition — A New Home:</strong> When the water slows down &mdash; maybe reaching a flat valley or a river mouth &mdash; it can no longer carry the heavy sediment. The grains sink and settle. This is called <span class="vtip"><strong>deposition</strong><span class="vtip-box"><span class="vtip-word">Deposition</span>When sediment slows down and settles in a new place.</span></span>. Over time, <span class="vtip">deposition<span class="vtip-box"><span class="vtip-word">Deposition</span>When sediment slows and settles in a new place, building new landforms.</span></span> builds up new land &mdash; like river deltas, beaches, and fertile floodplains!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think Like a Scientist</div>
+          <div class="question">"We said erosion is like a river carrying sediment. A fast river can carry boulders; a slow stream only carries sand. Why do you think the speed of water matters so much for how much sediment is moved?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MIND-BLOWING FACT #2 -->
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Mind-Blowing Fact</div>
+      <div class="mind-blow-text">In the 1930s, massive wind erosion created a disaster called the <strong>Dust Bowl</strong>. With no plant roots holding the soil in place, wind blew away <strong>millions of acres of topsoil</strong> across the Great Plains. Entire farms were buried in dust. It took decades to recover &mdash; and scientists learned that plants are Earth's most important protection against erosion.</div>
+    </div>
+  </div>
+
+  <!-- GO DEEPER 2 -->
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper &mdash; Gentle or Violent Erosion?</summary>
+    <div class="gd-body">
+      <p>Not all erosion happens the same way! Scientists describe different rates:</p>
+      <p><strong>Slow erosion</strong> happens gradually over thousands of years &mdash; like the Colorado River carving the Grand Canyon millimeter by millimeter. Most erosion in nature works this way.</p>
+      <p><strong>Fast erosion</strong> can happen suddenly. Heavy rainstorms, flooding rivers, or crumbling cliffs can move huge amounts of sediment in just minutes. A landslide is an extreme example &mdash; tons of soil and rock suddenly rush downhill at once.</p>
+      <p>Scientists today study erosion to help communities protect their land, coastlines, and farms from damage. Engineers design barriers and plant trees to slow erosion down.</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════
+     TAB 4 — SELF-CHECK QUIZ
+═══════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div class="quiz-card scroll-reveal" style="margin-top:0;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#F5A623;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">⚡</div>
+      <div style="flex:1;">
+        <div style="font-size:19px;color:#0E1C42;font-weight:800;line-height:1.2;">🧠 Quick Self-Check</div>
+        <div style="font-size:12px;color:#9A8E82;">Not graded &mdash; just for you! See how much you remember before starting the assignment.</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+
+      <!-- Q1 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. What is the difference between weathering and erosion?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>They are the same process — just different words for it</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Weathering breaks rocks down; erosion moves the broken pieces away</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Erosion happens underground; weathering happens at the surface</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🪨 That's right! Weathering is the breaking — erosion is the moving. They work together as a team!</div>
+        <div class="quiz-feedback fb-wrong">Not quite! Hint: think about what each word means — one is about <em>breaking</em>, the other is about <em>moving</em>.</div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">2. Which of the following best helps PREVENT erosion?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>A steep hillside with no plants on it</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Fast-moving water flowing over bare ground</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Plant roots gripping and holding the soil in place</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌿 Exactly! Plant roots act like anchors that hold soil in place. The Dust Bowl happened because there were no plants to hold the soil!</div>
+        <div class="quiz-feedback fb-wrong">Not quite! Think about what holds soil in place on a hillside. What's missing when erosion gets really bad?</div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-text">3. What happens when water gets into cracks in a rock and then freezes?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>The ice expands and pushes the crack apart, breaking the rock</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>The rock gets stronger and the crack seals shut</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>The water soaks into the rock and disappears</div>
+        </div>
+        <div class="quiz-feedback fb-correct">❄️ Correct! When water freezes, it expands. In a tight crack, that expansion acts like a tiny wedge, slowly splitting the rock. This is called freeze-thaw weathering!</div>
+        <div class="quiz-feedback fb-wrong">Not quite! Remember — ice takes up more space than liquid water. What does that expanding ice do to a crack it's stuck inside?</div>
+      </div>
+
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum"></div>
+        <div class="quiz-score-label">out of 3 correct</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════
+     TAB 5 — ASSIGNMENT
+═══════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#34B76F;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment: Show What You Know</div>
+        <div class="act-subtitle">Science Notebook Activity: Weathering and Erosion</div>
+      </div>
+      <div class="act-time" style="background:#34B76F;">⏱ 12 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- VIDEO SLOT: Assignment Explainer -->
+      <div style="background:#fff;border:2px solid #E8DDD2;border-radius:18px;margin-bottom:22px;overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);border-bottom:2px solid rgba(199,146,44,0.2);">
+          <span style="font-size:20px;">✍️</span>
+          <div>
+            <div style="font-size:10px;color:#C7922C;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;">Activity 4 · Assignment Explainer</div>
+            <div style="font-size:16px;color:#fff;font-weight:800;line-height:1.2;">Here's What to Do for Your Assignment!</div>
+          </div>
+        </div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#1a2a4a,#0E1C42);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;">
+            <div style="font-size:44px;margin-bottom:10px;opacity:0.55;">✍️</div>
+            <div style="font-size:14px;color:rgba(255,255,255,0.45);font-weight:600;line-height:1.5;">Assignment explainer video coming soon</div>
+            <div style="font-size:11px;color:rgba(199,146,44,0.4);font-family:monospace;margin-top:6px;"><!-- slot: 5-02-assignment-explainer --></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── TITLE YOUR PAGE ─── -->
+      <div style="background:#FFF3DC;border:2px solid #F5E6C8;border-radius:14px;padding:14px 18px;margin-bottom:18px;display:flex;align-items:center;gap:12px;">
+        <span style="font-size:28px;">📓</span>
+        <div>
+          <div style="font-size:13px;color:#C7922C;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;margin-bottom:2px;">First Step</div>
+          <div style="font-size:17px;color:#0E1C42;font-weight:700;line-height:1.4;"><strong>Title your page:</strong> <em>Weathering and Erosion</em></div>
+        </div>
+      </div>
+
+      <!-- ─── PART 1: VOCABULARY MATCH ─── -->
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">1. Vocabulary Match</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">In your science notebook, draw a line to match each word with its correct meaning:</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px;">
+        <!-- Words column -->
+        <div>
+          <div style="font-size:13px;color:#C7922C;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;margin-bottom:10px;">Words</div>
+          <div class="pq" style="margin-bottom:10px;"><span style="font-size:16px;color:#0E1C42;font-weight:800;">Weathering</span> →</div>
+          <div class="pq" style="margin-bottom:10px;"><span style="font-size:16px;color:#0E1C42;font-weight:800;">Erosion</span> →</div>
+          <div class="pq" style="margin-bottom:10px;"><span style="font-size:16px;color:#0E1C42;font-weight:800;">Glacier</span> →</div>
+          <div class="pq"><span style="font-size:16px;color:#0E1C42;font-weight:800;">Soil</span> →</div>
+        </div>
+        <!-- Definitions column -->
+        <div>
+          <div style="font-size:13px;color:#C7922C;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;margin-bottom:10px;">Definitions</div>
+          <div class="pq" style="margin-bottom:10px;"><span class="pq-num" style="background:#E8636B;">A</span><span style="font-size:15px;color:#2B1D12;">A slow-moving sheet of ice that can grind rocks</span></div>
+          <div class="pq" style="margin-bottom:10px;"><span class="pq-num" style="background:#D4772C;">B</span><span style="font-size:15px;color:#2B1D12;">The movement of broken rock or soil from one place to another</span></div>
+          <div class="pq" style="margin-bottom:10px;"><span class="pq-num" style="background:#C7922C;">C</span><span style="font-size:15px;color:#2B1D12;">Dirt made from tiny pieces of rock and organic matter</span></div>
+          <div class="pq"><span class="pq-num" style="background:#55C8E8;">D</span><span style="font-size:15px;color:#2B1D12;">The breaking of rocks into smaller pieces</span></div>
+        </div>
+      </div>
+
+      <!-- ─── PART 2: CAUSE AND EFFECT CHART ─── -->
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">2. Cause and Effect Chart</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:12px;">Copy this chart into your science notebook and fill in what each natural force does to rocks or soil:</p>
+
+      <div style="overflow-x:auto;margin-bottom:20px;">
+        <table class="assignment-table">
+          <thead>
+            <tr>
+              <th style="width:35%;">Natural Force</th>
+              <th>What It Does to Rocks or Soil</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>💧 Water</td><td style="color:#9A8E82;font-style:italic;">Write your answer here…</td></tr>
+            <tr><td>💨 Wind</td><td style="color:#9A8E82;font-style:italic;">Write your answer here…</td></tr>
+            <tr><td>🧊 Ice (Glaciers)</td><td style="color:#9A8E82;font-style:italic;">Write your answer here…</td></tr>
+            <tr><td>🌿 Plants</td><td style="color:#9A8E82;font-style:italic;">Write your answer here…</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ─── PART 3: REAL-LIFE EXAMPLES ─── -->
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">3. Real-Life Examples</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:10px;">Write <strong>2&ndash;3 sentences</strong> to answer:</p>
+
+      <div style="background:#FFF7EE;border:2px solid #E8C88A;border-radius:16px;padding:16px 20px;margin-bottom:20px;">
+        <div style="font-size:11px;color:#C7922C;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:6px;">Writing Prompt</div>
+        <div style="font-size:17px;color:#2B1D12;font-weight:700;line-height:1.65;font-style:italic;">"Have you seen any places where erosion or weathering is happening near your home or school? What did it look like? Describe what you saw and what natural force you think caused it."</div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Reflect</div>
+          <div class="question">"Compare the sketch you drew at the start of class to what you know now. What did you get right? What surprised you most about how weathering and erosion work?"</div>
+        </div>
+      </div>
+
+      <!-- SUBMISSION CHECKLIST -->
+      <div style="background:#fff;border:2px solid #55C8E8;border-radius:18px;margin-top:20px;overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:10px;padding:14px 20px;background:#EAF8FD;border-bottom:2px solid #D6F2FB;">
+          <div style="width:42px;height:42px;border-radius:50%;background:#55C8E8;color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">📬</div>
+          <div>
+            <div style="font-size:10px;color:#9A8E82;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;">Time to Submit</div>
+            <div style="font-size:20px;color:#0E1C42;font-weight:800;line-height:1.2;">What to Turn In</div>
+          </div>
+        </div>
+        <div style="padding:18px 22px;">
+          <p style="font-size:16px;color:#5A4D3E;line-height:1.65;margin-bottom:14px;">When you've finished all three parts, submit your work in the assignment on Canvas. Use the checklist below to make sure you have everything!</p>
+
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part 1 — Vocabulary Match:</strong> All four words matched to their correct definitions (Weathering, Erosion, Glacier, Soil).</span>
+          </div>
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part 2 — Cause and Effect Chart:</strong> All four rows filled in (Water, Wind, Ice/Glaciers, Plants) with a description of what each force does.</span>
+          </div>
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part 3 — Real-Life Examples:</strong> 2&ndash;3 sentences describing a real example of weathering or erosion you've seen, including the natural force involved.</span>
+          </div>
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:16px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Essential Question Response:</strong> Your 2&ndash;3 sentence answer to the big question using at least <em>three vocabulary words</em>.</span>
+          </div>
+
+          <div style="background:#FFF7EE;border:2px solid #F0DCC4;border-radius:14px;padding:14px 18px;">
+            <div style="font-size:13px;color:#C7922C;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;margin-bottom:8px;">📎 How to Submit</div>
+            <div style="font-size:15px;color:#2B1D12;line-height:1.7;">
+              Submit your work in whichever way works best for you:<br/><br/>
+              <span style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px;">⌨️ <strong>Type it</strong> &mdash; Type your answers directly into the Canvas assignment.</span><br/>
+              <span style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px;">📸 <strong>Photo</strong> &mdash; Take a clear picture of your handwritten notebook work and upload it.</span><br/>
+              <span style="display:inline-flex;align-items:center;gap:8px;">🎥 <strong>Video</strong> &mdash; Record a short video explaining your answers and showing your chart.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RETURN TO ESSENTIAL QUESTION -->
+  <div class="card theme-earth scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">🔄</div>
+      <div>
+        <div class="card-head-label">Circle Back</div>
+        <div class="card-head-title">Revisit Our Essential Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Now You Know!</div>
+          <div class="question">"The Grand Canyon is over a mile deep &mdash; but it's made of solid rock. How could something as simple as water carve through miles of rock over millions of years?"</div>
+        </div>
+      </div>
+      <p>Now that you've completed the lesson, write a <strong>2&ndash;3 sentence answer</strong> to this question in your science notebook. Try to use at least <strong>three vocabulary words</strong> from today!</p>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">⭐</span>
+        <p><strong>Excellent work today, scientist!</strong> You've learned that <span class="vtip">weathering<span class="vtip-box"><span class="vtip-word">Weathering</span>The breaking down of rocks by wind, water, or ice.</span></span> breaks rock into smaller pieces, that <span class="vtip">erosion<span class="vtip-box"><span class="vtip-word">Erosion</span>The movement of broken rock and soil from one place to another.</span></span> moves those pieces to new places, and that <span class="vtip">deposition<span class="vtip-box"><span class="vtip-word">Deposition</span>When sediment slows and settles in a new place.</span></span> builds new landforms when the pieces settle down. Next lesson, we'll explore how earthquakes also change Earth's surface &mdash; but much, much faster!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEO SLOT: Closing -->
+  <div style="background:#fff;border:2px solid #E8DDD2;border-radius:18px;overflow:hidden;box-shadow:0 2px 10px rgba(43,29,18,0.04);">
+    <div style="display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);border-bottom:2px solid rgba(199,146,44,0.2);">
+      <span style="font-size:20px;">🪨</span>
+      <div>
+        <div style="font-size:10px;color:#C7922C;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;">Closing · Lesson Wrap-Up</div>
+        <div style="font-size:16px;color:#fff;font-weight:800;line-height:1.2;">Great Work Today — Here's What's Coming Next!</div>
+      </div>
+    </div>
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#1a2a4a,#0E1C42);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;">
+        <div style="font-size:44px;margin-bottom:10px;opacity:0.55;">🪨</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.45);font-weight:600;line-height:1.5;">Lesson closing &amp; next lesson preview video coming soon</div>
+        <div style="font-size:11px;color:rgba(199,146,44,0.4);font-family:monospace;margin-top:6px;"><!-- slot: 5-02-closing --></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="footer">
+  <div class="footer-line1"><span>Optima Academy Online</span> &middot; Science &middot; Quarter 1 &middot; Student Lesson Page</div>
+  <div class="footer-line2">Lesson 5.02 &middot; Earth Science: Weathering and Erosion &mdash; Earth's Slow Sculptors</div>
+  <div class="footer-line3">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div><!-- end page-wrap -->
+
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
+  <span style="font-size:20px;">🪨</span> Back to Top
+</button>
+<canvas id="confettiCanvas"></canvas>
+
+<script>
+// ── Tab System ──
+var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];
+var tabsVisited = new Set(['vocab']);
+
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  var panel = document.getElementById('tab-' + tabId);
+  var btn   = document.querySelector('[data-tab="' + tabId + '"]');
+  if (panel) panel.classList.add('active');
+  if (btn)  { btn.classList.add('active'); btn.classList.add('visited'); }
+  tabsVisited.add(tabId);
+  var pct  = Math.round((tabsVisited.size / TAB_ORDER.length) * 100);
+  var fill = document.getElementById('progressFill');
+  var pctEl = document.getElementById('progressPct');
+  if (fill)  fill.style.width = pct + '%';
+  if (pctEl) pctEl.textContent = pct + '%';
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c){
+    if (tabId === 'vocab') { c.classList.remove('collapsed'); }
+    else { c.classList.add('collapsed'); }
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── Checklist ──
+document.querySelectorAll('.checklist-item').forEach(function(item){
+  item.addEventListener('click', function(){
+    var icon = this.querySelector('.check-icon');
+    if (this.classList.contains('checked')) { icon.textContent = '🪨'; }
+    else { icon.textContent = '☐'; }
+  });
+});
+
+// ── Clickable Diagram ──
+(function(){
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel   = document.getElementById('diagramPanel');
+  var wordEl  = document.getElementById('diagramWord');
+  var infoEl  = document.getElementById('diagramInfo');
+  if (!panel) return;
+  hotspots.forEach(function(hs){
+    hs.addEventListener('click', function(e){
+      e.stopPropagation();
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+      hs.classList.add('active');
+      var part = hs.getAttribute('data-part').replace(/-/g,' ');
+      wordEl.textContent = part.charAt(0).toUpperCase() + part.slice(1);
+      infoEl.innerHTML   = hs.getAttribute('data-info');
+      panel.classList.add('visible');
+      panel.scrollIntoView({ behavior:'smooth', block:'nearest' });
+    });
+  });
+  document.addEventListener('click', function(e){
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+    }
+  });
+})();
+
+// ── Self-Check Quiz ──
+var quizAnswered = 0;
+var quizCorrect  = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen  = optEl.getAttribute('data-val');
+  q.querySelectorAll('.quiz-opt').forEach(function(o){
+    if (o.getAttribute('data-val') === correct) { o.classList.add('correct'); }
+    else { o.classList.add('disabled'); }
+  });
+  var fbCorrect = q.querySelector('.fb-correct');
+  var fbWrong   = q.querySelector('.fb-wrong');
+  if (chosen === correct) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+  if (quizAnswered === 3) {
+    var scoreBox = document.getElementById('quizScore');
+    var scoreNum = document.getElementById('quizScoreNum');
+    var scoreMsg = document.getElementById('quizScoreMsg');
+    scoreNum.textContent = quizCorrect;
+    if      (quizCorrect === 3) { scoreMsg.textContent = '🪨 Perfect! You\'re a geologist in the making!'; setTimeout(window.launchConfetti, 300); }
+    else if (quizCorrect === 2) { scoreMsg.textContent = '🌿 Great job! Almost there — review and you\'ve got it!'; }
+    else                        { scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.'; }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip){
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function(){
+    var rect = tip.getBoundingClientRect();
+    var bw   = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Back to Top ──
+(function(){
+  var btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function(){ btn.classList.toggle('show', window.pageYOffset > 400); });
+})();
+
+// ── Confetti ──
+(function(){
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx    = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#C7922C','#F5A623','#FFD700','#55C8E8','#34B76F','#8B6FC0','#E8636B','#D4772C','#8B7355'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x,y){
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── Confetti on all checklist items checked ──
+(function(){
+  var items = document.querySelectorAll('.checklist-item');
+  items.forEach(function(item){
+    item.addEventListener('click', function(){
+      setTimeout(function(){
+        if(Array.from(items).every(function(it){ return it.classList.contains('checked'); }))
+          setTimeout(window.launchConfetti, 200);
+      }, 50);
+    });
+  });
+})();
+
+// ── Intro card click-to-toggle ──
+document.querySelectorAll('.intro-2col .card').forEach(function(card){
+  card.querySelector('.card-head').addEventListener('click', function(){
+    card.classList.toggle('collapsed');
+  });
+});
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent  = '20%';
+</script>
+</body>
+</html>
