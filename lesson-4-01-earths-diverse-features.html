@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Optima Academy Online – Earth's Diverse Features</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Century Gothic','Arial Rounded MT Bold',Verdana,sans-serif;background:#F4F0EB url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");color:#2B1D12;line-height:1.6;-webkit-font-smoothing:antialiased}
+.page-wrap{max-width:920px;margin:0 auto;background:#FAF7F3;box-shadow:0 0 40px rgba(0,0,0,0.07)}
+
+/* ── PROGRESS BAR ── */
+.progress-wrap{position:sticky;top:0;z-index:200;background:#0E1C42;padding:8px 20px 10px;border-bottom:2px solid rgba(168,216,120,0.3);display:flex;align-items:center;gap:14px}
+.progress-label{font-size:12px;color:#A8D878;font-weight:800;text-transform:uppercase;letter-spacing:.8px;white-space:nowrap}
+.progress-track{flex:1;height:10px;background:rgba(255,255,255,0.1);border-radius:10px;overflow:hidden}
+.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,#5A8A3C,#A8D878,#C4A862);border-radius:10px;transition:width .4s ease}
+.progress-pct{font-size:13px;color:#C4A862;font-weight:800;min-width:36px;text-align:right}
+
+/* ── HEADER ── */
+.header{background:linear-gradient(135deg,#0E1C42 0%,#1A2D5A 60%,#243868 100%);border-bottom:6px solid #5A8A3C;padding:22px 28px 24px;position:relative;overflow:hidden}
+.header::after{content:'';position:absolute;bottom:6px;left:0;right:0;height:3px;background:linear-gradient(90deg,#C4A862,#5A8A3C,#C4A862)}
+.header-brand{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.header-logo{width:52px;height:52px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.header-logo img{width:48px;height:38px}
+.header-org{font-size:22px;color:#fff;font-weight:800;line-height:1.15}
+.header-sub{font-size:11px;color:#A8D878;letter-spacing:.5px}
+.header-title{font-size:30px;color:#fff;font-weight:900;line-height:1.15;margin-bottom:10px;text-shadow:0 2px 12px rgba(90,138,60,.4)}
+.header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(90,138,60,.15);border:1.5px solid rgba(90,138,60,.35);border-radius:28px;padding:6px 16px}
+.header-badge span:first-child{font-size:22px}
+.header-badge span:last-child{font-size:18px;color:#fff;font-weight:800}
+
+/* ── HERO ── */
+.hero-visual{background:linear-gradient(180deg,#0D1A0A 0%,#162810 50%,#1E3414 100%);overflow:hidden;border-bottom:3px solid #5A8A3C}
+.hero-visual svg{display:block;width:100%;height:auto}
+
+/* ── INFO STRIP ── */
+.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E8DDD2}
+.info-item{flex:1;min-width:150px;padding:12px 16px;border-right:1px solid #E8DDD2;display:flex;align-items:center;gap:10px}
+.info-item:last-child{border-right:none}
+.info-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.info-label{font-size:10px;color:#9A8E82;text-transform:uppercase;letter-spacing:.5px;font-weight:700}
+.info-value{font-size:16px;color:#0E1C42;font-weight:800;line-height:1.2}
+.info-detail{font-size:11px;color:#5A4D3E;line-height:1.3}
+
+/* ── CARDS ── */
+.card{background:#fff;border:2px solid #E8DDD2;border-radius:18px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 12px rgba(43,29,18,.04)}
+.card-head{display:flex;align-items:center;gap:10px;padding:14px 20px;border-bottom:2px solid}
+.card-head-icon{width:42px;height:42px;border-radius:50%;color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.card-head-label{font-size:10px;color:#9A8E82;text-transform:uppercase;letter-spacing:.8px;font-weight:700}
+.card-head-title{font-size:20px;color:#0E1C42;font-weight:800;line-height:1.2}
+.card-body{padding:18px 22px}
+.card-body p{font-size:17px;color:#5A4D3E;line-height:1.75;margin-bottom:12px}
+.card-body p:last-child{margin-bottom:0}
+
+/* Card themes */
+.theme-earth .card-head{background:#FFF7EE;border-color:#F0DCC4}.theme-earth .card-head-icon{background:#C7922C}
+.theme-sky .card-head{background:#EAF8FD;border-color:#D6F2FB}.theme-sky .card-head-icon{background:#55C8E8}
+.theme-rock .card-head{background:#F0EDF6;border-color:#D8D0E8}.theme-rock .card-head-icon{background:#8B6FC0}
+.theme-map .card-head{background:#F0F7EC;border-color:#C4D8B8}.theme-map .card-head-icon{background:#5A8A3C}
+
+/* ── INTRO 2-COL ── */
+.intro-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 28px 0}
+.intro-2col .card{margin-bottom:0}
+.intro-2col .card .card-head{cursor:pointer;user-select:none;position:relative}
+.intro-2col .card .card-head::after{content:'▾';position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:16px;color:#9A8E82;transition:transform .25s ease}
+.intro-2col .card.collapsed .card-head::after{transform:translateY(-50%) rotate(-90deg)}
+.intro-2col .card.collapsed .card-body{display:none}
+
+/* ── NEED STRIP ── */
+.need-strip{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:12px 28px 16px}
+.need-strip-label{font-size:13px;color:#5A4D3E;font-weight:700;white-space:nowrap}
+.need-chip{display:inline-flex;align-items:center;gap:5px;background:#EEF8F0;border:1.5px solid #C4E5CC;border-radius:20px;padding:5px 12px;font-size:13px;color:#0E1C42;font-weight:700}
+
+/* ── TAB BAR ── */
+.tab-bar{position:sticky;top:44px;z-index:100;background:#FAF7F3;border-bottom:3px solid #E8DDD2;display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tab-bar::-webkit-scrollbar{display:none}
+.tab-btn{flex:1;min-width:130px;padding:12px 8px 11px;background:transparent;border:none;border-bottom:4px solid transparent;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;color:#9A8E82;cursor:pointer;transition:all .2s;white-space:nowrap;text-align:center}
+.tab-btn:hover{color:#0E1C42;background:#F0EDE8}
+.tab-btn.active{color:#0E1C42;border-bottom-color:#5A8A3C;background:#fff}
+.tab-btn .tab-check{display:none;font-size:12px;color:#34B76F;margin-left:4px;font-weight:800}
+.tab-btn.visited .tab-check{display:inline}
+
+/* ── TAB PANELS ── */
+.tab-panel{display:none;padding:24px 28px 36px}
+.tab-panel.active{display:block}
+
+/* ── ACTIVITY CARDS ── */
+.activity-card{background:#fff;border:2px solid #E8DDD2;border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:0 2px 10px rgba(43,29,18,.04)}
+.activity-card.act-warmup{border-left:6px solid #E8636B}
+.activity-card.act-lesson{border-left:6px solid #D4772C}
+.activity-card.act-explore{border-left:6px solid #55C8E8}
+.activity-card.act-practice{border-left:6px solid #34B76F}
+.act-head{display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2}
+.act-num{width:38px;height:38px;border-radius:14px;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.act-title{font-size:19px;color:#0E1C42;font-weight:800;line-height:1.2}
+.act-subtitle{font-size:12px;color:#9A8E82}
+.act-time{display:inline-flex;align-items:center;gap:4px;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:700;color:#fff;white-space:nowrap;margin-left:auto;flex-shrink:0}
+.act-body{padding:18px 22px 18px 20px}
+.act-body p{font-size:17px;color:#5A4D3E;line-height:1.75;margin-bottom:12px}
+
+/* ── CALLOUTS ── */
+.callout{border-radius:14px;padding:16px 18px;display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
+.callout-icon{font-size:28px;flex-shrink:0;margin-top:2px}
+.callout p{font-size:16px;color:#2B1D12;line-height:1.65;margin:0}
+.callout-tip{background:#EEF8F0;border:2px solid #C4E5CC}
+.callout-think{background:#FFF7EE;border:2px solid #F0DCC4}
+.callout-map{background:#F0F7EC;border:2px solid #C4D8B8}
+
+/* ── SOCRATIC Q ── */
+.socratic-q{background:linear-gradient(135deg,#F0F7EC,#E8F4E0);border:2px solid #B8D8A0;border-radius:16px;padding:16px 20px;margin:16px 0;display:flex;align-items:flex-start;gap:12px}
+.socratic-q .sq-icon{font-size:26px;flex-shrink:0;line-height:1}
+.socratic-q .sq-label{font-size:11px;color:#5A8A3C;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:4px}
+.socratic-q .sq-q{font-size:17px;color:#2B1D12;font-weight:700;line-height:1.6;font-style:italic}
+
+/* ── VOCAB FLIP CARDS ── */
+.vocab-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+.flip-card{perspective:800px;height:160px;cursor:pointer}
+.flip-card-inner{position:relative;width:100%;height:100%;transition:transform .5s ease;transform-style:preserve-3d}
+.flip-card.flipped .flip-card-inner{transform:rotateY(180deg)}
+.flip-card-front,.flip-card-back{position:absolute;top:0;left:0;width:100%;height:100%;border-radius:16px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 20px;text-align:center;border:2px solid #E8DDD2;box-shadow:0 2px 10px rgba(43,29,18,.06)}
+.flip-card-front{background:#FAFAF6;border-top:5px solid}
+.fc-emoji{font-size:32px;margin-bottom:8px}
+.fc-word{font-size:18px;font-weight:800;color:#0E1C42;margin-bottom:6px}
+.fc-tap{font-size:11px;color:#B0A698;font-weight:600}
+.flip-card-back{background:linear-gradient(145deg,#0E1C42,#1A2D5A);border-color:#0E1C42;transform:rotateY(180deg)}
+.fc-word-back{font-size:11px;color:#A8D878;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:8px}
+.fc-def{font-size:15px;color:#fff;line-height:1.6;font-weight:600}
+.fc-tap-back{font-size:11px;color:rgba(255,255,255,.4);margin-top:10px;font-weight:600}
+.fc-c1 .flip-card-front{border-top-color:#5A8A3C}
+.fc-c2 .flip-card-front{border-top-color:#C4A862}
+.fc-c3 .flip-card-front{border-top-color:#D4772C}
+.fc-c4 .flip-card-front{border-top-color:#55C8E8}
+.fc-c5 .flip-card-front{border-top-color:#8B6FC0}
+.fc-c6 .flip-card-front{border-top-color:#E8636B}
+
+/* ── VOCAB TOOLTIPS ── */
+.vtip{position:relative;color:#5A8A3C;font-weight:700;cursor:help;border-bottom:2px dotted rgba(90,138,60,.45);transition:color .15s}
+.vtip:hover{color:#3A6A1C}
+.vtip .vtip-box{position:fixed;background:#0E1C42;color:#fff;padding:12px 16px;border-radius:12px;font-size:14px;font-weight:600;font-style:normal;line-height:1.55;width:250px;text-align:center;opacity:0;visibility:hidden;transition:opacity .2s ease,transform .2s ease,visibility .2s;pointer-events:none;z-index:9999;box-shadow:0 6px 24px rgba(14,28,66,.35);border:1.5px solid rgba(168,216,120,.3);transform:translateY(6px)}
+.vtip .vtip-box::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:7px solid transparent;border-top-color:#0E1C42}
+.vtip .vtip-word{font-size:11px;color:#A8D878;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:4px;display:block}
+.vtip:hover .vtip-box{opacity:1;visibility:visible;transform:translateY(0)}
+
+/* ── MIND-BLOW ── */
+.mind-blow{background:linear-gradient(135deg,#1a2a4a,#0E1C42);border:2px solid rgba(168,216,120,.3);border-radius:18px;padding:18px 22px;margin:18px 0;display:flex;align-items:flex-start;gap:14px;position:relative;overflow:hidden}
+.mind-blow::before{content:'';position:absolute;top:-30px;right:-30px;width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,rgba(90,138,60,.15),transparent)}
+.mind-blow-icon{font-size:36px;flex-shrink:0;animation:mb-bounce 2s ease-in-out infinite}
+@keyframes mb-bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+.mind-blow-label{font-size:11px;color:#FFD700;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:4px}
+.mind-blow-text{font-size:16px;color:#fff;line-height:1.6;font-weight:600}
+.mind-blow-text strong{color:#A8D878}
+
+/* ── KEY CONCEPT ── */
+.key-concept{background:#F0F7EC;border:2px solid #C4D8B8;border-radius:14px;padding:18px 20px;margin:14px 0}
+.kc-label{font-size:13px;color:#5A8A3C;text-transform:uppercase;letter-spacing:.5px;font-weight:800;margin-bottom:8px}
+.kc-rule{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px}
+.kc-rule:last-child{margin-bottom:0}
+.kc-arrow{font-size:16px;margin-top:2px;flex-shrink:0}
+.kc-text{font-size:16px;color:#2B1D12;line-height:1.65}
+
+/* ── DIAGRAM ── */
+.diagram-wrap{background:#fff;border:2px solid #E8DDD2;border-radius:16px;padding:16px;margin:16px 0;text-align:center;overflow:hidden}
+.diagram-wrap svg{max-width:100%;height:auto}
+.diagram-hint{background:linear-gradient(135deg,#F0F7EC,#E8F4E0);border:2px solid #B8D8A0;border-radius:14px;padding:12px 18px;margin-top:10px;display:flex;align-items:center;gap:12px}
+.diagram-hint p{font-size:15px;color:#2B1D12;line-height:1.55;margin:0;font-weight:600}
+.diagram-info-panel{background:#0E1C42;color:#fff;padding:14px 20px;border-radius:14px;font-size:15px;line-height:1.55;font-weight:600;text-align:center;border:1.5px solid rgba(168,216,120,.3);box-shadow:0 4px 16px rgba(0,0,0,.2);margin:10px 0 0;display:none}
+.diagram-info-panel.visible{display:block}
+.dip-word{font-size:11px;color:#A8D878;text-transform:uppercase;letter-spacing:1px;font-weight:800;display:block;margin-bottom:3px}
+
+/* ── TYPES GRID ── */
+.types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.type-card{border-radius:16px;padding:16px;text-align:center;border:2px solid}
+.type-card svg{display:block;margin:0 auto 10px}
+.type-name{font-size:16px;font-weight:800;color:#0E1C42;margin-bottom:4px}
+.type-desc{font-size:13px;color:#5A4D3E;line-height:1.5}
+.tc-mtn{background:#FFF7EE;border-color:#F0DCC4}
+.tc-val{background:#EEF8F0;border-color:#C4E5CC}
+.tc-pln{background:#EAF8FD;border-color:#D6F2FB}
+
+/* ── COMPARE ── */
+.compare-wrap{background:linear-gradient(180deg,#EEF8F0,#E0F4E8);border:2px solid #C4E5CC;border-radius:16px;padding:16px;margin:16px 0;text-align:center}
+.compare-wrap svg{max-width:100%;height:auto}
+.compare-cap{font-size:13px;color:#9A8E82;margin-top:10px;font-weight:600}
+
+/* ── GO DEEPER ── */
+details.go-deeper{background:linear-gradient(135deg,#F0EDF6,#E8E2F2);border:2px solid #D8D0E8;border-radius:16px;margin:16px 0;overflow:hidden}
+details.go-deeper summary{padding:14px 18px;font-size:16px;font-weight:800;color:#0E1C42;cursor:pointer;display:flex;align-items:center;gap:10px;list-style:none}
+details.go-deeper summary::-webkit-details-marker{display:none}
+details.go-deeper summary::before{content:'🔭';font-size:22px}
+details.go-deeper summary::after{content:'▸';margin-left:auto;font-size:18px;color:#8B6FC0;transition:transform .3s}
+details.go-deeper[open] summary::after{transform:rotate(90deg)}
+details.go-deeper .gdb{padding:4px 18px 16px;font-size:15px;color:#5A4D3E;line-height:1.7;border-top:1.5px solid #D8D0E8}
+details.go-deeper .gdb p{margin-bottom:10px}
+
+/* ── STEP CARDS ── */
+.step-card{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.step-num{width:48px;height:48px;border-radius:50%;color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(0,0,0,.2)}
+.step-body{flex:1;border-radius:14px;padding:14px 16px}
+.step-body p{font-size:16px;color:#2B1D12;line-height:1.6;margin:0}
+
+/* ── QUIZ ── */
+.quiz-q-wrap{background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;padding:16px 18px;margin-bottom:14px}
+.quiz-q-text{font-size:17px;color:#2B1D12;font-weight:700;line-height:1.6;margin-bottom:12px}
+.quiz-options{display:flex;flex-direction:column;gap:8px}
+.quiz-opt{padding:10px 16px;border-radius:12px;border:2px solid #E8DDD2;background:#fff;font-size:15px;font-weight:700;color:#2B1D12;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:10px;user-select:none}
+.quiz-opt:hover{background:#F0F7EC;border-color:#5A8A3C}
+.quiz-opt.correct{background:#EEF8F0!important;border-color:#34B76F!important;color:#1a6b35!important}
+.quiz-opt.wrong{background:#FFF0EC!important;border-color:#E8636B!important;color:#a33!important}
+.quiz-opt.disabled{pointer-events:none;opacity:.6}
+.opt-letter{width:28px;height:28px;border-radius:50%;background:#E8DDD2;color:#5A4D3E;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.quiz-opt.correct .opt-letter{background:#34B76F;color:#fff}
+.quiz-opt.wrong .opt-letter{background:#E8636B;color:#fff}
+.quiz-feedback{font-size:14px;padding:10px 14px;border-radius:10px;margin-top:10px;display:none;font-weight:600;line-height:1.5}
+.quiz-feedback.show{display:block}
+.fb-correct{background:#EEF8F0;color:#1a6b35;border:1.5px solid #B8E8CF}
+.fb-wrong{background:#FFF0EC;color:#8a3030;border:1.5px solid #F5C4BA}
+.quiz-score-box{text-align:center;padding:16px;background:linear-gradient(135deg,#F0F7EC,#E8F4E0);border:2px solid #C4D8B8;border-radius:14px;margin-top:8px;display:none}
+.quiz-score-box.show{display:block}
+.quiz-score-num{font-size:36px;font-weight:900;color:#0E1C42}
+.quiz-score-label{font-size:14px;color:#9A8E82;font-weight:700}
+.quiz-score-msg{font-size:16px;color:#2B1D12;font-weight:700;margin-top:6px}
+
+/* ── ASSIGNMENT ── */
+.pq{background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;padding:14px 18px;margin-bottom:12px}
+.pq-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;color:#fff;font-weight:800;font-size:14px;margin-right:8px;vertical-align:middle;flex-shrink:0}
+.pq-text{font-size:17px;color:#2B1D12;line-height:1.65}
+
+/* ── CHECKLIST ── */
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none}
+.check-item:hover{background:#F0EDE8}
+.check-item.checked{background:#EEF8F0!important;border-color:#B8E8CF!important}
+.check-icon{font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s}
+.check-item.checked .check-icon{border-color:transparent!important;background:transparent!important;font-size:22px!important}
+
+/* ── TAB NAV ── */
+.tab-next-wrap{text-align:center;padding:24px 0 8px}
+.tab-next-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;background:linear-gradient(135deg,#5A8A3C,#7AAA5C);color:#fff;border:none;border-radius:28px;font-family:'Nunito',sans-serif;font-size:16px;font-weight:800;cursor:pointer;box-shadow:0 4px 16px rgba(90,138,60,.3);transition:transform .2s,box-shadow .2s}
+.tab-next-btn:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(90,138,60,.4)}
+
+/* ── VIDEO PLACEHOLDER ── */
+.video-wrap{border-radius:18px;overflow:hidden;border:2px solid #E8DDD2;box-shadow:0 4px 20px rgba(43,29,18,.08);background:#000;margin-bottom:22px}
+.vid-head{display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);border-bottom:2px solid rgba(168,216,120,.2)}
+.vid-type{font-size:10px;color:#A8D878;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:2px}
+.vid-title{font-size:16px;color:#fff;font-weight:800;line-height:1.2}
+.vid-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}
+.vid-placeholder{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#1a3a14,#0E2A0A);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}
+.vid-ph-icon{font-size:44px;margin-bottom:10px;opacity:.55}
+.vid-ph-text{font-size:14px;color:rgba(255,255,255,.45);font-weight:600;line-height:1.5;font-family:'Nunito',sans-serif}
+.vid-ph-id{font-size:11px;color:rgba(168,216,120,.4);font-family:monospace;margin-top:6px}
+
+/* ── SUBMIT BOX ── */
+.submit-box{background:#fff;border:2px solid #55C8E8;border-radius:18px;margin-top:20px;overflow:hidden}
+.submit-head{display:flex;align-items:center;gap:10px;padding:14px 20px;background:#EAF8FD;border-bottom:2px solid #D6F2FB}
+.submit-head-icon{width:42px;height:42px;border-radius:50%;background:#55C8E8;color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.submit-body{padding:18px 22px}
+
+/* ── FOOTER ── */
+.footer{background:#0E1C42;border-top:4px solid #5A8A3C;padding:18px 28px;text-align:center}
+.footer-line1{font-size:15px;color:#fff;margin-bottom:4px}
+.footer-line1 span{color:#A8D878;font-weight:700}
+.footer-line2{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:2px}
+.footer-line3{font-size:12px;color:rgba(255,255,255,.4)}
+
+/* ── BACK TO TOP ── */
+.back-to-top{position:fixed;bottom:28px;right:28px;height:44px;padding:0 18px 0 14px;border-radius:22px;background:linear-gradient(135deg,#5A8A3C,#7AAA5C);color:#fff;border:none;font-size:14px;font-weight:800;font-family:'Nunito',sans-serif;cursor:pointer;box-shadow:0 4px 18px rgba(90,138,60,.35);display:flex;align-items:center;gap:6px;opacity:0;visibility:hidden;transform:translateY(20px);transition:opacity .3s,visibility .3s,transform .3s,box-shadow .2s;z-index:500}
+.back-to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.back-to-top:hover{box-shadow:0 6px 24px rgba(90,138,60,.5);transform:translateY(-3px)}
+
+/* ── CONFETTI ── */
+#confettiCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:10000}
+
+strong{color:#0E1C42}
+
+@media(max-width:620px){
+  .intro-2col{grid-template-columns:1fr}
+  .types-grid{grid-template-columns:1fr}
+  .tab-btn{min-width:90px;font-size:11px;padding:10px 4px}
+  .vocab-grid{grid-template-columns:1fr}
+  .step-card{flex-direction:column;gap:8px}
+}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+<!-- ═══ PROGRESS BAR ═══ -->
+<div class="progress-wrap">
+  <span class="progress-label">🗺️ Lesson Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══ HEADER ═══ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy"/>
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">Earth's Diverse Features</div>
+  <div class="header-badge"><span>🔬</span><span>SCIENCE · EARTH &amp; SPACE</span></div>
+</div>
+
+<!-- ═══ HERO SVG: Topographic Map Overhead View ═══ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="mapBg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0D1A0A"/><stop offset="100%" stop-color="#182E10"/>
+  </linearGradient>
+  <linearGradient id="scanG" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#C4A862" stop-opacity="0"/>
+    <stop offset="50%" stop-color="#C4A862" stop-opacity="0.14"/>
+    <stop offset="100%" stop-color="#C4A862" stop-opacity="0"/>
+  </linearGradient>
+  <filter id="sGlow"><feGaussianBlur stdDeviation="6"/></filter>
+  <filter id="tGlow"><feGaussianBlur stdDeviation="2.5"/></filter>
+</defs>
+<style>
+  @keyframes cpulse{0%,100%{opacity:.32}50%{opacity:.78}}
+  @keyframes rflow{from{stroke-dashoffset:280}to{stroke-dashoffset:0}}
+  @keyframes ebob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+  @keyframes pglow{0%,100%{opacity:.4}50%{opacity:.85}}
+  @keyframes scanmove{0%{opacity:0;transform:translateX(-80px)}20%{opacity:1}80%{opacity:1}100%{opacity:0;transform:translateX(1010px)}}
+  .cr{animation:cpulse ease-in-out infinite}
+  .cr1{animation-duration:3s;animation-delay:0s}.cr2{animation-duration:3.3s;animation-delay:.4s}
+  .cr3{animation-duration:2.8s;animation-delay:.8s}.cr4{animation-duration:3.6s;animation-delay:1.2s}
+  .cr5{animation-duration:3.1s;animation-delay:1.6s}.cr6{animation-duration:2.7s;animation-delay:.2s}
+  .cr7{animation-duration:3.4s;animation-delay:.6s}
+  .rv{animation:rflow 3.8s linear infinite;stroke-dasharray:10 8}
+  .el1{animation:ebob 2.8s ease-in-out infinite}
+  .el2{animation:ebob 2.5s ease-in-out infinite .7s}
+  .pg{animation:pglow 2.2s ease-in-out infinite}
+  .sc{animation:scanmove 7s linear infinite}
+</style>
+
+<!-- Background -->
+<rect width="920" height="260" fill="url(#mapBg)"/>
+
+<!-- Grid lines -->
+<g opacity=".16" stroke="#3A6020" stroke-width=".6">
+  <line x1="0" y1="65" x2="920" y2="65"/><line x1="0" y1="130" x2="920" y2="130"/>
+  <line x1="0" y1="195" x2="920" y2="195"/><line x1="230" y1="0" x2="230" y2="260"/>
+  <line x1="460" y1="0" x2="460" y2="260"/><line x1="690" y1="0" x2="690" y2="260"/>
+</g>
+
+<!-- ── MOUNTAIN 1 (large, cx=260, cy=138) ── -->
+<!-- Glow -->
+<ellipse cx="260" cy="140" rx="132" ry="86" fill="#2A5A14" opacity=".5" filter="url(#sGlow)"/>
+<!-- Fill zones low → high -->
+<ellipse cx="260" cy="140" rx="128" ry="83" fill="#1C4A0E"/>
+<ellipse cx="260" cy="136" rx="103" ry="67" fill="#2C5E16"/>
+<ellipse cx="260" cy="132" rx="79" ry="52" fill="#4E7828"/>
+<ellipse cx="260" cy="128" rx="55" ry="36" fill="#8A7030"/>
+<ellipse cx="260" cy="125" rx="33" ry="22" fill="#B09040"/>
+<ellipse cx="260" cy="122" rx="16" ry="11" fill="#D4C060"/>
+<ellipse cx="260" cy="121" rx="6"  ry="4"  fill="#F0EAD8"/>
+<!-- Peak glow -->
+<ellipse class="pg" cx="260" cy="121" rx="14" ry="9" fill="#F0E080" opacity=".4" filter="url(#tGlow)"/>
+<!-- Contour rings -->
+<ellipse class="cr cr1" cx="260" cy="140" rx="128" ry="83" fill="none" stroke="#C4A862" stroke-width="1.5" opacity=".4"/>
+<ellipse class="cr cr2" cx="260" cy="136" rx="103" ry="67" fill="none" stroke="#C4A862" stroke-width="1.5" opacity=".45"/>
+<ellipse class="cr cr3" cx="260" cy="132" rx="79"  ry="52" fill="none" stroke="#CEB870" stroke-width="1.4" opacity=".4"/>
+<ellipse class="cr cr4" cx="260" cy="128" rx="55"  ry="36" fill="none" stroke="#D8C878" stroke-width="1.4" opacity=".45"/>
+<ellipse class="cr cr5" cx="260" cy="125" rx="33"  ry="22" fill="none" stroke="#E8D880" stroke-width="1.3" opacity=".5"/>
+<!-- Elevation label -->
+<g class="el1">
+  <rect x="236" y="106" width="48" height="20" rx="5" fill="#0A1408" opacity=".85"/>
+  <text x="260" y="120" text-anchor="middle" font-family="Nunito,sans-serif" font-size="10" font-weight="800" fill="#D4C060">2,500 m</text>
+</g>
+
+<!-- ── MOUNTAIN 2 (medium, cx=612, cy=126) ── -->
+<ellipse cx="612" cy="126" rx="92" ry="60" fill="#1C4A0E" opacity=".65" filter="url(#sGlow)"/>
+<ellipse cx="612" cy="126" rx="90" ry="58" fill="#1C4A0E"/>
+<ellipse cx="612" cy="122" rx="70" ry="45" fill="#2C5E16"/>
+<ellipse cx="612" cy="119" rx="50" ry="32" fill="#4E7828"/>
+<ellipse cx="612" cy="116" rx="30" ry="20" fill="#8A7030"/>
+<ellipse cx="612" cy="114" rx="14" ry="9"  fill="#B09040"/>
+<ellipse cx="612" cy="113" rx="5"  ry="3"  fill="#F0EAD8"/>
+<ellipse class="pg" cx="612" cy="113" rx="12" ry="7" fill="#F0E080" opacity=".35" filter="url(#tGlow)"/>
+<ellipse class="cr cr6" cx="612" cy="126" rx="90" ry="58" fill="none" stroke="#C4A862" stroke-width="1.3" opacity=".4"/>
+<ellipse class="cr cr2" cx="612" cy="122" rx="70" ry="45" fill="none" stroke="#C4A862" stroke-width="1.3" opacity=".45"/>
+<ellipse class="cr cr7" cx="612" cy="119" rx="50" ry="32" fill="none" stroke="#D8C878" stroke-width="1.3" opacity=".4"/>
+<ellipse class="cr cr4" cx="612" cy="116" rx="30" ry="20" fill="none" stroke="#E8D880" stroke-width="1.2" opacity=".45"/>
+<g class="el2">
+  <rect x="588" y="98" width="48" height="20" rx="5" fill="#0A1408" opacity=".85"/>
+  <text x="612" y="112" text-anchor="middle" font-family="Nunito,sans-serif" font-size="10" font-weight="800" fill="#D4C060">1,800 m</text>
+</g>
+
+<!-- ── RIVER (valley between mountains) ── -->
+<path d="M366,168 Q396,195 424,220 Q448,240 458,260" class="rv" stroke="#4A9AD0" stroke-width="4" fill="none" stroke-linecap="round" opacity=".85"/>
+<path d="M315,162 Q342,168 366,168" class="rv" stroke="#4A9AD0" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".65"/>
+<path d="M554,158 Q520,168 490,176 Q472,182 462,196" class="rv" stroke="#4A9AD0" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".65"/>
+<!-- River soft glow -->
+<path d="M366,168 Q396,195 424,220 Q448,240 458,260" stroke="#68B8E8" stroke-width="9" fill="none" opacity=".1" filter="url(#tGlow)"/>
+
+<!-- Plains contour lines (widely spaced) -->
+<path class="cr cr1" d="M0,183 Q40,186 80,188 Q105,189 118,191" stroke="#A0885A" stroke-width="1" fill="none" opacity=".3"/>
+<path class="cr cr3" d="M0,213 Q42,216 82,218 Q108,221 120,224" stroke="#A0885A" stroke-width="1" fill="none" opacity=".25"/>
+<path class="cr cr2" d="M738,168 Q790,170 850,170 Q890,170 920,171" stroke="#A0885A" stroke-width="1" fill="none" opacity=".3"/>
+<path class="cr cr4" d="M738,205 Q800,207 860,207 Q892,207 920,208" stroke="#A0885A" stroke-width="1" fill="none" opacity=".25"/>
+
+<!-- ── COMPASS ROSE (top-left) ── -->
+<g transform="translate(52,48)">
+  <circle r="20" fill="#0A1408" opacity=".78" stroke="#C4A862" stroke-width="1.2"/>
+  <polygon points="0,-15 -3,-7 3,-7" fill="#F5F0E8"/>
+  <polygon points="0,15 -3,7 3,7" fill="#7A7870"/>
+  <polygon points="15,0 7,-3 7,3" fill="#7A7870"/>
+  <polygon points="-15,0 -7,-3 -7,3" fill="#7A7870"/>
+  <circle r="3" fill="#C4A862"/>
+  <text y="-21" text-anchor="middle" font-family="Nunito,sans-serif" font-size="9" font-weight="800" fill="#D4C060">N</text>
+</g>
+
+<!-- ── ELEVATION LEGEND (top-right) ── -->
+<g transform="translate(818,14)">
+  <rect width="90" height="92" rx="7" fill="#0A1408" opacity=".82" stroke="#C4A862" stroke-width="1"/>
+  <text x="45" y="14" text-anchor="middle" font-family="Nunito,sans-serif" font-size="9" font-weight="800" fill="#C4A862">ELEVATION</text>
+  <rect x="8" y="20" width="14" height="9" rx="2" fill="#F0EAD8"/><text x="26" y="29" font-family="Nunito,sans-serif" font-size="8" fill="#D4D0C0">High / Snow</text>
+  <rect x="8" y="33" width="14" height="9" rx="2" fill="#B09040"/><text x="26" y="42" font-family="Nunito,sans-serif" font-size="8" fill="#D4D0C0">Rocky</text>
+  <rect x="8" y="46" width="14" height="9" rx="2" fill="#4E7828"/><text x="26" y="55" font-family="Nunito,sans-serif" font-size="8" fill="#D4D0C0">Forested</text>
+  <rect x="8" y="59" width="14" height="9" rx="2" fill="#1C4A0E"/><text x="26" y="68" font-family="Nunito,sans-serif" font-size="8" fill="#D4D0C0">Valley</text>
+  <line x1="8" y1="81" x2="22" y2="81" stroke="#C4A862" stroke-width="1.5"/>
+  <text x="26" y="84" font-family="Nunito,sans-serif" font-size="8" fill="#C4A862">Contour line</text>
+</g>
+
+<!-- Scan line -->
+<rect class="sc" x="-80" y="0" width="80" height="260" fill="url(#scanG)"/>
+
+<!-- Title -->
+<text x="460" y="250" text-anchor="middle" font-family="Nunito,sans-serif" font-size="14" font-weight="800" fill="#C4A862" letter-spacing="3" opacity=".88">EARTH'S DIVERSE FEATURES</text>
+</svg>
+</div>
+
+<!-- ═══ INFO STRIP ═══ -->
+<div class="info-strip">
+  <div class="info-item"><div class="info-icon" style="background:#F0F7EC">📅</div><div><div class="info-label">Quarter / Unit</div><div class="info-value">Q1 · Unit 4</div><div class="info-detail">Dynamic Earth</div></div></div>
+  <div class="info-item"><div class="info-icon" style="background:#FFF7EE">📖</div><div><div class="info-label">Week / Lesson</div><div class="info-value">Week 4</div><div class="info-detail">Lesson 4.01 · Earth Science</div></div></div>
+  <div class="info-item"><div class="info-icon" style="background:#EAF8FD">🗺️</div><div><div class="info-label">Science Focus</div><div class="info-value">Landforms &amp; Maps</div><div class="info-detail">Features of Earth's Surface</div></div></div>
+  <div class="info-item"><div class="info-icon" style="background:#EEF8F0">🌎</div><div><div class="info-label">Standard</div><div class="info-value">NGSS 4-ESS2-2</div><div class="info-detail">Patterns in Earth's Features</div></div></div>
+</div>
+
+<!-- ═══ INTRO 2-COL ═══ -->
+<div class="intro-2col">
+  <div class="card theme-earth">
+    <div class="card-head" id="eqHead">
+      <div class="card-head-icon">❓</div>
+      <div><div class="card-head-label">Essential Question</div><div class="card-head-title">Our Big Question for Today</div></div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0">
+        <span class="sq-icon">🤔</span>
+        <div><div class="sq-label">Think About This…</div><div class="sq-q">"How can analyzing maps help us understand the patterns and features of Earth's diverse landscapes?"</div></div>
+      </div>
+      <p>Scientists and explorers use special maps to "read" the shape of the land — finding mountains, rivers, valleys, and plains without ever leaving their desks. How is that possible?</p>
+    </div>
+  </div>
+  <div class="card theme-sky">
+    <div class="card-head" id="icHead">
+      <div class="card-head-icon">🎯</div>
+      <div><div class="card-head-label">Objectives</div><div class="card-head-title">I Can Statements</div></div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2"><div style="width:34px;height:34px;border-radius:50%;background:#E8636B;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</div><div style="font-size:16px;color:#0E1C42;line-height:1.6;padding-top:4px"><strong>I can</strong> explain what a topographic map is and how contour lines show elevation.</div></div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2"><div style="width:34px;height:34px;border-radius:50%;background:#D4772C;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0">2</div><div style="font-size:16px;color:#0E1C42;line-height:1.6;padding-top:4px"><strong>I can</strong> describe and compare mountains, valleys, and plains.</div></div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2"><div style="width:34px;height:34px;border-radius:50%;background:#34B76F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0">3</div><div style="font-size:16px;color:#0E1C42;line-height:1.6;padding-top:4px"><strong>I can</strong> explain how erosion shapes Earth's surface over time.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>🖍️</span>Colored pencils</span>
+  <span class="need-chip"><span>🏷️</span>Labels worksheet</span>
+</div>
+
+<!-- ═══ TAB BAR ═══ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab" onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="lesson" onclick="switchTab('lesson')">📘 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="explore" onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="assign" onclick="switchTab('assign')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+<!-- ════════════════════════════════
+     TAB 1 · VOCABULARY
+════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <!-- Welcome video -->
+  <div class="video-wrap">
+    <div class="vid-head"><span style="font-size:20px">🎬</span><div><div class="vid-type">Introduction · Welcome Video</div><div class="vid-title">Welcome to Today's Lesson!</div></div></div>
+    <div class="vid-ratio"><div class="vid-placeholder"><div class="vid-ph-icon">🎬</div><div class="vid-ph-text">Teacher introduction video coming soon</div><div class="vid-ph-id"><!-- slot: 4-01-welcome --></div></div></div>
+  </div>
+
+  <!-- Activity 1 Warm-Up -->
+  <div class="activity-card act-warmup">
+    <div class="act-head">
+      <div class="act-num" style="background:#E8636B">1</div>
+      <div style="flex:1"><div class="act-title">🌅 Warm-Up: Draw Earth From Above</div><div class="act-subtitle">Activate what you already know!</div></div>
+      <div class="act-time" style="background:#E8636B">⏱ 5 min</div>
+    </div>
+    <div class="act-body">
+      <p>In your science notebook, draw Earth's surface as if you were looking down from an airplane — way up high. Try to include mountains, rivers, flat areas, and anything else you can picture. Label what you drew!</p>
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div><div class="sq-label">Write &amp; Reflect</div><div class="sq-q">"If you wanted to show a friend that one part of a map is a steep mountain and another part is flat farmland — but you could only use lines — how would you do it? What would the lines look like in each place?"</div></div>
+      </div>
+      <div class="callout callout-tip"><span class="callout-icon">💡</span><p>No wrong answers here! Scientists always start with observations and questions. We'll come back to your sketch at the very end to see how your thinking has grown.</p></div>
+    </div>
+  </div>
+
+  <!-- Vocab Flip Cards -->
+  <div class="card theme-rock">
+    <div class="card-head"><div class="card-head-icon">📚</div><div><div class="card-head-label">Word Wall</div><div class="card-head-title">Key Vocabulary</div></div></div>
+    <div class="card-body">
+      <p>Before we explore Earth's landforms, let's learn the words scientists use. <strong>Tap each card</strong> to flip it and discover the definition. You'll see every word again throughout the lesson!</p>
+      <div class="vocab-grid">
+        <div class="flip-card fc-c1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🗺️</div><div class="fc-word">Topographic Map</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Topographic Map</div><div class="fc-def">A special map that shows the shape and height of land using contour lines.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-c2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">〰️</div><div class="fc-word">Contour Line</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Contour Line</div><div class="fc-def">A line on a map that connects all points at the same elevation — the same height above sea level.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-c3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🏔️</div><div class="fc-word">Landform</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Landform</div><div class="fc-def">A natural feature of Earth's surface, such as a mountain, valley, plain, or coastline.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-c4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">⬆️</div><div class="fc-word">Elevation</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Elevation</div><div class="fc-def">How high a place is above sea level. Mountains have high elevation; valleys have low elevation.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-c5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">💧</div><div class="fc-word">Erosion</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Erosion</div><div class="fc-def">The gradual wearing away of rocks and soil by wind, water, ice, or other natural forces.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-c6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🏞️</div><div class="fc-word">Valley</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Valley</div><div class="fc-def">A low area of land between hills or mountains, often carved by rivers over long periods of time.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mind-Blow #1 -->
+  <div class="mind-blow">
+    <div class="mind-blow-icon">🤯</div>
+    <div>
+      <div class="mind-blow-label">Mind-Blowing Fact</div>
+      <div class="mind-blow-text">Earth has more than <strong>1 million mountains</strong>! The tallest — Mount Everest — rises to 8,849 meters. At its summit, the air has less than <strong>one-third of the oxygen</strong> we breathe at sea level. Without special gear, you'd pass out from thin air in minutes!</div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap"><button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📘 The Lesson →</button></div>
+</div>
+
+<!-- ════════════════════════════════
+     TAB 2 · THE LESSON
+════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+
+  <div class="activity-card act-lesson">
+    <div class="act-head">
+      <div class="act-num" style="background:#D4772C">2</div>
+      <div style="flex:1"><div class="act-title">📘 The Lesson: Reading Earth's Surface</div><div class="act-subtitle">Maps that reveal the shape of our planet!</div></div>
+      <div class="act-time" style="background:#D4772C">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="video-wrap">
+        <div class="vid-head"><span style="font-size:20px">📘</span><div><div class="vid-type">Activity 2 · Lesson Explainer</div><div class="vid-title">Let's Explore Earth's Landforms!</div></div></div>
+        <div class="vid-ratio"><div class="vid-placeholder"><div class="vid-ph-icon">📘</div><div class="vid-ph-text">Lesson explainer video coming soon</div><div class="vid-ph-id"><!-- slot: 4-01-lesson-explainer --></div></div></div>
+      </div>
+
+      <p style="font-size:18px"><strong>Part 1 — What Is a Topographic Map?</strong></p>
+
+      <p>A regular road map shows you where roads and cities are — but what if you need to know whether the path ahead goes up a steep mountain or across a flat plain? That's exactly what a <span class="vtip">topographic map<span class="vtip-box"><span class="vtip-word">Topographic Map</span>A special map showing the shape and height of land using contour lines.</span></span> is for!</p>
+
+      <p>A topographic map uses <span class="vtip">contour lines<span class="vtip-box"><span class="vtip-word">Contour Line</span>A line connecting all points at the same elevation on a map.</span></span> — curved lines that connect all points at the same <span class="vtip">elevation<span class="vtip-box"><span class="vtip-word">Elevation</span>How high a place is above sea level.</span></span>. Imagine dipping a mountain into a giant tub of water. Each time the water rises another 100 meters, you paint a ring around the mountain where the water touches. Those rings, seen from directly above, become the contour lines on a map!</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div><div class="sq-label">Stop &amp; Think</div><div class="sq-q">"If you were looking at a topo map and saw contour lines packed very tightly together, what do you think that means about the land in that spot?"</div></div>
+      </div>
+
+      <!-- ── INTERACTIVE CROSS-SECTION DIAGRAM ── -->
+      <div class="diagram-wrap" style="padding:12px">
+        <svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,sans-serif">
+          <defs>
+            <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#B4DCF0"/><stop offset="100%" stop-color="#D8F0FA"/>
+            </linearGradient>
+            <linearGradient id="terG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#8A6A3A"/><stop offset="55%" stop-color="#785830"/><stop offset="100%" stop-color="#5A3E22"/>
+            </linearGradient>
+            <linearGradient id="seaG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#4A90D4"/><stop offset="100%" stop-color="#2A68A8"/>
+            </linearGradient>
+          </defs>
+
+          <!-- SKY -->
+          <rect width="720" height="255" fill="url(#skyG)"/>
+          <!-- Clouds -->
+          <ellipse cx="105" cy="52" rx="54" ry="20" fill="#fff" opacity=".74"/>
+          <ellipse cx="132" cy="44" rx="36" ry="18" fill="#fff" opacity=".58"/>
+          <ellipse cx="575" cy="68" rx="50" ry="18" fill="#fff" opacity=".64"/>
+          <ellipse cx="602" cy="60" rx="30" ry="14" fill="#fff" opacity=".48"/>
+
+          <!-- TERRAIN BODY -->
+          <polygon points="0,400 0,258 40,248 85,233 130,210 178,178 222,136 258,96 278,76 298,96 336,140 374,192 400,240 428,258 462,240 502,222 545,218 590,236 638,252 676,260 710,263 720,265 720,400" fill="url(#terG)"/>
+
+          <!-- VEGETATION (green surface strip, lower elevations only) -->
+          <!-- Left plain -->
+          <polygon points="0,258 40,248 85,233 130,210 178,178 178,193 130,225 85,248 40,263 0,272" fill="#4A8830" opacity=".88"/>
+          <!-- Right of valley to coast -->
+          <polygon points="400,240 428,258 462,240 502,222 545,218 590,236 638,252 676,260 710,263 720,265 720,280 710,277 676,274 638,266 590,250 545,232 502,236 462,254 428,272 400,254" fill="#4A8830" opacity=".88"/>
+          <!-- Valley floor (lush) -->
+          <polygon points="374,192 400,240 428,258 400,252 374,206" fill="#2A7020" opacity=".92"/>
+
+          <!-- SNOW CAP -->
+          <polygon points="268,88 278,76 288,88 283,96 278,88 273,96" fill="#fff" opacity=".9"/>
+          <ellipse cx="278" cy="90" rx="14" ry="7" fill="#EAF4F8" opacity=".78"/>
+
+          <!-- RIVER in valley -->
+          <path d="M398,248 Q402,262 400,278 Q398,302 394,330" stroke="#4A8FD4" stroke-width="5" fill="none" stroke-linecap="round" opacity=".8"/>
+          <path d="M398,248 Q402,262 400,278 Q398,302 394,330" stroke="#80B8E8" stroke-width="2" fill="none" stroke-linecap="round" opacity=".45"/>
+
+          <!-- OCEAN right -->
+          <rect x="700" y="263" width="20" height="137" fill="url(#seaG)"/>
+          <path d="M700,263 Q705,260 710,263 Q715,266 720,263" stroke="#68AEE0" stroke-width="2" fill="none" opacity=".6"/>
+
+          <!-- Strata lines -->
+          <path d="M0,320 Q360,312 720,318" stroke="#6A4A28" stroke-width="1" fill="none" opacity=".28" stroke-dasharray="9 6"/>
+          <path d="M0,358 Q360,350 720,356" stroke="#6A4A28" stroke-width="1" fill="none" opacity=".22" stroke-dasharray="9 6"/>
+          <path d="M0,386 Q360,379 720,385" stroke="#6A4A28" stroke-width="1" fill="none" opacity=".16" stroke-dasharray="9 6"/>
+
+          <!-- Sea level indicator -->
+          <line x1="0" y1="260" x2="710" y2="260" stroke="#4A8FD4" stroke-width="1" stroke-dasharray="6 4" opacity=".35"/>
+          <rect x="2" y="264" width="75" height="17" rx="4" fill="#0E1C42" opacity=".65"/>
+          <text x="39" y="276" text-anchor="middle" font-size="10" font-weight="700" fill="#A8D878">Sea Level (0 m)</text>
+
+          <!-- ── LABELS ── -->
+          <!-- Mountain Peak -->
+          <line x1="278" y1="78" x2="210" y2="36" stroke="#333" stroke-width="1.4"/>
+          <rect x="122" y="22" width="90" height="26" rx="7" fill="#FFF7EE" stroke="#F0DCC4" stroke-width="1.5"/>
+          <text x="167" y="39" text-anchor="middle" font-size="12" font-weight="800" fill="#0E1C42">Mountain Peak</text>
+
+          <!-- Steep Slope -->
+          <line x1="248" y1="125" x2="180" y2="128" stroke="#333" stroke-width="1.4"/>
+          <rect x="80" y="115" width="100" height="26" rx="7" fill="#FFF7EE" stroke="#F0DCC4" stroke-width="1.5"/>
+          <text x="130" y="132" text-anchor="middle" font-size="12" font-weight="800" fill="#D4772C">Steep Slope</text>
+
+          <!-- Valley -->
+          <line x1="412" y1="252" x2="476" y2="278" stroke="#333" stroke-width="1.4"/>
+          <rect x="474" y="266" width="66" height="26" rx="7" fill="#EEF8F0" stroke="#C4E5CC" stroke-width="1.5"/>
+          <text x="507" y="283" text-anchor="middle" font-size="12" font-weight="800" fill="#2A7020">Valley</text>
+
+          <!-- River -->
+          <line x1="397" y1="296" x2="462" y2="318" stroke="#333" stroke-width="1.4"/>
+          <rect x="460" y="306" width="60" height="26" rx="7" fill="#EAF8FD" stroke="#D6F2FB" stroke-width="1.5"/>
+          <text x="490" y="323" text-anchor="middle" font-size="12" font-weight="800" fill="#4A8FD4">River</text>
+
+          <!-- Gentle Slope -->
+          <line x1="502" y1="228" x2="554" y2="196" stroke="#333" stroke-width="1.4"/>
+          <rect x="552" y="183" width="104" height="26" rx="7" fill="#EEF8F0" stroke="#C4E5CC" stroke-width="1.5"/>
+          <text x="604" y="200" text-anchor="middle" font-size="12" font-weight="800" fill="#3A7A20">Gentle Slope</text>
+
+          <!-- Plain -->
+          <line x1="638" y1="254" x2="638" y2="222" stroke="#333" stroke-width="1.4"/>
+          <rect x="610" y="210" width="56" height="26" rx="7" fill="#FFF7EE" stroke="#F0DCC4" stroke-width="1.5"/>
+          <text x="638" y="227" text-anchor="middle" font-size="12" font-weight="800" fill="#C7922C">Plain</text>
+
+          <!-- Coastline -->
+          <line x1="703" y1="265" x2="703" y2="236" stroke="#333" stroke-width="1.4"/>
+          <rect x="662" y="224" width="82" height="26" rx="7" fill="#EAF8FD" stroke="#D6F2FB" stroke-width="1.5"/>
+          <text x="703" y="241" text-anchor="middle" font-size="12" font-weight="800" fill="#4A8FD4">Coastline</text>
+
+          <!-- ── CLICKABLE HOTSPOTS (invisible rects) ── -->
+          <rect class="hs" data-part="Mountain Peak" data-info="The highest point of a mountain! On a topographic map, the peak sits at the center of the smallest, tightest ring of contour lines. The closely-packed rings tell you that the slopes around it are very steep." x="200" y="60" width="160" height="100" rx="0" fill="transparent" style="cursor:pointer"/>
+          <rect class="hs" data-part="Steep Slope" data-info="Where the terrain drops sharply. On a topo map, contour lines crowd very close together here — because the elevation changes a LOT in a very short distance. Like the steps of a staircase!" x="155" y="128" width="110" height="110" rx="0" fill="transparent" style="cursor:pointer"/>
+          <rect class="hs" data-part="Valley" data-info="A low area carved between two higher landforms. Valleys are often shaped by rivers slowly cutting through rock over millions of years through erosion. On a topo map, valleys show V-shaped contour lines pointing toward higher elevation." x="350" y="192" width="110" height="90" rx="0" fill="transparent" style="cursor:pointer"/>
+          <rect class="hs" data-part="River" data-info="Water always flows from high elevation to low! Rivers carve valleys deeper over millions of years through erosion. On a topo map, rivers flow in the direction that V-shaped contour lines point." x="382" y="248" width="36" height="100" rx="0" fill="transparent" style="cursor:pointer"/>
+          <rect class="hs" data-part="Gentle Slope" data-info="Where the land rises or falls gradually. On a topo map, widely-spaced contour lines show a gentle slope — the elevation changes slowly, so the lines have room to spread out. A gentle slope is much easier to hike than a steep one!" x="428" y="210" width="145" height="70" rx="0" fill="transparent" style="cursor:pointer"/>
+          <rect class="hs" data-part="Plain" data-info="A large, flat area of land at low elevation. Plains have very few contour lines on a topo map because the elevation barely changes at all. Great farmland — think of the Great Plains of the USA!" x="590" y="235" width="104" height="60" rx="0" fill="transparent" style="cursor:pointer"/>
+          <rect class="hs" data-part="Coastline" data-info="Where land meets the sea — always at elevation zero (sea level)! Every elevation on Earth is measured from this point. Rivers eventually reach the coastline after flowing downhill through valleys." x="690" y="240" width="30" height="80" rx="0" fill="transparent" style="cursor:pointer"/>
+        </svg>
+
+        <div class="diagram-hint">
+          <span style="font-size:28px;animation:mb-bounce 2s ease-in-out infinite">👆</span>
+          <p>Tap any part of the landscape — mountain peak, steep slope, valley, river, gentle slope, plain, or coastline — to learn about it!</p>
+        </div>
+        <div class="diagram-info-panel" id="dPanel">
+          <span class="dip-word" id="dWord"></span>
+          <span id="dInfo"></span>
+        </div>
+      </div>
+
+      <!-- Key Concept -->
+      <div class="key-concept">
+        <div class="kc-label">🔑 Key Concept: The Contour Line Rule</div>
+        <div class="kc-rule"><span class="kc-arrow">⛰️</span><span class="kc-text"><strong>Lines CLOSE together → Steep terrain.</strong> The elevation changes quickly, so the lines have to crowd together. Think: lots of stairs in a short distance.</span></div>
+        <div class="kc-rule"><span class="kc-arrow">🌾</span><span class="kc-text"><strong>Lines FAR APART → Gentle terrain.</strong> The elevation barely changes, so lines spread out. Think: a long, slow ramp instead of stairs.</span></div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div><div class="sq-label">Stop &amp; Reason</div><div class="sq-q">"If you're hiking and the contour lines on your map are suddenly bunching very close together ahead of you, what should you expect to see when you look up the trail?"</div></div>
+      </div>
+
+      <!-- Part 2: Three Landform Types -->
+      <p style="font-size:18px;margin-top:20px"><strong>Part 2 — The Three Main Landforms</strong></p>
+      <p>Earth's surface has countless natural features, but scientists group them into categories called <span class="vtip">landforms<span class="vtip-box"><span class="vtip-word">Landform</span>A natural feature of Earth's surface.</span></span>. Let's meet the three most important ones!</p>
+
+      <div class="types-grid">
+        <!-- Mountain -->
+        <div class="type-card tc-mtn">
+          <svg viewBox="0 0 180 110" width="180" height="110" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="110" fill="#FFF7EE" rx="8"/>
+            <rect width="180" height="68" fill="#D4EAF8" rx="8"/>
+            <rect x="0" y="60" width="180" height="50" fill="#FFF7EE"/>
+            <rect x="0" y="88" width="180" height="22" fill="#7A9A50"/>
+            <rect x="0" y="96" width="180" height="14" fill="#5A7A30"/>
+            <polygon points="28,88 90,18 152,88" fill="#7A5E38"/>
+            <polygon points="58,88 90,18 122,88" fill="#8B6E48"/>
+            <polygon points="80,30 90,18 100,30 95,37 90,28 85,37" fill="#fff" opacity=".9"/>
+            <ellipse cx="148" cy="32" rx="22" ry="9" fill="#fff" opacity=".7"/>
+          </svg>
+          <div class="type-name">🏔️ Mountain</div>
+          <div class="type-desc">High landform rising steeply above surrounding land. Topo map shows <strong>tight concentric rings</strong> toward the peak.</div>
+        </div>
+        <!-- Valley -->
+        <div class="type-card tc-val">
+          <svg viewBox="0 0 180 110" width="180" height="110" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="110" fill="#EEF8F0" rx="8"/>
+            <rect width="180" height="56" fill="#D4EAF8" rx="8"/>
+            <rect x="0" y="48" width="180" height="62" fill="#EEF8F0"/>
+            <polygon points="0,110 0,28 78,92" fill="#7A5E38"/>
+            <polygon points="0,110 0,36 68,92" fill="#8B6E48"/>
+            <polygon points="180,110 180,28 102,92" fill="#7A5E38"/>
+            <polygon points="180,110 180,36 112,92" fill="#8B6E48"/>
+            <ellipse cx="90" cy="97" rx="62" ry="13" fill="#4A8830"/>
+            <path d="M58,110 Q90,96 122,110" stroke="#4A8FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity=".8"/>
+            <ellipse cx="74" cy="88" rx="7" ry="5" fill="#3A7020"/>
+            <ellipse cx="90" cy="86" rx="7" ry="5" fill="#4A8030"/>
+            <ellipse cx="106" cy="88" rx="7" ry="5" fill="#3A7020"/>
+          </svg>
+          <div class="type-name">🏞️ Valley</div>
+          <div class="type-desc">Low area between higher landforms, carved by rivers. Topo map shows <strong>V-shapes pointing uphill</strong>.</div>
+        </div>
+        <!-- Plain -->
+        <div class="type-card tc-pln">
+          <svg viewBox="0 0 180 110" width="180" height="110" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="110" fill="#EAF8FD" rx="8"/>
+            <rect width="180" height="64" fill="#C4E4F4" rx="8"/>
+            <rect x="0" y="57" width="180" height="53" fill="#EAF8FD"/>
+            <rect x="0" y="72" width="180" height="38" fill="#6A9A3E"/>
+            <rect x="0" y="80" width="180" height="30" fill="#5A8A2E"/>
+            <path d="M0,72 Q45,68 90,70 Q135,72 180,70" fill="#7AAA4E"/>
+            <ellipse cx="58" cy="30" rx="42" ry="14" fill="#fff" opacity=".8"/>
+            <ellipse cx="152" cy="44" rx="26" ry="10" fill="#fff" opacity=".6"/>
+            <line x1="48" y1="80" x2="48" y2="70" stroke="#3A6A20" stroke-width="1.5"/><circle cx="48" cy="68" r="3" fill="#F0C040"/>
+            <line x1="90" y1="78" x2="90" y2="70" stroke="#3A6A20" stroke-width="1.5"/><circle cx="90" cy="68" r="3" fill="#E8A030"/>
+            <line x1="132" y1="80" x2="132" y2="72" stroke="#3A6A20" stroke-width="1.5"/><circle cx="132" cy="70" r="3" fill="#F0C040"/>
+          </svg>
+          <div class="type-name">🌾 Plain</div>
+          <div class="type-desc">Large, flat land at low elevation. Topo map shows <strong>very few or widely spaced lines</strong> — barely any height change!</div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div><div class="sq-label">Observe &amp; Reason</div><div class="sq-q">"Mountains and valleys almost always appear near each other on a topo map. Why do you think that is? Could you have a mountain without a valley nearby? Could you have a valley without higher land on both sides?"</div></div>
+      </div>
+
+      <div class="callout callout-think"><span class="callout-icon">🌍</span><p><strong>Real-World Connection:</strong> The Mississippi River Valley is one of the largest valleys in North America. Over millions of years, the Mississippi River carved it through <span class="vtip">erosion<span class="vtip-box"><span class="vtip-word">Erosion</span>The gradual wearing away of rock and soil by wind, water, or other forces.</span></span>. Today, the rich soil deposited along its banks makes the surrounding land some of the most productive farmland on Earth!</p></div>
+
+      <!-- Size Comparison SVG -->
+      <div class="compare-wrap">
+        <svg viewBox="0 0 680 215" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,sans-serif">
+          <!-- Ground -->
+          <rect x="0" y="168" width="680" height="47" fill="#C4B99A"/>
+          <rect x="0" y="168" width="680" height="2" fill="#A89A7A"/>
+          <!-- School (~10m) -->
+          <rect x="18" y="148" width="55" height="22" rx="3" fill="#D4A862" stroke="#A07840" stroke-width="1.5"/>
+          <polygon points="16,148 45.5,136 75,148" fill="#A07840"/>
+          <rect x="37" y="153" width="10" height="15" rx="1" fill="#2A5A8A"/>
+          <rect x="22" y="153" width="8" height="8" rx="1" fill="#78C8F0"/>
+          <rect x="58" y="153" width="8" height="8" rx="1" fill="#78C8F0"/>
+          <text x="46" y="190" text-anchor="middle" font-size="10" font-weight="700" fill="#5A4D3E">School</text>
+          <text x="46" y="202" text-anchor="middle" font-size="8" fill="#9A8E82">~10 m</text>
+          <!-- Eiffel Tower (330m) -->
+          <polygon points="155,168 162,72 165,72 172,168" fill="#8A8070" stroke="#6A6050" stroke-width="1"/>
+          <line x1="157" y1="130" x2="170" y2="130" stroke="#6A6050" stroke-width="1"/>
+          <line x1="158" y1="108" x2="169" y2="108" stroke="#6A6050" stroke-width="1"/>
+          <circle cx="163" cy="68" r="3" fill="#C4A862"/>
+          <text x="163" y="190" text-anchor="middle" font-size="10" font-weight="700" fill="#5A4D3E">Eiffel Tower</text>
+          <text x="163" y="202" text-anchor="middle" font-size="8" fill="#9A8E82">330 m</text>
+          <!-- Small Hill (500m) -->
+          <ellipse cx="260" cy="168" rx="50" ry="18" fill="#4A8830"/>
+          <ellipse cx="260" cy="154" rx="36" ry="15" fill="#5A9840"/>
+          <ellipse cx="260" cy="143" rx="22" ry="11" fill="#7AB050"/>
+          <ellipse cx="260" cy="134" rx="10" ry="7" fill="#8ABA60"/>
+          <text x="260" y="190" text-anchor="middle" font-size="10" font-weight="700" fill="#5A4D3E">Small Hill</text>
+          <text x="260" y="202" text-anchor="middle" font-size="8" fill="#9A8E82">500 m</text>
+          <!-- Rocky Mountain (4,401m) -->
+          <polygon points="340,168 388,44 436,168" fill="#8B6A40" stroke="#6A4A28" stroke-width="1"/>
+          <polygon points="374,58 388,44 402,58 396,68 388,56 380,68" fill="#fff" opacity=".85"/>
+          <polygon points="358,168 388,44 418,168" fill="#9B7A50"/>
+          <text x="388" y="190" text-anchor="middle" font-size="10" font-weight="700" fill="#5A4D3E">Rocky Mtn</text>
+          <text x="388" y="202" text-anchor="middle" font-size="8" fill="#9A8E82">4,401 m</text>
+          <!-- Everest (8,849m) -->
+          <polygon points="498,168 554,3 610,168" fill="#7A7070" stroke="#5A5050" stroke-width="1"/>
+          <polygon points="541,18 554,3 567,18 561,28 554,16 547,28" fill="#fff" opacity=".9"/>
+          <polygon points="515,168 554,3 593,168" fill="#8A8080"/>
+          <text x="554" y="190" text-anchor="middle" font-size="10" font-weight="700" fill="#5A4D3E">Mt. Everest</text>
+          <text x="554" y="202" text-anchor="middle" font-size="8" fill="#9A8E82">8,849 m</text>
+          <!-- Scale line -->
+          <line x1="4" y1="168" x2="4" y2="3" stroke="#5A8A3C" stroke-width="1.5" stroke-dasharray="4 3" opacity=".6"/>
+          <text x="9" y="172" font-size="8" fill="#5A8A3C" font-weight="700">0 m</text>
+        </svg>
+        <div class="compare-cap">Mount Everest is nearly <strong>27 Eiffel Towers stacked on top of each other!</strong> Topographic maps help us see these dramatic elevation differences at a glance.</div>
+      </div>
+
+      <!-- Go Deeper #1 -->
+      <details class="go-deeper">
+        <summary>Curious? Go Deeper — How Do Mountains Form?</summary>
+        <div class="gdb">
+          <p>Earth's outer shell — the <strong>crust</strong> — is broken into giant pieces called <strong>tectonic plates</strong>. These plates drift slowly, just a few centimeters per year. When two plates crash into each other, the rock in between gets crumpled and pushed upward — forming mountains! That's how the Himalayas and Rocky Mountains formed.</p>
+          <p>Some mountains build differently: when hot magma from inside Earth pushes up through a crack in the crust, it cools and hardens into a <strong>volcanic mountain</strong> like Mount Fuji in Japan or Mauna Kea in Hawai'i.</p>
+          <p>Here's the twist: all mountains are eventually worn back down by erosion — just very, very slowly. So Earth's surface is always changing, just too slowly for any single person to notice!</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap"><button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button></div>
+</div>
+
+<!-- ════════════════════════════════
+     TAB 3 · EXPLORE
+════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+
+  <div class="activity-card act-explore">
+    <div class="act-head">
+      <div class="act-num" style="background:#55C8E8">3</div>
+      <div style="flex:1"><div class="act-title">🔬 Guided Exploration: How to Read a Topo Map</div><div class="act-subtitle">Four steps that scientists and hikers use every day!</div></div>
+      <div class="act-time" style="background:#55C8E8">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="video-wrap">
+        <div class="vid-head"><span style="font-size:20px">🔬</span><div><div class="vid-type">Activity 3 · Guided Exploration</div><div class="vid-title">Reading a Topographic Map — Step by Step!</div></div></div>
+        <div class="vid-ratio"><div class="vid-placeholder"><div class="vid-ph-icon">🔬</div><div class="vid-ph-text">Guided exploration video coming soon</div><div class="vid-ph-id"><!-- slot: 4-01-exploration --></div></div></div>
+      </div>
+
+      <p>Let's practice reading a topographic map using <strong>four steps</strong>. As you follow along, picture the cross-section diagram from the last tab — it will help you imagine what each step reveals!</p>
+
+      <div class="step-card">
+        <div class="step-num" style="background:linear-gradient(135deg,#1E5A10,#2E7A18)">1</div>
+        <div class="step-body" style="background:#F0F7EC;border:2px solid #C4D8B8">
+          <p><strong>Find Sea Level.</strong> Every elevation is measured from <span class="vtip">sea level<span class="vtip-box"><span class="vtip-word">Sea Level</span>The average height of the ocean surface — used as the zero point for all elevation measurements.</span></span> — the average height of the ocean, always 0 meters. The coastline is your starting point. Everything above it has a positive elevation number!</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num" style="background:linear-gradient(135deg,#2E7A18,#4A9A2A)">2</div>
+        <div class="step-body" style="background:#FFF7EE;border:2px solid #F0DCC4">
+          <p><strong>Read the Contour Lines.</strong> Each <span class="vtip">contour line<span class="vtip-box"><span class="vtip-word">Contour Line</span>A line on a map connecting all points at the same elevation.</span></span> represents a specific elevation. Most maps show a <em>contour interval</em> — the height difference between each line (often 50 or 100 meters). Lines close together? <strong>Steep!</strong> Lines far apart? <strong>Gentle slope.</strong></p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num" style="background:linear-gradient(135deg,#4A9A2A,#6AB040)">3</div>
+        <div class="step-body" style="background:#EEF8F0;border:2px solid #C4E5CC">
+          <p><strong>Spot the Landforms.</strong> <span class="vtip">Mountains<span class="vtip-box"><span class="vtip-word">Landform</span>A natural feature of Earth's surface, such as a mountain, valley, or plain.</span></span> look like bull's-eye rings getting smaller toward the center peak. <span class="vtip">Valleys<span class="vtip-box"><span class="vtip-word">Valley</span>A low area between higher landforms, often carved by rivers.</span></span> show V-shaped contour lines pointing toward higher elevation. <span class="vtip">Plains<span class="vtip-box"><span class="vtip-word">Landform</span>A natural feature of Earth's surface, such as a mountain, valley, or plain.</span></span> have very few lines at all — barely any height change!</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num" style="background:linear-gradient(135deg,#6AB040,#88C858)">4</div>
+        <div class="step-body" style="background:#FAFAF6;border:2px solid #E8DDD2">
+          <p><strong>Follow the Water.</strong> Water <em>always</em> flows from high elevation to low. On a topo map, rivers flow in the direction that V-shaped contour lines point. This also reveals where <span class="vtip">erosion<span class="vtip-box"><span class="vtip-word">Erosion</span>The gradual wearing away of rocks and soil by wind, water, or other forces.</span></span> is happening — moving water is Earth's most powerful surface sculptor!</p>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div><div class="sq-label">Think Like a Scientist</div><div class="sq-q">"You have two topographic maps — one of the Sahara Desert and one of the Rocky Mountains. How would they look different? What patterns would each map show? What would it feel like to hike through each landscape?"</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mind-Blow #2 -->
+  <div class="mind-blow">
+    <div class="mind-blow-icon">🤯</div>
+    <div>
+      <div class="mind-blow-label">Mind-Blowing Fact</div>
+      <div class="mind-blow-text">The Grand Canyon is so deep that you could stack <strong>three Eiffel Towers</strong> on top of each other and they <em>still</em> wouldn't reach the rim! The Colorado River carved it through <strong>5–6 million years of erosion</strong> — wearing away rock at roughly the speed a human fingernail grows.</div>
+    </div>
+  </div>
+
+  <!-- Go Deeper #2 -->
+  <details class="go-deeper">
+    <summary>Curious? Go Deeper — The Many Forces of Erosion</summary>
+    <div class="gdb">
+      <p>Water isn't the only force that shapes Earth's landforms! Erosion can happen in many ways:</p>
+      <p><strong>Wind erosion</strong> is powerful in deserts, where tiny sand particles blast against rock like microscopic sandpaper, sculpting wild arches, hoodoos, and canyons over thousands of years.</p>
+      <p><strong>Glacier erosion</strong> happens when slow rivers of ice grind across rock, carving wide, U-shaped valleys. The stunning fjords of Norway and the majestic valleys of Yosemite National Park were shaped this way!</p>
+      <p><strong>Wave erosion</strong> reshapes coastlines constantly — ocean waves smash against cliffs, breaking off chunks of rock. Some shorelines erode several meters every single year!</p>
+      <p>The key insight scientists love: Earth's surface is <em>always</em> changing — just too slowly for us to see it happen in a lifetime.</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap"><button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button></div>
+</div>
+
+<!-- ════════════════════════════════
+     TAB 4 · SELF-CHECK QUIZ
+════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div class="activity-card act-warmup" style="border-left-color:#C4A862">
+    <div class="act-head">
+      <div class="act-num" style="background:#C4A862">⚡</div>
+      <div style="flex:1"><div class="act-title">🧠 Quick Self-Check</div><div class="act-subtitle">Not graded — just for you! See how much you remember.</div></div>
+    </div>
+    <div class="act-body">
+
+      <!-- Q1 -->
+      <div class="quiz-q-wrap" data-answer="b">
+        <div class="quiz-q-text">1. What do <em>closely-spaced</em> contour lines on a topographic map tell you?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQ(this)"><span class="opt-letter">A</span>The land is flat and easy to walk across</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQ(this)"><span class="opt-letter">B</span>The land is steep — elevation changes quickly</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQ(this)"><span class="opt-letter">C</span>A river is flowing through the area</div>
+        </div>
+        <div class="quiz-feedback fb-correct">📍 Exactly! Lines packed tight mean the land rises or falls steeply over a short distance — like many stairs crammed together.</div>
+        <div class="quiz-feedback fb-wrong">Not quite! Think about it: if the elevation changes a lot in a very short distance, do the contour lines have room to spread out — or do they have to crowd together?</div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="quiz-q-wrap" data-answer="a">
+        <div class="quiz-q-text">2. Which landform is found at the <em>lowest</em> elevation?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQ(this)"><span class="opt-letter">A</span>Valley</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQ(this)"><span class="opt-letter">B</span>Mountain peak</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQ(this)"><span class="opt-letter">C</span>Plateau (a flat-topped high area)</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🏞️ Right! Valleys are the low points nestled between higher landforms — often carved by rivers flowing downhill over millions of years.</div>
+        <div class="quiz-feedback fb-wrong">Not quite! Think about which landform is literally lower than the land on both sides of it.</div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="quiz-q-wrap" data-answer="c">
+        <div class="quiz-q-text">3. What is the main force that carves most valleys on Earth's surface?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQ(this)"><span class="opt-letter">A</span>Earthquakes splitting the ground apart</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQ(this)"><span class="opt-letter">B</span>Wind blowing soil away over time</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQ(this)"><span class="opt-letter">C</span>Moving water slowly wearing away rock through erosion</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌊 Yes! Rivers and glaciers are Earth's greatest sculptors — slowly carving valleys through erosion over millions of years. The Grand Canyon is proof!</div>
+        <div class="quiz-feedback fb-wrong">Not quite! Remember: water flows from high to low, and as it flows, it slowly wears away the rock beneath. What's the name for that process?</div>
+      </div>
+
+      <div class="quiz-score-box" id="qScore">
+        <div class="quiz-score-num" id="qNum"></div>
+        <div class="quiz-score-label">out of 3 correct</div>
+        <div class="quiz-score-msg" id="qMsg"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap"><button class="tab-next-btn" onclick="switchTab('assign')">Continue to ✍️ Assignment →</button></div>
+</div>
+
+<!-- ════════════════════════════════
+     TAB 5 · ASSIGNMENT
+════════════════════════════════ -->
+<div class="tab-panel" id="tab-assign">
+
+  <div class="activity-card act-practice">
+    <div class="act-head">
+      <div class="act-num" style="background:#34B76F">4</div>
+      <div style="flex:1"><div class="act-title">✍️ Assignment: Show What You Know</div><div class="act-subtitle">Now it's your turn, scientist!</div></div>
+      <div class="act-time" style="background:#34B76F">⏱ 12 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="video-wrap">
+        <div class="vid-head"><span style="font-size:20px">✍️</span><div><div class="vid-type">Activity 4 · Assignment Explainer</div><div class="vid-title">Here's What to Do for Your Assignment!</div></div></div>
+        <div class="vid-ratio"><div class="vid-placeholder"><div class="vid-ph-icon">✍️</div><div class="vid-ph-text">Assignment explainer video coming soon</div><div class="vid-ph-id"><!-- slot: 4-01-assignment --></div></div></div>
+      </div>
+
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px">🗺️ Part A — Label the Landform Diagram</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px">Use the word bank to fill in the correct label for each feature.<br><strong>Word Bank: mountain peak &nbsp;·&nbsp; valley &nbsp;·&nbsp; plain &nbsp;·&nbsp; contour lines &nbsp;·&nbsp; river &nbsp;·&nbsp; coastline</strong></p>
+
+      <div class="pq"><span class="pq-num" style="background:#34B76F">1</span><span class="pq-text">The highest point at the center of the tightest contour rings: ___________</span></div>
+      <div class="pq"><span class="pq-num" style="background:#34B76F">2</span><span class="pq-text">A low area between higher landforms, often carved by water: ___________</span></div>
+      <div class="pq"><span class="pq-num" style="background:#34B76F">3</span><span class="pq-text">Large, flat area with very few or widely-spaced lines on a topo map: ___________</span></div>
+      <div class="pq"><span class="pq-num" style="background:#34B76F">4</span><span class="pq-text">Lines on the map that connect all points at the same elevation: ___________</span></div>
+
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px">📝 Part B — Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px">Answer in <strong>complete sentences</strong>. Use at least one vocabulary word in each answer!</p>
+
+      <div class="pq"><span class="pq-num" style="background:#D4772C">5</span><span class="pq-text">A hiker is planning a trail through the mountains. Explain why a topographic map would be more useful than a regular road map. Use the words <em>contour lines</em> and <em>elevation</em> in your answer.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#D4772C">6</span><span class="pq-text">How do rivers and valleys form? Use the word <em>erosion</em> in your explanation and describe what happens over time.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#D4772C">7</span><span class="pq-text">On a topo map, you see V-shaped contour lines all pointing toward the northwest. What does that tell you about which direction the river in that area flows? Explain your reasoning.</span></div>
+
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px">🎨 Part C — Create Your Own Topographic Map</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px">In your science notebook, draw a topographic map of an imaginary landscape that includes: one <strong>mountain</strong> (with at least 4 contour rings), one <strong>valley</strong> (V-shaped contour lines), and one <strong>plain</strong> (few or no lines). Add elevation numbers to your lines starting at 0 m at the edge. Use color to show different elevation zones!</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div><div class="sq-label">Reflect &amp; Compare</div><div class="sq-q">"Look back at the sketch you drew during the Warm-Up. How is your map now different from your first drawing? What new features did you add? What surprised you most about how maps show the 3D shape of land?"</div></div>
+      </div>
+
+      <!-- Submission Checklist -->
+      <div class="submit-box">
+        <div class="submit-head">
+          <div class="submit-head-icon">📬</div>
+          <div><div style="font-size:10px;color:#9A8E82;text-transform:uppercase;letter-spacing:.8px;font-weight:700">Time to Submit</div><div style="font-size:20px;color:#0E1C42;font-weight:800;line-height:1.2">What to Turn In</div></div>
+        </div>
+        <div class="submit-body">
+          <p style="font-size:16px;color:#5A4D3E;line-height:1.65;margin-bottom:14px">When you've finished all three parts, submit your work in Canvas. Use this checklist to make sure you've got everything!</p>
+
+          <div class="check-item" onclick="toggleCheck(this)"><span class="check-icon">☐</span><span style="font-size:16px;color:#2B1D12;line-height:1.55"><strong>Part A — Label the Diagram:</strong> All four labels filled in using the word bank.</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><span class="check-icon">☐</span><span style="font-size:16px;color:#2B1D12;line-height:1.55"><strong>Part B — Short Answer:</strong> Questions 5, 6, and 7 answered in complete sentences with vocab words.</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><span class="check-icon">☐</span><span style="font-size:16px;color:#2B1D12;line-height:1.55"><strong>Part C — Your Topo Map:</strong> Original map with mountain (4+ rings), valley (V-shapes), plain, elevation numbers, and color.</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><span class="check-icon">☐</span><span style="font-size:16px;color:#2B1D12;line-height:1.55"><strong>Essential Question Response:</strong> 2–3 sentences using at least three vocabulary words from today's lesson.</span></div>
+
+          <div style="background:#FFF7EE;border:2px solid #F0DCC4;border-radius:14px;padding:14px 18px;margin-top:16px">
+            <div style="font-size:13px;color:#C7922C;text-transform:uppercase;letter-spacing:.5px;font-weight:800;margin-bottom:8px">📎 How to Submit</div>
+            <div style="font-size:15px;color:#2B1D12;line-height:1.7">
+              ⌨️ <strong>Type it</strong> — Enter your answers directly into Canvas.<br>
+              📸 <strong>Photo</strong> — Take a clear photo of your handwritten work and map, then upload.<br>
+              🎥 <strong>Video</strong> — Record yourself walking through your map and explaining your answers.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Return to Essential Question -->
+  <div class="card theme-map">
+    <div class="card-head"><div class="card-head-icon">🔄</div><div><div class="card-head-label">Circle Back</div><div class="card-head-title">Revisit Our Essential Question</div></div></div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0">
+        <span class="sq-icon">🤔</span>
+        <div><div class="sq-label">Now You Know!</div><div class="sq-q">"How can analyzing maps help us understand the patterns and features of Earth's diverse landscapes?"</div></div>
+      </div>
+      <p>In your science notebook, write a <strong>2–3 sentence answer</strong>. Use at least <strong>three vocabulary words</strong>: <em>topographic map, contour lines, landform, elevation, erosion,</em> or <em>valley</em>.</p>
+      <div class="callout callout-map"><span class="callout-icon">⭐</span><p><strong>Outstanding work today, scientist!</strong> You've learned how <span class="vtip">topographic maps<span class="vtip-box"><span class="vtip-word">Topographic Map</span>A special map showing the shape and height of land using contour lines.</span></span> use <span class="vtip">contour lines<span class="vtip-box"><span class="vtip-word">Contour Line</span>A line connecting all points at the same elevation.</span></span> to reveal Earth's shape in 3D, how mountains, valleys, and plains differ in <span class="vtip">elevation<span class="vtip-box"><span class="vtip-word">Elevation</span>How high a place is above sea level.</span></span>, and how <span class="vtip">erosion<span class="vtip-box"><span class="vtip-word">Erosion</span>The gradual wearing away of rocks and soil by wind, water, or other forces.</span></span> sculpts the land over millions of years. Next up: we'll explore how Earth's surface keeps changing — through forces much more dramatic than rivers!</p></div>
+    </div>
+  </div>
+
+  <!-- Closing video -->
+  <div class="video-wrap">
+    <div class="vid-head"><span style="font-size:20px">🗺️</span><div><div class="vid-type">Closing · Lesson Wrap-Up</div><div class="vid-title">Great Work — Here's What's Coming Next!</div></div></div>
+    <div class="vid-ratio"><div class="vid-placeholder"><div class="vid-ph-icon">🗺️</div><div class="vid-ph-text">Lesson closing &amp; preview video coming soon</div><div class="vid-ph-id"><!-- slot: 4-01-closing --></div></div></div>
+  </div>
+
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="footer">
+  <div class="footer-line1"><span>Optima Academy Online</span> · Science · Quarter 1 · Student Lesson Page</div>
+  <div class="footer-line2">Lesson 4.01 · Earth Science: Earth's Diverse Features</div>
+  <div class="footer-line3">© Optima Academy Online · An Education Experience Company</div>
+</div>
+
+</div><!-- /page-wrap -->
+
+<button class="back-to-top" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <span style="font-size:20px">🏔️</span> Back to Top
+</button>
+<canvas id="confettiCanvas"></canvas>
+
+<script>
+// ── TAB SYSTEM ──
+var TAB_ORDER = ['vocab','lesson','explore','quiz','assign'];
+var visited = new Set(['vocab']);
+
+function switchTab(id) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  var panel = document.getElementById('tab-' + id);
+  var btn   = document.querySelector('[data-tab="' + id + '"]');
+  if (panel) panel.classList.add('active');
+  if (btn)   { btn.classList.add('active'); btn.classList.add('visited'); }
+  visited.add(id);
+  // Progress
+  var pct = Math.round(visited.size / TAB_ORDER.length * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+  // Collapse intro cards when not on vocab tab
+  document.querySelectorAll('.intro-2col .card').forEach(function(c){
+    if (id === 'vocab') c.classList.remove('collapsed');
+    else                c.classList.add('collapsed');
+  });
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+// ── INTRO CARD TOGGLE ──
+document.getElementById('eqHead').addEventListener('click', function(){ this.closest('.card').classList.toggle('collapsed'); });
+document.getElementById('icHead').addEventListener('click', function(){ this.closest('.card').classList.toggle('collapsed'); });
+
+// ── CLICKABLE DIAGRAM ──
+(function(){
+  var hots = document.querySelectorAll('.hs');
+  var panel = document.getElementById('dPanel');
+  var wordEl = document.getElementById('dWord');
+  var infoEl = document.getElementById('dInfo');
+  if (!panel) return;
+  hots.forEach(function(hs){
+    hs.addEventListener('click', function(e){
+      e.stopPropagation();
+      hots.forEach(function(h){ h.setAttribute('fill','transparent'); });
+      hs.setAttribute('fill','rgba(196,168,98,0.18)');
+      wordEl.textContent = hs.getAttribute('data-part');
+      infoEl.textContent = hs.getAttribute('data-info');
+      panel.classList.add('visible');
+    });
+  });
+  document.addEventListener('click', function(){
+    panel.classList.remove('visible');
+    hots.forEach(function(h){ h.setAttribute('fill','transparent'); });
+  });
+})();
+
+// ── VOCAB TOOLTIPS ──
+document.querySelectorAll('.vtip').forEach(function(tip){
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function(){
+    var r = tip.getBoundingClientRect(), bw = 250;
+    var left = r.left + r.width/2 - bw/2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var top = r.top - 130;
+    if (top < 8) top = r.bottom + 10;
+    box.style.top = top + 'px';
+  });
+});
+
+// ── SELF-CHECK QUIZ ──
+var qAnswered = 0, qCorrect = 0;
+function checkQ(optEl) {
+  var q = optEl.closest('.quiz-q-wrap');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  qAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen  = optEl.getAttribute('data-val');
+  q.querySelectorAll('.quiz-opt').forEach(function(o){
+    if (o.getAttribute('data-val') === correct) o.classList.add('correct');
+    else o.classList.add('disabled');
+  });
+  var fbC = q.querySelector('.fb-correct');
+  var fbW = q.querySelector('.fb-wrong');
+  if (chosen === correct) {
+    qCorrect++;
+    optEl.classList.add('correct');
+    if (fbC) fbC.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbW) fbW.classList.add('show');
+  }
+  if (qAnswered === 3) {
+    var box = document.getElementById('qScore');
+    document.getElementById('qNum').textContent = qCorrect;
+    var msgs = ['👍 Good effort! Review the lesson and give it another go.','🏔️ Almost there — great work!','🗺️ Perfect! You\'re a true Earth scientist!'];
+    document.getElementById('qMsg').textContent = msgs[qCorrect === 3 ? 2 : qCorrect === 2 ? 1 : 0];
+    box.classList.add('show');
+    if (qCorrect === 3) setTimeout(launchConfetti, 300);
+  }
+}
+
+// ── CHECKLIST ──
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  var icon = item.querySelector('.check-icon');
+  icon.textContent = item.classList.contains('checked') ? '🗺️' : '☐';
+  var items = document.querySelectorAll('.check-item');
+  if (Array.from(items).every(function(i){ return i.classList.contains('checked'); })) {
+    setTimeout(launchConfetti, 200);
+  }
+}
+
+// ── BACK TO TOP ──
+window.addEventListener('scroll', function(){
+  document.getElementById('btt').classList.toggle('show', window.pageYOffset > 500);
+});
+
+// ── CONFETTI ──
+(function(){
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx = canvas.getContext('2d');
+  var parts = [], running = false;
+  var colors = ['#5A8A3C','#C4A862','#D4772C','#55C8E8','#34B76F','#8B6FC0','#A8D878','#FFD700'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function P(x,y){
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.g=.44; this.d=.98; this.sz=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rot=Math.random()*360; this.rs=(Math.random()-.5)*12;
+    this.op=1; this.sq=Math.random()>.5;
+  }
+  function burst(x,y,n){ for(var i=0;i<n;i++) parts.push(new P(x,y)); if(!running){running=true;tick();} }
+  function tick(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    parts.forEach(function(p,i){
+      p.vy+=p.g; p.vx*=p.d; p.x+=p.vx; p.y+=p.vy;
+      p.rot+=p.rs; p.op-=.008;
+      if(p.op<=0){parts.splice(i,1);return;}
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rot*Math.PI/180);
+      ctx.globalAlpha=p.op; ctx.fillStyle=p.color;
+      if(p.sq){ ctx.fillRect(-p.sz/2,-p.sz/2,p.sz,p.sz*.6); }
+      else { ctx.beginPath(); ctx.arc(0,0,p.sz/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(parts.length){ requestAnimationFrame(tick); }
+    else { running=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-120, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 65);
+    burst(cx+120, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── INIT ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+</script>
+</body>
+</html>
