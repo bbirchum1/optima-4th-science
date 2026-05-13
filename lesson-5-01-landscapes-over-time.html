@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – Landscapes Over Time</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Century Gothic','Arial Rounded MT Bold',Verdana,sans-serif;background:#F4F0EB;color:#2B1D12;line-height:1.6;-webkit-font-smoothing:antialiased}
+.page-wrap{max-width:920px;margin:0 auto;background:#FAF7F3;box-shadow:0 0 40px rgba(0,0,0,0.07)}
+.header{background:linear-gradient(135deg,#0E1C42 0%,#1A2D5A 60%,#243868 100%);border-bottom:6px solid #C7922C;padding:22px 28px 24px;position:relative;overflow:hidden}
+.header::after{content:'';position:absolute;bottom:6px;left:0;right:0;height:3px;background:linear-gradient(90deg,#D4772C,#C7922C,#D4772C)}
+.header-brand{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.header-logo{width:52px;height:52px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.15)}
+.header-logo img{width:48px;height:38px}
+.header-org{font-size:22px;color:#fff;font-weight:800;line-height:1.15}
+.header-sub{font-size:11px;color:#55C8E8;letter-spacing:0.5px}
+.header-title{font-size:30px;color:#fff;font-weight:900;line-height:1.15;margin-bottom:10px;text-shadow:0 2px 12px rgba(199,146,44,0.3)}
+.header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(199,146,44,0.15);border:1.5px solid rgba(199,146,44,0.35);border-radius:28px;padding:6px 16px}
+.header-badge span:first-child{font-size:22px}
+.header-badge span:last-child{font-size:18px;color:#fff;font-weight:800}
+.hero-visual{background:linear-gradient(180deg,#1a2a3a 0%,#3a2515 40%,#5a3a10 100%);padding:0;position:relative;overflow:hidden;border-bottom:3px solid #C7922C}
+.hero-visual svg{display:block;width:100%;height:auto}
+.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E8DDD2}
+.info-item{flex:1;min-width:150px;padding:12px 16px;border-right:1px solid #E8DDD2;display:flex;align-items:center;gap:10px}
+.info-item:last-child{border-right:none}
+.info-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.info-label{font-size:10px;color:#9A8E82;text-transform:uppercase;letter-spacing:0.5px;font-weight:700}
+.info-value{font-size:16px;color:#0E1C42;font-weight:800;line-height:1.2}
+.info-detail{font-size:11px;color:#5A4D3E;line-height:1.3}
+.card{background:#fff;border:2px solid #E8DDD2;border-radius:18px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 12px rgba(43,29,18,0.04)}
+.card-head{display:flex;align-items:center;gap:10px;padding:14px 20px;border-bottom:2px solid}
+.card-head-icon{width:42px;height:42px;border-radius:50%;color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.card-head-label{font-size:10px;color:#9A8E82;text-transform:uppercase;letter-spacing:0.8px;font-weight:700}
+.card-head-title{font-size:20px;color:#0E1C42;font-weight:800;line-height:1.2}
+.card-body{padding:18px 22px}
+.card-body p{font-size:17px;color:#5A4D3E;line-height:1.75;margin-bottom:12px}
+.card-body p:last-child{margin-bottom:0}
+.theme-earth .card-head{background:#FFF7EE;border-color:#F0DCC4}.theme-earth .card-head-icon{background:#C7922C}
+.theme-sky .card-head{background:#EAF8FD;border-color:#D6F2FB}.theme-sky .card-head-icon{background:#55C8E8}
+.theme-rock .card-head{background:#F0EDF6;border-color:#D8D0E8}.theme-rock .card-head-icon{background:#8B6FC0}
+.activity-card{background:#fff;border:2px solid #E8DDD2;border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:0 2px 10px rgba(43,29,18,0.04)}
+.activity-card.act-warmup{border-left:6px solid #E8636B}
+.activity-card.act-lesson{border-left:6px solid #D4772C}
+.activity-card.act-explore{border-left:6px solid #55C8E8}
+.activity-card.act-practice{border-left:6px solid #34B76F}
+.act-head{display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2}
+.act-num{width:38px;height:38px;border-radius:14px;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.act-title{font-size:19px;color:#0E1C42;font-weight:800;line-height:1.2}
+.act-subtitle{font-size:12px;color:#9A8E82}
+.act-time{display:inline-flex;align-items:center;gap:4px;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:700;color:#fff;white-space:nowrap;margin-left:auto;flex-shrink:0}
+.act-body{padding:18px 22px 18px 20px}
+.act-body p{font-size:17px;color:#5A4D3E;line-height:1.75;margin-bottom:12px}
+.callout{border-radius:14px;padding:16px 18px;display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
+.callout-icon{font-size:28px;flex-shrink:0;margin-top:2px}
+.callout p{font-size:16px;color:#2B1D12;line-height:1.65;margin:0}
+.callout-tip{background:#EEF8F0;border:2px solid #C4E5CC}
+.callout-think{background:#FFF7EE;border:2px solid #F0DCC4}
+.socratic-q{background:linear-gradient(135deg,#FFF7EE,#FFF3E0);border:2px solid #E8C88A;border-radius:16px;padding:16px 20px;margin:16px 0;display:flex;align-items:flex-start;gap:12px}
+.socratic-q .sq-icon{font-size:26px;flex-shrink:0;line-height:1}
+.socratic-q .label{font-size:11px;color:#C7922C;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:4px}
+.socratic-q .question{font-size:17px;color:#2B1D12;font-weight:700;line-height:1.6;font-style:italic}
+.diagram-wrap{background:#fff;border:2px solid #E8DDD2;border-radius:16px;padding:16px;margin:16px 0;text-align:center}
+.diagram-wrap svg{max-width:100%;height:auto}
+.key-concept{background:#FFF3DC;border:2px solid #F5E6C8;border-radius:14px;padding:18px 20px;margin:14px 0}
+.key-concept .kc-label{font-size:13px;color:#C7922C;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;margin-bottom:8px}
+.key-concept p{font-size:16px;color:#2B1D12;line-height:1.7;margin-bottom:8px}
+.key-concept p:last-child{margin-bottom:0}
+.pq{background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;padding:14px 18px;margin-bottom:12px}
+.pq-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;color:#fff;font-weight:800;font-size:14px;margin-right:8px;vertical-align:middle}
+.pq-text{font-size:17px;color:#2B1D12;line-height:1.65;margin-bottom:8px}
+.vocab-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+.flip-card{perspective:800px;height:160px;cursor:pointer}
+.flip-card-inner{position:relative;width:100%;height:100%;transition:transform 0.5s ease;transform-style:preserve-3d}
+.flip-card.flipped .flip-card-inner{transform:rotateY(180deg)}
+.flip-card-front,.flip-card-back{position:absolute;top:0;left:0;width:100%;height:100%;border-radius:16px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 20px;text-align:center;border:2px solid #E8DDD2;box-shadow:0 2px 10px rgba(43,29,18,0.06)}
+.flip-card-front{background:#FAFAF6;border-top:5px solid}
+.flip-card-front .fc-emoji{font-size:32px;margin-bottom:8px}
+.flip-card-front .fc-word{font-size:18px;font-weight:800;color:#0E1C42;margin-bottom:6px}
+.flip-card-front .fc-tap{font-size:11px;color:#B0A698;font-weight:600}
+.flip-card-back{background:linear-gradient(145deg,#0E1C42,#1A2D5A);border-color:#0E1C42;transform:rotateY(180deg)}
+.flip-card-back .fc-def{font-size:15px;color:#fff;line-height:1.6;font-weight:600}
+.flip-card-back .fc-word-back{font-size:11px;color:#55C8E8;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:8px}
+.flip-card-back .fc-tap-back{font-size:11px;color:rgba(255,255,255,0.4);margin-top:10px;font-weight:600}
+.fc-color-1 .flip-card-front{border-top-color:#E8636B}
+.fc-color-2 .flip-card-front{border-top-color:#D4772C}
+.fc-color-3 .flip-card-front{border-top-color:#C7922C}
+.fc-color-4 .flip-card-front{border-top-color:#55C8E8}
+.fc-color-5 .flip-card-front{border-top-color:#34B76F}
+.fc-color-6 .flip-card-front{border-top-color:#8B6FC0}
+.vtip{position:relative;color:#8B6FC0;font-weight:700;cursor:help;border-bottom:2px dotted rgba(139,111,192,0.45);transition:color 0.15s}
+.vtip:hover{color:#6B4FA0}
+.vtip .vtip-box{position:fixed;background:#0E1C42;color:#fff;padding:12px 16px;border-radius:12px;font-size:14px;font-weight:600;font-style:normal;line-height:1.55;width:250px;text-align:center;opacity:0;visibility:hidden;transition:opacity 0.2s ease,transform 0.2s ease,visibility 0.2s;pointer-events:none;z-index:9999;box-shadow:0 6px 24px rgba(14,28,66,0.35);border:1.5px solid rgba(85,200,232,0.3);transform:translateY(6px)}
+.vtip .vtip-box::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:7px solid transparent;border-top-color:#0E1C42}
+.vtip .vtip-word{font-size:11px;color:#55C8E8;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:4px;display:block}
+.vtip:hover .vtip-box{opacity:1;visibility:visible;transform:translateY(0)}
+details{background:#fff;border:2px solid #E8DDD2;border-left:5px solid #8B6FC0;border-radius:14px;margin-bottom:12px;overflow:hidden}
+details summary{padding:12px 18px;font-size:16px;font-weight:700;color:#0E1C42;cursor:pointer}
+details summary:hover{background:#FAFAF6}
+details>div{padding:12px 18px 14px;font-size:16px;color:#5A4D3E;line-height:1.65;border-top:1.5px solid #E8DDD2}
+.progress-wrap{position:sticky;top:0;z-index:200;background:#0E1C42;padding:8px 20px 10px;border-bottom:2px solid rgba(85,200,232,0.3);display:flex;align-items:center;gap:14px}
+.progress-label{font-size:12px;color:#55C8E8;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;white-space:nowrap}
+.progress-track{flex:1;height:10px;background:rgba(255,255,255,0.1);border-radius:10px;overflow:hidden}
+.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,#C7922C,#F5A623,#FFD700);border-radius:10px;transition:width 0.4s ease}
+.progress-pct{font-size:13px;color:#FFD700;font-weight:800;min-width:36px;text-align:right}
+.mind-blow{background:linear-gradient(135deg,#1a2a4a,#0E1C42);border:2px solid rgba(85,200,232,0.3);border-radius:18px;padding:18px 22px;margin:18px 0;display:flex;align-items:flex-start;gap:14px;position:relative;overflow:hidden}
+.mind-blow::before{content:'';position:absolute;top:-30px;right:-30px;width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,rgba(199,146,44,0.15),transparent)}
+.mind-blow-icon{font-size:36px;flex-shrink:0;animation:mind-blow-bounce 2s ease-in-out infinite}
+@keyframes mind-blow-bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+.mind-blow-content{flex:1}
+.mind-blow-label{font-size:11px;color:#FFD700;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:4px}
+.mind-blow-text{font-size:16px;color:#fff;line-height:1.6;font-weight:600}
+.mind-blow-text strong{color:#55C8E8}
+.diagram-interactive .hotspot{cursor:pointer;opacity:0;transition:opacity 0.2s}
+.diagram-interactive .hotspot:hover{opacity:0.25}
+.diagram-interactive .hotspot.active{opacity:0.35}
+.diagram-info-panel{background:#0E1C42;color:#fff;padding:14px 20px;border-radius:14px;font-size:15px;line-height:1.55;font-weight:600;text-align:center;border:1.5px solid rgba(85,200,232,0.3);box-shadow:0 4px 16px rgba(0,0,0,0.2);margin:10px 0 0;display:none}
+.diagram-info-panel.visible{display:block}
+.diagram-info-panel .dip-word{font-size:11px;color:#FFD700;text-transform:uppercase;letter-spacing:1px;font-weight:800;display:block;margin-bottom:3px}
+.size-compare-wrap{background:linear-gradient(180deg,#EAF8FD,#D6EEFB);border:2px solid #D6F2FB;border-radius:16px;padding:16px;margin:16px 0;text-align:center}
+.size-compare-wrap svg{max-width:100%;height:auto}
+.size-compare-caption{font-size:13px;color:#9A8E82;margin-top:10px;font-weight:600}
+.quiz-card{background:#fff;border:2px solid #E8DDD2;border-left:6px solid #F5A623;border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:0 2px 10px rgba(43,29,18,0.04)}
+.quiz-q{background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;padding:16px 18px;margin-bottom:14px}
+.quiz-q-text{font-size:17px;color:#2B1D12;font-weight:700;line-height:1.6;margin-bottom:12px}
+.quiz-options{display:flex;flex-direction:column;gap:8px}
+.quiz-opt{padding:10px 16px;border-radius:12px;border:2px solid #E8DDD2;background:#fff;font-size:15px;font-weight:700;color:#2B1D12;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:10px;user-select:none}
+.quiz-opt:hover{background:#FFF7EE;border-color:#F5A623}
+.quiz-opt.correct{background:#EEF8F0!important;border-color:#34B76F!important;color:#1a6b35!important}
+.quiz-opt.wrong{background:#FFF0EC!important;border-color:#E8636B!important;color:#a33!important}
+.quiz-opt.disabled{pointer-events:none;opacity:0.6}
+.quiz-opt .opt-letter{width:28px;height:28px;border-radius:50%;background:#E8DDD2;color:#5A4D3E;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s}
+.quiz-opt.correct .opt-letter{background:#34B76F;color:#fff}
+.quiz-opt.wrong .opt-letter{background:#E8636B;color:#fff}
+.quiz-feedback{font-size:14px;padding:10px 14px;border-radius:10px;margin-top:10px;display:none;font-weight:600;line-height:1.5}
+.quiz-feedback.show{display:block}
+.quiz-feedback.fb-correct{background:#EEF8F0;color:#1a6b35;border:1.5px solid #B8E8CF}
+.quiz-feedback.fb-wrong{background:#FFF0EC;color:#8a3030;border:1.5px solid #F5C4BA}
+.quiz-score{text-align:center;padding:16px;background:linear-gradient(135deg,#FFF7EE,#FFF3DC);border:2px solid #F5E6C8;border-radius:14px;margin-top:8px;display:none}
+.quiz-score.show{display:block}
+.quiz-score-num{font-size:36px;font-weight:900;color:#0E1C42}
+.quiz-score-label{font-size:14px;color:#9A8E82;font-weight:700}
+.quiz-score-msg{font-size:16px;color:#2B1D12;font-weight:700;margin-top:6px}
+.go-deeper{background:linear-gradient(135deg,#F0EDF6,#E8E2F2);border:2px solid #D8D0E8;border-radius:16px;margin:16px 0;overflow:hidden}
+.go-deeper summary{padding:14px 18px;font-size:16px;font-weight:800;color:#0E1C42;cursor:pointer;display:flex;align-items:center;gap:10px;list-style:none}
+.go-deeper summary::-webkit-details-marker{display:none}
+.go-deeper summary::before{content:'🔭';font-size:22px}
+.go-deeper summary::after{content:'▸';margin-left:auto;font-size:18px;color:#8B6FC0;transition:transform 0.3s}
+.go-deeper[open] summary::after{transform:rotate(90deg)}
+.go-deeper .gd-body{padding:4px 18px 16px;font-size:15px;color:#5A4D3E;line-height:1.7;border-top:1.5px solid #D8D0E8}
+.go-deeper .gd-body p{margin-bottom:10px}
+.scroll-reveal{opacity:1!important;transform:none!important;transition:none!important}
+.back-to-top{position:fixed;bottom:28px;right:28px;height:44px;padding:0 18px 0 14px;border-radius:22px;background:linear-gradient(135deg,#C7922C,#8B7355);color:#fff;border:none;font-size:14px;font-weight:800;font-family:'Nunito',sans-serif;cursor:pointer;box-shadow:0 4px 18px rgba(199,146,44,0.35);display:flex;align-items:center;gap:6px;opacity:0;visibility:hidden;transform:translateY(20px);transition:opacity 0.3s,visibility 0.3s,transform 0.3s,box-shadow 0.2s;z-index:500}
+.back-to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.back-to-top:hover{box-shadow:0 6px 24px rgba(199,146,44,0.5);transform:translateY(-3px)}
+#confettiCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:10000}
+.video-wrap{border-radius:18px;overflow:hidden;border:2px solid #E8DDD2;box-shadow:0 4px 20px rgba(43,29,18,0.08);background:#000;margin:0 0 22px}
+.video-wrap-header{display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);border-bottom:2px solid rgba(85,200,232,0.2)}
+.video-wrap-type{font-size:10px;color:#55C8E8;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:2px}
+.video-wrap-title{font-size:16px;color:#fff;font-weight:800;line-height:1.2}
+.video-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}
+.video-ratio iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.video-placeholder{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#1a2a4a,#0E1C42);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}
+.video-placeholder-icon{font-size:44px;margin-bottom:10px;opacity:0.55}
+.video-placeholder-text{font-size:14px;color:rgba(255,255,255,0.45);font-weight:600;line-height:1.5;font-family:'Nunito',sans-serif}
+.video-placeholder-id{font-size:11px;color:rgba(85,200,232,0.4);font-family:monospace;margin-top:6px}
+.video-feedback{display:none}
+.video-feedback.show{display:block}
+.intro-2col .card .card-head{cursor:pointer;user-select:none;position:relative}
+.intro-2col .card .card-head::after{content:'▾';position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:16px;color:#9A8E82;transition:transform 0.25s ease}
+.intro-2col .card.collapsed .card-head::after{transform:translateY(-50%) rotate(-90deg)}
+.intro-2col .card.collapsed .card-body{display:none}
+.tab-bar{position:sticky;top:44px;z-index:100;background:#FAF7F3;border-bottom:3px solid #E8DDD2;display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tab-bar::-webkit-scrollbar{display:none}
+.tab-btn{flex:1;min-width:130px;padding:12px 8px 11px;background:transparent;border:none;border-bottom:4px solid transparent;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;color:#9A8E82;cursor:pointer;transition:all 0.2s;white-space:nowrap;line-height:1.3;text-align:center}
+.tab-btn:hover{color:#0E1C42;background:#F0EDE8}
+.tab-btn.active{color:#0E1C42;border-bottom-color:#C7922C;background:#fff}
+.tab-btn .tab-check{display:none;font-size:12px;color:#34B76F;margin-left:4px;font-weight:800}
+.tab-btn.visited .tab-check{display:inline}
+.tab-panel{display:none;padding:24px 28px 36px}
+.tab-panel.active{display:block}
+.intro-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 28px 0}
+.intro-2col .card{margin-bottom:0}
+.need-strip{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:12px 28px 16px}
+.need-strip-label{font-size:13px;color:#5A4D3E;font-weight:700;white-space:nowrap}
+.need-chip{display:inline-flex;align-items:center;gap:5px;background:#EEF8F0;border:1.5px solid #C4E5CC;border-radius:20px;padding:5px 12px;font-size:13px;color:#0E1C42;font-weight:700}
+.types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.type-card{border-radius:16px;padding:16px;text-align:center;border:2px solid;position:relative;overflow:hidden}
+.type-card svg{display:block;margin:0 auto 10px}
+.type-name{font-size:16px;font-weight:800;color:#0E1C42;margin-bottom:4px}
+.type-desc{font-size:13px;color:#5A4D3E;line-height:1.5}
+.tc-layers{background:#FFF7EE;border-color:#F0DCC4}
+.tc-fossils{background:#EEF8F0;border-color:#C4E5CC}
+.tc-canyon{background:#F0EDF6;border-color:#D8D0E8}
+.footer{background:#0E1C42;border-top:4px solid #C7922C;padding:18px 28px;text-align:center}
+.footer-line1{font-size:15px;color:#fff;margin-bottom:4px}
+.footer-line1 span{color:#C7922C;font-weight:700}
+.footer-line2{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:2px}
+.footer-line3{font-size:12px;color:rgba(255,255,255,0.4)}
+strong{color:#0E1C42}
+.tab-next-wrap{text-align:center;padding:24px 0 8px}
+.tab-next-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;background:linear-gradient(135deg,#C7922C,#D4772C);color:#fff;border:none;border-radius:28px;font-family:'Nunito',sans-serif;font-size:16px;font-weight:800;cursor:pointer;box-shadow:0 4px 16px rgba(199,146,44,0.3);transition:transform 0.2s,box-shadow 0.2s}
+.tab-next-btn:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(199,146,44,0.4)}
+.checklist-item:hover{background:#F0EDE8!important}
+.checklist-item.checked{background:#EEF8F0!important;border-color:#B8E8CF!important}
+.checklist-item.checked .check-icon{border-color:transparent!important;background:transparent!important;font-size:22px!important}
+.checklist-item.checked span:last-child{color:#5A4D3E}
+@media(max-width:620px){.intro-2col{grid-template-columns:1fr}.types-grid{grid-template-columns:1fr}.tab-btn{min-width:100px;font-size:11px;padding:10px 4px}}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+<!-- PROGRESS BAR -->
+<div class="progress-wrap">
+  <span class="progress-label">🪨 Lesson Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy"/></div>
+    <div><div class="header-org">Optima Academy Online</div><div class="header-sub">An Education Experience Company</div></div>
+  </div>
+  <div class="header-title">Landscapes Over Time</div>
+  <div class="header-badge"><span>🔬</span><span>SCIENCE &middot; EARTH &amp; SPACE</span></div>
+</div>
+
+<!-- HERO SVG: Canyon at Dusk -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2a3a"/>
+      <stop offset="60%" stop-color="#5a3a18"/>
+      <stop offset="100%" stop-color="#7a4a20"/>
+    </linearGradient>
+    <radialGradient id="sunhalo" cx="0.87" cy="0.66" r="0.18">
+      <stop offset="0%" stop-color="#F5A623" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#F5A623" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="bl3"><feGaussianBlur stdDeviation="3"/></filter>
+    <filter id="bl5"><feGaussianBlur stdDeviation="5"/></filter>
+    <filter id="bl2"><feGaussianBlur stdDeviation="2"/></filter>
+  </defs>
+  <style>
+    @keyframes twinkle{0%,100%{opacity:.15}50%{opacity:.9}}
+    @keyframes sunpulse{0%,100%{opacity:.7}50%{opacity:1}}
+    @keyframes rivglow{0%,100%{opacity:.5}50%{opacity:.85}}
+    @keyframes seddrift{0%{transform:translateY(0);opacity:0}25%{opacity:.65}80%{opacity:.3}100%{transform:translateY(28px);opacity:0}}
+    .st{animation:twinkle ease-in-out infinite}
+    .s1{animation-duration:3s;animation-delay:0s}.s2{animation-duration:4.2s;animation-delay:.7s}
+    .s3{animation-duration:3.6s;animation-delay:1.3s}.s4{animation-duration:4.8s;animation-delay:.4s}
+    .s5{animation-duration:3.2s;animation-delay:1.9s}.s6{animation-duration:4s;animation-delay:.9s}
+    .s7{animation-duration:3.8s;animation-delay:2.2s}.s8{animation-duration:4.4s;animation-delay:.2s}
+    .suna{animation:sunpulse 3.5s ease-in-out infinite}
+    .riva{animation:rivglow 2.8s ease-in-out infinite}
+    .sd1{animation:seddrift 4s linear infinite;animation-delay:0s}
+    .sd2{animation:seddrift 5s linear infinite;animation-delay:1.6s}
+    .sd3{animation:seddrift 4.5s linear infinite;animation-delay:2.9s}
+  </style>
+  <rect width="920" height="260" fill="url(#dusk)"/>
+  <ellipse class="suna" cx="800" cy="173" rx="78" ry="48" fill="url(#sunhalo)"/>
+  <circle cx="800" cy="172" r="13" fill="#F5A623" opacity="0.9"/>
+  <circle cx="800" cy="172" r="22" fill="#F5A623" filter="url(#bl5)" opacity="0.28"/>
+  <circle class="st s1" cx="75"  cy="28" r="1.5" fill="#fff"/>
+  <circle class="st s2" cx="190" cy="18" r="1.2" fill="#fff"/>
+  <circle class="st s3" cx="310" cy="36" r="1.0" fill="#fff"/>
+  <circle class="st s4" cx="460" cy="15" r="1.4" fill="#fff"/>
+  <circle class="st s5" cx="560" cy="32" r="1.0" fill="#fff"/>
+  <circle class="st s6" cx="650" cy="20" r="1.3" fill="#fff"/>
+  <circle class="st s7" cx="110" cy="58" r="0.8" fill="#fff"/>
+  <circle class="st s8" cx="395" cy="48" r="0.9" fill="#fff"/>
+  <!-- Strata full width -->
+  <rect x="0" y="173" width="920" height="20" fill="#C4A870"/>
+  <rect x="0" y="193" width="920" height="17" fill="#B05A3A"/>
+  <rect x="0" y="210" width="920" height="15" fill="#8A8070"/>
+  <rect x="0" y="225" width="920" height="15" fill="#5A3A20"/>
+  <rect x="0" y="240" width="920" height="20" fill="#2A1A0A"/>
+  <!-- Rim polygons hide strata on sides, reveal canyon center -->
+  <polygon points="0,260 0,168 310,168 356,260" fill="#3A2A10"/>
+  <polygon points="920,260 920,168 610,168 564,260" fill="#3A2A10"/>
+  <!-- Ground surface -->
+  <rect x="0" y="165" width="920" height="7" fill="#4a3a18"/>
+  <!-- Inner wall shadows -->
+  <polygon points="310,168 326,168 372,260 356,260" fill="#1A0E06" opacity="0.35"/>
+  <polygon points="610,168 594,168 548,260 564,260" fill="#1A0E06" opacity="0.35"/>
+  <!-- Fossil hint in red layer on inner left wall -->
+  <ellipse cx="334" cy="201" rx="8" ry="6.5" stroke="#D4A880" stroke-width="1.5" fill="none" opacity="0.55"/>
+  <ellipse cx="334" cy="201" rx="4.5" ry="3.5" stroke="#D4A880" stroke-width="1" fill="none" opacity="0.45"/>
+  <ellipse cx="334" cy="201" rx="2" ry="1.5" stroke="#D4A880" stroke-width="1" fill="none" opacity="0.4"/>
+  <!-- Vegetation on rims -->
+  <ellipse cx="55"  cy="163" rx="16" ry="6" fill="#4a5a28"/>
+  <ellipse cx="108" cy="162" rx="12" ry="5" fill="#3a4a20"/>
+  <ellipse cx="178" cy="163" rx="18" ry="6" fill="#4a5a28"/>
+  <ellipse cx="245" cy="162" rx="10" ry="4" fill="#3a4a20"/>
+  <ellipse cx="682" cy="162" rx="14" ry="5" fill="#4a5a28"/>
+  <ellipse cx="748" cy="163" rx="20" ry="6" fill="#3a4a20"/>
+  <ellipse cx="843" cy="162" rx="12" ry="5" fill="#4a5a28"/>
+  <!-- River -->
+  <rect class="riva" x="360" y="252" width="200" height="8" rx="4" fill="#3A8EC8" filter="url(#bl2)" opacity="0.7"/>
+  <rect x="364" y="254" width="192" height="5" rx="3" fill="#2A6EA8" opacity="0.55"/>
+  <!-- Drifting sediment in sky above canyon -->
+  <circle class="sd1" cx="430" cy="138" r="1.5" fill="#C4A870" opacity="0.5"/>
+  <circle class="sd2" cx="484" cy="122" r="1.2" fill="#D4B888" opacity="0.4"/>
+  <circle class="sd3" cx="512" cy="133" r="1.7" fill="#C4A870" opacity="0.45"/>
+  <!-- Label -->
+  <text x="460" y="152" text-anchor="middle" font-family="Nunito,sans-serif" font-size="13" font-weight="800" fill="#FFD700" letter-spacing="2.5" opacity="0.85">LANDSCAPES OVER TIME &middot; EARTH'S HISTORY IN ROCK</text>
+</svg>
+</div>
+
+<!-- INFO STRIP -->
+<div class="info-strip">
+  <div class="info-item"><div class="info-icon" style="background:#FFF7EE;">📅</div><div><div class="info-label">Quarter / Unit</div><div class="info-value">Q1 &middot; Unit 5</div><div class="info-detail">Dynamic Earth</div></div></div>
+  <div class="info-item"><div class="info-icon" style="background:#FFF3DC;">📖</div><div><div class="info-label">Week / Lesson</div><div class="info-value">Week 5</div><div class="info-detail">Lesson 5.01 &mdash; Earth Science</div></div></div>
+  <div class="info-item"><div class="info-icon" style="background:#EEF8F0;">🪨</div><div><div class="info-label">Science Focus</div><div class="info-value">Landscapes</div><div class="info-detail">Rock Layers, Fossils &amp; Canyons</div></div></div>
+  <div class="info-item"><div class="info-icon" style="background:#F0EDF6;">🌎</div><div><div class="info-label">Standard</div><div class="info-value">NGSS 4-ESS1-1</div><div class="info-detail">Changes in a Landscape Over Time</div></div></div>
+</div>
+
+<!-- INTRO 2-COL -->
+<div class="intro-2col">
+  <div class="card theme-earth scroll-reveal">
+    <div class="card-head"><div class="card-head-icon">❓</div><div><div class="card-head-label">Essential Question</div><div class="card-head-title">Our Big Question for Today</div></div></div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div><div class="label">Think About This&hellip;</div><div class="question">"How can patterns in rock formations and fossils help us understand changes in a landscape over time?"</div></div>
+      </div>
+      <p>Hold that question in your mind as you work through today's lesson. By the end, you should be able to answer it using scientific vocabulary!</p>
+    </div>
+  </div>
+  <div class="card theme-sky scroll-reveal">
+    <div class="card-head"><div class="card-head-icon">🎯</div><div><div class="card-head-label">Objectives</div><div class="card-head-title">I Can Statements</div></div></div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#E8636B;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain how rock layers form and use patterns in them to describe how a landscape has changed over time.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#D4772C;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> describe how fossils found in rock layers are clues about past environments.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#34B76F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain how rivers carve canyons over time and describe how abiotic factors affect what can live in a place.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science Notebook</span>
+  <span class="need-chip"><span>✏️</span>Colored Pencils</span>
+  <span class="need-chip"><span>📏</span>Ruler</span>
+</div>
+
+<!-- TAB BAR -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📘 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+<!-- ══════════ TAB 1: VOCABULARY ══════════ -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <div class="video-wrap" style="margin-bottom:22px;">
+    <div class="video-wrap-header"><span style="font-size:20px;">🎬</span><div><div class="video-wrap-type">Introduction · Welcome Video</div><div class="video-wrap-title">Welcome to Today's Lesson!</div></div></div>
+    <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🎬</div><div class="video-placeholder-text">Teacher introduction video coming soon</div><div class="video-placeholder-id"><!-- slot: 5-01-welcome --></div></div></div>
+  </div>
+
+  <!-- ACTIVITY 1: WARM-UP -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#E8636B;">1</div>
+      <div style="flex:1;"><div class="act-title">🌅 Warm-Up: What Do You Already Know?</div><div class="act-subtitle">Activate your prior knowledge!</div></div>
+      <div class="act-time" style="background:#E8636B;">⏱ 5 min</div>
+    </div>
+    <div class="act-body">
+      <p>In your science notebook, draw a quick sketch of what you <em>think</em> the inside of the ground looks like if you could slice it open like a sandwich and look at the side. Don't worry about being right &mdash; just draw what you imagine! Label anything you can.</p>
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div><div class="label">Write &amp; Reflect</div><div class="question">"Have you ever seen a canyon, a cliff, or a road cut through a hillside? Did you notice any layers in the rock? What colors or patterns did you see? What do you think made those layers?"</div></div>
+      </div>
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>There are no wrong answers here! Scientists always start by asking questions and making observations. We'll come back to your sketch at the end of the lesson to see how much you've learned.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOCAB FLIP CARDS -->
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head"><div class="card-head-icon">📚</div><div><div class="card-head-label">Word Wall</div><div class="card-head-title">Key Vocabulary</div></div></div>
+    <div class="card-body">
+      <p>Before we begin, let's learn the words scientists use when they talk about landscapes, rock layers, and fossils. <strong>Tap each card to flip it</strong> and read the definition. You'll see these words throughout the lesson!</p>
+      <div class="vocab-grid">
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🏔️</div><div class="fc-word">Landscape</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Landscape</div><div class="fc-def">The shape and features of an area of land — including its hills, valleys, rivers, and rocks.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">📚</div><div class="fc-word">Rock Layer</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Rock Layer</div><div class="fc-def">A flat band of rock formed from sediment that piled up over time. Scientists also call these strata.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🌊</div><div class="fc-word">Sediment</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Sediment</div><div class="fc-def">Tiny pieces of rock, sand, and soil carried by wind or water that slowly settle and pile up over time.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🦕</div><div class="fc-word">Fossil</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Fossil</div><div class="fc-def">The preserved remains or imprint of a once-living plant or animal found inside rock.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🏜️</div><div class="fc-word">Canyon</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Canyon</div><div class="fc-def">A deep valley with steep rocky walls, carved by a river flowing over the land for a very long time.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">☀️</div><div class="fc-word">Abiotic Factors</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Abiotic Factors</div><div class="fc-def">The non-living parts of an environment — like sunlight, water, soil, and temperature — that affect what can live there.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mind-blow">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Mind-Blowing Fact</div>
+      <div class="mind-blow-text">The Grand Canyon is <strong>more than 1 mile (1.6 km) deep!</strong> The Colorado River took about <strong>5–6 million years</strong> to carve it — and the rocks at the very bottom are nearly <strong>2 BILLION years old.</strong> That's almost half the age of Earth itself!</div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📘 The Lesson →</button>
+  </div>
+</div>
+
+<!-- ══════════ TAB 2: THE LESSON ══════════ -->
+<div class="tab-panel" id="tab-lesson">
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#D4772C;">2</div>
+      <div style="flex:1;"><div class="act-title">📘 The Lesson: Reading Earth's History</div><div class="act-subtitle">Discover what rock layers and fossils can tell us!</div></div>
+      <div class="act-time" style="background:#D4772C;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="video-wrap">
+        <div class="video-wrap-header"><span style="font-size:20px;">📘</span><div><div class="video-wrap-type">Activity 2 · Lesson Explainer</div><div class="video-wrap-title">Let's Explore Rock Layers and Fossils!</div></div></div>
+        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">📘</div><div class="video-placeholder-text">Lesson explainer video coming soon</div><div class="video-placeholder-id"><!-- slot: 5-01-lesson-explainer --></div></div></div>
+      </div>
+
+      <p style="font-size:18px;"><strong>Part 1 — Rocks and Fossils Tell a Story</strong></p>
+      <p>Long ago, explorers looked closely at the land around them and shared what they saw. Today, scientists do something similar &mdash; they study <span class="vtip"><strong>rocks</strong><span class="vtip-box"><span class="vtip-word">Rock Layer</span>A flat band of rock formed from sediment that piled up over time.</span></span> and <span class="vtip"><strong>fossils</strong><span class="vtip-box"><span class="vtip-word">Fossil</span>The preserved remains or imprint of a once-living plant or animal found inside rock.</span></span> to learn about how Earth has changed. These clues help us understand how <span class="vtip"><strong>landscapes</strong><span class="vtip-box"><span class="vtip-word">Landscape</span>The shape and features of an area of land, including its hills, valleys, rivers, and rocks.</span></span> grow and change, and how they become homes for different plants and animals.</p>
+
+      <p>Rocks and fossils are like pages in a giant history book about the Earth. Each rock layer can tell us what the land looked like when it formed. Think of rock layers like a stack of pancakes &mdash; the first pancake sits at the bottom and each new one goes on top. <strong>Older layers are always at the bottom; newer layers are always on top.</strong></p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div><div class="label">Stop &amp; Think</div><div class="question">"If you found a seashell fossil in a rock layer on dry land — far from any ocean — what might that tell you about what this place looked like millions of years ago?"</div></div>
+      </div>
+
+      <!-- INTERACTIVE DIAGRAM -->
+      <div class="diagram-wrap diagram-interactive">
+        <svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,sans-serif;">
+          <defs>
+            <linearGradient id="skyD" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#C8E8F8"/><stop offset="100%" stop-color="#EAF8FE"/></linearGradient>
+            <style>
+              @keyframes sfDrop{0%{opacity:0;transform:translateY(-6px)}25%{opacity:.7}80%{opacity:.25}100%{opacity:0;transform:translateY(28px)}}
+              .df1{animation:sfDrop 3s linear infinite;animation-delay:0s}
+              .df2{animation:sfDrop 4s linear infinite;animation-delay:1.3s}
+              .df3{animation:sfDrop 3.5s linear infinite;animation-delay:2.6s}
+              .df4{animation:sfDrop 4.5s linear infinite;animation-delay:.7s}
+            </style>
+          </defs>
+          <!-- Sky context -->
+          <rect width="720" height="120" fill="url(#skyD)"/>
+          <ellipse cx="580" cy="36" rx="55" ry="18" fill="#fff" opacity="0.6"/>
+          <ellipse cx="140" cy="50" rx="42" ry="15" fill="#fff" opacity="0.5"/>
+          <circle cx="640" cy="22" r="14" fill="#F5D060" opacity="0.7"/>
+          <!-- Ground surface -->
+          <rect x="0" y="115" width="720" height="7" fill="#6A8A3A" opacity="0.75"/>
+          <ellipse cx="90"  cy="113" rx="13" ry="5" fill="#5A7A2A"/>
+          <ellipse cx="200" cy="112" rx="10" ry="4" fill="#6A8A3A"/>
+          <ellipse cx="360" cy="113" rx="15" ry="5" fill="#5A7A2A"/>
+          <ellipse cx="540" cy="112" rx="11" ry="4" fill="#6A8A3A"/>
+          <ellipse cx="650" cy="113" rx="13" ry="5" fill="#5A7A2A"/>
+          <!-- Sediment particles falling -->
+          <circle class="df1" cx="310" cy="78" r="2.5" fill="#C4A870" opacity="0.6"/>
+          <circle class="df2" cx="385" cy="62" r="2"   fill="#D4B888" opacity="0.5"/>
+          <circle class="df3" cx="430" cy="72" r="2.5" fill="#C4A870" opacity="0.55"/>
+          <circle class="df4" cx="255" cy="85" r="1.8" fill="#B8A060" opacity="0.5"/>
+          <text x="360" y="100" text-anchor="middle" font-size="11" fill="#8A7A60" font-weight="600" opacity="0.7">&#8595; sediment settling here now</text>
+          <!-- STRATA LAYERS -->
+          <rect x="0" y="122" width="720" height="50" fill="#D4C28A"/>
+          <line x1="0" y1="138" x2="720" y2="138" stroke="#C4B078" stroke-width="0.8" opacity="0.4"/>
+          <line x1="0" y1="154" x2="720" y2="154" stroke="#C4B078" stroke-width="0.8" opacity="0.4"/>
+          <rect x="0" y="172" width="720" height="50" fill="#C07850"/>
+          <line x1="0" y1="188" x2="720" y2="188" stroke="#A86038" stroke-width="0.8" opacity="0.4"/>
+          <line x1="0" y1="205" x2="720" y2="205" stroke="#A86038" stroke-width="0.8" opacity="0.4"/>
+          <rect x="0" y="222" width="720" height="47" fill="#8A8878"/>
+          <line x1="0" y1="237" x2="720" y2="237" stroke="#787866" stroke-width="0.8" opacity="0.4"/>
+          <rect x="0" y="269" width="720" height="52" fill="#6B4030"/>
+          <line x1="0" y1="285" x2="720" y2="285" stroke="#5A3020" stroke-width="0.8" opacity="0.4"/>
+          <line x1="0" y1="302" x2="720" y2="302" stroke="#5A3020" stroke-width="0.8" opacity="0.4"/>
+          <rect x="0" y="321" width="720" height="69" fill="#3A2010"/>
+          <line x1="0" y1="342" x2="720" y2="342" stroke="#2A1508" stroke-width="0.8" opacity="0.4"/>
+          <line x1="0" y1="362" x2="720" y2="362" stroke="#2A1508" stroke-width="0.8" opacity="0.4"/>
+          <!-- AMMONITE FOSSIL in Layer 2 (x=360, y=196) -->
+          <g transform="translate(360,196)">
+            <ellipse cx="0" cy="0" rx="20" ry="18" stroke="#D4B888" stroke-width="2.5" fill="#C07850" opacity="0.6"/>
+            <ellipse cx="0" cy="0" rx="13" ry="11" stroke="#D4B888" stroke-width="2"   fill="#B06840" opacity="0.75"/>
+            <ellipse cx="0" cy="0" rx="7"  ry="6"  stroke="#D4B888" stroke-width="1.5" fill="#A05830" opacity="0.9"/>
+            <path d="M-20,0 Q-16,-7 -12,-1 Q-8,5 -5,0"   stroke="#E8C898" stroke-width="1.2" fill="none" opacity="0.65"/>
+            <path d="M0,-18 Q4,-14 1,-9 Q-2,-4 0,0"       stroke="#E8C898" stroke-width="1.2" fill="none" opacity="0.65"/>
+            <path d="M18,4 Q14,9 10,4 Q7,-1 5,0"          stroke="#E8C898" stroke-width="1.2" fill="none" opacity="0.65"/>
+          </g>
+          <!-- LEAF FOSSIL in Layer 4 (x=210, y=292) -->
+          <g transform="translate(210,292)">
+            <path d="M0,-17 C8,-13 14,-6 12,0 C10,8 4,15 0,19 C-4,15 -10,8 -12,0 C-14,-6 -8,-13 0,-17 Z" stroke="#A07855" stroke-width="1.5" fill="#6B4030" opacity="0.5"/>
+            <line x1="0" y1="-17" x2="0"   y2="19"  stroke="#A07855" stroke-width="1.2" opacity="0.7"/>
+            <line x1="0" y1="-8"  x2="9"   y2="-2"  stroke="#A07855" stroke-width="0.9" opacity="0.55"/>
+            <line x1="0" y1="-8"  x2="-9"  y2="-2"  stroke="#A07855" stroke-width="0.9" opacity="0.55"/>
+            <line x1="0" y1="2"   x2="10"  y2="7"   stroke="#A07855" stroke-width="0.9" opacity="0.55"/>
+            <line x1="0" y1="2"   x2="-10" y2="7"   stroke="#A07855" stroke-width="0.9" opacity="0.55"/>
+            <line x1="0" y1="10"  x2="8"   y2="14"  stroke="#A07855" stroke-width="0.8" opacity="0.45"/>
+            <line x1="0" y1="10"  x2="-8"  y2="14"  stroke="#A07855" stroke-width="0.8" opacity="0.45"/>
+          </g>
+          <!-- LABELS right side -->
+          <line x1="460" y1="116" x2="530" y2="82"  stroke="#0E1C42" stroke-width="1.5"/>
+          <rect x="530" y="70"  width="80"  height="26" rx="6" fill="#FFF7EE" stroke="#F0DCC4" stroke-width="1.5"/>
+          <text x="570" y="88"  text-anchor="middle" font-size="13" font-weight="700" fill="#D4772C">Sediment</text>
+          <line x1="480" y1="147" x2="545" y2="114" stroke="#0E1C42" stroke-width="1.5"/>
+          <rect x="545" y="102" width="117" height="26" rx="6" fill="#FFF3DC" stroke="#E8C88A" stroke-width="1.5"/>
+          <text x="603" y="120" text-anchor="middle" font-size="13" font-weight="700" fill="#0E1C42">Newest Layer</text>
+          <line x1="382" y1="196" x2="500" y2="188" stroke="#0E1C42" stroke-width="1.5"/>
+          <rect x="500" y="176" width="150" height="26" rx="6" fill="#FFF0EC" stroke="#F5C4BA" stroke-width="1.5"/>
+          <text x="575" y="194" text-anchor="middle" font-size="13" font-weight="700" fill="#E8636B">Sea Fossil &#x1F41A;</text>
+          <line x1="480" y1="245" x2="545" y2="268" stroke="#0E1C42" stroke-width="1.5"/>
+          <rect x="545" y="256" width="94"  height="26" rx="6" fill="#FFF3DC" stroke="#E8C88A" stroke-width="1.5"/>
+          <text x="592" y="274" text-anchor="middle" font-size="13" font-weight="700" fill="#0E1C42">Rock Layer</text>
+          <!-- LABELS left side -->
+          <line x1="188" y1="292" x2="95"  y2="284" stroke="#0E1C42" stroke-width="1.5"/>
+          <rect x="8"   y="272" width="89"  height="26" rx="6" fill="#EEF8F0" stroke="#C4E5CC" stroke-width="1.5"/>
+          <text x="52"  y="290" text-anchor="middle" font-size="13" font-weight="700" fill="#34B76F">Plant Fossil &#x1F33F;</text>
+          <line x1="200" y1="355" x2="100" y2="355" stroke="#0E1C42" stroke-width="1.5"/>
+          <rect x="5"   y="343" width="97"  height="26" rx="6" fill="#FFF0EC" stroke="#F5C4BA" stroke-width="1.5"/>
+          <text x="53"  y="361" text-anchor="middle" font-size="13" font-weight="700" fill="#E8636B">Oldest Layer</text>
+          <!-- HOTSPOTS -->
+          <rect class="hotspot" data-part="sediment"          data-info="Tiny bits of rock, sand, and soil are settling here right now! This is called sediment. Over thousands of years, it gets buried, squeezed, and cemented into a brand-new rock layer."                                                                                       x="0" y="108" width="720" height="16" fill="#FFD700"/>
+          <rect class="hotspot" data-part="newest layer"      data-info="The most recently formed rock layer — it is the youngest! Layers on top are always newer than layers below. Scientists call this the Law of Superposition: new stuff always piles on top of old stuff."                                                                       x="0" y="122" width="720" height="50" fill="#FFD700"/>
+          <ellipse class="hotspot" data-part="sea fossil"     data-info="An ammonite fossil — an ancient sea creature! Finding a sea fossil in rock far from any ocean tells scientists this area was once covered by a warm, shallow sea. Fossils are amazing clues to past environments!"                                                              cx="360" cy="196" rx="35" ry="26" fill="#FFD700"/>
+          <ellipse class="hotspot" data-part="plant fossil"   data-info="A leaf fossil preserved in rock! When this plant was buried under sediment, its imprint was slowly preserved as the sediment hardened into rock. This tells us land plants once lived here — the environment has changed dramatically over time!"                           cx="210" cy="292" rx="32" ry="24" fill="#FFD700"/>
+          <rect class="hotspot" data-part="oldest layer"      data-info="The deepest layer is the oldest! It formed first, and everything above it piled on top over millions of years. In the Grand Canyon, the rocks at the very bottom are nearly 2 BILLION years old — almost half the age of Earth itself!"                                   x="0" y="321" width="720" height="69" fill="#FFD700"/>
+        </svg>
+        <div style="background:linear-gradient(135deg,#FFF7EE,#FFF3DC);border:2px solid #F5E6C8;border-radius:14px;padding:12px 18px;margin-top:10px;display:flex;align-items:center;gap:12px;">
+          <span style="font-size:28px;flex-shrink:0;animation:mind-blow-bounce 2s ease-in-out infinite;">👆</span>
+          <p style="font-size:15px;color:#2B1D12;line-height:1.55;margin:0;font-weight:600;">Tap any layer, fossil, or the ground surface to discover what it can tell us about Earth's history!</p>
+        </div>
+        <div class="diagram-info-panel" id="diagramPanel"><span class="dip-word" id="diagramWord"></span><span id="diagramInfo"></span></div>
+      </div>
+
+      <div class="key-concept">
+        <div class="kc-label">🔑 Key Concept</div>
+        <p><strong>Rock layers</strong> are like pages in a giant history book. The <strong>oldest pages are at the bottom</strong> — buried first — and the newest pages are on top. A <span class="vtip"><strong>canyon</strong><span class="vtip-box"><span class="vtip-word">Canyon</span>A deep valley with steep rocky walls, carved by a river flowing over the land for a very long time.</span></span> is a great place to see these pages because a river has already cut through them for us!</p>
+        <p><span class="vtip"><strong>Fossils</strong><span class="vtip-box"><span class="vtip-word">Fossil</span>The preserved remains or imprint of a once-living plant or animal found inside rock.</span></span> inside those layers are even more powerful clues. Find a seashell fossil in rock on dry land, and you know that area was once an ancient ocean!</p>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div><div class="label">Stop &amp; Reason</div><div class="question">"Why do you think scientists need to look at multiple rock layers to understand a landscape's history? Why wouldn't just one layer be enough?"</div></div>
+      </div>
+
+      <!-- PART 2: THREE TYPES OF EVIDENCE -->
+      <p style="font-size:18px;margin-top:20px;"><strong>Part 2 — Three Types of Clues Scientists Use</strong></p>
+      <p>Scientists studying how a <span class="vtip">landscape<span class="vtip-box"><span class="vtip-word">Landscape</span>The shape and features of an area of land, including its hills, valleys, rivers, and rocks.</span></span> has changed rely on three main types of evidence:</p>
+
+      <div class="types-grid">
+        <div class="type-card tc-layers">
+          <svg viewBox="0 0 180 100" width="180" height="100" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="100" fill="#FFF7EE" rx="8"/>
+            <rect x="15" y="18" width="150" height="11" rx="3" fill="#D4C28A"/>
+            <rect x="15" y="31" width="150" height="11" rx="3" fill="#C07850"/>
+            <rect x="15" y="44" width="150" height="11" rx="3" fill="#8A8878"/>
+            <rect x="15" y="57" width="150" height="11" rx="3" fill="#6B4030"/>
+            <rect x="15" y="70" width="150" height="11" rx="3" fill="#3A2010"/>
+            <text x="90" y="94" text-anchor="middle" font-size="10" fill="#9A8E82" font-family="Nunito,sans-serif">oldest at bottom &#8595;</text>
+          </svg>
+          <div class="type-name">Rock Layers</div>
+          <div class="type-desc">Show how much time has passed. The bottom layer formed first, millions of years ago.</div>
+        </div>
+        <div class="type-card tc-fossils">
+          <svg viewBox="0 0 180 100" width="180" height="100" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="100" fill="#EEF8F0" rx="8"/>
+            <rect x="10" y="28" width="160" height="50" fill="#8A8878" rx="4"/>
+            <g transform="translate(90,53)">
+              <ellipse cx="0" cy="0" rx="19" ry="17" stroke="#D4B888" stroke-width="2.5" fill="#8A8878"/>
+              <ellipse cx="0" cy="0" rx="12" ry="10" stroke="#D4B888" stroke-width="2"   fill="#7A7868"/>
+              <ellipse cx="0" cy="0" rx="6"  ry="5"  stroke="#D4B888" stroke-width="1.5" fill="#6A6858"/>
+              <path d="M-19,0 Q-14,-6 -10,-1 Q-6,4 -4,0" stroke="#E8C898" stroke-width="1.2" fill="none"/>
+              <path d="M0,-17 Q4,-12 1,-7 Q-2,-3 0,0"    stroke="#E8C898" stroke-width="1.2" fill="none"/>
+            </g>
+            <text x="90" y="92" text-anchor="middle" font-size="10" fill="#34B76F" font-weight="700" font-family="Nunito,sans-serif">shows past life</text>
+          </svg>
+          <div class="type-name">Fossils</div>
+          <div class="type-desc">Reveal what lived there long ago. Sea fossils on dry land = ancient ocean!</div>
+        </div>
+        <div class="type-card tc-canyon">
+          <svg viewBox="0 0 180 100" width="180" height="100" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="100" fill="#F0EDF6" rx="8"/>
+            <rect x="0" y="0"  width="180" height="32" fill="#D6EEFB" rx="8"/>
+            <rect x="0" y="32" width="180" height="11" fill="#D4C28A"/>
+            <rect x="0" y="43" width="180" height="10" fill="#C07850"/>
+            <rect x="0" y="53" width="180" height="10" fill="#8A8878"/>
+            <rect x="0" y="63" width="180" height="10" fill="#6B4030"/>
+            <rect x="0" y="73" width="180" height="27" fill="#3A2010"/>
+            <polygon points="55,30 125,30 112,98 68,98" fill="#D6EEFB"/>
+            <rect x="70" y="92" width="40" height="6" rx="3" fill="#3A8EC8"/>
+            <text x="90" y="16" text-anchor="middle" font-size="10" fill="#8B6FC0" font-weight="700" font-family="Nunito,sans-serif">layers + erosion</text>
+          </svg>
+          <div class="type-name">Canyon Walls</div>
+          <div class="type-desc">Show rock layers AND how rivers carved through them over millions of years.</div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div><div class="label">Observe &amp; Reason</div><div class="question">"Imagine you found a rock layer full of fish fossils sitting right on top of a layer full of fern fossils. What story would those two layers tell about how this place changed over time?"</div></div>
+      </div>
+
+      <div class="callout callout-think">
+        <span class="callout-icon">🏜️</span>
+        <p><strong>Real-World Connection:</strong> The <strong>Grand Canyon</strong> in Arizona shows all three types of clues in one place. Its walls reveal more than <strong>40 separate rock layers</strong>, contain fossils of ancient sea creatures (even though it is in a desert today!), and show exactly how the Colorado River carved one of the world's largest canyons over 5–6 million years.</p>
+      </div>
+
+      <!-- SIZE COMPARISON -->
+      <div class="size-compare-wrap scroll-reveal">
+        <svg viewBox="0 0 680 205" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,sans-serif;">
+          <rect x="0" y="158" width="680" height="25" fill="#C4B99A"/>
+          <rect x="0" y="160" width="680" height="2"  fill="#A89A7A"/>
+          <text x="178" y="154" text-anchor="middle" font-size="9" font-weight="700" fill="#9A8E82" letter-spacing="0.5">GROUND LEVEL</text>
+          <!-- Person -->
+          <rect x="46" y="147" width="8" height="11" rx="2" fill="#E8636B" opacity="0.85"/>
+          <circle cx="50" cy="142" r="5" fill="#E8636B" opacity="0.85"/>
+          <text x="50" y="176" text-anchor="middle" font-size="9" font-weight="700" fill="#9A8E82">Person</text>
+          <text x="50" y="186" text-anchor="middle" font-size="9" fill="#9A8E82">~1.5m</text>
+          <!-- School bus -->
+          <rect x="96" y="139" width="60" height="21" rx="3" fill="#F5A623" stroke="#C7922C" stroke-width="1.5"/>
+          <rect x="102" y="143" width="10" height="9" rx="2" fill="#D6EEFB"/>
+          <rect x="116" y="143" width="10" height="9" rx="2" fill="#D6EEFB"/>
+          <rect x="130" y="143" width="10" height="9" rx="2" fill="#D6EEFB"/>
+          <circle cx="108" cy="161" r="5" fill="#333"/>
+          <circle cx="144" cy="161" r="5" fill="#333"/>
+          <text x="126" y="176" text-anchor="middle" font-size="9" font-weight="700" fill="#9A8E82">School Bus</text>
+          <text x="126" y="186" text-anchor="middle" font-size="9" fill="#9A8E82">~4m tall</text>
+          <!-- Niagara Falls -->
+          <rect x="213" y="101" width="18" height="59" rx="3" fill="#3A8EC8" opacity="0.6"/>
+          <rect x="208" y="98"  width="28" height="8"  rx="2" fill="#C4B99A"/>
+          <text x="222" y="176" text-anchor="middle" font-size="9" font-weight="700" fill="#9A8E82">Niagara Falls</text>
+          <text x="222" y="186" text-anchor="middle" font-size="9" fill="#9A8E82">57m</text>
+          <!-- Eiffel Tower -->
+          <polygon points="292,5 307,160 277,160" fill="#8B8B8B" opacity="0.5"/>
+          <polygon points="294,70 305,160 279,160" fill="#8B8B8B" opacity="0.35"/>
+          <text x="292" y="176" text-anchor="middle" font-size="9" font-weight="700" fill="#9A8E82">Eiffel Tower</text>
+          <text x="292" y="186" text-anchor="middle" font-size="9" fill="#9A8E82">~330m</text>
+          <!-- Divider -->
+          <line x1="348" y1="10" x2="348" y2="198" stroke="#E8DDD2" stroke-width="1.5" stroke-dasharray="5,4"/>
+          <text x="348" y="8" text-anchor="middle" font-size="9" fill="#C4B99A">vs.</text>
+          <!-- Grand Canyon shaft going DOWN -->
+          <rect x="398" y="154" width="54" height="5" fill="#6B5040"/>
+          <rect x="540" y="154" width="54" height="5" fill="#6B5040"/>
+          <rect x="452" y="159" width="90" height="11" fill="#D4C28A"/>
+          <rect x="454" y="170" width="86" height="9"  fill="#C07850"/>
+          <rect x="456" y="179" width="82" height="9"  fill="#8A8878"/>
+          <rect x="458" y="188" width="78" height="8"  fill="#6B4030"/>
+          <rect x="460" y="196" width="74" height="7"  fill="#3A2010"/>
+          <rect x="462" y="203" width="70" height="5"  fill="#1A0A00" opacity="0.8"/>
+          <rect x="464" y="197" width="66" height="5" rx="2" fill="#2A6EA8" opacity="0.55"/>
+          <text x="497" y="205" text-anchor="middle" font-size="10" fill="#9A8E82">&#8226; &#8226; &#8226;</text>
+          <text x="497" y="134" text-anchor="middle" font-size="13" font-weight="900" fill="#C7922C">Grand Canyon</text>
+          <text x="497" y="148" text-anchor="middle" font-size="11" font-weight="800" fill="#D4772C">&#8595; 1,857m DEEP!</text>
+          <text x="497" y="176" text-anchor="middle" font-size="9" font-weight="700" fill="#9A8E82">over 1 mile deep</text>
+          <text x="497" y="186" text-anchor="middle" font-size="9" fill="#9A8E82">(going DOWN into Earth)</text>
+          <text x="340" y="203" text-anchor="middle" font-size="8" fill="#C4B99A" font-style="italic">*not to scale</text>
+        </svg>
+        <div class="size-compare-caption">Even the Eiffel Tower (330m) is less than one-fifth as deep as the Grand Canyon. The canyon goes DOWN into the Earth — far deeper than any building is tall!</div>
+      </div>
+
+      <details class="go-deeper scroll-reveal">
+        <summary>Curious? Go Deeper — How Does Sediment Become Rock?</summary>
+        <div class="gd-body">
+          <p>When <strong>sediment</strong> (sand, dirt, and small rock pieces) piles up at the bottom of a river, lake, or ocean, something amazing happens over a very long time. New sediment keeps piling on top, and the weight of all that material squeezes the deeper layers together — a process called <strong>compaction</strong>.</p>
+          <p>Then minerals dissolved in the water seep in and act like cement, gluing all the particles together. This combined process — compaction and cementation — is called <strong>lithification</strong>, which simply means "turning into rock." It can take thousands to millions of years!</p>
+          <p>The result is <strong>sedimentary rock</strong> — the same kind you see in canyon walls. Every canyon wall is a library of Earth's history, just waiting to be read!</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+</div>
+
+<!-- ══════════ TAB 3: GUIDED EXPLORATION ══════════ -->
+<div class="tab-panel" id="tab-explore">
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#55C8E8;">3</div>
+      <div style="flex:1;"><div class="act-title">🔬 Guided Exploration: How a Canyon Forms</div><div class="act-subtitle">Follow the river's journey through solid rock!</div></div>
+      <div class="act-time" style="background:#55C8E8;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="video-wrap">
+        <div class="video-wrap-header"><span style="font-size:20px;">🔬</span><div><div class="video-wrap-type">Activity 3 · Guided Exploration</div><div class="video-wrap-title">Follow the Journey of a Canyon!</div></div></div>
+        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🔬</div><div class="video-placeholder-text">Guided exploration video coming soon</div><div class="video-placeholder-id"><!-- slot: 5-01-exploration-explainer --></div></div></div>
+      </div>
+
+      <p>Let's trace how a <span class="vtip"><strong>canyon</strong><span class="vtip-box"><span class="vtip-word">Canyon</span>A deep valley with steep rocky walls, carved by a river flowing over the land for a very long time.</span></span> forms — <strong>step by step</strong>. As you read each step, think about how those rock layers we studied become the walls of the canyon.</p>
+
+      <div style="position:relative;margin:16px 0;">
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#3A8EC8,#55C8E8);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(58,142,200,0.3);">1</div>
+          <div style="flex:1;background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Rain and Rivers:</strong> Rain falls on the land and flows downhill, joining together to form rivers. The Colorado River flowed across a high, flat area called a <strong>plateau</strong>. A plateau is like a table of land — flat on top with steep edges.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#D4772C,#F5A623);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(212,119,44,0.3);">2</div>
+          <div style="flex:1;background:#FFF7EE;border:2px solid #F0DCC4;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Erosion Begins:</strong> Moving water carries tiny pieces of <span class="vtip">sediment<span class="vtip-box"><span class="vtip-word">Sediment</span>Tiny pieces of rock, sand, and soil carried by wind or water that settle and pile up over time.</span></span> — sand and small rocks. These particles scrape against the riverbed like sandpaper, slowly wearing away the rock below. This wearing-away process is called <strong>erosion</strong>.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#C7922C,#FFD700);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(199,146,44,0.3);">3</div>
+          <div style="flex:1;background:#FFF3DC;border:2px solid #F5E6C8;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>The Canyon Deepens:</strong> Over thousands, then <em>millions</em> of years, the river cuts deeper and deeper into the rock. The canyon walls grow taller as layer after layer is slowly carved away. Imagine dragging a key across wood millions of times — one scratch is nothing, but millions of scratches carve a deep groove!</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#5A3A20,#8B5E3C);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(90,58,32,0.3);">4</div>
+          <div style="flex:1;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Layers Revealed!</strong> As the <span class="vtip">canyon<span class="vtip-box"><span class="vtip-word">Canyon</span>A deep valley with steep rocky walls, carved by a river flowing over the land for a very long time.</span></span> deepens, the ancient <span class="vtip">rock layers<span class="vtip-box"><span class="vtip-word">Rock Layer</span>A flat band of rock formed from sediment that piled up over time.</span></span> hidden underground become visible on the canyon walls. Each layer is a chapter in Earth's history book — and the river just opened it for us to read!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div><div class="label">Think Like a Scientist</div><div class="question">"We said the river carved the canyon like dragging a key across wood millions of times. In what ways is that a good comparison? In what ways might it be different from what actually happens to rock?"</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Mind-Blowing Fact</div>
+      <div class="mind-blow-text">Scientists discovered <strong>fossil seashells and fish bones</strong> near the top of the Himalayas — the <strong>tallest mountain range on Earth!</strong> This means that ground was once the floor of an ancient ocean. Over millions of years, giant forces slowly pushed the ocean floor <strong>up and up</strong> until it became the world's highest mountains.</div>
+    </div>
+  </div>
+
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper — Fast Changes vs. Slow Changes</summary>
+    <div class="gd-body">
+      <p>Most changes to Earth's landscape happen VERY slowly — like the millions of years it took to carve the Grand Canyon. Scientists call these <strong>slow processes</strong>, and they include erosion, the settling of sediment, and the slow build-up of rock layers.</p>
+      <p>But some changes happen <strong>quickly:</strong> volcanic eruptions can add new rock in days or weeks. Large floods can deposit thick layers of new sediment in hours. Landslides can completely reshape a hillside in minutes.</p>
+      <p>Scientists study BOTH kinds of changes — because even tiny, slow processes add up to enormous effects over millions of years. As scientists say: <em>"The present is the key to the past!"</em></p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+</div>
+
+<!-- ══════════ TAB 4: SELF-CHECK ══════════ -->
+<div class="tab-panel" id="tab-quiz">
+  <div class="quiz-card scroll-reveal" style="margin-top:0;margin-bottom:18px;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#F5A623;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">⚡</div>
+      <div style="flex:1;"><div style="font-size:19px;color:#0E1C42;font-weight:800;line-height:1.2;">🧠 Quick Self-Check</div><div style="font-size:12px;color:#9A8E82;">Not graded — just for you! See how much you remember before starting the assignment.</div></div>
+    </div>
+    <div style="padding:18px 22px;">
+
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. What does it mean when scientists find seashell fossils in a rock layer on dry land?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Seashells can grow inside solid rock</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>That area used to be covered by water</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>The fossils were placed there by people long ago</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🐚 Exactly right! Fossils tell us what the environment used to be like. Seashells found on dry land = ancient ocean!</div>
+        <div class="quiz-feedback fb-wrong">Not quite! Think about where seashells come from. What does finding them far from any ocean tell us about the past?</div>
+      </div>
+
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">2. In a set of rock layers, where would you find the OLDEST rocks?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>At the very top</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>At the very bottom</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Somewhere in the middle</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🪨 Correct! Older layers are buried under newer ones — like the first pancake in a stack. The bottom layer is always oldest!</div>
+        <div class="quiz-feedback fb-wrong">Not quite! Think of the pancake analogy. When you stack pancakes, which one ends up at the very bottom?</div>
+      </div>
+
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">3. Which of the following is an example of an abiotic factor?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>A pine tree growing on a hillside</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>A fish swimming in a river</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Sunlight reaching the ground</div>
+        </div>
+        <div class="quiz-feedback fb-correct">☀️ Yes! Sunlight is non-living but incredibly important. It helps decide what plants can grow and what animals can live in a place.</div>
+        <div class="quiz-feedback fb-wrong">Not quite! Remember — abiotic means non-living. Which one of those choices is not alive?</div>
+      </div>
+
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum"></div>
+        <div class="quiz-score-label">out of 3 correct</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+        <div class="video-feedback" id="quizVideoCorrect">
+          <div class="video-wrap" style="margin-top:14px;text-align:left;">
+            <div class="video-wrap-header"><span style="font-size:20px;">🪨</span><div><div class="video-wrap-type">✅ Feedback · Perfect Score</div><div class="video-wrap-title">Amazing work, scientist!</div></div></div>
+            <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">⭐</div><div class="video-placeholder-text">Perfect score celebration video coming soon</div><div class="video-placeholder-id"><!-- slot: 5-01-quiz-perfect --></div></div></div>
+          </div>
+        </div>
+        <div class="video-feedback" id="quizVideoReview">
+          <div class="video-wrap" style="margin-top:14px;text-align:left;">
+            <div class="video-wrap-header"><span style="font-size:20px;">💪</span><div><div class="video-wrap-type">📚 Feedback · Keep Going</div><div class="video-wrap-title">You're getting there — let's review!</div></div></div>
+            <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🔄</div><div class="video-placeholder-text">Review encouragement video coming soon</div><div class="video-placeholder-id"><!-- slot: 5-01-quiz-review --></div></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+</div>
+
+<!-- ══════════ TAB 5: ASSIGNMENT ══════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#34B76F;">4</div>
+      <div style="flex:1;"><div class="act-title">✍️ Assignment: Show What You Know</div><div class="act-subtitle">Now it's your turn to be the scientist!</div></div>
+      <div class="act-time" style="background:#34B76F;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="video-wrap">
+        <div class="video-wrap-header"><span style="font-size:20px;">✍️</span><div><div class="video-wrap-type">Activity 4 · Assignment Explainer</div><div class="video-wrap-title">Here's What to Do for Your Assignment!</div></div></div>
+        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">✍️</div><div class="video-placeholder-text">Assignment explainer video coming soon</div><div class="video-placeholder-id"><!-- slot: 5-01-assignment-explainer --></div></div></div>
+      </div>
+
+      <!-- PART A -->
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">📓 Part A &mdash; In Your Science Notebook</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Create a new page and write the title: <strong><em>Landscapes Over Time</em></strong></p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#34B76F;">1</span>
+        <div class="pq-text"><strong>Draw a diagram of rock layers.</strong> Show at least four layers, one on top of the other. Include fossils inside the layers — such as seashells in one layer and plant parts in another. Use your colored pencils to make each layer a different color.</div>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#34B76F;">2</span>
+        <div class="pq-text"><strong>Label each layer</strong> in your diagram. Mark which layer is the oldest (at the bottom) and which is the newest (at the top).</div>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#34B76F;">3</span>
+        <div class="pq-text"><strong>Write a short sentence next to each layer</strong> explaining what the fossils tell us about what the environment was like. For example: <em>"Seashells mean this land was once underwater."</em></div>
+      </div>
+
+      <!-- PART B -->
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:22px;">🏜️ Part B &mdash; Draw a Canyon</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Below your rock layers diagram, draw a canyon on the same notebook page.</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#D4772C;">4</span>
+        <div class="pq-text"><strong>Draw a canyon.</strong> Show the river at the bottom and the rock layers visible in the canyon walls. Use color to make the layers stand out — at least three visible strata bands in the walls.</div>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#D4772C;">5</span>
+        <div class="pq-text"><strong>Below your drawing, write a sentence</strong> explaining how the river helped shape the canyon over a long time. Use the word <em>erosion</em> in your sentence.</div>
+      </div>
+
+      <!-- PART C -->
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:22px;">🤔 Part C &mdash; Think &amp; Write</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#55C8E8;">6</span>
+        <div class="pq-text"><strong>Think and write:</strong> How do things like sunlight, water, and soil (<span class="vtip">abiotic factors<span class="vtip-box"><span class="vtip-word">Abiotic Factors</span>The non-living parts of an environment — like sunlight, water, soil, and temperature — that affect what can live there.</span></span>) affect what plants and animals can live in these places? Write 2–3 complete sentences using the term <em>abiotic factors</em>.</div>
+      </div>
+
+      <!-- SUBMISSION CHECKLIST -->
+      <div style="background:#fff;border:2px solid #55C8E8;border-radius:18px;margin-top:24px;overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:10px;padding:14px 20px;background:#EAF8FD;border-bottom:2px solid #D6F2FB;">
+          <div style="width:42px;height:42px;border-radius:50%;background:#55C8E8;color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">📬</div>
+          <div><div style="font-size:10px;color:#9A8E82;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;">Time to Submit</div><div style="font-size:20px;color:#0E1C42;font-weight:800;line-height:1.2;">What to Turn In</div></div>
+        </div>
+        <div style="padding:18px 22px;">
+          <p style="font-size:16px;color:#5A4D3E;line-height:1.65;margin-bottom:14px;">When you have finished all three parts, submit your work in the assignment on Canvas. Tap each item below as you complete it!</p>
+
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;">&#9744;</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part A &mdash; Rock Layers Diagram:</strong> At least four layers drawn and colored, fossils included, each layer labeled and with a sentence explaining what the fossils tell us.</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;">&#9744;</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part B &mdash; Canyon Drawing:</strong> Canyon drawn with the river at the bottom and rock layers visible in the walls, plus a sentence using the word <em>erosion</em>.</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;">&#9744;</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part C &mdash; Think &amp; Write:</strong> 2–3 complete sentences about abiotic factors, using the term correctly.</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:16px;cursor:pointer;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;">&#9744;</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Essential Question Response:</strong> 2–3 sentences answering how rock formations and fossils help us understand landscape changes, using at least three vocabulary words.</span>
+          </div>
+
+          <div style="background:#FFF7EE;border:2px solid #F0DCC4;border-radius:14px;padding:14px 18px;">
+            <div style="font-size:13px;color:#C7922C;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;margin-bottom:8px;">📎 How to Submit</div>
+            <div style="font-size:15px;color:#2B1D12;line-height:1.7;">
+              Submit your work in whichever way works best for you:<br/><br/>
+              <span style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px;">⌨️ <strong>Type it</strong> &mdash; Type your answers directly into the Canvas assignment.</span><br/>
+              <span style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px;">📸 <strong>Photo</strong> &mdash; Take a clear picture of your notebook work and upload it.</span><br/>
+              <span style="display:inline-flex;align-items:center;gap:8px;">🎥 <strong>Video</strong> &mdash; Record a short video explaining your answers and showing your drawings.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RETURN TO ESSENTIAL QUESTION -->
+  <div class="card theme-earth scroll-reveal">
+    <div class="card-head"><div class="card-head-icon">🔄</div><div><div class="card-head-label">Circle Back</div><div class="card-head-title">Revisit Our Essential Question</div></div></div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div><div class="label">Now You Know!</div><div class="question">"How can patterns in rock formations and fossils help us understand changes in a landscape over time?"</div></div>
+      </div>
+      <p>Now that you've completed the lesson, write a <strong>2–3 sentence answer</strong> to this question in your science notebook. Try to use at least <strong>three vocabulary words</strong> from today: <em>rock layer, fossil, sediment, canyon, landscape,</em> or <em>abiotic factors</em>.</p>
+      <div class="callout callout-tip">
+        <span class="callout-icon">⭐</span>
+        <p><strong>Excellent work today, scientist!</strong> You've learned that <span class="vtip">rock layers<span class="vtip-box"><span class="vtip-word">Rock Layer</span>A flat band of rock formed from sediment that piled up over time.</span></span> are Earth's history book, that <span class="vtip">fossils<span class="vtip-box"><span class="vtip-word">Fossil</span>The preserved remains or imprint of a once-living plant or animal found inside rock.</span></span> inside them reveal past environments, and that rivers carve <span class="vtip">canyons<span class="vtip-box"><span class="vtip-word">Canyon</span>A deep valley with steep rocky walls, carved by a river flowing over the land for a very long time.</span></span> over millions of years. Next lesson, we'll explore more about how living and nonliving parts of an environment work together!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOSING VIDEO -->
+  <div class="video-wrap scroll-reveal" style="margin-bottom:0;">
+    <div class="video-wrap-header"><span style="font-size:20px;">🪨</span><div><div class="video-wrap-type">Closing · Lesson Wrap-Up</div><div class="video-wrap-title">Great Work Today — Here's What's Coming Next!</div></div></div>
+    <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🪨</div><div class="video-placeholder-text">Lesson closing &amp; next lesson preview video coming soon</div><div class="video-placeholder-id"><!-- slot: 5-01-closing --></div></div></div>
+  </div>
+
+</div><!-- end tab-assignment -->
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-line1"><span>Optima Academy Online</span> &middot; Science &middot; Quarter 1 &middot; Student Lesson Page</div>
+  <div class="footer-line2">Lesson 5.01 &middot; Earth Science: Landscapes Over Time</div>
+  <div class="footer-line3">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div><!-- end page-wrap -->
+
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top"><span style="font-size:20px;">🪨</span> Back to Top</button>
+<canvas id="confettiCanvas"></canvas>
+
+<script>
+// ── Tab System ──
+var TAB_ORDER=['vocab','lesson','explore','quiz','assignment'];
+var tabsVisited=new Set(['vocab']);
+function switchTab(tabId){
+  document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
+  var panel=document.getElementById('tab-'+tabId);
+  var btn=document.querySelector('[data-tab="'+tabId+'"]');
+  if(panel)panel.classList.add('active');
+  if(btn){btn.classList.add('active');btn.classList.add('visited')}
+  tabsVisited.add(tabId);
+  var pct=Math.round((tabsVisited.size/TAB_ORDER.length)*100);
+  var fill=document.getElementById('progressFill');
+  var pctEl=document.getElementById('progressPct');
+  if(fill)fill.style.width=pct+'%';
+  if(pctEl)pctEl.textContent=pct+'%';
+  document.querySelectorAll('.intro-2col .card').forEach(function(c){
+    if(tabId==='vocab'){c.classList.remove('collapsed')}else{c.classList.add('collapsed')}
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ── Checklist ──
+function toggleCheck(item){
+  item.classList.toggle('checked');
+  var icon=item.querySelector('.check-icon');
+  icon.textContent=item.classList.contains('checked')?'🪨':'☐';
+  var items=document.querySelectorAll('.checklist-item');
+  if(Array.from(items).every(function(it){return it.classList.contains('checked')})){
+    setTimeout(window.launchConfetti,200);
+  }
+}
+
+// ── Clickable Diagram ──
+(function(){
+  var hotspots=document.querySelectorAll('.hotspot');
+  var panel=document.getElementById('diagramPanel');
+  var wordEl=document.getElementById('diagramWord');
+  var infoEl=document.getElementById('diagramInfo');
+  if(!panel)return;
+  hotspots.forEach(function(hs){
+    hs.addEventListener('click',function(e){
+      e.stopPropagation();
+      hotspots.forEach(function(h){h.classList.remove('active')});
+      hs.classList.add('active');
+      var part=hs.getAttribute('data-part');
+      wordEl.textContent=part.charAt(0).toUpperCase()+part.slice(1);
+      infoEl.innerHTML=hs.getAttribute('data-info');
+      panel.classList.add('visible');
+      panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+    });
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.classList.contains('hotspot')){
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h){h.classList.remove('active')});
+    }
+  });
+})();
+
+// ── Self-Check Quiz ──
+var quizAnswered=0,quizCorrect=0;
+function checkQuiz(optEl){
+  var q=optEl.closest('.quiz-q');
+  if(q.classList.contains('answered'))return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct=q.getAttribute('data-answer');
+  var chosen=optEl.getAttribute('data-val');
+  q.querySelectorAll('.quiz-opt').forEach(function(o){
+    if(o.getAttribute('data-val')===correct){o.classList.add('correct')}
+    else{o.classList.add('disabled')}
+  });
+  var fbCorrect=q.querySelector('.fb-correct');
+  var fbWrong=q.querySelector('.fb-wrong');
+  if(chosen===correct){
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if(fbCorrect)fbCorrect.classList.add('show');
+  }else{
+    optEl.classList.add('wrong');
+    if(fbWrong)fbWrong.classList.add('show');
+  }
+  if(quizAnswered===3){
+    var scoreBox=document.getElementById('quizScore');
+    var scoreNum=document.getElementById('quizScoreNum');
+    var scoreMsg=document.getElementById('quizScoreMsg');
+    scoreNum.textContent=quizCorrect;
+    var vC=document.getElementById('quizVideoCorrect');
+    var vR=document.getElementById('quizVideoReview');
+    if(quizCorrect===3){
+      scoreMsg.textContent='🪨 Perfect! You are a geology expert!';
+      if(vC)vC.classList.add('show');
+      setTimeout(window.launchConfetti,300);
+    }else if(quizCorrect===2){
+      scoreMsg.textContent='🔥 Great job! Almost there!';
+      if(vR)vR.classList.add('show');
+    }else{
+      scoreMsg.textContent='👍 Good effort! Review the lesson and try again.';
+      if(vR)vR.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip){
+  var box=tip.querySelector('.vtip-box');
+  if(!box)return;
+  tip.addEventListener('mouseenter',function(){
+    var rect=tip.getBoundingClientRect();
+    var bw=250;
+    var left=rect.left+rect.width/2-bw/2;
+    if(left<8)left=8;
+    if(left+bw>window.innerWidth-8)left=window.innerWidth-bw-8;
+    box.style.left=left+'px';
+    var topPos=rect.top-140;
+    if(topPos<8)topPos=rect.bottom+10;
+    box.style.top=topPos+'px';
+  });
+});
+
+// ── Back to Top ──
+(function(){
+  var btn=document.getElementById('backToTop');
+  window.addEventListener('scroll',function(){btn.classList.toggle('show',window.pageYOffset>400)});
+})();
+
+// ── Confetti ──
+(function(){
+  var canvas=document.getElementById('confettiCanvas');
+  var ctx=canvas.getContext('2d');
+  var particles=[],animating=false;
+  var colors=['#C7922C','#F5A623','#FFD700','#55C8E8','#34B76F','#8B6FC0','#D4772C','#E8636B'];
+  function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight}
+  window.addEventListener('resize',resize);resize();
+  function Particle(x,y){
+    this.x=x;this.y=y;this.vx=(Math.random()-.5)*16;this.vy=Math.random()*-18-4;
+    this.gravity=.45;this.drag=.98;this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360;this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1;this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){
+    for(var i=0;i<count;i++)particles.push(new Particle(x,y));
+    if(!animating){animating=true;animate()}
+  }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity;p.vx*=p.drag;p.x+=p.vx;p.y+=p.vy;
+      p.rotation+=p.rotSpeed;p.opacity-=.008;
+      if(p.opacity<=0){particles.splice(i,1);return}
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity;ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6)}
+      else{ctx.beginPath();ctx.arc(0,0,p.size/2,0,Math.PI*2);ctx.fill()}
+      ctx.restore();
+    });
+    if(particles.length>0){requestAnimationFrame(animate)}else{animating=false;ctx.clearRect(0,0,canvas.width,canvas.height)}
+  }
+  window.launchConfetti=function(){
+    var cx=window.innerWidth/2;
+    burst(cx-100,window.innerHeight*.45,50);
+    burst(cx,window.innerHeight*.35,60);
+    burst(cx+100,window.innerHeight*.45,50);
+  };
+})();
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+document.getElementById('progressFill').style.width='20%';
+document.getElementById('progressPct').textContent='20%';
+document.querySelectorAll('.intro-2col .card').forEach(function(card){
+  card.querySelector('.card-head').addEventListener('click',function(){
+    card.classList.toggle('collapsed');
+  });
+});
+</script>
+</body>
+</html>
