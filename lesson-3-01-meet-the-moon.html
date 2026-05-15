@@ -329,7 +329,6 @@ em{color:#5A4D3E}
   <span class="need-strip-label">🎒 You'll need:</span>
   <span class="need-chip"><span>📓</span>Science notebook</span>
   <span class="need-chip"><span>✏️</span>Colored pencils</span>
-  <span class="need-chip"><span>🌙</span>Moon phases worksheet</span>
 </div>
 
 <div class="tab-bar" id="tabBar">
@@ -436,7 +435,9 @@ em{color:#5A4D3E}
       </div>
 
       <div class="socratic-q"><span class="sq-icon">🤔</span><div><div class="label">Stop &amp; Reason</div><div class="question">"Why is it helpful to compare the moon's movement to walking around a friend while facing them? In what ways is that comparison accurate — and in what ways is it different from the real thing?"</div></div></div>
-
+<div style="margin-top:10px;background:#EAF8FD;border-radius:10px;padding:10px 16px;border-left:3px solid #55C8E8;">
+  <p style="margin:0;font-size:15px;color:#0E1C42;">💡 <strong>Use evidence!</strong> Try starting with: <em>"The moon phase diagram shows that… which is evidence that…"</em></p>
+</div>
       <p style="font-size:18px;margin-top:20px;"><strong>Part 2 — The Eight Phases of the Moon</strong></p>
       <p>Even though we can't see the moon spinning, we <em>can</em> observe its <span class="vtip"><strong>phases</strong><span class="vtip-box"><span class="vtip-word">Moon Phase</span>The shape of the lit part of the moon we can see from Earth each night.</span></span> as it <span class="vtip"><strong>revolves</strong><span class="vtip-box"><span class="vtip-word">Revolve</span>To travel in a curved path around another object.</span></span> around Earth. One full <span class="vtip"><strong>lunar cycle</strong><span class="vtip-box"><span class="vtip-word">Lunar Cycle</span>The 29.5-day repeating pattern of all 8 moon phases.</span></span> takes about 29.5 days — almost exactly one month! Long before calendars were invented, people counted months by watching the moon.</p>
       <p>There are <strong>eight phases</strong> in every lunar cycle. The Sun is always shining — but from Earth, we see different amounts of the moon's lit side depending on where it is in its orbit. <strong>Tap any moon in the diagram below to explore each phase!</strong></p>
@@ -523,7 +524,64 @@ em{color:#5A4D3E}
         </div>
         <div class="diagram-info-panel" id="diagramPanel"><span class="dip-word" id="diagramWord"></span><span id="diagramInfo"></span></div>
       </div>
-
+<!-- ═══ MOON PHASE DATA TABLE ═══ -->
+<div style="margin:24px 0;overflow-x:auto;">
+  <h4 style="color:#0E1C42;margin:0 0 12px;font-size:1rem;font-weight:700;">📊 The Lunar Cycle — 8 Phases in ~29 Days</h4>
+  <table style="width:100%;border-collapse:collapse;font-size:0.9rem;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.07);">
+    <thead>
+      <tr style="background:#0E1C42;color:#fff;">
+        <th style="padding:10px 14px;text-align:left;">Phase Name</th>
+        <th style="padding:10px 14px;text-align:center;">What It Looks Like</th>
+        <th style="padding:10px 14px;text-align:center;">Days Since New Moon</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background:#FAF7F3;">
+        <td style="padding:10px 14px;font-weight:700;color:#0E1C42;">🌑 New Moon</td>
+        <td style="padding:10px 14px;text-align:center;color:#5A4D3E;">Completely dark — not visible</td>
+        <td style="padding:10px 14px;text-align:center;font-weight:700;">0</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px;font-weight:700;color:#0E1C42;">🌒 Waxing Crescent</td>
+        <td style="padding:10px 14px;text-align:center;color:#5A4D3E;">Thin sliver on the right</td>
+        <td style="padding:10px 14px;text-align:center;font-weight:700;">~4</td>
+      </tr>
+      <tr style="background:#FAF7F3;">
+        <td style="padding:10px 14px;font-weight:700;color:#0E1C42;">🌓 First Quarter</td>
+        <td style="padding:10px 14px;text-align:center;color:#5A4D3E;">Half lit on the right</td>
+        <td style="padding:10px 14px;text-align:center;font-weight:700;">~7</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px;font-weight:700;color:#0E1C42;">🌔 Waxing Gibbous</td>
+        <td style="padding:10px 14px;text-align:center;color:#5A4D3E;">More than half lit on the right</td>
+        <td style="padding:10px 14px;text-align:center;font-weight:700;">~10</td>
+      </tr>
+      <tr style="background:#FAF7F3;">
+        <td style="padding:10px 14px;font-weight:700;color:#0E1C42;">🌕 Full Moon</td>
+        <td style="padding:10px 14px;text-align:center;color:#5A4D3E;">Completely lit — full circle</td>
+        <td style="padding:10px 14px;text-align:center;font-weight:700;">~14</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px;font-weight:700;color:#0E1C42;">🌖 Waning Gibbous</td>
+        <td style="padding:10px 14px;text-align:center;color:#5A4D3E;">More than half lit on the left</td>
+        <td style="padding:10px 14px;text-align:center;font-weight:700;">~18</td>
+      </tr>
+      <tr style="background:#FAF7F3;">
+        <td style="padding:10px 14px;font-weight:700;color:#0E1C42;">🌗 Third Quarter</td>
+        <td style="padding:10px 14px;text-align:center;color:#5A4D3E;">Half lit on the left</td>
+        <td style="padding:10px 14px;text-align:center;font-weight:700;">~21</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px;font-weight:700;color:#0E1C42;">🌘 Waning Crescent</td>
+        <td style="padding:10px 14px;text-align:center;color:#5A4D3E;">Thin sliver on the left</td>
+        <td style="padding:10px 14px;text-align:center;font-weight:700;">~25</td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="margin-top:14px;background:#EEF9FF;border-radius:10px;padding:14px 18px;border-left:4px solid #55C8E8;">
+    <p style="margin:0;color:#0E1C42;font-size:14px;">🔍 <strong>What do you notice?</strong> Look at the "Days Since New Moon" column. How many days does it take to go from New Moon back to New Moon again? What pattern do you see in how the lit side shifts from right to left?</p>
+  </div>
+</div>
       <div class="callout callout-think"><span class="callout-icon">🌙</span><p><strong>Real-World Connection:</strong> The word <strong>"month"</strong> comes directly from the word <strong>"moon"</strong> — a month is one lunar cycle! Many cultures still use lunar calendars today. The <strong>Chinese Lunar New Year</strong> and the Islamic holy month of <strong>Ramadan</strong> are both set by moon phases, which is why their dates shift each year on our solar calendar.</p></div>
 
       <!-- SIZE COMPARISON -->
@@ -696,9 +754,69 @@ em{color:#5A4D3E}
           <p style="font-size:16px;color:#5A4D3E;line-height:1.65;margin-bottom:14px;">When you've finished all three parts, submit your work in Canvas. Use the checklist to make sure you have everything!</p>
           <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s;user-select:none;"><span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;">☐</span><span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part A — Match the Phase:</strong> All four phase names filled in from the word bank.</span></div>
           <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s;user-select:none;"><span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;">☐</span><span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part B — Short Answer:</strong> Questions 5–8 answered in complete sentences with vocabulary words.</span></div>
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>My CER response:</strong> I made a claim about moon phases, used the lunar cycle table as evidence, and explained my reasoning.</span>
+          </div>
           <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s;user-select:none;"><span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;">☐</span><span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part C — Lunar Cycle Diagram:</strong> All 8 phases drawn in order around Earth, labeled, and colored in.</span></div>
           <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:16px;cursor:pointer;transition:background .2s;user-select:none;"><span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;">☐</span><span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Essential Question Response:</strong> 2–3 sentences using at least three vocabulary words.</span></div>
           <div style="background:#FFF7EE;border:2px solid #F0DCC4;border-radius:14px;padding:14px 18px;">
+            <!-- ═══ CER REMINDER BANNER — Level 2, lesson 3.01 — last time with starters! ═══ -->
+<div style="background:#F0EDF6;border-left:4px solid #8B6FC0;border-radius:0 12px 12px 0;padding:14px 18px;margin:0 0 20px;display:flex;align-items:flex-start;gap:12px;">
+  <span style="font-size:24px;line-height:1;flex-shrink:0;">🔬</span>
+  <div>
+    <div style="font-size:13px;font-weight:800;color:#8B6FC0;margin-bottom:4px;">CER — this is the last time you'll see sentence starters!</div>
+    <p style="font-size:14px;color:#2B1D12;margin:0;line-height:1.6;">Starting next lesson, the CER frame will just have blank lines — no hints. You've got this! &nbsp;<strong style="color:#E8636B;">C</strong> = claim &nbsp;·&nbsp; <strong style="color:#D4772C;">E</strong> = evidence &nbsp;·&nbsp; <strong style="color:#34B76F;">R</strong> = reasoning</p>
+  </div>
+</div>
+
+<!-- ═══ CER QUESTION FRAME — Level 2: Last guided lesson ═══ -->
+<div style="background:#FAF7F3;border:2px solid #8B6FC0;border-radius:16px;padding:22px 24px;margin-bottom:20px;">
+  <div style="font-size:12px;color:#8B6FC0;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:8px;">✏️ CER Response — Last time with hints!</div>
+  <p style="font-size:17px;color:#0E1C42;font-weight:700;margin-bottom:18px;">Why does the moon appear to change shape over the month? Use the lunar cycle as evidence.</p>
+
+  <div style="margin-bottom:16px;">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+      <div style="width:28px;height:28px;background:#E8636B;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;">C</div>
+      <strong style="color:#0E1C42;font-size:16px;">Claim</strong>
+      <span style="color:#9A8E82;font-size:14px;">— Does the moon's shape actually change?</span>
+    </div>
+    <div style="background:#fff;border:2px dashed #E8DDD2;border-radius:10px;padding:14px;">
+      <p style="color:#C7922C;font-size:14px;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"The moon appears to change shape because…"</em></p>
+      <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:16px;">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+      <div style="width:28px;height:28px;background:#D4772C;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;">E</div>
+      <strong style="color:#0E1C42;font-size:16px;">Evidence</strong>
+      <span style="color:#9A8E82;font-size:14px;">— What does the lunar cycle table show?</span>
+    </div>
+    <div style="background:#fff;border:2px dashed #E8DDD2;border-radius:10px;padding:14px;">
+      <p style="color:#C7922C;font-size:14px;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"The data table shows that over ~29 days, the moon goes through… phases, including…"</em></p>
+      <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+      <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:16px;">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+      <div style="width:28px;height:28px;background:#34B76F;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;">R</div>
+      <strong style="color:#0E1C42;font-size:16px;">Reasoning</strong>
+      <span style="color:#9A8E82;font-size:14px;">— Why does the amount of lit surface change?</span>
+    </div>
+    <div style="background:#fff;border:2px dashed #E8DDD2;border-radius:10px;padding:14px;">
+      <p style="color:#C7922C;font-size:14px;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because as the moon orbits Earth, the amount of its sunlit side that we can see…"</em></p>
+      <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+      <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+    </div>
+  </div>
+
+  <div style="background:#EAF8FD;border-radius:10px;padding:12px 14px;border-left:3px solid #55C8E8;">
+    <p style="margin:0;font-size:14px;color:#0E1C42;">📚 <strong>Vocab check:</strong> Try to use at least one of these words: <strong>lunar cycle</strong>, <strong>phases</strong>, <strong>orbit</strong>, <strong>reflect</strong></p>
+  </div>
+</div>
             <div style="font-size:13px;color:#C7922C;text-transform:uppercase;letter-spacing:.5px;font-weight:800;margin-bottom:8px;">📎 How to Submit</div>
             <div style="font-size:15px;color:#2B1D12;line-height:1.7;">⌨️ <strong>Type it</strong> — Type your answers directly into the Canvas assignment.<br/><br/>📸 <strong>Photo</strong> — Take a clear picture of your handwritten work and upload it.<br/><br/>🎥 <strong>Video</strong> — Record a short video explaining your answers and showing your diagram.</div>
           </div>
