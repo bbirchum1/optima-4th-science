@@ -1,0 +1,2103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – Future Explorations: Seeking Resources Beyond Earth</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+    background: #F4F0EB url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    color: #2B1D12;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page-wrap { max-width: 920px; margin: 0 auto; background: #FAF7F3; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+  /* ── Header ── */
+  .header {
+    background: linear-gradient(135deg, #0E1C42 0%, #1a1060 60%, #0E1C42 100%);
+    border-bottom: 6px solid #8B6FC0;
+    padding: 22px 28px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 6px; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #55C8E8, #8B6FC0, #55C8E8);
+  }
+  .header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .header-logo {
+    width: 52px; height: 52px; border-radius: 50%; background: #fff;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .header-logo img { width: 48px; height: 38px; }
+  .header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+  .header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+  .header-title {
+    font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+    text-shadow: 0 2px 12px rgba(139,111,192,0.4);
+  }
+  .header-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(139,111,192,0.18); border: 1.5px solid rgba(139,111,192,0.4);
+    border-radius: 28px; padding: 6px 16px;
+  }
+  .header-badge span:first-child { font-size: 22px; }
+  .header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+  /* ── Hero Visual ── */
+  .hero-visual {
+    background: linear-gradient(180deg, #06091a 0%, #0d0a2a 60%, #1a0a2e 100%);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #8B6FC0;
+  }
+  .hero-visual svg { display: block; width: 100%; height: auto; }
+
+  /* ── Info Strip ── */
+  .info-strip {
+    display: flex; flex-wrap: wrap; background: #fff;
+    border-bottom: 2px solid #E8DDD2;
+  }
+  .info-item {
+    flex: 1; min-width: 150px; padding: 12px 16px;
+    border-right: 1px solid #E8DDD2;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .info-item:last-child { border-right: none; }
+  .info-icon {
+    width: 40px; height: 40px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+  .info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+  .info-value { font-size: 16px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+  .info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+  /* ── Content Area ── */
+  .content { padding: 24px 28px 36px; }
+
+  /* ── Card System ── */
+  .card {
+    background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+    margin-bottom: 22px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(43,29,18,0.04);
+  }
+  .card-head {
+    display: flex; align-items: center; gap: 10px;
+    padding: 14px 20px; border-bottom: 2px solid;
+  }
+  .card-head-icon {
+    width: 42px; height: 42px; border-radius: 50%; color: #fff;
+    font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+  .card-head-title { font-size: 20px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+  .card-body { padding: 18px 22px; }
+  .card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+  .card-body p:last-child { margin-bottom: 0; }
+
+  /* ── Color Themes ── */
+  .theme-lava .card-head { background: #FFF0EC; border-color: #F5C4BA; }
+  .theme-lava .card-head-icon { background: #E8636B; }
+  .theme-earth .card-head { background: #FFF7EE; border-color: #F0DCC4; }
+  .theme-earth .card-head-icon { background: #C7922C; }
+  .theme-sky .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+  .theme-sky .card-head-icon { background: #55C8E8; }
+  .theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+  .theme-forest .card-head-icon { background: #34B76F; }
+  .theme-rock .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+  .theme-rock .card-head-icon { background: #8B6FC0; }
+  .theme-magma .card-head { background: #FFF3DC; border-color: #F5E6C8; }
+  .theme-magma .card-head-icon { background: #D4772C; }
+
+  /* ── Activity Cards ── */
+  .activity-card {
+    background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+    margin-bottom: 18px; overflow: hidden;
+    box-shadow: 0 2px 10px rgba(43,29,18,0.04);
+  }
+  .activity-card.act-warmup  { border-left: 6px solid #E8636B; }
+  .activity-card.act-lesson  { border-left: 6px solid #D4772C; }
+  .activity-card.act-explore { border-left: 6px solid #55C8E8; }
+  .activity-card.act-practice{ border-left: 6px solid #34B76F; }
+  .activity-card.act-check   { border-left: 6px solid #8B6FC0; }
+
+  .act-head {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 20px 14px 18px;
+    border-bottom: 1.5px solid #E8DDD2;
+  }
+  .act-num {
+    width: 38px; height: 38px; border-radius: 14px; color: #fff;
+    font-size: 18px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .act-title { font-size: 19px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+  .act-subtitle { font-size: 12px; color: #9A8E82; }
+  .act-time {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 4px 12px; border-radius: 20px;
+    font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap;
+    margin-left: auto; flex-shrink: 0;
+  }
+  .act-body { padding: 18px 22px 18px 20px; }
+  .act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+  /* ── Callout Boxes ── */
+  .callout {
+    border-radius: 14px; padding: 16px 18px;
+    display: flex; align-items: flex-start; gap: 12px;
+    margin-bottom: 14px;
+  }
+  .callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+  .callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+  .callout-lava   { background: #FFF0EC; border: 2px solid #F5C4BA; }
+  .callout-think  { background: #FFF7EE; border: 2px solid #F0DCC4; }
+  .callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+  .callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+  .callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+  .callout-space  { background: linear-gradient(135deg, #0E1C42, #1a1060); border: 2px solid rgba(139,111,192,0.4); }
+  .callout-space p { color: #fff; }
+
+  /* ── Socratic Questions ── */
+  .socratic-q {
+    background: linear-gradient(135deg, #f0edf6, #e8e2f2);
+    border: 2px solid #C8B8E8;
+    border-radius: 16px; padding: 16px 20px;
+    margin: 16px 0;
+    display: flex; align-items: flex-start; gap: 12px;
+  }
+  .socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+  .socratic-q .label {
+    font-size: 11px; color: #8B6FC0; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; margin-bottom: 4px;
+  }
+  .socratic-q .question {
+    font-size: 17px; color: #2B1D12; font-weight: 700;
+    line-height: 1.6; font-style: italic;
+  }
+
+  /* ── Diagram Containers ── */
+  .diagram-wrap {
+    background: #fff; border: 2px solid #E8DDD2;
+    border-radius: 16px; padding: 16px; margin: 16px 0;
+    text-align: center;
+  }
+  .diagram-wrap svg { max-width: 100%; height: auto; }
+  .diagram-caption {
+    font-size: 13px; color: #9A8E82; margin-top: 10px;
+    font-weight: 600; text-align: center;
+  }
+
+  /* ── Key Concept Box ── */
+  .key-concept {
+    background: #F0EDF6; border: 2px solid #D8D0E8;
+    border-radius: 14px; padding: 18px 20px; margin: 14px 0;
+  }
+  .key-concept .kc-label {
+    font-size: 13px; color: #8B6FC0; text-transform: uppercase;
+    letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px;
+  }
+  .key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+  .key-concept p:last-child { margin-bottom: 0; }
+
+  /* ── Practice Questions ── */
+  .pq {
+    background: #FAFAF6; border: 2px solid #E8DDD2;
+    border-radius: 14px; padding: 14px 18px; margin-bottom: 12px;
+  }
+  .pq-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px; border-radius: 50%;
+    color: #fff; font-weight: 800; font-size: 14px;
+    margin-right: 8px; vertical-align: middle;
+  }
+  .pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+
+  /* ── Vocab Flashcards ── */
+  .vocab-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 14px; margin: 14px 0;
+  }
+  .flip-card {
+    perspective: 800px;
+    height: 160px;
+    cursor: pointer;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%; height: 100%;
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+  }
+  .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+  .flip-card-front, .flip-card-back {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    border-radius: 16px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 18px 20px;
+    text-align: center;
+    border: 2px solid #E8DDD2;
+    box-shadow: 0 2px 10px rgba(43,29,18,0.06);
+  }
+  .flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+  .flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+  .flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #0E1C42; margin-bottom: 6px; }
+  .flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+  .flip-card-back {
+    background: linear-gradient(145deg, #0E1C42, #1a1060);
+    border-color: #0E1C42;
+    transform: rotateY(180deg);
+  }
+  .flip-card-back .fc-def { font-size: 15px; color: #fff; line-height: 1.6; font-weight: 600; }
+  .flip-card-back .fc-word-back {
+    font-size: 11px; color: #55C8E8; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; margin-bottom: 8px;
+  }
+  .flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 10px; font-weight: 600; }
+  .fc-color-1 .flip-card-front { border-top-color: #8B6FC0; }
+  .fc-color-2 .flip-card-front { border-top-color: #55C8E8; }
+  .fc-color-3 .flip-card-front { border-top-color: #E8636B; }
+  .fc-color-4 .flip-card-front { border-top-color: #D4772C; }
+  .fc-color-5 .flip-card-front { border-top-color: #34B76F; }
+  .fc-color-6 .flip-card-front { border-top-color: #C7922C; }
+
+  /* ── Vocab Tooltips ── */
+  .vtip {
+    position: relative; color: #8B6FC0; font-weight: 700;
+    cursor: help; border-bottom: 2px dotted rgba(139,111,192,0.45);
+    transition: color 0.15s;
+  }
+  .vtip:hover { color: #6B4FA0; }
+  .vtip .vtip-box {
+    position: fixed; background: #0E1C42; color: #fff;
+    padding: 12px 16px; border-radius: 12px;
+    font-size: 14px; font-weight: 600; font-style: normal;
+    line-height: 1.55; width: 250px; text-align: center;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    pointer-events: none; z-index: 9999;
+    box-shadow: 0 6px 24px rgba(14,28,66,0.35);
+    border: 1.5px solid rgba(85,200,232,0.3);
+    transform: translateY(6px);
+  }
+  .vtip .vtip-box::after {
+    content: ''; position: absolute; top: 100%; left: 50%;
+    transform: translateX(-50%);
+    border: 7px solid transparent; border-top-color: #0E1C42;
+  }
+  .vtip .vtip-word {
+    font-size: 11px; color: #55C8E8; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block;
+  }
+  .vtip:hover .vtip-box { opacity: 1; visibility: visible; transform: translateY(0); }
+
+  /* ── Details / Reveal ── */
+  details {
+    background: #fff; border: 2px solid #E8DDD2;
+    border-left: 5px solid #8B6FC0;
+    border-radius: 14px; margin-bottom: 12px; overflow: hidden;
+  }
+  details summary {
+    padding: 12px 18px; font-size: 16px; font-weight: 700;
+    color: #0E1C42; cursor: pointer;
+  }
+  details summary:hover { background: #FAFAF6; }
+  details > div {
+    padding: 12px 18px 14px; font-size: 16px; color: #5A4D3E;
+    line-height: 1.65; border-top: 1.5px solid #E8DDD2;
+  }
+
+  /* ── Go Deeper ── */
+  .go-deeper {
+    background: linear-gradient(135deg, #F0EDF6, #E8E2F2);
+    border: 2px solid #D8D0E8; border-radius: 16px;
+    margin: 16px 0; overflow: hidden;
+  }
+  .go-deeper summary {
+    padding: 14px 18px; font-size: 16px; font-weight: 800;
+    color: #0E1C42; cursor: pointer;
+    display: flex; align-items: center; gap: 10px; list-style: none;
+  }
+  .go-deeper summary::-webkit-details-marker { display: none; }
+  .go-deeper summary::before { content: '🔭'; font-size: 22px; }
+  .go-deeper summary::after {
+    content: '▸'; margin-left: auto; font-size: 18px; color: #8B6FC0;
+    transition: transform 0.3s;
+  }
+  .go-deeper[open] summary::after { transform: rotate(90deg); }
+  .go-deeper .gd-body {
+    padding: 4px 18px 16px; font-size: 15px;
+    color: #5A4D3E; line-height: 1.7;
+    border-top: 1.5px solid #D8D0E8;
+  }
+  .go-deeper .gd-body p { margin-bottom: 10px; }
+
+  /* ── Mind-Blowing Fact ── */
+  .mind-blow {
+    background: linear-gradient(135deg, #06091a, #1a1060);
+    border: 2px solid rgba(139,111,192,0.4);
+    border-radius: 18px; padding: 18px 22px;
+    margin: 18px 0; display: flex;
+    align-items: flex-start; gap: 14px;
+    position: relative; overflow: hidden;
+  }
+  .mind-blow::before {
+    content: ''; position: absolute; top: -30px; right: -30px;
+    width: 120px; height: 120px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(139,111,192,0.2), transparent);
+  }
+  .mind-blow-icon {
+    font-size: 36px; flex-shrink: 0;
+    animation: mind-blow-bounce 2s ease-in-out infinite;
+  }
+  @keyframes mind-blow-bounce { 0%,100%{transform:scale(1)} 50%{transform:scale(1.12)} }
+  .mind-blow-content { flex: 1; }
+  .mind-blow-label {
+    font-size: 11px; color: #FFD700; text-transform: uppercase;
+    letter-spacing: 1.5px; font-weight: 800; margin-bottom: 4px;
+  }
+  .mind-blow-text { font-size: 16px; color: #fff; line-height: 1.6; font-weight: 600; }
+  .mind-blow-text strong { color: #55C8E8; }
+
+  /* ── Diagram Interactive ── */
+  .diagram-interactive { position: relative; }
+  .diagram-interactive .hotspot { cursor: pointer; opacity: 0; transition: opacity 0.2s; }
+  .diagram-interactive .hotspot:hover { opacity: 0.25; }
+  .diagram-interactive .hotspot.active { opacity: 0.35; }
+  .diagram-info-panel {
+    background: #0E1C42; color: #fff;
+    padding: 14px 20px; border-radius: 14px;
+    font-size: 15px; line-height: 1.55; font-weight: 600;
+    text-align: center;
+    border: 1.5px solid rgba(85,200,232,0.3);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    margin: 10px 0 0; display: none;
+  }
+  .diagram-info-panel.visible { display: block; }
+  .diagram-info-panel .dip-word {
+    font-size: 11px; color: #FFD700; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; display: block; margin-bottom: 3px;
+  }
+
+  /* ── Types Grid ── */
+  .types-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 12px; margin: 16px 0;
+  }
+  .type-card {
+    border-radius: 16px; padding: 16px; text-align: center;
+    border: 2px solid; position: relative; overflow: hidden;
+  }
+  .type-card svg { display: block; margin: 0 auto 10px; }
+  .type-name { font-size: 16px; font-weight: 800; color: #0E1C42; margin-bottom: 4px; }
+  .type-desc { font-size: 13px; color: #5A4D3E; line-height: 1.5; }
+  .tc-mars    { background: #FFF0EC; border-color: #F5C4BA; }
+  .tc-venus   { background: #FFF7EE; border-color: #F0DCC4; }
+  .tc-asteroid{ background: #F0EDF6; border-color: #D8D0E8; }
+
+  /* ── Size Compare ── */
+  .size-compare-wrap {
+    background: linear-gradient(180deg, #06091a, #0d1230);
+    border: 2px solid rgba(85,200,232,0.2); border-radius: 16px;
+    padding: 16px; margin: 16px 0; text-align: center;
+  }
+  .size-compare-wrap svg { max-width: 100%; height: auto; }
+  .size-compare-caption {
+    font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 10px;
+    font-weight: 600; text-align: center;
+  }
+
+  /* ── Mission Steps ── */
+  .mission-step {
+    display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px;
+  }
+  .mission-num {
+    width: 52px; height: 52px; border-radius: 50%; color: #fff;
+    font-size: 13px; font-weight: 900;
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(14,28,66,0.3);
+    letter-spacing: 0.5px; line-height: 1.1;
+  }
+  .mission-num .phase-label { font-size: 8px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.85; }
+  .mission-num .phase-num { font-size: 22px; font-weight: 900; }
+  .mission-body {
+    flex: 1; border-radius: 14px; padding: 14px 16px;
+  }
+
+  /* ── Self-Check Quiz ── */
+  .quiz-card {
+    background: #fff; border: 2px solid #E8DDD2;
+    border-left: 6px solid #8B6FC0;
+    border-radius: 18px; margin-bottom: 18px; overflow: hidden;
+    box-shadow: 0 2px 10px rgba(43,29,18,0.04);
+  }
+  .quiz-q {
+    background: #FAFAF6; border: 2px solid #E8DDD2;
+    border-radius: 14px; padding: 16px 18px; margin-bottom: 14px;
+  }
+  .quiz-q-text {
+    font-size: 17px; color: #2B1D12; font-weight: 700;
+    line-height: 1.6; margin-bottom: 12px;
+  }
+  .quiz-options { display: flex; flex-direction: column; gap: 8px; }
+  .quiz-opt {
+    padding: 10px 16px; border-radius: 12px;
+    border: 2px solid #E8DDD2; background: #fff;
+    font-size: 15px; font-weight: 700; color: #2B1D12;
+    cursor: pointer; transition: all 0.2s;
+    display: flex; align-items: center; gap: 10px;
+    user-select: none;
+  }
+  .quiz-opt:hover { background: #F0EDF6; border-color: #8B6FC0; }
+  .quiz-opt.correct { background: #EEF8F0 !important; border-color: #34B76F !important; color: #1a6b35 !important; }
+  .quiz-opt.wrong   { background: #FFF0EC !important; border-color: #E8636B !important; color: #a33 !important; }
+  .quiz-opt.disabled { pointer-events: none; opacity: 0.6; }
+  .quiz-opt .opt-letter {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: #E8DDD2; color: #5A4D3E;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: all 0.2s;
+  }
+  .quiz-opt.correct .opt-letter { background: #34B76F; color: #fff; }
+  .quiz-opt.wrong .opt-letter   { background: #E8636B; color: #fff; }
+  .quiz-feedback {
+    font-size: 14px; padding: 10px 14px; border-radius: 10px;
+    margin-top: 10px; display: none; font-weight: 600; line-height: 1.5;
+  }
+  .quiz-feedback.show { display: block; }
+  .quiz-feedback.fb-correct { background: #EEF8F0; color: #1a6b35; border: 1.5px solid #B8E8CF; }
+  .quiz-feedback.fb-wrong   { background: #FFF0EC; color: #8a3030; border: 1.5px solid #F5C4BA; }
+  .quiz-score {
+    text-align: center; padding: 16px;
+    background: linear-gradient(135deg, #F0EDF6, #E8E2F2);
+    border: 2px solid #D8D0E8; border-radius: 14px; margin-top: 8px; display: none;
+  }
+  .quiz-score.show { display: block; }
+  .quiz-score-num { font-size: 36px; font-weight: 900; color: #0E1C42; }
+  .quiz-score-label { font-size: 14px; color: #9A8E82; font-weight: 700; }
+  .quiz-score-msg { font-size: 16px; color: #2B1D12; font-weight: 700; margin-top: 6px; }
+
+  /* ── Video System ── */
+  .video-wrap {
+    border-radius: 18px; overflow: hidden;
+    border: 2px solid #E8DDD2;
+    box-shadow: 0 4px 20px rgba(43,29,18,0.08);
+    background: #000; margin: 0 0 22px;
+  }
+  .video-wrap-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, #0E1C42, #1a1060);
+    border-bottom: 2px solid rgba(139,111,192,0.3);
+  }
+  .video-wrap-type { font-size: 10px; color: #8B6FC0; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+  .video-wrap-title { font-size: 16px; color: #fff; font-weight: 800; line-height: 1.2; }
+  .video-ratio { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+  .video-ratio iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+  .video-placeholder {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, #06091a, #0E1C42);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 24px;
+  }
+  .video-placeholder-icon { font-size: 44px; margin-bottom: 10px; opacity: 0.55; }
+  .video-placeholder-text { font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 600; line-height: 1.5; font-family: 'Nunito', sans-serif; }
+  .video-placeholder-id { font-size: 11px; color: rgba(139,111,192,0.4); font-family: monospace; margin-top: 6px; letter-spacing: 0.5px; }
+  .video-feedback { display: none; }
+  .video-feedback.show { display: block; }
+
+  /* ── Progress Bar ── */
+  .progress-wrap {
+    position: sticky; top: 0; z-index: 200;
+    background: #06091a; padding: 8px 20px 10px;
+    border-bottom: 2px solid rgba(139,111,192,0.3);
+    display: flex; align-items: center; gap: 14px;
+  }
+  .progress-label { font-size: 12px; color: #8B6FC0; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+  .progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+  .progress-fill {
+    height: 100%; width: 0%;
+    background: linear-gradient(90deg, #8B6FC0, #55C8E8, #FFD700);
+    border-radius: 10px; transition: width 0.4s ease;
+  }
+  .progress-pct { font-size: 13px; color: #FFD700; font-weight: 800; min-width: 36px; text-align: right; }
+
+  /* ── Tab Bar ── */
+  .tab-bar {
+    position: sticky; top: 44px; z-index: 100;
+    background: #FAF7F3; border-bottom: 3px solid #E8DDD2;
+    display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .tab-bar::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex: 1; min-width: 130px; padding: 12px 8px 11px;
+    background: transparent; border: none;
+    border-bottom: 4px solid transparent;
+    font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700;
+    color: #9A8E82; cursor: pointer; transition: all 0.2s;
+    white-space: nowrap; line-height: 1.3; text-align: center;
+  }
+  .tab-btn:hover { color: #0E1C42; background: #F0EDE8; }
+  .tab-btn.active { color: #0E1C42; border-bottom-color: #8B6FC0; background: #fff; }
+  .tab-btn .tab-check { display: none; font-size: 12px; color: #34B76F; margin-left: 4px; font-weight: 800; }
+  .tab-btn.visited .tab-check { display: inline; }
+
+  /* ── Tab Panels ── */
+  .tab-panel { display: none; padding: 24px 28px 36px; }
+  .tab-panel.active { display: block; }
+  .scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+  /* ── Intro 2-col ── */
+  .intro-2col {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px; padding: 20px 28px 0;
+  }
+  .intro-2col .card { margin-bottom: 0; }
+  .intro-2col .card .card-head {
+    cursor: pointer; user-select: none; position: relative;
+  }
+  .intro-2col .card .card-head::after {
+    content: '▾'; position: absolute; right: 16px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px; color: #9A8E82; transition: transform 0.25s ease;
+  }
+  .intro-2col .card.collapsed .card-head::after {
+    transform: translateY(-50%) rotate(-90deg);
+  }
+  .intro-2col .card.collapsed .card-body { display: none; }
+
+  /* ── Need Strip ── */
+  .need-strip {
+    display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
+    padding: 12px 28px 16px;
+  }
+  .need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 700; white-space: nowrap; }
+  .need-chip {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: #F0EDF6; border: 1.5px solid #D8D0E8;
+    border-radius: 20px; padding: 5px 12px;
+    font-size: 13px; color: #0E1C42; font-weight: 700;
+  }
+
+  /* ── Tab Next Button ── */
+  .tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+  .tab-next-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 30px;
+    background: linear-gradient(135deg, #8B6FC0, #55C8E8);
+    color: #fff; border: none; border-radius: 28px;
+    font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800;
+    cursor: pointer; box-shadow: 0 4px 16px rgba(139,111,192,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(139,111,192,0.5); }
+
+  /* ── Checklist ── */
+  .checklist-item:hover { background: #F0EDE8 !important; }
+  .checklist-item.checked { background: #EEF8F0 !important; border-color: #B8E8CF !important; }
+  .checklist-item.checked .check-icon { border-color: transparent !important; background: transparent !important; font-size: 22px !important; }
+  .checklist-item.checked span:last-child { color: #5A4D3E; }
+
+  /* ── Back to Top ── */
+  .back-to-top {
+    position: fixed; bottom: 28px; right: 28px;
+    height: 44px; padding: 0 18px 0 14px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #8B6FC0, #55C8E8);
+    color: #fff; border: none; font-size: 14px; font-weight: 800;
+    font-family: 'Nunito', sans-serif; cursor: pointer;
+    box-shadow: 0 4px 18px rgba(139,111,192,0.4);
+    display: flex; align-items: center; gap: 6px;
+    opacity: 0; visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.2s;
+    z-index: 500; letter-spacing: 0.3px;
+  }
+  .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+  .back-to-top:hover { box-shadow: 0 6px 24px rgba(139,111,192,0.6); transform: translateY(-3px); }
+
+  /* ── Confetti ── */
+  #confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000; }
+
+  /* ── Footer ── */
+  .footer {
+    background: #06091a; border-top: 4px solid #8B6FC0;
+    padding: 18px 28px; text-align: center;
+  }
+  .footer-line1 { font-size: 15px; color: #fff; margin-bottom: 4px; }
+  .footer-line1 span { color: #8B6FC0; font-weight: 700; }
+  .footer-line2 { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+  .footer-line3 { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+  strong { color: #0E1C42; }
+
+  @media (max-width: 620px) {
+    .intro-2col { grid-template-columns: 1fr; }
+    .types-grid { grid-template-columns: 1fr; }
+    .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 4px; }
+  }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+<!-- ═══ PROGRESS BAR ═══ -->
+<div class="progress-wrap">
+  <span class="progress-label">🚀 Lesson Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══ HEADER ═══ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">Future Explorations: Seeking Resources Beyond Earth</div>
+  <div class="header-badge">
+    <span>🚀</span>
+    <span>SCIENCE &middot; EARTH &amp; SPACE</span>
+  </div>
+</div>
+
+<!-- ═══ HERO SVG ═══ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="spaceBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#06091a"/>
+      <stop offset="60%" stop-color="#0d0a2a"/>
+      <stop offset="100%" stop-color="#1a0a2e"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#FFD700" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#F5A623" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#F5A623" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="earthGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#55C8E8" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#55C8E8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="marsGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#E8636B" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#E8636B" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#8B6FC0" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#8B6FC0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#55C8E8" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#55C8E8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur4"><feGaussianBlur stdDeviation="4"/></filter>
+    <filter id="blur8"><feGaussianBlur stdDeviation="8"/></filter>
+    <filter id="blur14"><feGaussianBlur stdDeviation="14"/></filter>
+  </defs>
+  <style>
+    @keyframes twinkle { 0%,100%{opacity:.1} 50%{opacity:.9} }
+    @keyframes twinkle2 { 0%,100%{opacity:.3} 50%{opacity:.7} }
+    @keyframes planet-pulse { 0%,100%{opacity:.35} 50%{opacity:.65} }
+    @keyframes rocket-fly { 0%,100%{transform:translate(0px,0px) rotate(-8deg)} 50%{transform:translate(90px,-18px) rotate(-12deg)} }
+    @keyframes exhaust { 0%{opacity:.7;transform:scale(1)} 100%{opacity:0;transform:scale(0.3) translateX(-8px)} }
+    @keyframes asteroid-drift { 0%,100%{transform:translate(0,0) rotate(0deg)} 50%{transform:translate(4px,-5px) rotate(12deg)} }
+    @keyframes nebula-breathe { 0%,100%{opacity:.12} 50%{opacity:.22} }
+    .st { animation: twinkle ease-in-out infinite; }
+    .st2 { animation: twinkle2 ease-in-out infinite; }
+    .s1{animation-duration:2.8s;animation-delay:0s}
+    .s2{animation-duration:3.5s;animation-delay:.7s}
+    .s3{animation-duration:4s;animation-delay:1.4s}
+    .s4{animation-duration:3.2s;animation-delay:.3s}
+    .s5{animation-duration:4.5s;animation-delay:1s}
+    .s6{animation-duration:3.8s;animation-delay:2s}
+    .s7{animation-duration:2.5s;animation-delay:.5s}
+    .s8{animation-duration:4.2s;animation-delay:1.6s}
+    .s9{animation-duration:3.3s;animation-delay:.2s}
+    .s10{animation-duration:4.8s;animation-delay:2.4s}
+    .s11{animation-duration:2.9s;animation-delay:.9s}
+    .s12{animation-duration:3.6s;animation-delay:1.8s}
+    .s13{animation-duration:4.1s;animation-delay:.6s}
+    .s14{animation-duration:3.4s;animation-delay:2.2s}
+    .s15{animation-duration:2.7s;animation-delay:1.1s}
+    .earth-glow { animation: planet-pulse 4s ease-in-out infinite; }
+    .mars-glow { animation: planet-pulse 3.5s ease-in-out infinite .8s; }
+    .rocket-grp { animation: rocket-fly 10s ease-in-out infinite; transform-origin: 340px 160px; }
+    .asteroid1 { animation: asteroid-drift 6s ease-in-out infinite; }
+    .asteroid2 { animation: asteroid-drift 5s ease-in-out infinite 1.2s; }
+    .asteroid3 { animation: asteroid-drift 7s ease-in-out infinite .6s; }
+    .neb1 { animation: nebula-breathe 6s ease-in-out infinite; }
+    .neb2 { animation: nebula-breathe 8s ease-in-out infinite 2s; }
+  </style>
+
+  <!-- Background -->
+  <rect width="920" height="260" fill="url(#spaceBg)"/>
+
+  <!-- Nebulae -->
+  <ellipse class="neb1" cx="650" cy="110" rx="220" ry="90" fill="url(#nebula1)" filter="url(#blur14)"/>
+  <ellipse class="neb2" cx="220" cy="140" rx="180" ry="80" fill="url(#nebula2)" filter="url(#blur14)"/>
+
+  <!-- Stars -->
+  <circle class="st s1" cx="42" cy="18" r="1.2" fill="#fff"/>
+  <circle class="st s2" cx="130" cy="40" r="1" fill="#fff"/>
+  <circle class="st s3" cx="88" cy="72" r="1.5" fill="#fff"/>
+  <circle class="st s4" cx="195" cy="22" r="0.9" fill="#fff"/>
+  <circle class="st s5" cx="310" cy="14" r="1.3" fill="#fff"/>
+  <circle class="st s6" cx="450" cy="30" r="1" fill="#fff"/>
+  <circle class="st s7" cx="580" cy="18" r="1.4" fill="#fff"/>
+  <circle class="st s8" cx="700" cy="45" r="0.8" fill="#fff"/>
+  <circle class="st s9" cx="800" cy="22" r="1.2" fill="#fff"/>
+  <circle class="st s10" cx="870" cy="58" r="1" fill="#fff"/>
+  <circle class="st2 s11" cx="160" cy="85" r="0.7" fill="#55C8E8"/>
+  <circle class="st2 s12" cx="430" cy="65" r="0.9" fill="#8B6FC0"/>
+  <circle class="st2 s13" cx="620" cy="38" r="1.1" fill="#fff"/>
+  <circle class="st2 s14" cx="750" cy="80" r="0.8" fill="#55C8E8"/>
+  <circle class="st2 s15" cx="50" cy="120" r="1" fill="#fff"/>
+  <circle class="st s3" cx="370" cy="50" r="0.8" fill="#fff"/>
+  <circle class="st s5" cx="510" cy="75" r="1" fill="#fff"/>
+  <circle class="st s7" cx="640" cy="55" r="0.7" fill="#fff"/>
+  <circle class="st s1" cx="830" cy="35" r="1.1" fill="#fff"/>
+  <circle class="st s4" cx="260" cy="58" r="0.9" fill="#fff"/>
+
+  <!-- ═══ CORRECT ORDER (left → right = far from Sun → close to Sun) ═══ -->
+  <!-- Sun glow (upper RIGHT — Sun is innermost / rightmost) -->
+  <circle cx="920" cy="0" r="200" fill="url(#sunGlow)" filter="url(#blur14)"/>
+  <circle cx="920" cy="0" r="70" fill="#FFD700" opacity="0.18" filter="url(#blur8)"/>
+
+  <!-- ASTEROID BELT — far left (outermost, farthest from Sun) -->
+  <g class="asteroid1"><polygon points="55,148 64,140 71,148 67,158 57,157" fill="#9A8E82" opacity="0.75"/></g>
+  <g class="asteroid2"><polygon points="82,122 93,115 100,123 95,133 84,131" fill="#8B7355" opacity="0.7"/></g>
+  <g class="asteroid3"><polygon points="68,170 77,162 85,170 80,180 70,178" fill="#9A8E82" opacity="0.65"/></g>
+  <circle cx="105" cy="152" r="4" fill="#8B7355" opacity="0.6"/>
+  <circle cx="42" cy="138" r="3" fill="#9A8E82" opacity="0.55"/>
+  <circle cx="116" cy="135" r="2.5" fill="#9A8E82" opacity="0.6"/>
+  <circle cx="35" cy="162" r="3.5" fill="#8B7355" opacity="0.55"/>
+  <circle cx="95" cy="172" r="2" fill="#9A8E82" opacity="0.5"/>
+  <circle cx="48" cy="150" r="2" fill="#8B7355" opacity="0.5"/>
+  <!-- Asteroid Belt label -->
+  <rect x="26" y="193" width="88" height="20" rx="5" fill="rgba(14,28,66,0.85)" stroke="rgba(139,111,192,0.4)" stroke-width="1"/>
+  <text x="70" y="207" text-anchor="middle" font-family="Nunito,sans-serif" font-size="10" font-weight="800" fill="#8B6FC0">Asteroid Belt</text>
+
+  <!-- MARS — left of center (next out from Earth) -->
+  <circle class="mars-glow" cx="255" cy="148" r="44" fill="url(#marsGlow)" filter="url(#blur8)"/>
+  <circle cx="255" cy="148" r="30" fill="#a83820"/>
+  <ellipse cx="244" cy="140" rx="10" ry="6" fill="#8a2a18" opacity="0.5"/>
+  <ellipse cx="264" cy="155" rx="7" ry="4" fill="#c04828" opacity="0.4"/>
+  <ellipse cx="250" cy="160" rx="5" ry="3.5" fill="#8a2a18" opacity="0.35"/>
+  <ellipse cx="255" cy="120" rx="8" ry="3" fill="#fff" opacity="0.55"/>
+  <circle cx="255" cy="148" r="32" fill="none" stroke="#E8636B" stroke-width="2" opacity="0.2"/>
+  <!-- Mars label -->
+  <rect x="219" y="188" width="52" height="20" rx="5" fill="rgba(14,28,66,0.85)" stroke="rgba(232,99,107,0.4)" stroke-width="1"/>
+  <text x="245" y="202" text-anchor="middle" font-family="Nunito,sans-serif" font-size="11" font-weight="800" fill="#E8636B">Mars</text>
+  <line x1="245" y1="188" x2="247" y2="178" stroke="rgba(232,99,107,0.4)" stroke-width="1"/>
+
+  <!-- Dashed orbit arc: Asteroid Belt → Mars → Earth -->
+  <path d="M 140 155 Q 330 95 490 128" stroke="rgba(255,255,255,0.07)" stroke-width="1.5" fill="none" stroke-dasharray="4,5"/>
+
+  <!-- Rocket group (animated, flying from Earth toward Mars/asteroid belt — going left) -->
+  <g class="rocket-grp">
+    <!-- Exhaust trails (pointing right = rocket moving left) -->
+    <ellipse cx="408" cy="148" rx="7" ry="3" fill="#F5A623" opacity="0.65" filter="url(#blur4)"/>
+    <ellipse cx="414" cy="149" rx="5" ry="2" fill="#FFD700" opacity="0.45" filter="url(#blur4)"/>
+    <!-- Rocket body (nose pointing left) -->
+    <polygon points="385,142 400,135 400,155" fill="#fff" opacity="0.9"/>
+    <polygon points="385,142 394,138 394,148" fill="#55C8E8" opacity="0.7"/>
+    <!-- Fins -->
+    <polygon points="398,136 403,130 402,140" fill="#8B6FC0" opacity="0.8"/>
+    <polygon points="398,150 403,158 402,145" fill="#8B6FC0" opacity="0.8"/>
+    <!-- Window -->
+    <circle cx="393" cy="143" r="3" fill="#55C8E8" opacity="0.9"/>
+  </g>
+
+  <!-- EARTH — center (our home, middle of the scene) -->
+  <circle class="earth-glow" cx="500" cy="118" r="58" fill="url(#earthGlow)" filter="url(#blur8)"/>
+  <circle cx="500" cy="118" r="42" fill="#1e5a9e"/>
+  <defs>
+    <clipPath id="heroEarthClip">
+      <circle cx="500" cy="118" r="41.5"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#heroEarthClip)">
+    <!-- Greenland -->
+    <path fill="#3aae65" opacity="0.88" d="M494,84 L500,80 L506,83 L504,91 L496,93 L490,88 Z"/>
+    <!-- North America -->
+    <path fill="#3aae65" opacity="0.90" d="M464,93 L468,86 L474,81 L481,80 L487,83 L491,89 L493,97 L490,105 L484,109 L477,113 L472,118 L468,115 L464,107 L462,99 Z"/>
+    <!-- Central America -->
+    <path fill="#3aae65" opacity="0.85" d="M484,109 L491,105 L493,112 L489,118 L483,121 L479,117 L480,113 Z"/>
+    <!-- South America -->
+    <path fill="#3aae65" opacity="0.90" d="M483,123 L496,120 L504,123 L507,132 L504,143 L498,153 L492,157 L487,148 L485,136 L484,126 Z"/>
+    <!-- Europe -->
+    <path fill="#3aae65" opacity="0.85" d="M515,88 L521,84 L527,87 L528,93 L523,99 L515,100 L512,94 Z"/>
+    <!-- Africa -->
+    <path fill="#3aae65" opacity="0.88" d="M514,101 L522,98 L530,100 L533,109 L532,120 L527,132 L519,140 L512,142 L509,134 L512,121 L514,109 Z"/>
+    <!-- Antarctica hint -->
+    <path fill="#ddf0f8" opacity="0.5" d="M460,148 L480,154 L500,157 L520,154 L540,148 L542,160 L458,160 Z"/>
+    <!-- North polar ice -->
+    <ellipse cx="500" cy="78" rx="28" ry="6" fill="#ddf0f8" opacity="0.4"/>
+  </g>
+  <circle cx="500" cy="118" r="44" fill="none" stroke="#55C8E8" stroke-width="3" opacity="0.4"/>
+  <circle cx="500" cy="118" r="46" fill="none" stroke="#55C8E8" stroke-width="1" opacity="0.15"/>
+  <!-- Earth label -->
+  <rect x="462" y="170" width="76" height="20" rx="5" fill="rgba(14,28,66,0.85)" stroke="rgba(85,200,232,0.4)" stroke-width="1"/>
+  <text x="500" y="184" text-anchor="middle" font-family="Nunito,sans-serif" font-size="11" font-weight="800" fill="#55C8E8">Earth 🏠</text>
+
+  <!-- VENUS — right of Earth (between Earth and Sun) -->
+  <circle cx="720" cy="125" r="28" fill="#C7922C" opacity="0.92"/>
+  <ellipse cx="714" cy="118" rx="18" ry="10" fill="#F5C040" opacity="0.25"/>
+  <ellipse cx="724" cy="132" rx="14" ry="8" fill="#D4772C" opacity="0.2"/>
+  <circle cx="720" cy="125" r="29.5" fill="none" stroke="#F5A623" stroke-width="2" opacity="0.3"/>
+  <!-- Venus label -->
+  <rect x="683" y="162" width="52" height="20" rx="5" fill="rgba(14,28,66,0.85)" stroke="rgba(245,166,35,0.4)" stroke-width="1"/>
+  <text x="709" y="176" text-anchor="middle" font-family="Nunito,sans-serif" font-size="11" font-weight="800" fill="#F5A623">Venus</text>
+  <line x1="709" y1="162" x2="712" y2="153" stroke="rgba(245,166,35,0.4)" stroke-width="1"/>
+
+  <!-- Dashed orbit arc: Earth → Venus → Sun -->
+  <path d="M 542 118 Q 630 90 748 118" stroke="rgba(255,255,255,0.07)" stroke-width="1.5" fill="none" stroke-dasharray="4,5"/>
+
+  <!-- Banner label -->
+  <text x="460" y="248" text-anchor="middle" font-family="Nunito, sans-serif" font-size="13" font-weight="800" fill="#8B6FC0" letter-spacing="2.5" opacity="0.85">FUTURE EXPLORATIONS: SEEKING RESOURCES BEYOND EARTH</text>
+</svg>
+</div>
+
+<!-- ═══ INFO STRIP ═══ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#F0EDF6;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Week</div>
+      <div class="info-value">Q1 &middot; Week 8</div>
+      <div class="info-detail">Dynamic Earth &amp; Space</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">📖</div>
+    <div>
+      <div class="info-label">Lesson</div>
+      <div class="info-value">Lesson 8.02</div>
+      <div class="info-detail">Earth &amp; Space Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#F0EDF6;">🚀</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Space Resources</div>
+      <div class="info-detail">Future Exploration</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">NGSS 4-ESS3-1</div>
+      <div class="info-detail">Earth &amp; Human Activity</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ INTRO 2-COL ═══ -->
+<div class="intro-2col">
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">❓</div>
+      <div>
+        <div class="card-head-label">Key Question</div>
+        <div class="card-head-title">Our Big Question for Today</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This&hellip;</div>
+          <div class="question">"How might future space exploration help us find the resources we need — and what challenges do we face in using these resources responsibly?"</div>
+        </div>
+      </div>
+      <p>Keep this question in your mind as you explore today's lesson. By the end, you'll be able to answer it using scientific vocabulary!</p>
+    </div>
+  </div>
+
+  <div class="card theme-sky scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#E8636B;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain why scientists are searching for resources beyond Earth.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#D4772C;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> describe how future explorers might find resources on Mars, Venus, and asteroids.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#34B76F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain why responsible exploration of space environments matters.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Colored pencils</span>
+  <span class="need-chip"><span>🌌</span>Your imagination!</span>
+</div>
+
+<!-- ═══ TAB BAR ═══ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab" onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="lesson" onclick="switchTab('lesson')">📘 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="explore" onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+<!-- ═══════════════════════════════════ -->
+<!-- TAB 1: VOCABULARY                  -->
+<!-- ═══════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to Today's Lesson!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🚀</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 8-02-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WARM-UP -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#E8636B;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Warm-Up: Launch Your Thinking!</div>
+        <div class="act-subtitle">Activate your prior knowledge about space exploration</div>
+      </div>
+      <div class="act-time" style="background:#E8636B;">⏱ 5 min</div>
+    </div>
+    <div class="act-body">
+      <p>In your science notebook, draw a quick sketch of our solar system. Include Earth, at least one other planet, and any other space objects you know about. Label what you can — no need to be perfect!</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Write &amp; Reflect</div>
+          <div class="question">"Imagine you are an explorer from 500 years ago setting off across the ocean, not knowing what you'd find. How might a future astronaut exploring Mars feel the same way? How might it be different?"</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>Just like early explorers sailed into the unknown, future space explorers will travel to worlds we've only seen through telescopes. By the end of today's lesson, you'll understand <em>why</em> they're going — and what they hope to find!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOCABULARY -->
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Mission Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>These are the key words scientists use when they talk about space exploration and resources. <strong>Tap each card to flip it</strong> and read the definition. You'll see these words throughout the mission!</p>
+      <div class="vocab-grid">
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🌍</div><div class="fc-word">Resource</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Resource</div><div class="fc-def">A material or substance that people use — like metals, fuels, water, or minerals.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🚀</div><div class="fc-word">Space Exploration</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Space Exploration</div><div class="fc-def">Traveling into space to study planets, moons, asteroids, and other objects in our universe.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🤖</div><div class="fc-word">Rover</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Rover</div><div class="fc-def">A robotic vehicle designed to move across the surface of another planet, gathering information and samples.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">☄️</div><div class="fc-word">Asteroid</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Asteroid</div><div class="fc-def">A rocky object, smaller than a planet, that orbits the Sun. Many are packed with valuable metals.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">⛏️</div><div class="fc-word">Mining</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Mining</div><div class="fc-def">The process of digging or collecting valuable materials from the ground — or from space rocks!</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🌫️</div><div class="fc-word">Atmosphere</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Atmosphere</div><div class="fc-def">The layer of gases that surrounds a planet. Earth's atmosphere gives us air to breathe; Venus's atmosphere is toxic!</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mind-blow">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Mind-Blowing Fact</div>
+      <div class="mind-blow-text">The asteroid belt between Mars and Jupiter contains an estimated <strong>1.1 to 1.9 million asteroids</strong> larger than 1 kilometer wide. Together, they hold enough iron, nickel, gold, and platinum to supply every person on Earth with <strong>40 billion kilograms of metal</strong> — more than all the metal ever mined in human history!</div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📘 The Lesson →</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ -->
+<!-- TAB 2: THE LESSON                  -->
+<!-- ═══════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#D4772C;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📘 The Lesson: A New Age of Exploration</div>
+        <div class="act-subtitle">Discover why scientists look beyond Earth for resources!</div>
+      </div>
+      <div class="act-time" style="background:#D4772C;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="video-wrap">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">📘</span>
+          <div>
+            <div class="video-wrap-type">Activity 2 · Lesson Explainer</div>
+            <div class="video-wrap-title">A New Age of Exploration — Let's Explore!</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">🌌</div>
+            <div class="video-placeholder-text">Lesson explainer video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 8-02-lesson-explainer --></div>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size:18px;"><strong>Part 1 — Why Look Beyond Earth?</strong></p>
+
+      <p>For thousands of years, humans have used <span class="vtip"><strong>resources</strong><span class="vtip-box"><span class="vtip-word">Resource</span>A material or substance that people use — like metals, fuels, water, or minerals.</span></span> from Earth — metals for technology, fuels for energy, and minerals for building. But as our population grows and our technology advances, we use more resources than ever before.</p>
+
+      <p>Think of it like a lunchbox. If you only packed a little food but kept eating more and more, you'd eventually run out. Earth is our "lunchbox" — and scientists want to make sure we never go hungry by finding new sources of the materials we need.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Stop &amp; Think</div>
+          <div class="question">"If you could take only three things with you to survive on a distant planet, what would you choose — and why? What does that tell you about which resources are most important?"</div>
+        </div>
+      </div>
+
+      <p>Just as early explorers set sail across oceans to discover new lands and resources, scientists today are setting their sights on the planets and asteroids of our solar system. <span class="vtip"><strong>Space exploration</strong><span class="vtip-box"><span class="vtip-word">Space Exploration</span>Traveling into space to study planets, moons, asteroids, and other objects in our universe.</span></span> could unlock resources we've never had access to before — enough to power our civilization for centuries.</p>
+
+      <!-- SOLAR SYSTEM INTERACTIVE DIAGRAM -->
+      <div class="diagram-wrap diagram-interactive" style="background:linear-gradient(135deg,#06091a,#0d1230);">
+        <svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,sans-serif;">
+          <defs>
+            <radialGradient id="sunD" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0%" stop-color="#FFD700"/>
+              <stop offset="40%" stop-color="#F5A623"/>
+              <stop offset="100%" stop-color="#F5A623" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="earthD" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0%" stop-color="#1a4a7a"/>
+              <stop offset="100%" stop-color="#0d2a4a"/>
+            </radialGradient>
+            <radialGradient id="marsD" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0%" stop-color="#c04030"/>
+              <stop offset="100%" stop-color="#8a2818"/>
+            </radialGradient>
+            <radialGradient id="venusD" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0%" stop-color="#F5C040"/>
+              <stop offset="100%" stop-color="#C7922C"/>
+            </radialGradient>
+            <filter id="dBlur"><feGaussianBlur stdDeviation="5"/></filter>
+            <filter id="dBlur2"><feGaussianBlur stdDeviation="3"/></filter>
+          </defs>
+
+          <!-- Space background -->
+          <rect width="720" height="380" fill="#06091a" rx="0"/>
+
+          <!-- Stars -->
+          <circle cx="30" cy="25" r="0.8" fill="#fff" opacity="0.6"/>
+          <circle cx="90" cy="50" r="1" fill="#fff" opacity="0.5"/>
+          <circle cx="200" cy="15" r="0.7" fill="#fff" opacity="0.7"/>
+          <circle cx="350" cy="30" r="1" fill="#fff" opacity="0.5"/>
+          <circle cx="480" cy="20" r="0.8" fill="#55C8E8" opacity="0.6"/>
+          <circle cx="610" cy="45" r="0.9" fill="#fff" opacity="0.5"/>
+          <circle cx="680" cy="25" r="0.7" fill="#fff" opacity="0.6"/>
+          <circle cx="420" cy="55" r="0.8" fill="#8B6FC0" opacity="0.55"/>
+          <circle cx="150" cy="340" r="0.8" fill="#fff" opacity="0.4"/>
+          <circle cx="560" cy="350" r="1" fill="#fff" opacity="0.4"/>
+          <circle cx="700" cy="320" r="0.7" fill="#fff" opacity="0.45"/>
+          <circle cx="40" cy="300" r="0.9" fill="#55C8E8" opacity="0.35"/>
+          <circle cx="270" cy="360" r="0.8" fill="#fff" opacity="0.4"/>
+
+          <!-- Orbit ellipses (centered at Sun ~70,190) -->
+          <!-- Venus orbit -->
+          <ellipse cx="70" cy="190" rx="188" ry="76" fill="none" stroke="rgba(245,192,64,0.18)" stroke-width="1"/>
+          <!-- Earth orbit -->
+          <ellipse cx="70" cy="190" rx="298" ry="118" fill="none" stroke="rgba(85,200,232,0.18)" stroke-width="1"/>
+          <!-- Mars orbit -->
+          <ellipse cx="70" cy="190" rx="418" ry="158" fill="none" stroke="rgba(232,99,107,0.18)" stroke-width="1"/>
+          <!-- Asteroid Belt -->
+          <ellipse cx="70" cy="190" rx="508" ry="188" fill="none" stroke="rgba(139,111,192,0.15)" stroke-width="1.5" stroke-dasharray="3,4"/>
+
+          <!-- Sun glow -->
+          <circle cx="70" cy="190" r="120" fill="url(#sunD)" filter="url(#dBlur)"/>
+          <circle cx="70" cy="190" r="45" fill="#FFD700" opacity="0.9"/>
+          <circle cx="70" cy="190" r="38" fill="#FFF3DC" opacity="0.5"/>
+
+          <!-- Venus -->
+          <!-- position: angle -38deg on Venus orbit rx=188,ry=76 -->
+          <!-- cx = 70 + 188*cos(-38°) ≈ 70+148=218, cy=190+76*sin(-38°)≈190-47=143 -->
+          <circle cx="218" cy="143" r="16" fill="url(#venusD)" opacity="0.95"/>
+          <ellipse cx="218" cy="143" rx="16" ry="16" fill="none" stroke="rgba(245,166,35,0.35)" stroke-width="1.5"/>
+          <ellipse cx="214" cy="139" rx="9" ry="5" fill="#F5C040" opacity="0.25"/>
+          <!-- Venus label -->
+          <line x1="218" y1="127" x2="218" y2="95" stroke="rgba(245,192,64,0.4)" stroke-width="1" stroke-dasharray="2,2"/>
+          <rect x="183" y="80" width="70" height="22" rx="5" fill="rgba(14,28,66,0.9)" stroke="rgba(245,192,64,0.4)" stroke-width="1.2"/>
+          <text x="218" y="95" text-anchor="middle" font-size="12" font-weight="800" fill="#F5C040">Venus</text>
+          <text x="218" y="76" text-anchor="middle" font-size="9" fill="rgba(245,192,64,0.6)">465°C surface</text>
+
+          <!-- Earth -->
+          <!-- angle ~-5deg on Earth orbit rx=298,ry=118 -->
+          <!-- cx=70+298*cos(-5°)≈70+297=367, cy=190+118*sin(-5°)≈190-10=180 -->
+          <circle cx="367" cy="180" r="20" fill="url(#earthD)"/>
+          <ellipse cx="360" cy="173" rx="11" ry="7" fill="#34B76F" opacity="0.8"/>
+          <ellipse cx="373" cy="182" rx="7" ry="5" fill="#34B76F" opacity="0.7"/>
+          <circle cx="367" cy="180" r="21.5" fill="none" stroke="#55C8E8" stroke-width="2" opacity="0.35"/>
+          <!-- Earth label -->
+          <line x1="367" y1="200" x2="367" y2="230" stroke="rgba(85,200,232,0.4)" stroke-width="1" stroke-dasharray="2,2"/>
+          <rect x="332" y="228" width="70" height="22" rx="5" fill="rgba(14,28,66,0.9)" stroke="rgba(85,200,232,0.4)" stroke-width="1.2"/>
+          <text x="367" y="243" text-anchor="middle" font-size="12" font-weight="800" fill="#55C8E8">Earth 🏠</text>
+
+          <!-- Mars -->
+          <!-- angle -18deg on Mars orbit rx=418,ry=158 -->
+          <!-- cx=70+418*cos(-18°)≈70+397=467, cy=190+158*sin(-18°)≈190-49=141 -->
+          <circle cx="467" cy="141" r="17" fill="url(#marsD)"/>
+          <ellipse cx="460" cy="135" rx="9" ry="5" fill="#8a2818" opacity="0.4"/>
+          <!-- Polar ice -->
+          <ellipse cx="467" cy="125" rx="6" ry="2.5" fill="#fff" opacity="0.6"/>
+          <circle cx="467" cy="141" r="18.5" fill="none" stroke="rgba(232,99,107,0.3)" stroke-width="1.5"/>
+          <!-- Mars label -->
+          <line x1="467" y1="124" x2="510" y2="90" stroke="rgba(232,99,107,0.4)" stroke-width="1" stroke-dasharray="2,2"/>
+          <rect x="490" y="74" width="90" height="22" rx="5" fill="rgba(14,28,66,0.9)" stroke="rgba(232,99,107,0.4)" stroke-width="1.2"/>
+          <text x="535" y="89" text-anchor="middle" font-size="12" font-weight="800" fill="#E8636B">Mars ⛏️</text>
+          <text x="535" y="70" text-anchor="middle" font-size="9" fill="rgba(232,99,107,0.6)">minerals &amp; water ice</text>
+
+          <!-- Asteroid Belt label + dots -->
+          <circle cx="580" cy="155" r="4" fill="#9A8E82" opacity="0.7"/>
+          <circle cx="600" cy="175" r="3" fill="#8B7355" opacity="0.65"/>
+          <circle cx="570" cy="195" r="5" fill="#9A8E82" opacity="0.6"/>
+          <circle cx="590" cy="210" r="3.5" fill="#8B7355" opacity="0.7"/>
+          <circle cx="615" cy="155" r="2.5" fill="#9A8E82" opacity="0.55"/>
+          <circle cx="560" cy="170" r="3" fill="#8B7355" opacity="0.6"/>
+          <circle cx="608" cy="195" r="4" fill="#9A8E82" opacity="0.65"/>
+          <line x1="590" y1="175" x2="620" y2="260" stroke="rgba(139,111,192,0.35)" stroke-width="1" stroke-dasharray="2,2"/>
+          <rect x="570" y="258" width="110" height="22" rx="5" fill="rgba(14,28,66,0.9)" stroke="rgba(139,111,192,0.4)" stroke-width="1.2"/>
+          <text x="625" y="273" text-anchor="middle" font-size="11" font-weight="800" fill="#8B6FC0">Asteroid Belt ☄️</text>
+          <text x="625" y="254" text-anchor="middle" font-size="9" fill="rgba(139,111,192,0.6)">gold, platinum, iron</text>
+
+          <!-- Sun label -->
+          <line x1="70" y1="238" x2="70" y2="285" stroke="rgba(255,215,0,0.4)" stroke-width="1" stroke-dasharray="2,2"/>
+          <rect x="28" y="283" width="84" height="22" rx="5" fill="rgba(14,28,66,0.9)" stroke="rgba(255,215,0,0.4)" stroke-width="1.2"/>
+          <text x="70" y="298" text-anchor="middle" font-size="12" font-weight="800" fill="#FFD700">The Sun ☀️</text>
+
+          <!-- Clickable Hotspots -->
+          <circle class="hotspot" data-part="the-sun" data-info="The Sun is the center of our solar system and provides light and heat for all the planets. Future spacecraft could use giant solar panels to harvest the Sun's energy to power long-distance space missions — and it's free, endless energy!" cx="70" cy="190" r="50" fill="#FFD700"/>
+          <circle class="hotspot" data-part="venus" data-info="Venus is the second planet from the Sun. Its surface is so hot (465°C / 870°F) that no landing craft has survived for long. Instead, scientists plan to send drones and balloons into Venus's thick atmosphere to collect gases and study it safely from above." cx="218" cy="143" r="30" fill="#FFD700"/>
+          <circle class="hotspot" data-part="earth" data-info="Home! Earth provides everything we need right now, but as our population grows and we use more resources, scientists want to make sure we find additional sources in space. Earth's resources are the reason space exploration for resources is so important." cx="367" cy="180" r="30" fill="#FFD700"/>
+          <circle class="hotspot" data-part="mars" data-info="The Red Planet! Scientists believe Mars holds valuable minerals and metals beneath its surface. Mars also has water ice at its poles — future explorers could melt this ice for drinking water, farming, and even splitting it into hydrogen rocket fuel!" cx="467" cy="141" r="30" fill="#FFD700"/>
+          <ellipse class="hotspot" data-part="asteroid-belt" data-info="The asteroid belt between Mars and Jupiter contains millions of rocky objects rich in iron, nickel, gold, and platinum. Robotic mining spacecraft could extract these materials and send them back to Earth — or use them to build space stations!" cx="590" cy="183" rx="55" ry="70" fill="#FFD700"/>
+        </svg>
+
+        <div style="background:linear-gradient(135deg,#F0EDF6,#E8E2F2);border:2px solid #D8D0E8;border-radius:14px;padding:12px 18px;margin-top:10px;display:flex;align-items:center;gap:12px;">
+          <span style="font-size:28px;flex-shrink:0;">🌌</span>
+          <p style="font-size:15px;color:#2B1D12;line-height:1.55;margin:0;font-weight:600;">Tap on any planet or region to learn about its exploration potential. What resources might future astronauts find there?</p>
+        </div>
+        <div class="diagram-info-panel" id="diagramPanel">
+          <span class="dip-word" id="diagramWord"></span>
+          <span id="diagramInfo"></span>
+        </div>
+      </div>
+
+      <div class="key-concept">
+        <div class="kc-label">🔑 Key Concept</div>
+        <p>As Earth's population grows, the demand for <span class="vtip"><strong>resources</strong><span class="vtip-box"><span class="vtip-word">Resource</span>A material or substance that people use — like metals, fuels, water, or minerals.</span></span> like metals, minerals, and energy grows too. Scientists believe the planets and <span class="vtip"><strong>asteroids</strong><span class="vtip-box"><span class="vtip-word">Asteroid</span>A rocky object, smaller than a planet, that orbits the Sun. Many are packed with valuable metals.</span></span> in our solar system may hold trillions of dollars' worth of materials that could benefit humanity.</p>
+        <p>Just as early explorers didn't know exactly what they'd find across the ocean, today's space scientists are only beginning to understand what treasures the solar system holds.</p>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Stop &amp; Reason</div>
+          <div class="question">"Early explorers who set sail across the ocean took enormous risks. They didn't know what they'd find. How is a future Mars explorer similar? What might make it even more challenging?"</div>
+        </div>
+      </div>
+
+      <!-- PART 2: THREE TARGETS -->
+      <p style="font-size:18px; margin-top:20px;"><strong>Part 2 — Three Targets for Future Exploration</strong></p>
+      <p>Not all space exploration works the same way! Different destinations require different tools and approaches. Scientists are focused on three exciting targets:</p>
+
+      <div class="types-grid">
+        <!-- Mars Mining -->
+        <div class="type-card tc-mars">
+          <svg viewBox="0 0 180 110" width="180" height="110" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="110" fill="#FFF0EC" rx="8"/>
+            <!-- Mars sky -->
+            <rect width="180" height="65" fill="#d4785c" rx="8"/>
+            <rect x="0" y="55" width="180" height="10" fill="#c04030" opacity="0.4"/>
+            <!-- Mars surface -->
+            <rect y="64" width="180" height="46" fill="#a83820" rx="0"/>
+            <ellipse cx="40" cy="68" rx="16" ry="5" fill="#8a2818" opacity="0.5"/>
+            <ellipse cx="130" cy="72" rx="12" ry="4" fill="#8a2818" opacity="0.4"/>
+            <ellipse cx="90" cy="70" rx="8" ry="3" fill="#c04828" opacity="0.3"/>
+            <!-- Rover -->
+            <rect x="72" y="75" width="36" height="18" rx="4" fill="#9A8E82"/>
+            <rect x="68" y="78" width="6" height="12" rx="2" fill="#8B7355"/>
+            <rect x="106" y="78" width="6" height="12" rx="2" fill="#8B7355"/>
+            <circle cx="74" cy="91" r="4" fill="#5A4D3E"/>
+            <circle cx="106" cy="91" r="4" fill="#5A4D3E"/>
+            <circle cx="90" cy="91" r="4" fill="#5A4D3E"/>
+            <rect x="86" y="68" width="8" height="12" rx="1" fill="#8B7355"/>
+            <rect x="82" y="66" width="16" height="4" rx="2" fill="#55C8E8" opacity="0.7"/>
+            <!-- Sun dot -->
+            <circle cx="155" cy="18" r="8" fill="#FFD700" opacity="0.8"/>
+          </svg>
+          <div class="type-name">Mars Mining</div>
+          <div class="type-desc">Robots and rovers drill for minerals and metals beneath Mars's dusty red surface.</div>
+        </div>
+
+        <!-- Venus Exploration -->
+        <div class="type-card tc-venus">
+          <svg viewBox="0 0 180 110" width="180" height="110" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="110" fill="#FFF7EE" rx="8"/>
+            <!-- Venus atmosphere layers -->
+            <rect width="180" height="110" fill="#F5C040" rx="8" opacity="0.25"/>
+            <ellipse cx="90" cy="40" rx="120" ry="30" fill="#F5A623" opacity="0.2"/>
+            <ellipse cx="90" cy="70" rx="130" ry="25" fill="#D4772C" opacity="0.18"/>
+            <ellipse cx="90" cy="90" rx="110" ry="20" fill="#C7922C" opacity="0.2"/>
+            <!-- Swirl lines -->
+            <path d="M10,30 Q60,15 110,32 Q150,45 170,30" stroke="#F5A623" stroke-width="1.5" fill="none" opacity="0.4"/>
+            <path d="M5,55 Q70,40 130,58 Q160,68 175,55" stroke="#D4772C" stroke-width="1.5" fill="none" opacity="0.35"/>
+            <!-- Drone/balloon -->
+            <ellipse cx="90" cy="58" rx="18" ry="10" fill="#E8DDD2" stroke="#C7922C" stroke-width="1.5"/>
+            <rect x="84" y="67" width="12" height="8" rx="2" fill="#9A8E82"/>
+            <line x1="78" y1="62" x2="68" y2="68" stroke="#9A8E82" stroke-width="1.5"/>
+            <line x1="102" y1="62" x2="112" y2="68" stroke="#9A8E82" stroke-width="1.5"/>
+            <circle cx="90" cy="56" r="4" fill="#55C8E8" opacity="0.8"/>
+          </svg>
+          <div class="type-name">Venus Exploration</div>
+          <div class="type-desc">Too hot to land! Drones and balloons float through Venus's thick atmosphere to collect samples.</div>
+        </div>
+
+        <!-- Asteroid Mining -->
+        <div class="type-card tc-asteroid">
+          <svg viewBox="0 0 180 110" width="180" height="110" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="110" fill="#F0EDF6" rx="8"/>
+            <!-- Space background -->
+            <rect width="180" height="110" fill="#0d1230" rx="8" opacity="0.85"/>
+            <!-- Stars -->
+            <circle cx="20" cy="15" r="1" fill="#fff" opacity="0.7"/>
+            <circle cx="55" cy="30" r="0.8" fill="#fff" opacity="0.5"/>
+            <circle cx="150" cy="20" r="1" fill="#55C8E8" opacity="0.6"/>
+            <circle cx="165" cy="50" r="0.8" fill="#fff" opacity="0.5"/>
+            <circle cx="30" cy="80" r="1" fill="#fff" opacity="0.45"/>
+            <circle cx="140" cy="90" r="0.9" fill="#8B6FC0" opacity="0.55"/>
+            <!-- Asteroid -->
+            <polygon points="75,25 105,20 125,40 120,68 100,80 70,75 50,58 52,35" fill="#8B7355"/>
+            <polygon points="75,25 105,20 125,40 120,68 100,80 70,75 50,58 52,35" fill="none" stroke="#9A8E82" stroke-width="1" opacity="0.5"/>
+            <!-- Surface texture -->
+            <circle cx="88" cy="45" r="6" fill="#6B5545" opacity="0.5"/>
+            <circle cx="105" cy="58" r="4" fill="#6B5545" opacity="0.4"/>
+            <circle cx="72" cy="60" r="5" fill="#6B5545" opacity="0.45"/>
+            <!-- Metal glints -->
+            <circle cx="95" cy="30" r="2.5" fill="#FFD700" opacity="0.8"/>
+            <circle cx="112" cy="50" r="2" fill="#55C8E8" opacity="0.7"/>
+            <circle cx="78" cy="68" r="2.5" fill="#FFD700" opacity="0.75"/>
+            <circle cx="65" cy="45" r="1.8" fill="#F5A623" opacity="0.7"/>
+            <!-- Mining robot arm -->
+            <line x1="130" y1="42" x2="148" y2="30" stroke="#9A8E82" stroke-width="2"/>
+            <rect x="143" y="22" width="12" height="14" rx="2" fill="#8B7355" stroke="#9A8E82" stroke-width="1"/>
+          </svg>
+          <div class="type-name">Asteroid Mining</div>
+          <div class="type-desc">Robotic spacecraft harvest gold, platinum, and iron from rocky asteroids drifting in space.</div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Observe &amp; Compare</div>
+          <div class="question">"Look at the three exploration targets. Mars needs rovers, Venus needs drones, and asteroids might need robotic miners. Why do you think each place requires such a different tool? What makes each location unique?"</div>
+        </div>
+      </div>
+
+      <div class="callout callout-think">
+        <span class="callout-icon">🌍</span>
+        <p><strong>Real-World Connection:</strong> NASA's Perseverance rover is already on Mars collecting rock samples. SpaceX is developing the Starship rocket to carry humans there one day. And companies like Planetary Resources were founded specifically to mine asteroids — the future is already being planned!</p>
+      </div>
+
+      <!-- PLANET SIZE COMPARISON -->
+      <div class="size-compare-wrap scroll-reveal">
+        <svg viewBox="0 0 680 210" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,sans-serif;">
+          <!-- Ground baseline -->
+          <line x1="0" y1="170" x2="680" y2="170" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+
+          <!-- Asteroid (small irregular) -->
+          <polygon points="55,165 62,155 70,157 72,165 66,170 56,169" fill="#9A8E82"/>
+          <circle cx="64" cy="159" r="1.5" fill="#FFD700" opacity="0.7"/>
+          <text x="63" y="185" text-anchor="middle" font-size="10" font-weight="800" fill="rgba(255,255,255,0.6)">Asteroid</text>
+          <text x="63" y="198" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.35)">~500m</text>
+
+          <!-- Moon -->
+          <circle cx="170" cy="150" r="20" fill="#9A8E82"/>
+          <ellipse cx="163" cy="145" rx="6" ry="4" fill="#8B7355" opacity="0.4"/>
+          <ellipse cx="178" cy="155" rx="4" ry="3" fill="#8B7355" opacity="0.35"/>
+          <text x="170" y="185" text-anchor="middle" font-size="10" font-weight="800" fill="rgba(255,255,255,0.6)">Moon</text>
+          <text x="170" y="198" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.35)">3,474 km</text>
+
+          <!-- Mars -->
+          <circle cx="300" cy="132" r="38" fill="#a83820"/>
+          <ellipse cx="290" cy="124" rx="12" ry="7" fill="#8a2818" opacity="0.45"/>
+          <ellipse cx="300" cy="116" rx="9" ry="3.5" fill="#fff" opacity="0.6"/>
+          <text x="300" y="185" text-anchor="middle" font-size="10" font-weight="800" fill="rgba(232,99,107,0.9)">Mars</text>
+          <text x="300" y="198" text-anchor="middle" font-size="9" fill="rgba(232,99,107,0.5)">6,779 km</text>
+
+          <!-- Venus -->
+          <circle cx="448" cy="100" r="70" fill="#C7922C" opacity="0.9"/>
+          <ellipse cx="436" cy="90" rx="30" ry="18" fill="#F5C040" opacity="0.3"/>
+          <ellipse cx="456" cy="108" rx="22" ry="12" fill="#D4772C" opacity="0.2"/>
+          <circle cx="448" cy="100" r="71.5" fill="none" stroke="#F5A623" stroke-width="2" opacity="0.2"/>
+          <text x="448" y="185" text-anchor="middle" font-size="10" font-weight="800" fill="rgba(245,166,35,0.9)">Venus</text>
+          <text x="448" y="198" text-anchor="middle" font-size="9" fill="rgba(245,166,35,0.5)">12,104 km</text>
+
+          <!-- Earth -->
+          <circle cx="608" cy="98" r="72" fill="#1e5a9e"/>
+          <defs>
+            <clipPath id="earthClipSC">
+              <circle cx="608" cy="98" r="71.5"/>
+            </clipPath>
+          </defs>
+          <g clip-path="url(#earthClipSC)">
+            <!-- Ocean shading -->
+            <ellipse cx="590" cy="80" rx="52" ry="38" fill="#2277cc" opacity="0.12"/>
+            <!-- Greenland -->
+            <path fill="#3aae65" opacity="0.88" d="M572,33 L580,29 L587,32 L585,42 L576,45 L569,40 Z"/>
+            <!-- North America (simplified but shaped) -->
+            <path fill="#3aae65" opacity="0.90" d="
+              M563,52 L566,44 L571,38 L578,35 L585,37
+              L591,43 L595,51 L596,60 L593,68
+              L586,73 L580,79 L574,84
+              L569,81 L565,74 L562,65 Z"/>
+            <!-- Central America / Mexico -->
+            <path fill="#3aae65" opacity="0.85" d="
+              M586,73 L593,68 L595,76 L590,83 L584,88 L579,84 L580,79 Z"/>
+            <!-- South America -->
+            <path fill="#3aae65" opacity="0.90" d="
+              M587,91 L601,88 L610,91
+              L614,101 L611,114
+              L605,126 L598,136 L591,139
+              L587,129 L585,115 L585,102 Z"/>
+            <!-- Europe (partial) -->
+            <path fill="#3aae65" opacity="0.85" d="
+              M627,44 L634,40 L641,43 L643,50 L638,57 L629,59 L625,52 Z"/>
+            <!-- Africa -->
+            <path fill="#3aae65" opacity="0.88" d="
+              M627,59 L637,55 L647,57 L651,66
+              L651,79 L645,93 L637,107
+              L626,116 L619,116
+              L616,107 L619,93
+              L621,79 L621,66 Z"/>
+            <!-- Antarctica hint (bottom) -->
+            <path fill="#ddf0f8" opacity="0.55" d="
+              M536,158 L560,163 L585,166 L608,167 L631,166 L655,163 L680,157 L680,170 L536,170 Z"/>
+            <!-- North polar ice -->
+            <ellipse cx="608" cy="27" rx="32" ry="7" fill="#ddf0f8" opacity="0.45"/>
+          </g>
+          <circle cx="608" cy="98" r="73.5" fill="none" stroke="#55C8E8" stroke-width="2" opacity="0.3"/>
+          <text x="608" y="185" text-anchor="middle" font-size="10" font-weight="800" fill="rgba(85,200,232,0.9)">Earth</text>
+          <text x="608" y="198" text-anchor="middle" font-size="9" fill="rgba(85,200,232,0.5)">12,742 km</text>
+
+          <!-- Not-to-scale note -->
+          <text x="340" y="14" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.35)" font-style="italic">sizes shown to relative scale (not real astronomical scale)</text>
+        </svg>
+        <div class="size-compare-caption">Venus and Earth are almost twins in size! Mars is about half the size of Earth. Asteroids are tiny by comparison — but packed with precious metals.</div>
+      </div>
+
+      <!-- GO DEEPER 1 -->
+      <details class="go-deeper scroll-reveal">
+        <summary>Curious? Go Deeper — The Moon: Our First Stepping Stone</summary>
+        <div class="gd-body">
+          <p>Before humans set foot on Mars or an asteroid, scientists plan to return to the <strong>Moon</strong> first! NASA's Artemis program is working toward sending astronauts back as early as the mid-2020s — this time to <em>stay</em>.</p>
+          <p>The Moon has a rare gas called <strong>Helium-3</strong> embedded in its soil by the solar wind. Helium-3 could one day power a new type of nuclear fusion energy — with almost no radioactive waste. Just 25 tonnes of it could power the entire United States for a year!</p>
+          <p>The Moon also has <strong>water ice</strong> in permanently shadowed craters at its poles. Future explorers could melt this ice, split it into hydrogen and oxygen, and use those to make rocket fuel — right on the Moon. This would make the Moon a "gas station in space" for missions heading deeper into the solar system.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ -->
+<!-- TAB 3: GUIDED EXPLORATION          -->
+<!-- ═══════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#55C8E8;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🛸 Mission Control: How a Resource Mission Works</div>
+        <div class="act-subtitle">Trace the journey of a space resource mission — step by step!</div>
+      </div>
+      <div class="act-time" style="background:#55C8E8;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="video-wrap">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">🛸</span>
+          <div>
+            <div class="video-wrap-type">Activity 3 · Mission Briefing</div>
+            <div class="video-wrap-title">Mission Control: How Does a Resource Mission Work?</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">🛸</div>
+            <div class="video-placeholder-text">Mission briefing video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 8-02-exploration-explainer --></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mission Control header strip -->
+      <div style="background:linear-gradient(135deg,#06091a,#1a1060);border:2px solid rgba(85,200,232,0.25);border-radius:14px;padding:12px 20px;margin-bottom:20px;display:flex;align-items:center;gap:12px;">
+        <span style="font-size:30px;">🛸</span>
+        <div>
+          <div style="font-size:10px;color:#55C8E8;text-transform:uppercase;letter-spacing:2px;font-weight:800;">Mission Control Briefing</div>
+          <div style="font-size:16px;color:#fff;font-weight:700;line-height:1.3;">Follow the four phases of a future space resource mission below.</div>
+        </div>
+      </div>
+
+      <!-- PHASE 1 -->
+      <div class="mission-step">
+        <div class="mission-num" style="background:linear-gradient(135deg,#8B6FC0,#6B4FA0);width:60px;height:60px;flex-shrink:0;">
+          <span class="phase-label">Phase</span>
+          <span class="phase-num">1</span>
+        </div>
+        <div class="mission-body" style="background:#F0EDF6;border:2px solid #D8D0E8;">
+          <p style="font-size:16px;color:#2B1D12;line-height:1.65;margin:0;"><strong>Identify the Need:</strong> Scientists study which <span class="vtip"><strong>resources</strong><span class="vtip-box"><span class="vtip-word">Resource</span>A material or substance that people use — like metals, fuels, water, or minerals.</span></span> are becoming scarce on Earth. They decide which space destination — Mars, Venus, or the asteroid belt — might hold those materials. Telescopes and satellites help them scout from a distance before any spacecraft is ever launched.</p>
+        </div>
+      </div>
+
+      <!-- PHASE 2 -->
+      <div class="mission-step">
+        <div class="mission-num" style="background:linear-gradient(135deg,#55C8E8,#2A9AB8);width:60px;height:60px;flex-shrink:0;">
+          <span class="phase-label">Phase</span>
+          <span class="phase-num">2</span>
+        </div>
+        <div class="mission-body" style="background:#EAF8FD;border:2px solid #D6F2FB;">
+          <p style="font-size:16px;color:#2B1D12;line-height:1.65;margin:0;"><strong>Send Robotic Scouts:</strong> Uncrewed probes and <span class="vtip"><strong>rovers</strong><span class="vtip-box"><span class="vtip-word">Rover</span>A robotic vehicle designed to move across the surface of another planet, gathering information and samples.</span></span> are launched first — they're our "eyes on the ground" (or on Mars!). For Venus, scientists might send drones into the <span class="vtip"><strong>atmosphere</strong><span class="vtip-box"><span class="vtip-word">Atmosphere</span>The layer of gases that surrounds a planet. Earth's atmosphere gives us air to breathe; Venus's atmosphere is toxic!</span></span> to analyze gases without ever landing on the dangerous surface.</p>
+        </div>
+      </div>
+
+      <!-- PHASE 3 -->
+      <div class="mission-step">
+        <div class="mission-num" style="background:linear-gradient(135deg,#D4772C,#B05A18);width:60px;height:60px;flex-shrink:0;">
+          <span class="phase-label">Phase</span>
+          <span class="phase-num">3</span>
+        </div>
+        <div class="mission-body" style="background:#FFF7EE;border:2px solid #F0DCC4;">
+          <p style="font-size:16px;color:#2B1D12;line-height:1.65;margin:0;"><strong>Extract the Resource:</strong> Once scientists confirm a valuable deposit, robotic <span class="vtip"><strong>mining</strong><span class="vtip-box"><span class="vtip-word">Mining</span>The process of digging or collecting valuable materials from the ground — or from space rocks!</span></span> machines drill, scoop, or collect materials. On an <span class="vtip"><strong>asteroid</strong><span class="vtip-box"><span class="vtip-word">Asteroid</span>A rocky object, smaller than a planet, that orbits the Sun. Many are packed with valuable metals.</span></span>, a robotic spacecraft might attach itself and slowly chip away at the surface over months or years.</p>
+        </div>
+      </div>
+
+      <!-- PHASE 4 -->
+      <div class="mission-step" style="margin-bottom:0;">
+        <div class="mission-num" style="background:linear-gradient(135deg,#34B76F,#1a8a4a);width:60px;height:60px;flex-shrink:0;">
+          <span class="phase-label">Phase</span>
+          <span class="phase-num">4</span>
+        </div>
+        <div class="mission-body" style="background:#EEF8F0;border:2px solid #C4E5CC;">
+          <p style="font-size:16px;color:#2B1D12;line-height:1.65;margin:0;"><strong>Use Responsibly:</strong> Resources extracted in space could be used in two ways — shipped back to Earth, or used in space to build spacecraft, fuel stations, or even future space habitats. Either way, scientists must explore carefully to protect the environments of other worlds, just like we try to protect Earth's environments today.</p>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-top:16px;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think Like a Space Scientist</div>
+          <div class="question">"In Phase 4, we said scientists must protect other planets' environments. But if no life lives on Mars or an asteroid, does it still matter how we treat those environments? Why or why not?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Mind-Blowing Fact</div>
+      <div class="mind-blow-text">Mars's north polar ice cap contains enough <strong>water ice</strong> that if it all melted, it could flood the entire planet in a <strong>35-meter deep ocean</strong>! Future explorers could melt that ice for drinking water, grow crops, and even split water molecules into hydrogen and oxygen to make rocket fuel — right on Mars!</div>
+    </div>
+  </div>
+
+  <!-- GO DEEPER 2 -->
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper — The Rules of Space: Who Owns It?</summary>
+    <div class="gd-body">
+      <p>Here's an interesting question: if someone mines gold from an asteroid, who does it belong to? This is a real debate happening today!</p>
+      <p>In 1967, most countries in the world agreed to the <strong>Outer Space Treaty</strong>. It says that no single country can "own" a planet, the Moon, or any other space object. Space belongs to all of humanity — not just one nation.</p>
+      <p>But the treaty doesn't say much about <em>resources</em> extracted from space. In 2015, the United States passed a law allowing American companies to keep any resources they mine from asteroids. Other countries are now creating their own laws, too.</p>
+      <p>Scientists and world leaders are working to create international agreements so that the benefits of space resources are shared fairly — and so that space doesn't become a new place for conflict. It's one of the most important conversations happening in science and politics today!</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ -->
+<!-- TAB 4: SELF-CHECK QUIZ             -->
+<!-- ═══════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div class="quiz-card scroll-reveal" style="margin-top:0;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#8B6FC0;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">⚡</div>
+      <div style="flex:1;">
+        <div style="font-size:19px;color:#0E1C42;font-weight:800;line-height:1.2;">🧠 Mission Debrief: Quick Self-Check</div>
+        <div style="font-size:12px;color:#9A8E82;">Not graded — this is just for you! See how much you remember before the assignment.</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+
+      <!-- Q1 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. Why are scientists interested in finding resources on Mars and in the asteroid belt?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Space resources are easier to collect than Earth resources</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Earth's resources may not be enough as our population and technology needs grow</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Scientists are bored and want a new adventure</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🚀 Exactly! As Earth's population grows, we need more resources — and space might hold the answer.</div>
+        <div class="quiz-feedback fb-wrong">Think about it — what's the connection between growing populations and resource scarcity? Why would scientists take such a big risk?</div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">2. Why might scientists use drones or balloons to explore Venus instead of landing on its surface?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Venus has no solid ground to land on</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Venus's surface is extremely hot and hostile — reaching 465°C</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Venus is too far away for spacecraft to reach the surface</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌡️ Correct! At 465°C, Venus's surface is hot enough to melt lead — no robot could survive down there for long!</div>
+        <div class="quiz-feedback fb-wrong">Not quite! Think about what you learned about Venus. What makes it so extreme and dangerous?</div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">3. What does it mean to explore space "responsibly"?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Collecting as many resources as possible before other countries get there</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Never taking any resources from space at all</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Using resources carefully, sharing the benefits fairly, and protecting space environments</div>
+        </div>
+        <div class="quiz-feedback fb-correct">⭐ Great thinking! Responsible exploration means balancing our needs with protecting the environments of other worlds — just like we try to protect Earth!</div>
+        <div class="quiz-feedback fb-wrong">Good effort! Think about the balance between using resources AND protecting space environments. What did Phase 4 of the mission say?</div>
+      </div>
+
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum"></div>
+        <div class="quiz-score-label">out of 3 correct</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+
+        <div class="video-feedback" id="quizVideoCorrect">
+          <div class="video-wrap" style="margin-top:14px;text-align:left;">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">🌟</span>
+              <div>
+                <div class="video-wrap-type">✅ Feedback · Perfect Score</div>
+                <div class="video-wrap-title">Outstanding work, Space Scientist!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">🚀</div>
+                <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 8-02-quiz-perfect --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="video-feedback" id="quizVideoReview">
+          <div class="video-wrap" style="margin-top:14px;text-align:left;">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">💪</span>
+              <div>
+                <div class="video-wrap-type">📚 Feedback · Keep Going</div>
+                <div class="video-wrap-title">You're getting there — let's review together!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">🔄</div>
+                <div class="video-placeholder-text">Review encouragement video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 8-02-quiz-review --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ -->
+<!-- TAB 5: ASSIGNMENT                  -->
+<!-- ═══════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#34B76F;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment: Show What You Know</div>
+        <div class="act-subtitle">You're cleared for launch — show your mission knowledge!</div>
+      </div>
+      <div class="act-time" style="background:#34B76F;">⏱ 12 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="video-wrap">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">✍️</span>
+          <div>
+            <div class="video-wrap-type">Activity 4 · Assignment Explainer</div>
+            <div class="video-wrap-title">Here's What to Do for Your Assignment!</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">🛸</div>
+            <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 8-02-assignment-explainer --></div>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">🔍 Part A &mdash; Exploration Targets</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use the word bank to fill in the correct location or tool for each description. <strong>Word Bank: Mars, Venus, Asteroid Belt, Rover, Atmosphere, Mining</strong></p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#34B76F;">1</span>
+        <span class="pq-text">The region between Mars and Jupiter, filled with millions of rocky objects rich in metals: ___________</span>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#34B76F;">2</span>
+        <span class="pq-text">A robotic vehicle that explores the surface of another planet: ___________</span>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#34B76F;">3</span>
+        <span class="pq-text">The "Red Planet" that may hold minerals, metals, and water ice beneath its surface: ___________</span>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#34B76F;">4</span>
+        <span class="pq-text">The thick layer of gases around Venus that drones might float through to collect samples: ___________</span>
+      </div>
+
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🚀 Part B &mdash; Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer in <strong>complete sentences</strong>. Use your vocabulary words!</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#D4772C;">5</span>
+        <span class="pq-text">Why are scientists interested in resources found on Mars or in the asteroid belt? Connect your answer to resources on Earth.</span>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#D4772C;">6</span>
+        <span class="pq-text">Why can't scientists land spacecraft on Venus's surface to collect samples? What do they do instead?</span>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#D4772C;">7</span>
+        <span class="pq-text">Explain what "responsible exploration" means using at least two vocabulary words from today's lesson.</span>
+      </div>
+
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C &mdash; Dream Mission Design</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">In your science notebook, design your own future space resource mission. Draw a diagram showing: <strong>Where you're going · What resource you're collecting · What tool you'd use (rover, drone, mining robot)</strong></p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Label at least <strong>four parts</strong> of your mission plan. Use colors!</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Personal Reflection</div>
+          <div class="question">"Imagine you were chosen to be one of the first humans to travel to Mars on a resource mission. You would be gone for years, far from your family and friends. Would you go? Write 2–3 sentences explaining why or why not — and what you'd hope to discover."</div>
+        </div>
+      </div>
+
+      <!-- SUBMISSION CHECKLIST -->
+      <div style="background:#fff;border:2px solid #8B6FC0;border-radius:18px;margin-top:20px;overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:10px;padding:14px 20px;background:linear-gradient(135deg,#F0EDF6,#E8E2F2);border-bottom:2px solid #D8D0E8;">
+          <div style="width:42px;height:42px;border-radius:50%;background:#8B6FC0;color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">🛸</div>
+          <div>
+            <div style="font-size:10px;color:#9A8E82;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;">Mission Checklist</div>
+            <div style="font-size:20px;color:#0E1C42;font-weight:800;line-height:1.2;">What to Turn In</div>
+          </div>
+        </div>
+        <div style="padding:18px 22px;">
+          <p style="font-size:16px;color:#5A4D3E;line-height:1.65;margin-bottom:14px;">Check each box when you've completed that part. All systems go before you submit!</p>
+
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part A:</strong> All four exploration targets filled in using words from the word bank.</span>
+          </div>
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part B:</strong> Questions 5, 6, and 7 answered in complete sentences using vocabulary words.</span>
+          </div>
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part C:</strong> Dream mission diagram with at least four labeled parts and color.</span>
+          </div>
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:16px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Key Question Response:</strong> 2–3 sentences answering the big question using at least three vocabulary words.</span>
+          </div>
+
+          <div style="background:#FFF7EE;border:2px solid #F0DCC4;border-radius:14px;padding:14px 18px;">
+            <div style="font-size:13px;color:#C7922C;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;margin-bottom:8px;">📎 How to Submit</div>
+            <div style="font-size:15px;color:#2B1D12;line-height:1.7;">
+              Submit your work however works best for you:<br/><br/>
+              <span style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px;">⌨️ <strong>Type it</strong> — Type your answers directly into the Canvas assignment.</span><br/>
+              <span style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px;">📸 <strong>Photo</strong> — Take a clear photo of your handwritten work and upload it.</span><br/>
+              <span style="display:inline-flex;align-items:center;gap:8px;">🎥 <strong>Video</strong> — Record a short video explaining your answers and showing your mission diagram.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RETURN TO KEY QUESTION -->
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">🔄</div>
+      <div>
+        <div class="card-head-label">Circle Back</div>
+        <div class="card-head-title">Revisit Our Key Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Now You Know!</div>
+          <div class="question">"How might future space exploration help us find the resources we need — and what challenges do we face in using these resources responsibly?"</div>
+        </div>
+      </div>
+      <p>Now that you've completed the lesson, write a <strong>2–3 sentence answer</strong> to this question in your science notebook. Use at least <strong>three vocabulary words</strong> from today!</p>
+      <div class="callout callout-tip">
+        <span class="callout-icon">⭐</span>
+        <p><strong>Excellent work, Space Scientist!</strong> You've learned that as Earth's <span class="vtip">resources<span class="vtip-box"><span class="vtip-word">Resource</span>A material or substance that people use — like metals, fuels, water, or minerals.</span></span> are put under growing demand, scientists are looking to Mars, Venus, and the <span class="vtip">asteroid<span class="vtip-box"><span class="vtip-word">Asteroid</span>A rocky object, smaller than a planet, that orbits the Sun. Many are packed with valuable metals.</span></span> belt for new materials — while ensuring that <span class="vtip">space exploration<span class="vtip-box"><span class="vtip-word">Space Exploration</span>Traveling into space to study planets, moons, asteroids, and other objects in our universe.</span></span> is done responsibly. The next frontier of exploration is already being planned — and you might be part of it!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOSING VIDEO -->
+  <div class="video-wrap scroll-reveal" style="margin-bottom:0;">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🚀</span>
+      <div>
+        <div class="video-wrap-type">Closing · Lesson Wrap-Up</div>
+        <div class="video-wrap-title">Great Work — Here's What's Coming in Our Next Mission!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🌌</div>
+        <div class="video-placeholder-text">Lesson closing &amp; next lesson preview video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 8-02-closing --></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="footer">
+  <div class="footer-line1"><span>Optima Academy Online</span> &middot; Science &middot; Quarter 1 &middot; Student Lesson Page</div>
+  <div class="footer-line2">Lesson 8.02 &middot; Earth &amp; Space Science: Future Explorations — Seeking Resources Beyond Earth</div>
+  <div class="footer-line3">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div><!-- end page-wrap -->
+
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
+  <span style="font-size:20px;">🚀</span> Back to Top
+</button>
+<canvas id="confettiCanvas"></canvas>
+
+<script>
+// ── Tab System ──
+var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];
+var tabsVisited = new Set(['vocab']);
+
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+  var panel = document.getElementById('tab-' + tabId);
+  var btn = document.querySelector('[data-tab="' + tabId + '"]');
+  if (panel) panel.classList.add('active');
+  if (btn) { btn.classList.add('active'); btn.classList.add('visited'); }
+  tabsVisited.add(tabId);
+  var pct = Math.round((tabsVisited.size / TAB_ORDER.length) * 100);
+  var fill = document.getElementById('progressFill');
+  var pctEl = document.getElementById('progressPct');
+  if (fill) fill.style.width = pct + '%';
+  if (pctEl) pctEl.textContent = pct + '%';
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c) {
+    if (tabId === 'vocab') { c.classList.remove('collapsed'); }
+    else { c.classList.add('collapsed'); }
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── Checklist ──
+document.querySelectorAll('.checklist-item').forEach(function(item) {
+  item.addEventListener('click', function() {
+    var icon = this.querySelector('.check-icon');
+    if (this.classList.contains('checked')) { icon.textContent = '🚀'; }
+    else { icon.textContent = '☐'; }
+  });
+});
+
+// ── Clickable Diagram ──
+(function() {
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel = document.getElementById('diagramPanel');
+  var wordEl = document.getElementById('diagramWord');
+  var infoEl = document.getElementById('diagramInfo');
+  if (!panel) return;
+  hotspots.forEach(function(hs) {
+    hs.addEventListener('click', function(e) {
+      e.stopPropagation();
+      hotspots.forEach(function(h) { h.classList.remove('active'); });
+      hs.classList.add('active');
+      var part = hs.getAttribute('data-part').replace(/-/g, ' ');
+      wordEl.textContent = part.charAt(0).toUpperCase() + part.slice(1);
+      infoEl.innerHTML = hs.getAttribute('data-info');
+      panel.classList.add('visible');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h) { h.classList.remove('active'); });
+    }
+  });
+})();
+
+// ── Self-Check Quiz ──
+var quizAnswered = 0;
+var quizCorrect = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen = optEl.getAttribute('data-val');
+  var opts = q.querySelectorAll('.quiz-opt');
+  opts.forEach(function(o) {
+    if (o.getAttribute('data-val') === correct) { o.classList.add('correct'); }
+    else { o.classList.add('disabled'); }
+  });
+  var fbCorrect = q.querySelector('.fb-correct');
+  var fbWrong = q.querySelector('.fb-wrong');
+  if (chosen === correct) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+  if (quizAnswered === 3) {
+    var scoreBox = document.getElementById('quizScore');
+    var scoreNum = document.getElementById('quizScoreNum');
+    var scoreMsg = document.getElementById('quizScoreMsg');
+    scoreNum.textContent = quizCorrect;
+    var vCorrect = document.getElementById('quizVideoCorrect');
+    var vReview = document.getElementById('quizVideoReview');
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '🚀 Perfect! You\'re ready for the mission!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌟 Great job! Almost cleared for launch!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip) {
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function() {
+    var rect = tip.getBoundingClientRect();
+    var bw = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Back to Top ──
+(function() {
+  var btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() {
+    btn.classList.toggle('show', window.pageYOffset > 400);
+  });
+})();
+
+// ── Confetti ──
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#8B6FC0','#55C8E8','#FFD700','#E8636B','#34B76F','#F5A623','#D4772C','#fff'];
+  function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x, y, count) {
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i) {
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function() {
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── Hook confetti to quiz ──
+(function() {
+  var scoreEl = document.getElementById('quizScore');
+  if(!scoreEl) return;
+  new MutationObserver(function(muts) {
+    muts.forEach(function(m) {
+      if(m.target.classList.contains('show') && m.target.id==='quizScore') {
+        if(parseInt(document.getElementById('quizScoreNum').textContent)===3)
+          setTimeout(window.launchConfetti,300);
+      }
+    });
+  }).observe(scoreEl,{attributes:true,attributeFilter:['class']});
+})();
+
+// ── Hook confetti to checklist ──
+(function() {
+  var items = document.querySelectorAll('.checklist-item');
+  items.forEach(function(item) {
+    item.addEventListener('click', function() {
+      setTimeout(function() {
+        if(Array.from(items).every(function(it){ return it.classList.contains('checked'); }))
+          setTimeout(window.launchConfetti, 200);
+      }, 50);
+    });
+  });
+})();
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+
+// ── Intro card click-to-toggle ──
+document.querySelectorAll('.intro-2col .card').forEach(function(card) {
+  card.querySelector('.card-head').addEventListener('click', function() {
+    card.classList.toggle('collapsed');
+  });
+});
+</script>
+</body>
+</html>
