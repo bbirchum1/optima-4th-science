@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>Optima Academy Online – Unit 1 Assessment: Scientist, Sky &amp; Space</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+    background: #F4F0EB url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    color: #2B1D12;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page-wrap { max-width: 920px; margin: 0 auto; background: #FAF7F3; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+  /* ── Header ── */
+  .header {
+    background: linear-gradient(135deg, #0E1C42 0%, #1a1060 60%, #0E1C42 100%);
+    border-bottom: 6px solid #8B6FC0;
+    padding: 22px 28px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 6px; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #55C8E8, #8B6FC0, #55C8E8);
+  }
+  .header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .header-logo {
+    width: 52px; height: 52px; border-radius: 50%; background: #fff;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .header-logo img { width: 48px; height: 38px; }
+  .header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+  .header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+  .header-title {
+    font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+    text-shadow: 0 2px 12px rgba(139,111,192,0.4);
+  }
+  .header-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(139,111,192,0.18); border: 1.5px solid rgba(139,111,192,0.4);
+    border-radius: 28px; padding: 6px 16px;
+  }
+  .header-badge span:first-child { font-size: 22px; }
+  .header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+  /* ── Hero Visual ── */
+  .hero-visual {
+    background: linear-gradient(180deg, #06091a 0%, #0d0a2a 60%, #1a0a2e 100%);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #8B6FC0;
+  }
+  .hero-visual svg { display: block; width: 100%; height: auto; }
+
+  /* ── Info Strip ── */
+  .info-strip {
+    display: flex; flex-wrap: wrap; background: #fff;
+    border-bottom: 2px solid #E8DDD2;
+  }
+  .info-item {
+    flex: 1; min-width: 150px; padding: 12px 16px;
+    border-right: 1px solid #E8DDD2;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .info-item:last-child { border-right: none; }
+  .info-icon {
+    width: 40px; height: 40px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+  .info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+  .info-value { font-size: 16px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+  .info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+  /* ── Content Area ── */
+  .content { padding: 24px 28px 36px; }
+
+  /* ── Card System ── */
+  .card {
+    background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+    margin-bottom: 22px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(43,29,18,0.04);
+  }
+  .card-head {
+    display: flex; align-items: center; gap: 10px;
+    padding: 14px 20px; border-bottom: 2px solid;
+  }
+  .card-head-icon {
+    width: 42px; height: 42px; border-radius: 50%; color: #fff;
+    font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+  .card-head-title { font-size: 20px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+  .card-body { padding: 18px 22px; }
+  .card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+  .card-body p:last-child { margin-bottom: 0; }
+
+  /* ── Color Themes ── */
+  .theme-lava .card-head { background: #FFF0EC; border-color: #F5C4BA; }
+  .theme-lava .card-head-icon { background: #E8636B; }
+  .theme-earth .card-head { background: #FFF7EE; border-color: #F0DCC4; }
+  .theme-earth .card-head-icon { background: #C7922C; }
+  .theme-sky .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+  .theme-sky .card-head-icon { background: #55C8E8; }
+  .theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+  .theme-forest .card-head-icon { background: #34B76F; }
+  .theme-rock .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+  .theme-rock .card-head-icon { background: #8B6FC0; }
+  .theme-magma .card-head { background: #FFF3DC; border-color: #F5E6C8; }
+  .theme-magma .card-head-icon { background: #D4772C; }
+
+  /* ── Activity Cards ── */
+  .activity-card {
+    background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+    margin-bottom: 18px; overflow: hidden;
+    box-shadow: 0 2px 10px rgba(43,29,18,0.04);
+  }
+  .activity-card.act-warmup  { border-left: 6px solid #E8636B; }
+  .activity-card.act-lesson  { border-left: 6px solid #D4772C; }
+  .activity-card.act-explore { border-left: 6px solid #55C8E8; }
+  .activity-card.act-practice{ border-left: 6px solid #34B76F; }
+  .activity-card.act-check   { border-left: 6px solid #8B6FC0; }
+
+  .act-head {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 20px 14px 18px;
+    border-bottom: 1.5px solid #E8DDD2;
+  }
+  .act-num {
+    width: 38px; height: 38px; border-radius: 14px; color: #fff;
+    font-size: 18px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .act-title { font-size: 19px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+  .act-subtitle { font-size: 12px; color: #9A8E82; }
+  .act-time {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 4px 12px; border-radius: 20px;
+    font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap;
+    margin-left: auto; flex-shrink: 0;
+  }
+  .act-body { padding: 18px 22px 18px 20px; }
+  .act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+  /* ── Callout Boxes ── */
+  .callout {
+    border-radius: 14px; padding: 16px 18px;
+    display: flex; align-items: flex-start; gap: 12px;
+    margin-bottom: 14px;
+  }
+  .callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+  .callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+  .callout-lava   { background: #FFF0EC; border: 2px solid #F5C4BA; }
+  .callout-think  { background: #FFF7EE; border: 2px solid #F0DCC4; }
+  .callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+  .callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+  .callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+  .callout-space  { background: linear-gradient(135deg, #0E1C42, #1a1060); border: 2px solid rgba(139,111,192,0.4); }
+  .callout-space p { color: #fff; }
+
+  /* ── Socratic Questions ── */
+  .socratic-q {
+    background: linear-gradient(135deg, #f0edf6, #e8e2f2);
+    border: 2px solid #C8B8E8;
+    border-radius: 16px; padding: 16px 20px;
+    margin: 16px 0;
+    display: flex; align-items: flex-start; gap: 12px;
+  }
+  .socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+  .socratic-q .label {
+    font-size: 11px; color: #8B6FC0; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; margin-bottom: 4px;
+  }
+  .socratic-q .question {
+    font-size: 17px; color: #2B1D12; font-weight: 700;
+    line-height: 1.6; font-style: italic;
+  }
+
+  /* ── Diagram Containers ── */
+  .diagram-wrap {
+    background: #fff; border: 2px solid #E8DDD2;
+    border-radius: 16px; padding: 16px; margin: 16px 0;
+    text-align: center;
+  }
+  .diagram-wrap svg { max-width: 100%; height: auto; }
+  .diagram-caption {
+    font-size: 13px; color: #9A8E82; margin-top: 10px;
+    font-weight: 600; text-align: center;
+  }
+
+  /* ── Key Concept Box ── */
+  .key-concept {
+    background: #F0EDF6; border: 2px solid #D8D0E8;
+    border-radius: 14px; padding: 18px 20px; margin: 14px 0;
+  }
+  .key-concept .kc-label {
+    font-size: 13px; color: #8B6FC0; text-transform: uppercase;
+    letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px;
+  }
+  .key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+  .key-concept p:last-child { margin-bottom: 0; }
+
+  /* ── Practice Questions ── */
+  .pq {
+    background: #FAFAF6; border: 2px solid #E8DDD2;
+    border-radius: 14px; padding: 14px 18px; margin-bottom: 12px;
+  }
+  .pq-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px; border-radius: 50%;
+    color: #fff; font-weight: 800; font-size: 14px;
+    margin-right: 8px; vertical-align: middle;
+  }
+  .pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+
+  /* ── Vocab Flashcards ── */
+  .vocab-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 14px; margin: 14px 0;
+  }
+  .flip-card {
+    perspective: 800px;
+    height: 160px;
+    cursor: pointer;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%; height: 100%;
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+  }
+  .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+  .flip-card-front, .flip-card-back {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    border-radius: 16px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 18px 20px;
+    text-align: center;
+    border: 2px solid #E8DDD2;
+    box-shadow: 0 2px 10px rgba(43,29,18,0.06);
+  }
+  .flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+  .flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+  .flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #0E1C42; margin-bottom: 6px; }
+  .flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+  .flip-card-back {
+    background: linear-gradient(145deg, #0E1C42, #1a1060);
+    border-color: #0E1C42;
+    transform: rotateY(180deg);
+  }
+  .flip-card-back .fc-def { font-size: 15px; color: #fff; line-height: 1.6; font-weight: 600; }
+  .flip-card-back .fc-word-back {
+    font-size: 11px; color: #55C8E8; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; margin-bottom: 8px;
+  }
+  .flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 10px; font-weight: 600; }
+  .fc-color-1 .flip-card-front { border-top-color: #8B6FC0; }
+  .fc-color-2 .flip-card-front { border-top-color: #55C8E8; }
+  .fc-color-3 .flip-card-front { border-top-color: #E8636B; }
+  .fc-color-4 .flip-card-front { border-top-color: #D4772C; }
+  .fc-color-5 .flip-card-front { border-top-color: #34B76F; }
+  .fc-color-6 .flip-card-front { border-top-color: #C7922C; }
+
+  /* ── Vocab Tooltips ── */
+  .vtip {
+    position: relative; color: #8B6FC0; font-weight: 700;
+    cursor: help; border-bottom: 2px dotted rgba(139,111,192,0.45);
+    transition: color 0.15s;
+  }
+  .vtip:hover { color: #6B4FA0; }
+  .vtip .vtip-box {
+    position: fixed; background: #0E1C42; color: #fff;
+    padding: 12px 16px; border-radius: 12px;
+    font-size: 14px; font-weight: 600; font-style: normal;
+    line-height: 1.55; width: 250px; text-align: center;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    pointer-events: none; z-index: 9999;
+    box-shadow: 0 6px 24px rgba(14,28,66,0.35);
+    border: 1.5px solid rgba(85,200,232,0.3);
+    transform: translateY(6px);
+  }
+  .vtip .vtip-box::after {
+    content: ''; position: absolute; top: 100%; left: 50%;
+    transform: translateX(-50%);
+    border: 7px solid transparent; border-top-color: #0E1C42;
+  }
+  .vtip .vtip-word {
+    font-size: 11px; color: #55C8E8; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block;
+  }
+  .vtip:hover .vtip-box { opacity: 1; visibility: visible; transform: translateY(0); }
+
+  /* ── Details / Reveal ── */
+  details {
+    background: #fff; border: 2px solid #E8DDD2;
+    border-left: 5px solid #8B6FC0;
+    border-radius: 14px; margin-bottom: 12px; overflow: hidden;
+  }
+  details summary {
+    padding: 12px 18px; font-size: 16px; font-weight: 700;
+    color: #0E1C42; cursor: pointer;
+  }
+  details summary:hover { background: #FAFAF6; }
+  details > div {
+    padding: 12px 18px 14px; font-size: 16px; color: #5A4D3E;
+    line-height: 1.65; border-top: 1.5px solid #E8DDD2;
+  }
+
+  /* ── Go Deeper ── */
+  .go-deeper {
+    background: linear-gradient(135deg, #F0EDF6, #E8E2F2);
+    border: 2px solid #D8D0E8; border-radius: 16px;
+    margin: 16px 0; overflow: hidden;
+  }
+  .go-deeper summary {
+    padding: 14px 18px; font-size: 16px; font-weight: 800;
+    color: #0E1C42; cursor: pointer;
+    display: flex; align-items: center; gap: 10px; list-style: none;
+  }
+  .go-deeper summary::-webkit-details-marker { display: none; }
+  .go-deeper summary::before { content: '🔭'; font-size: 22px; }
+  .go-deeper summary::after {
+    content: '▸'; margin-left: auto; font-size: 18px; color: #8B6FC0;
+    transition: transform 0.3s;
+  }
+  .go-deeper[open] summary::after { transform: rotate(90deg); }
+  .go-deeper .gd-body {
+    padding: 4px 18px 16px; font-size: 15px;
+    color: #5A4D3E; line-height: 1.7;
+    border-top: 1.5px solid #D8D0E8;
+  }
+  .go-deeper .gd-body p { margin-bottom: 10px; }
+
+  /* ── Mind-Blowing Fact ── */
+  .mind-blow {
+    background: linear-gradient(135deg, #06091a, #1a1060);
+    border: 2px solid rgba(139,111,192,0.4);
+    border-radius: 18px; padding: 18px 22px;
+    margin: 18px 0; display: flex;
+    align-items: flex-start; gap: 14px;
+    position: relative; overflow: hidden;
+  }
+  .mind-blow::before {
+    content: ''; position: absolute; top: -30px; right: -30px;
+    width: 120px; height: 120px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(139,111,192,0.2), transparent);
+  }
+  .mind-blow-icon {
+    font-size: 36px; flex-shrink: 0;
+    animation: mind-blow-bounce 2s ease-in-out infinite;
+  }
+  @keyframes mind-blow-bounce { 0%,100%{transform:scale(1)} 50%{transform:scale(1.12)} }
+  .mind-blow-content { flex: 1; }
+  .mind-blow-label {
+    font-size: 11px; color: #FFD700; text-transform: uppercase;
+    letter-spacing: 1.5px; font-weight: 800; margin-bottom: 4px;
+  }
+  .mind-blow-text { font-size: 16px; color: #fff; line-height: 1.6; font-weight: 600; }
+  .mind-blow-text strong { color: #55C8E8; }
+
+  /* ── Diagram Interactive ── */
+  .diagram-interactive { position: relative; }
+  .diagram-interactive .hotspot { cursor: pointer; opacity: 0; transition: opacity 0.2s; }
+  .diagram-interactive .hotspot:hover { opacity: 0.25; }
+  .diagram-interactive .hotspot.active { opacity: 0.35; }
+  .diagram-info-panel {
+    background: #0E1C42; color: #fff;
+    padding: 14px 20px; border-radius: 14px;
+    font-size: 15px; line-height: 1.55; font-weight: 600;
+    text-align: center;
+    border: 1.5px solid rgba(85,200,232,0.3);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    margin: 10px 0 0; display: none;
+  }
+  .diagram-info-panel.visible { display: block; }
+  .diagram-info-panel .dip-word {
+    font-size: 11px; color: #FFD700; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; display: block; margin-bottom: 3px;
+  }
+
+  /* ── Types Grid ── */
+  .types-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 12px; margin: 16px 0;
+  }
+  .type-card {
+    border-radius: 16px; padding: 16px; text-align: center;
+    border: 2px solid; position: relative; overflow: hidden;
+  }
+  .type-card svg { display: block; margin: 0 auto 10px; }
+  .type-name { font-size: 16px; font-weight: 800; color: #0E1C42; margin-bottom: 4px; }
+  .type-desc { font-size: 13px; color: #5A4D3E; line-height: 1.5; }
+  .tc-mars    { background: #FFF0EC; border-color: #F5C4BA; }
+  .tc-venus   { background: #FFF7EE; border-color: #F0DCC4; }
+  .tc-asteroid{ background: #F0EDF6; border-color: #D8D0E8; }
+
+  /* ── Size Compare ── */
+  .size-compare-wrap {
+    background: linear-gradient(180deg, #06091a, #0d1230);
+    border: 2px solid rgba(85,200,232,0.2); border-radius: 16px;
+    padding: 16px; margin: 16px 0; text-align: center;
+  }
+  .size-compare-wrap svg { max-width: 100%; height: auto; }
+  .size-compare-caption {
+    font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 10px;
+    font-weight: 600; text-align: center;
+  }
+
+  /* ── Mission Steps ── */
+  .mission-step {
+    display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px;
+  }
+  .mission-num {
+    width: 52px; height: 52px; border-radius: 50%; color: #fff;
+    font-size: 13px; font-weight: 900;
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(14,28,66,0.3);
+    letter-spacing: 0.5px; line-height: 1.1;
+  }
+  .mission-num .phase-label { font-size: 8px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.85; }
+  .mission-num .phase-num { font-size: 22px; font-weight: 900; }
+  .mission-body {
+    flex: 1; border-radius: 14px; padding: 14px 16px;
+  }
+
+  /* ── Self-Check Quiz ── */
+  .quiz-card {
+    background: #fff; border: 2px solid #E8DDD2;
+    border-left: 6px solid #8B6FC0;
+    border-radius: 18px; margin-bottom: 18px; overflow: hidden;
+    box-shadow: 0 2px 10px rgba(43,29,18,0.04);
+  }
+  .quiz-q {
+    background: #FAFAF6; border: 2px solid #E8DDD2;
+    border-radius: 14px; padding: 16px 18px; margin-bottom: 14px;
+  }
+  .quiz-q-text {
+    font-size: 17px; color: #2B1D12; font-weight: 700;
+    line-height: 1.6; margin-bottom: 12px;
+  }
+  .quiz-options { display: flex; flex-direction: column; gap: 8px; }
+  .quiz-opt {
+    padding: 10px 16px; border-radius: 12px;
+    border: 2px solid #E8DDD2; background: #fff;
+    font-size: 15px; font-weight: 700; color: #2B1D12;
+    cursor: pointer; transition: all 0.2s;
+    display: flex; align-items: center; gap: 10px;
+    user-select: none;
+  }
+  .quiz-opt:hover { background: #F0EDF6; border-color: #8B6FC0; }
+  .quiz-opt.correct { background: #EEF8F0 !important; border-color: #34B76F !important; color: #1a6b35 !important; }
+  .quiz-opt.wrong   { background: #FFF0EC !important; border-color: #E8636B !important; color: #a33 !important; }
+  .quiz-opt.disabled { pointer-events: none; opacity: 0.6; }
+  .quiz-opt .opt-letter {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: #E8DDD2; color: #5A4D3E;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: all 0.2s;
+  }
+  .quiz-opt.correct .opt-letter { background: #34B76F; color: #fff; }
+  .quiz-opt.wrong .opt-letter   { background: #E8636B; color: #fff; }
+  .quiz-feedback {
+    font-size: 14px; padding: 10px 14px; border-radius: 10px;
+    margin-top: 10px; display: none; font-weight: 600; line-height: 1.5;
+  }
+  .quiz-feedback.show { display: block; }
+  .quiz-feedback.fb-correct { background: #EEF8F0; color: #1a6b35; border: 1.5px solid #B8E8CF; }
+  .quiz-feedback.fb-wrong   { background: #FFF0EC; color: #8a3030; border: 1.5px solid #F5C4BA; }
+  .quiz-score {
+    text-align: center; padding: 16px;
+    background: linear-gradient(135deg, #F0EDF6, #E8E2F2);
+    border: 2px solid #D8D0E8; border-radius: 14px; margin-top: 8px; display: none;
+  }
+  .quiz-score.show { display: block; }
+  .quiz-score-num { font-size: 36px; font-weight: 900; color: #0E1C42; }
+  .quiz-score-label { font-size: 14px; color: #9A8E82; font-weight: 700; }
+  .quiz-score-msg { font-size: 16px; color: #2B1D12; font-weight: 700; margin-top: 6px; }
+
+  /* ── Video System ── */
+  .video-wrap {
+    border-radius: 18px; overflow: hidden;
+    border: 2px solid #E8DDD2;
+    box-shadow: 0 4px 20px rgba(43,29,18,0.08);
+    background: #000; margin: 0 0 22px;
+  }
+  .video-wrap-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, #0E1C42, #1a1060);
+    border-bottom: 2px solid rgba(139,111,192,0.3);
+  }
+  .video-wrap-type { font-size: 10px; color: #8B6FC0; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+  .video-wrap-title { font-size: 16px; color: #fff; font-weight: 800; line-height: 1.2; }
+  .video-ratio { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+  .video-ratio iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+  .video-placeholder {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, #06091a, #0E1C42);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 24px;
+  }
+  .video-placeholder-icon { font-size: 44px; margin-bottom: 10px; opacity: 0.55; }
+  .video-placeholder-text { font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 600; line-height: 1.5; font-family: 'Nunito', sans-serif; }
+  .video-placeholder-id { font-size: 11px; color: rgba(139,111,192,0.4); font-family: monospace; margin-top: 6px; letter-spacing: 0.5px; }
+  .video-feedback { display: none; }
+  .video-feedback.show { display: block; }
+
+  /* ── Progress Bar ── */
+  .progress-wrap {
+    position: sticky; top: 0; z-index: 200;
+    background: #06091a; padding: 8px 20px 10px;
+    border-bottom: 2px solid rgba(139,111,192,0.3);
+    display: flex; align-items: center; gap: 14px;
+  }
+  .progress-label { font-size: 12px; color: #8B6FC0; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+  .progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+  .progress-fill {
+    height: 100%; width: 0%;
+    background: linear-gradient(90deg, #8B6FC0, #55C8E8, #FFD700);
+    border-radius: 10px; transition: width 0.4s ease;
+  }
+  .progress-pct { font-size: 13px; color: #FFD700; font-weight: 800; min-width: 36px; text-align: right; }
+
+  /* ── Tab Bar ── */
+  .tab-bar {
+    position: sticky; top: 44px; z-index: 100;
+    background: #FAF7F3; border-bottom: 3px solid #E8DDD2;
+    display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .tab-bar::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex: 1; min-width: 130px; padding: 12px 8px 11px;
+    background: transparent; border: none;
+    border-bottom: 4px solid transparent;
+    font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700;
+    color: #9A8E82; cursor: pointer; transition: all 0.2s;
+    white-space: nowrap; line-height: 1.3; text-align: center;
+  }
+  .tab-btn:hover { color: #0E1C42; background: #F0EDE8; }
+  .tab-btn.active { color: #0E1C42; border-bottom-color: #8B6FC0; background: #fff; }
+  .tab-btn .tab-check { display: none; font-size: 12px; color: #34B76F; margin-left: 4px; font-weight: 800; }
+  .tab-btn.visited .tab-check { display: inline; }
+
+  /* ── Tab Panels ── */
+  .tab-panel { display: none; padding: 24px 28px 36px; }
+  .tab-panel.active { display: block; }
+  .scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+  /* ── Intro 2-col ── */
+  .intro-2col {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px; padding: 20px 28px 0;
+  }
+  .intro-2col .card { margin-bottom: 0; }
+  .intro-2col .card .card-head {
+    cursor: pointer; user-select: none; position: relative;
+  }
+  .intro-2col .card .card-head::after {
+    content: '▾'; position: absolute; right: 16px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px; color: #9A8E82; transition: transform 0.25s ease;
+  }
+  .intro-2col .card.collapsed .card-head::after {
+    transform: translateY(-50%) rotate(-90deg);
+  }
+  .intro-2col .card.collapsed .card-body { display: none; }
+
+  /* ── Need Strip ── */
+  .need-strip {
+    display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
+    padding: 12px 28px 16px;
+  }
+  .need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 700; white-space: nowrap; }
+  .need-chip {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: #F0EDF6; border: 1.5px solid #D8D0E8;
+    border-radius: 20px; padding: 5px 12px;
+    font-size: 13px; color: #0E1C42; font-weight: 700;
+  }
+
+  /* ── Tab Next Button ── */
+  .tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+  .tab-next-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 30px;
+    background: linear-gradient(135deg, #8B6FC0, #55C8E8);
+    color: #fff; border: none; border-radius: 28px;
+    font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800;
+    cursor: pointer; box-shadow: 0 4px 16px rgba(139,111,192,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(139,111,192,0.5); }
+
+  /* ── Checklist ── */
+  .checklist-item:hover { background: #F0EDE8 !important; }
+  .checklist-item.checked { background: #EEF8F0 !important; border-color: #B8E8CF !important; }
+  .checklist-item.checked .check-icon { border-color: transparent !important; background: transparent !important; font-size: 22px !important; }
+  .checklist-item.checked span:last-child { color: #5A4D3E; }
+
+  /* ── Back to Top ── */
+  .back-to-top {
+    position: fixed; bottom: 28px; right: 28px;
+    height: 44px; padding: 0 18px 0 14px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #8B6FC0, #55C8E8);
+    color: #fff; border: none; font-size: 14px; font-weight: 800;
+    font-family: 'Nunito', sans-serif; cursor: pointer;
+    box-shadow: 0 4px 18px rgba(139,111,192,0.4);
+    display: flex; align-items: center; gap: 6px;
+    opacity: 0; visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.2s;
+    z-index: 500; letter-spacing: 0.3px;
+  }
+  .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+  .back-to-top:hover { box-shadow: 0 6px 24px rgba(139,111,192,0.6); transform: translateY(-3px); }
+
+  /* ── Confetti ── */
+  #confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000; }
+
+  /* ── Footer ── */
+  .footer {
+    background: #06091a; border-top: 4px solid #8B6FC0;
+    padding: 18px 28px; text-align: center;
+  }
+  .footer-line1 { font-size: 15px; color: #fff; margin-bottom: 4px; }
+  .footer-line1 span { color: #8B6FC0; font-weight: 700; }
+  .footer-line2 { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+  .footer-line3 { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+  strong { color: #0E1C42; }
+
+  @media (max-width: 620px) {
+    .intro-2col { grid-template-columns: 1fr; }
+    .types-grid { grid-template-columns: 1fr; }
+    .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 4px; }
+  }
+
+
+  /* ── Image Suggestion (shown only if /images/[name].png is missing) ── */
+  .lesson-figure { margin: 20px 0; }
+  .lesson-figure-label {
+    font-size: 12px; color: #5A4D3E; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.6px;
+    margin-bottom: 8px;
+  }
+  .lesson-figure img { width: 100%; height: auto; border-radius: 14px; display: block; }
+  .lesson-figure-caption {
+    font-size: 14px; color: #5A4D3E; line-height: 1.6;
+    margin-top: 10px; padding: 10px 14px;
+    background: #FAFAF6; border-left: 4px solid #34B76F;
+    border-radius: 6px;
+  }
+  .lesson-figure-caption strong { color: #1B6F3F; }
+  .image-suggestion {
+    background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+    border: 2.5px dashed #F9A825;
+    border-radius: 16px;
+    padding: 20px 22px;
+    text-align: center;
+  }
+  .image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+  .image-suggestion-label {
+    font-size: 11px; color: #E65100; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .image-suggestion-desc {
+    font-size: 15px; color: #5A4D3E; line-height: 1.65;
+    font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+    text-align: left;
+  }
+  .image-suggestion-file {
+    font-size: 12px; color: #2B1D12; font-family: 'Courier New', monospace;
+    font-weight: 700;
+    background: rgba(0,0,0,0.06); border-radius: 6px;
+    padding: 5px 12px; display: inline-block; margin-top: 4px;
+    user-select: all;
+  }
+
+
+/* === Assessment-specific styles (overlaid on brand CSS) === */
+.banner-asmt{background:linear-gradient(135deg,#1F3A6F,#0E1C42 55%,#5C1F4F);color:#fff;padding:28px 22px;text-align:center;border-bottom:6px solid #8B6FC0;}
+.banner-asmt h1{font-size:30px;font-weight:900;letter-spacing:0.4px;margin-bottom:8px;line-height:1.2;text-shadow:0 2px 10px rgba(139,111,192,0.4);}
+.banner-asmt p{font-size:15px;opacity:0.92;max-width:620px;margin:0 auto;line-height:1.5;}
+.card{background:#fff;border:2px solid #E8DDD2;border-radius:18px;margin-bottom:24px;overflow:hidden;box-shadow:0 2px 8px rgba(14,28,66,0.05);}
+.card-head{display:flex;align-items:center;gap:14px;padding:18px 22px;background:linear-gradient(135deg,#F5EEDC,#F0E2C5);border-bottom:2px solid #E8DDD2;}
+.card-head-icon{font-size:30px;}
+.card-head-label{font-size:11px;color:#9A8E82;text-transform:uppercase;letter-spacing:1px;font-weight:800;}
+.card-head-title{font-size:21px;color:#0E1C42;font-weight:900;}
+.card-body{padding:20px 22px;}
+.flip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;}
+.flip-card{height:170px;perspective:1000px;cursor:pointer;}
+.flip-card-inner{position:relative;width:100%;height:100%;transition:transform .55s;transform-style:preserve-3d;}
+.flip-card.flipped .flip-card-inner{transform:rotateY(180deg);}
+.flip-card-front,.flip-card-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:14px;padding:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;}
+.flip-card-back{transform:rotateY(180deg);background:#fff;color:#2B1D12;border:2px solid #E8DDD2;justify-content:flex-start;padding:14px 12px;}
+.fc-color-1 .flip-card-front{background:linear-gradient(135deg,#8B6FC0,#5A3B92);}
+.fc-color-2 .flip-card-front{background:linear-gradient(135deg,#F2B842,#D49018);}
+.fc-color-3 .flip-card-front{background:linear-gradient(135deg,#34B76F,#1F8C4F);}
+.fc-color-4 .flip-card-front{background:linear-gradient(135deg,#55C8E8,#2D9BBF);}
+.fc-color-5 .flip-card-front{background:linear-gradient(135deg,#E8636B,#C0454E);}
+.fc-color-6 .flip-card-front{background:linear-gradient(135deg,#7A4D2E,#5A3010);}
+.fc-emoji{font-size:34px;margin-bottom:6px;}
+.fc-word{font-size:16px;font-weight:900;line-height:1.2;}
+.fc-tap{position:absolute;bottom:8px;font-size:9px;font-weight:700;opacity:0.7;letter-spacing:1px;text-transform:uppercase;}
+.flip-card-back .fc-word-back{font-size:13px;font-weight:900;color:#0E1C42;margin-bottom:6px;text-align:center;}
+.flip-card-back .fc-def{font-size:11px;line-height:1.5;color:#2B1D12;text-align:left;}
+.flip-card-back .fc-tap-back{position:absolute;bottom:6px;font-size:8px;color:#9A8E82;letter-spacing:1px;text-transform:uppercase;width:100%;text-align:center;left:0;}
+.callout{display:flex;gap:12px;background:#F0F6FF;border:2px solid #B0C8E8;border-radius:14px;padding:14px 16px;margin:14px 0;align-items:flex-start;}
+.callout-icon{font-size:24px;flex-shrink:0;}
+.callout-tip{background:#FFF6E5;border-color:#F0C97A;}
+.callout-info{background:#F0F6FF;border-color:#B0C8E8;}
+.callout-celebrate{background:#EAF8EE;border-color:#A8DCAF;}
+.callout p{font-size:14px;color:#2B1D12;line-height:1.55;}
+table.data{width:100%;border-collapse:collapse;margin:14px 0;background:#fff;border-radius:12px;overflow:hidden;border:2px solid #E8DDD2;font-size:14px;}
+table.data th{background:linear-gradient(135deg,#0E1C42,#5A3B92);color:#fff;padding:12px;text-align:left;font-weight:800;font-size:12px;letter-spacing:0.4px;text-transform:uppercase;}
+table.data td{padding:11px 12px;border-bottom:1px solid #E8DDD2;vertical-align:top;}
+table.data tr:last-child td{border-bottom:none;}
+table.data tr:nth-child(even) td{background:#FAF6EE;}
+.cell-input{width:100%;border:1.5px dashed #C9BFE0;background:#FAF6FF;border-radius:6px;padding:6px 8px;font-family:'Nunito',sans-serif;font-size:14px;color:#2B1D12;}
+.cell-input:focus{outline:none;border-color:#8B6FC0;background:#fff;}
+.q-block{background:#fff;border:2px solid #E8DDD2;border-radius:14px;padding:16px 18px;margin:16px 0;}
+.q-num{display:inline-block;background:#8B6FC0;color:#fff;font-size:11px;font-weight:800;padding:4px 11px;border-radius:999px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
+.q-prompt{font-size:15px;color:#2B1D12;font-weight:700;margin-bottom:10px;line-height:1.5;}
+.answer-box{background:#FAF6FF;border:2px dashed #C9BFE0;border-radius:10px;font-family:'Nunito',sans-serif;font-size:14px;color:#2B1D12;width:100%;resize:vertical;padding:12px 14px;line-height:1.5;}
+.answer-box:focus{outline:none;border-color:#8B6FC0;background:#fff;}
+.cer-wrap{background:#fff;border:3px solid #8B6FC0;border-radius:18px;padding:20px 22px;margin:20px 0;box-shadow:0 4px 16px rgba(139,111,192,0.15);}
+.cer-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.cer-icon{font-size:26px;}
+.cer-title{font-size:18px;font-weight:900;color:#0E1C42;}
+.cer-piece{margin-bottom:16px;}
+.cer-label{display:inline-block;background:linear-gradient(135deg,#8B6FC0,#5A3B92);color:#fff;font-size:11px;font-weight:900;padding:4px 11px;border-radius:6px;letter-spacing:0.5px;margin-bottom:6px;text-transform:uppercase;}
+.cer-piece textarea{width:100%;min-height:60px;border:2px dashed #C9BFE0;background:#FAF6FF;border-radius:10px;padding:12px 14px;font-family:inherit;font-size:14px;color:#2B1D12;line-height:1.5;resize:vertical;}
+.cer-piece textarea:focus{outline:none;border-color:#5A3B92;background:#fff;}
+.gather-wrap{background:linear-gradient(135deg,#0E1C42,#5A3B92);color:#fff;border-radius:18px;padding:24px 26px;margin:24px 0;box-shadow:0 6px 24px rgba(14,28,66,0.25);}
+.gather-head{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.gather-icon{font-size:30px;}
+.gather-title{font-size:22px;font-weight:900;}
+.gather-sub{font-size:13px;opacity:0.8;margin-bottom:14px;}
+.gather-textarea{width:100%;min-height:260px;border:2px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.08);color:#fff;border-radius:12px;padding:14px;font-family:inherit;font-size:13px;line-height:1.5;resize:vertical;}
+.gather-buttons{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}
+.gather-btn{background:linear-gradient(135deg,#FFD700,#F2B842);color:#0E1C42;border:none;padding:11px 20px;font-size:13px;font-weight:900;border-radius:999px;cursor:pointer;letter-spacing:0.4px;text-transform:uppercase;font-family:inherit;box-shadow:0 2px 8px rgba(255,215,0,0.3);}
+.gather-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(255,215,0,0.4);}
+.gather-btn.secondary{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.4);box-shadow:none;}
+.gather-btn.secondary:hover{background:rgba(255,255,255,0.1);}
+.checklist-item{display:flex;gap:10px;padding:11px 15px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;user-select:none;align-items:flex-start;}
+.check-icon{font-size:20px;flex-shrink:0;width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:6px;border:2px solid #D0C8BE;background:#fff;font-weight:900;color:transparent;}
+.checklist-item.checked .check-icon{background:#34B76F;border-color:#1F6E3F;color:#fff;}
+.checklist-item.checked .check-icon::before{content:"✓";}
+.checklist-item span:last-child{font-size:14px;color:#2B1D12;line-height:1.5;}
+.rubric{background:#fff;border:2px solid #E8DDD2;border-radius:14px;overflow:hidden;margin:18px 0;}
+.rubric-head{background:linear-gradient(135deg,#0E1C42,#5A3B92);color:#fff;padding:13px 18px;font-size:14px;font-weight:900;letter-spacing:0.5px;text-transform:uppercase;}
+.rubric table{width:100%;border-collapse:collapse;font-size:12.5px;}
+.rubric th,.rubric td{padding:9px 11px;border:1px solid #E8DDD2;vertical-align:top;text-align:left;line-height:1.4;}
+.rubric th{background:#F5EEDC;font-weight:800;color:#0E1C42;font-size:11px;text-transform:uppercase;letter-spacing:0.4px;}
+.rubric td:first-child{font-weight:800;color:#0E1C42;background:#FAF6EE;}
+.act-num{width:42px;height:42px;border-radius:50%;color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 6px rgba(0,0,0,0.15);}
+.act-head{display:flex;gap:14px;align-items:center;padding:18px 22px;border-bottom:2px solid #E8DDD2;}
+.act-title{font-size:21px;font-weight:900;color:#0E1C42;}
+.act-subtitle{font-size:13px;color:#9A8E82;font-weight:600;}
+.act-body{padding:20px 22px;}
+@media (max-width:600px){.banner-asmt h1{font-size:22px;}.flip-card{height:150px;}}
+</style>
+</head>
+<body>
+
+<!-- ═══ PROGRESS BAR ═══ -->
+<div class="progress-wrap">
+  <span class="progress-label">🔭 Assessment Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══ HEADER ═══ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">Scientist, Sky &amp; Space Observation Notebook</div>
+  <div class="header-badge">
+    <span>🔭</span>
+    <span>UNIT 1 · MAJOR ASSESSMENT</span>
+  </div>
+</div>
+
+<!-- ═══ BANNER ═══ -->
+<div class="banner-asmt">
+  <h1>🔭 Show What You Know</h1>
+  <p>You've spent the first weeks of 4th grade learning what scientists DO — how they observe, ask questions, and use evidence. Today you'll show what you've learned by working through a notebook of sky and space observations.</p>
+</div>
+
+<!-- ═══ INFO STRIP ═══ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF5E1;">📅</div>
+    <div>
+      <div class="info-label">Modules Covered</div>
+      <div class="info-value">Modules 1–3</div>
+      <div class="info-detail">Earth in Space + Tools</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">📖</div>
+    <div>
+      <div class="info-label">Assessment Type</div>
+      <div class="info-value">Observation Notebook</div>
+      <div class="info-detail">CER + evidence</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF5E1;">⏱️</div>
+    <div>
+      <div class="info-label">Time</div>
+      <div class="info-value">45–60 min</div>
+      <div class="info-detail">Take it slow</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">📤</div>
+    <div>
+      <div class="info-label">Submit On</div>
+      <div class="info-value">Canvas</div>
+      <div class="info-detail">Gathered answers</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TABS ═══ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="overview" onclick="switchTab('overview')">📋 Overview<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="parta" onclick="switchTab('parta')">🔍 Part A · Observations<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="partb" onclick="switchTab('partb')">🌙 Part B · Sky Patterns<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="partc" onclick="switchTab('partc')">📝 Part C · CER + Submit<span class="tab-check">✓</span></button>
+</div>
+
+<!-- ═══════════════════════════════════ -->
+<!-- OVERVIEW TAB -->
+<!-- ═══════════════════════════════════ -->
+<div class="tab-panel active" id="tab-overview">
+
+<div class="card">
+  <div class="card-head">
+    <div class="card-head-icon">🎯</div>
+    <div>
+      <div class="card-head-label">What You'll Show</div>
+      <div class="card-head-title">Goals for This Assessment</div>
+    </div>
+  </div>
+  <div class="card-body">
+    <p style="margin-bottom:10px;">By the end of this assessment, you'll have shown that you can:</p>
+    <ul style="margin:0 0 8px 26px;line-height:1.8;font-size:15px;">
+      <li>Tell the difference between an <strong>observation</strong> and an <strong>inference</strong>.</li>
+      <li>Use a <strong>tool</strong> or <strong>model</strong> to study something a scientist can't visit directly.</li>
+      <li>Spot a <strong>pattern</strong> in moon or sky data.</li>
+      <li>Write a clear <strong>CER</strong> (Claim, Evidence, Reasoning) about how scientists use evidence.</li>
+    </ul>
+    <div class="callout callout-tip" style="margin-top:14px;">
+      <span class="callout-icon">💡</span>
+      <p>This isn't a memory test. You can think back to anything you've learned in lessons 1.01 – 3.02. The questions ask you to USE what you know, not just repeat words.</p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" style="background:linear-gradient(135deg,#EEF8F0,#D8F0DC);">
+    <div class="card-head-icon">📚</div>
+    <div>
+      <div class="card-head-label">Quick Vocabulary Review</div>
+      <div class="card-head-title">Tap a Card to Flip It</div>
+    </div>
+  </div>
+  <div class="card-body">
+    <p style="margin-bottom:14px;font-size:14px;color:var(--gray);">These words show up in the questions ahead. You don't need to memorize them — just make sure you can recognize them.</p>
+    <div class="flip-grid">
+      <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">👀</div><div class="fc-word">Observation</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Observation</div><div class="fc-def">Something you notice using your senses or a tool. "The moon looks like a half-circle tonight" is an observation.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+      <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🧠</div><div class="fc-word">Inference</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Inference</div><div class="fc-def">A guess or explanation you make based on observations + what you already know. "The moon must be in a half phase" is an inference.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+      <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🔄</div><div class="fc-word">Rotate / Revolve</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Rotate vs. Revolve</div><div class="fc-def">Earth ROTATES on its axis (spins) every 24 hours. Earth REVOLVES around the Sun once every year.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+      <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🌙</div><div class="fc-word">Moon Phase</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Moon Phase</div><div class="fc-def">A particular shape of the moon's lit-up side as seen from Earth — new, crescent, quarter, gibbous, full, and back.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+      <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🧭</div><div class="fc-word">Cardinal Directions</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Cardinal Directions</div><div class="fc-def">North, South, East, West. The Sun rises in the east and sets in the west — every day, all over Earth.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+      <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">📐</div><div class="fc-word">Pattern</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Pattern</div><div class="fc-def">Something that repeats in a predictable way. Moon phases follow a pattern. So do sunrises and constellations.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" style="background:linear-gradient(135deg,#EEF0FA,#D8DDF0);">
+    <div class="card-head-icon">⚖️</div>
+    <div>
+      <div class="card-head-label">How to Submit</div>
+      <div class="card-head-title">Type, Gather, Copy, Paste</div>
+    </div>
+  </div>
+  <div class="card-body">
+    <p style="font-size:14px;line-height:1.65;">Each question has a typing box. When you're done, jump to <strong>Part C</strong>, click <strong>"Gather All My Answers"</strong>, then copy and paste them into the Canvas submission box. That's it — no recording, no photos, just your words.</p>
+  </div>
+</div>
+
+<div class="tab-next-wrap">
+  <button class="tab-next-btn" onclick="switchTab('parta')">Continue to Part A →</button>
+</div>
+
+</div>
+
+<!-- ═══════════════════════════════════ -->
+<!-- PART A TAB -->
+<!-- ═══════════════════════════════════ -->
+<div class="tab-panel" id="tab-parta">
+
+<div class="card">
+  <div class="act-head" style="background:linear-gradient(135deg,#FFEAE7,#FDD3CE);">
+    <div class="act-num" style="background:#E8636B;">A</div>
+    <div style="flex:1;">
+      <div class="act-title">🔍 Part A · Observations &amp; Inferences</div>
+      <div class="act-subtitle">A scientist looks at evidence — and learns the difference between what they SEE and what they GUESS.</div>
+    </div>
+  </div>
+  <div class="act-body">
+
+    <p style="margin-bottom:14px;">A Florida student is keeping a science notebook. They write down 6 things in one evening. Some are OBSERVATIONS (things they noticed). Some are INFERENCES (guesses based on what they noticed). Read each one, then sort it.</p>
+
+    <table class="data">
+      <thead>
+        <tr><th>#</th><th>Notebook Entry</th><th>Observation or Inference?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>"The moon looks like half a circle tonight."</td><td><input type="text" class="cell-input" data-tblq="tbl_unit-1-scientist-sky-space_1" placeholder="Type here..." /></td></tr>
+        <tr><td>2</td><td>"It must be a Wednesday because the moon looks like a half-circle."</td><td><input type="text" class="cell-input" data-tblq="tbl_unit-1-scientist-sky-space_2" placeholder="Type here..." /></td></tr>
+        <tr><td>3</td><td>"There are seven bright stars in a line in the sky."</td><td><input type="text" class="cell-input" data-tblq="tbl_unit-1-scientist-sky-space_3" placeholder="Type here..." /></td></tr>
+        <tr><td>4</td><td>"Those stars are the Big Dipper because I see a pot shape."</td><td><input type="text" class="cell-input" data-tblq="tbl_unit-1-scientist-sky-space_4" placeholder="Type here..." /></td></tr>
+        <tr><td>5</td><td>"The Sun came up on my left when I was facing the swing."</td><td><input type="text" class="cell-input" data-tblq="tbl_unit-1-scientist-sky-space_5" placeholder="Type here..." /></td></tr>
+        <tr><td>6</td><td>"That means I was facing north because the Sun rises in the east."</td><td><input type="text" class="cell-input" data-tblq="tbl_unit-1-scientist-sky-space_6" placeholder="Type here..." /></td></tr>
+      </tbody>
+    </table>
+
+    <div class="q-block">
+      <span class="q-num">Q1</span>
+      <p class="q-prompt">For EACH row, type the row number followed by "O" (observation) or "I" (inference). Example: <em>1 = O, 2 = I, 3 = O, 4 = I, 5 = O, 6 = I.</em></p>
+      <textarea class="answer-box" id="q1" rows="3" placeholder="Type your sort here (e.g., 1 = O, 2 = I, ...)"></textarea>
+    </div>
+
+    <div class="q-block">
+      <span class="q-num">Q2</span>
+      <p class="q-prompt">Pick ONE row that you marked as an inference. Explain WHY you marked it that way. What information did the student use to make the guess?</p>
+      <textarea class="answer-box" id="q2" rows="4" placeholder="I marked row ___ as an inference because..."></textarea>
+    </div>
+
+    <div class="callout callout-tip" style="margin-top:18px;">
+      <span class="callout-icon">🔭</span>
+      <p><strong>Scientist Tools.</strong> Sometimes our eyes alone aren't enough. We need a tool to see something better — like a telescope for far-away things or a hand lens for tiny details.</p>
+    </div>
+
+    <p style="margin-top:14px;margin-bottom:10px;">Look at the table below. For EACH situation, which tool would help the scientist most?</p>
+
+    <table class="data">
+      <thead>
+        <tr><th>Situation</th><th>Best Tool</th><th>Why</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Studying the surface of Mars from Earth</td><td><input type="text" class="cell-input" data-tblq="u1_tool_1" placeholder="Pick the best tool" /></td><td><input type="text" class="cell-input" data-tblq="u1_why_1" placeholder="Why?" /></td></tr>
+        <tr><td>Looking at the structure of a wildflower's petals up close</td><td><input type="text" class="cell-input" data-tblq="u1_tool_2" placeholder="Pick the best tool" /></td><td><input type="text" class="cell-input" data-tblq="u1_why_2" placeholder="Why?" /></td></tr>
+        <tr><td>Figuring out which way the Sun rose</td><td><input type="text" class="cell-input" data-tblq="u1_tool_3" placeholder="Pick the best tool" /></td><td><input type="text" class="cell-input" data-tblq="u1_why_3" placeholder="Why?" /></td></tr>
+      </tbody>
+    </table>
+
+    <div class="q-block">
+      <span class="q-num">Q3</span>
+      <p class="q-prompt">Write each situation and the best tool, then in one short sentence explain WHY that tool fits the job. Example: <em>"Mars surface — telescope. A telescope helps us see something too far away to visit."</em></p>
+      <textarea class="answer-box" id="q3" rows="6" placeholder="1. Mars surface — _____. Reason: ...&#10;2. Wildflower petals — _____. Reason: ...&#10;3. Sun direction — _____. Reason: ..."></textarea>
+    </div>
+
+  </div>
+</div>
+
+<div class="tab-next-wrap">
+  <button class="tab-next-btn" onclick="switchTab('partb')">Continue to Part B →</button>
+</div>
+
+</div>
+
+<!-- ═══════════════════════════════════ -->
+<!-- PART B TAB -->
+<!-- ═══════════════════════════════════ -->
+<div class="tab-panel" id="tab-partb">
+
+<div class="card">
+  <div class="act-head" style="background:linear-gradient(135deg,#E5EDFA,#C6D4F0);">
+    <div class="act-num" style="background:#4A7FBF;">B</div>
+    <div style="flex:1;">
+      <div class="act-title">🌙 Part B · Sky &amp; Moon Patterns</div>
+      <div class="act-subtitle">Use the data to spot the pattern.</div>
+    </div>
+  </div>
+  <div class="act-body">
+
+    <p style="margin-bottom:10px;">A 4th grader watched the moon for one week and drew what they saw each night. Here is their data table:</p>
+
+    <table class="data">
+      <thead>
+        <tr><th>Night</th><th>Date</th><th>Moon Shape (what they saw)</th><th>Lit on the Right or Left?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Mon</td><td>A thin sliver</td><td>Right side lit</td></tr>
+        <tr><td>2</td><td>Tue</td><td>A slightly bigger sliver</td><td>Right side lit</td></tr>
+        <tr><td>3</td><td>Wed</td><td>About half a circle</td><td>Right side lit</td></tr>
+        <tr><td>4</td><td>Thu</td><td>More than half a circle</td><td>Right side lit</td></tr>
+        <tr><td>5</td><td>Fri</td><td>Almost a full circle</td><td>Right side lit</td></tr>
+        <tr><td>6</td><td>Sat</td><td>Full circle</td><td>All lit</td></tr>
+        <tr><td>7</td><td>Sun</td><td>Almost full but missing a sliver on the right</td><td>Left side mostly lit</td></tr>
+      </tbody>
+    </table>
+
+    <div class="q-block">
+      <span class="q-num">Q4</span>
+      <p class="q-prompt">Describe the PATTERN you see in the moon over the week. What's happening from night to night?</p>
+      <textarea class="answer-box" id="q4" rows="4" placeholder="Over the week the moon..."></textarea>
+    </div>
+
+    <div class="q-block">
+      <span class="q-num">Q5</span>
+      <p class="q-prompt">Is the moon WAXING (getting more lit-up each night) or WANING (getting less lit-up each night) during the FIRST 6 nights? How can you tell from the data? (Use evidence from the table.)</p>
+      <textarea class="answer-box" id="q5" rows="4" placeholder="The moon is ______. I can tell from the data because..."></textarea>
+    </div>
+
+    <div class="q-block">
+      <span class="q-num">Q6</span>
+      <p class="q-prompt">A friend says, "The moon makes its own light, just like the Sun." Is your friend right? Explain in 2 sentences using what you've learned.</p>
+      <textarea class="answer-box" id="q6" rows="4" placeholder="My friend is _____ because..."></textarea>
+    </div>
+
+    <div class="callout callout-info" style="margin-top:18px;">
+      <span class="callout-icon">🌟</span>
+      <p><strong>Constellations and Polaris.</strong> Many people across history have used stars to find their way — including sailors near Florida's coasts.</p>
+    </div>
+
+    <div class="q-block">
+      <span class="q-num">Q7</span>
+      <p class="q-prompt">A sailor in Florida is lost at night and wants to figure out which direction is NORTH. Which star would help, and why? (Hint: think back to lesson 3.02.)</p>
+      <textarea class="answer-box" id="q7" rows="3" placeholder="The sailor should look for _____ because..."></textarea>
+    </div>
+
+    <div class="q-block">
+      <span class="q-num">Q8</span>
+      <p class="q-prompt">Earth ROTATES once every 24 hours and REVOLVES around the Sun once every year. Which of these motions causes day and night? Which causes the seasons?</p>
+      <textarea class="answer-box" id="q8" rows="3" placeholder="Day and night is caused by _____. The seasons are caused by _____."></textarea>
+    </div>
+
+  </div>
+</div>
+
+<div class="tab-next-wrap">
+  <button class="tab-next-btn" onclick="switchTab('partc')">Continue to Part C →</button>
+</div>
+
+</div>
+
+<!-- ═══════════════════════════════════ -->
+<!-- PART C TAB -->
+<!-- ═══════════════════════════════════ -->
+<div class="tab-panel" id="tab-partc">
+
+<div class="card">
+  <div class="act-head" style="background:linear-gradient(135deg,#F0EDF6,#D8D0E8);">
+    <div class="act-num" style="background:#8B6FC0;">C</div>
+    <div style="flex:1;">
+      <div class="act-title">📝 Part C · CER + Reflect + Submit</div>
+      <div class="act-subtitle">Pull it all together with a Claim-Evidence-Reasoning paragraph and a short reflection.</div>
+    </div>
+  </div>
+  <div class="act-body">
+
+    <p style="margin-bottom:10px;">Scientists can't visit the Moon every night. They can't fly to Mars to study its surface. But they STILL learn about these places.</p>
+
+    <div class="cer-wrap">
+      <div class="cer-head"><span class="cer-icon">🧠</span><span class="cer-title">CER · How Do Scientists Learn About Far-Away Things?</span></div>
+      <p style="font-size:13px;color:var(--gray);margin-bottom:14px;">Write a short paragraph answering: <em>"How do scientists learn about things they can't visit directly — like the Moon or the planets?"</em> Use what you've learned this unit.</p>
+
+      <div class="cer-piece">
+        <span class="cer-label">Claim</span>
+        <p style="font-size:12px;color:var(--gray);margin-bottom:6px;">Write ONE sentence that answers the question.</p>
+        <textarea id="claim" placeholder="Scientists learn about far-away things by..."></textarea>
+      </div>
+
+      <div class="cer-piece">
+        <span class="cer-label">Evidence</span>
+        <p style="font-size:12px;color:var(--gray);margin-bottom:6px;">Give TWO pieces of evidence (examples from the lessons).</p>
+        <textarea id="evidence" placeholder="Evidence 1: ...&#10;Evidence 2: ..."></textarea>
+      </div>
+
+      <div class="cer-piece">
+        <span class="cer-label">Reasoning</span>
+        <p style="font-size:12px;color:var(--gray);margin-bottom:6px;">Explain HOW your evidence supports your claim.</p>
+        <textarea id="reasoning" placeholder="My evidence supports the claim because..."></textarea>
+      </div>
+    </div>
+
+    <div class="callout callout-celebrate" style="margin-top:18px;">
+      <span class="callout-icon">🔄</span>
+      <p><strong>Revise Your Thinking.</strong> If you started the unit with a different idea about how scientists work — write it below. Then describe what you think NOW after this unit.</p>
+    </div>
+
+    <div class="q-block">
+      <span class="q-num">Q9 · Reflection</span>
+      <p class="q-prompt">In 2–3 sentences: What did you think a SCIENTIST was on the first day of school? What do you think a scientist is NOW, after these first few modules?</p>
+      <textarea class="answer-box" id="q9" rows="5" placeholder="On the first day I thought... Now I think..."></textarea>
+    </div>
+
+    <!-- GATHERED ANSWERS -->
+    <div class="gather-wrap">
+      <div class="gather-head">
+        <span class="gather-icon">📦</span>
+        <span class="gather-title">Gathered Answers</span>
+      </div>
+      <div class="gather-sub">Click "Gather All My Answers" to combine everything you typed. Then copy it and paste into Canvas.</div>
+      <textarea class="gather-textarea" id="gatherBox" readonly placeholder="Your gathered answers will appear here once you click the button below."></textarea>
+      <div class="gather-buttons">
+        <button class="gather-btn" onclick="gatherAnswers()">📦 Gather All My Answers</button>
+        <button class="gather-btn secondary" onclick="copyGathered()">📋 Copy to Clipboard</button>
+        <button class="gather-btn secondary" onclick="downloadGathered()">💾 Download as Text</button>
+      </div>
+    </div>
+
+    <!-- SUBMISSION CHECKLIST -->
+    <div class="card" style="margin-top:22px;">
+      <div class="card-head">
+        <div class="card-head-icon">☑️</div>
+        <div>
+          <div class="card-head-label">Before You Submit</div>
+          <div class="card-head-title">Submission Checklist</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="checklist-item" onclick="this.classList.toggle('checked')"><span class="check-icon"></span><span>I answered all 9 questions in Parts A, B, and C.</span></div>
+        <div class="checklist-item" onclick="this.classList.toggle('checked')"><span class="check-icon"></span><span>I wrote a Claim, Evidence, and Reasoning in the CER block.</span></div>
+        <div class="checklist-item" onclick="this.classList.toggle('checked')"><span class="check-icon"></span><span>My CER includes at least TWO pieces of evidence from the lessons.</span></div>
+        <div class="checklist-item" onclick="this.classList.toggle('checked')"><span class="check-icon"></span><span>I clicked "Gather All My Answers" and copied it.</span></div>
+        <div class="checklist-item" onclick="this.classList.toggle('checked')"><span class="check-icon"></span><span>I pasted my gathered answers into the Canvas assignment box.</span></div>
+        <div class="checklist-item" onclick="this.classList.toggle('checked')"><span class="check-icon"></span><span>I submitted my work on Canvas.</span></div>
+      </div>
+    </div>
+
+    <!-- RUBRIC -->
+    <div class="rubric">
+      <div class="rubric-head">📊 How Your Work Will Be Graded</div>
+      <table>
+        <thead>
+          <tr><th>Criterion</th><th>Beginning</th><th>Developing</th><th>Proficient</th><th>Advanced</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Science Understanding</td><td>Shows limited or inaccurate understanding</td><td>Explains some ideas correctly with gaps</td><td>Accurately explains observation, inference, and sky patterns</td><td>Connects ideas across multiple lessons</td></tr>
+          <tr><td>Evidence / Data Use</td><td>Uses little or no evidence</td><td>Uses evidence with limited explanation</td><td>Uses table data to support claims</td><td>Selects strong evidence and explains the pattern</td></tr>
+          <tr><td>Modeling</td><td>No clear use of model or tool</td><td>Names a tool without explaining</td><td>Picks tools/models that fit the situation</td><td>Explains WHY tools/models help scientists</td></tr>
+          <tr><td>CER / Argument</td><td>Claim, evidence, or reasoning missing</td><td>Has all three but they're weakly connected</td><td>Clear claim with evidence and reasoning</td><td>Strong CER that ties multiple lessons together</td></tr>
+          <tr><td>Communication</td><td>Unclear or incomplete</td><td>Mostly clear but missing details</td><td>Clear, organized, accurate</td><td>Precise and uses science vocabulary well</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<script>
+var TAB_ORDER = ['overview','parta','partb','partc'];
+var tabsVisited = new Set(['overview']);
+
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+  var panel = document.getElementById('tab-' + tabId);
+  var btn = document.querySelector('[data-tab="' + tabId + '"]');
+  if (panel) panel.classList.add('active');
+  if (btn) { btn.classList.add('active'); btn.classList.add('visited'); }
+  tabsVisited.add(tabId);
+  var pct = Math.round((tabsVisited.size / TAB_ORDER.length) * 100);
+  var fill = document.getElementById('progressFill');
+  var pctEl = document.getElementById('progressPct');
+  if (fill) fill.style.width = pct + '%';
+  if (pctEl) pctEl.textContent = pct + '%';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// progress bar based on filled fields
+function updateProgress(){
+  const fields=document.querySelectorAll('textarea:not(#gatherBox), .cell-input');
+  const filled=Array.from(fields).filter(f=>f.value.trim().length>0).length;
+  const pct=Math.round((filled/fields.length)*100);
+  const pf=document.getElementById('progressFill');
+  if(pf) pf.style.width=pct+'%';
+  const pp=document.getElementById('progressPct');
+  if(pp) pp.textContent=pct+'%';
+}
+document.addEventListener('input',e=>{if(e.target.matches('textarea, .cell-input')) updateProgress();});
+
+function gatherAnswers(){
+  const sections=[
+    {label:'PART A · OBSERVATIONS & INFERENCES',items:[
+      {label:'Q1 — Observation/Inference Sort',id:'q1'},
+      {label:'Q2 — Why one row is an inference',id:'q2'},
+      {label:'Q3 — Tool matching with reasons',id:'q3'},
+    ]},
+    {label:'PART B · SKY & MOON PATTERNS',items:[
+      {label:'Q4 — Pattern description',id:'q4'},
+      {label:'Q5 — Waxing or waning?',id:'q5'},
+      {label:'Q6 — Does the moon make light?',id:'q6'},
+      {label:'Q7 — How to find north at night',id:'q7'},
+      {label:'Q8 — Day/night vs seasons',id:'q8'},
+    ]},
+    {label:'PART C · CER + REFLECTION',items:[
+      {label:'Claim',id:'claim'},
+      {label:'Evidence',id:'evidence'},
+      {label:'Reasoning',id:'reasoning'},
+      {label:'Q9 — Reflection on scientists',id:'q9'},
+    ]},
+  ];
+  const today=new Date().toLocaleDateString();
+  let out='UNIT 1 ASSESSMENT · SCIENTIST, SKY & SPACE\nSubmitted on: '+today+'\n\n';
+  sections.forEach(s=>{
+    out+='\n=== '+s.label+' ===\n\n';
+    s.items.forEach(it=>{
+      const v=(document.getElementById(it.id)||{}).value||'(no answer)';
+      out+=it.label+':\n'+v.trim()+'\n\n';
+    });
+  });
+  document.getElementById('gatherBox').value=out;
+  // Collect interactive table inputs by row label
+  const tableInputs=document.querySelectorAll('.cell-input');
+  if(tableInputs.length){
+    out+='\n=== TABLE ANSWERS ===\n\n';
+    let currentTable=null;
+    tableInputs.forEach((inp)=>{
+      const tbl=inp.closest('table');
+      if(tbl !== currentTable){
+        out+='\n--- Table ' + (Array.from(document.querySelectorAll('table')).indexOf(tbl)+1) + ' ---\n';
+        currentTable=tbl;
+      }
+      // Row label = first <td> or <th> in the same row
+      const row=inp.closest('tr');
+      const labelCell=row && row.querySelector('td,th');
+      const label=labelCell ? labelCell.textContent.trim() : ('Input ' + inp.dataset.tblq);
+      // Skip if label is the input cell itself (no label cell)
+      const isLabel = labelCell && !labelCell.contains(inp);
+      const v=(inp.value||'').trim();
+      out += (isLabel ? label : 'Input '+inp.dataset.tblq) + ': ' + (v||'(blank)') + '\n';
+    });
+  }
+  document.getElementById('gatherBox').value=out;
+}
+
+function copyGathered(){
+  const txt=document.getElementById('gatherBox').value;
+  if(!txt){alert('Click "Gather All My Answers" first!');return;}
+  navigator.clipboard.writeText(txt).then(()=>{
+    alert('✓ Copied! Paste it into Canvas now.');
+  });
+}
+
+function downloadGathered(){
+  const txt=document.getElementById('gatherBox').value;
+  if(!txt){alert('Click "Gather All My Answers" first!');return;}
+  const blob=new Blob([txt],{type:'text/plain'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download='unit1-assessment-answers.txt';
+  document.body.appendChild(a);a.click();document.body.removeChild(a);
+}
+</script>
+
+</body>
+</html>
