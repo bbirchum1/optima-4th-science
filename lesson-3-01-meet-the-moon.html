@@ -246,7 +246,32 @@ em{color:#5A4D3E}
     .p3{animation:pf 3s ease-in-out infinite;animation-delay:.7s}.p4{animation:pf 3s ease-in-out infinite;animation-delay:1.05s}
     .p5{animation:pf 3s ease-in-out infinite;animation-delay:1.4s}.p6{animation:pf 3s ease-in-out infinite;animation-delay:1.75s}
     .p7{animation:pf 3s ease-in-out infinite;animation-delay:2.1s}.p8{animation:pf 3s ease-in-out infinite;animation-delay:2.45s}
-  </style>
+  
+/* ── Response Textareas ── */
+.response-textarea { width: 100%; min-height: 80px; padding: 10px 12px; border: 1.5px solid #D0C8BE; border-radius: 10px; background: #FAFAF6; font-family: 'Nunito', sans-serif; font-size: 15px; color: #2B1D12; resize: vertical; line-height: 1.65; transition: border-color 0.2s, box-shadow 0.2s; box-sizing: border-box; }
+.response-textarea:focus { outline: none; border-color: #55C8E8; box-shadow: 0 0 0 3px rgba(85,200,232,0.15); background: #fff; }
+.response-textarea.ta-sm { min-height: 64px; }
+.response-textarea.ta-lg { min-height: 110px; }
+/* ── Gathered Answers ── */
+.gathered-card { background: #fff; border: 2px solid #E8DDD2; border-radius: 18px; margin: 24px 0; overflow: hidden; box-shadow: 0 2px 12px rgba(43,29,18,0.06); }
+.gathered-header { background: linear-gradient(135deg, #0E1C42, #1A2D5A); padding: 14px 20px; display: flex; align-items: center; gap: 12px; }
+.gathered-header-icon { font-size: 24px; }
+.gathered-header-label { font-size: 10px; color: #55C8E8; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+.gathered-header-title { font-size: 18px; color: #fff; font-weight: 800; line-height: 1.2; }
+.gathered-body { padding: 16px 20px 18px; }
+.gathered-intro { font-size: 14px; color: #5A4D3E; line-height: 1.6; margin-bottom: 12px; font-style: italic; }
+.gathered-name-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1.5px solid #E8DDD2; }
+.gathered-name-label { font-size: 13px; color: #0E1C42; font-weight: 800; white-space: nowrap; }
+.gathered-name-input { flex: 1; padding: 8px 12px; border: 1.5px solid #D0C8BE; border-radius: 8px; font-family: 'Nunito', sans-serif; font-size: 14px; color: #2B1D12; background: #FAFAF6; }
+.gathered-name-input:focus { outline: none; border-color: #55C8E8; background: #fff; }
+.gathered-output { width: 100%; min-height: 200px; padding: 12px 14px; border: 1.5px solid #D0C8BE; border-radius: 10px; background: #F4F0EB; font-family: 'Courier New', monospace; font-size: 13px; color: #2B1D12; resize: vertical; line-height: 1.6; white-space: pre-wrap; box-sizing: border-box; }
+.gathered-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.gathered-btn { background: #0E1C42; color: #fff; border: none; padding: 9px 18px; border-radius: 10px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+.gathered-btn:hover { background: #55C8E8; transform: translateY(-1px); }
+.gathered-btn-download { background: #34B76F; }
+.gathered-copied { display: none; margin-top: 8px; padding: 6px 12px; background: #EEF8F0; color: #1a6b35; border-radius: 8px; font-size: 13px; font-weight: 700; border: 1.5px solid #B8E8CF; }
+.gathered-copied.show { display: block; }
+</style>
   <rect width="920" height="260" fill="url(#spaceBg)"/>
   <circle class="st s1" cx="42" cy="18" r="1.5" fill="#fff"/>
   <circle class="st s2" cx="118" cy="44" r="1" fill="#fff"/>
@@ -736,9 +761,17 @@ em{color:#5A4D3E}
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:22px;">🚀 Part B — Short Answer</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer each question in <strong>complete sentences</strong> using your vocabulary words!</p>
       <div class="pq"><span class="pq-num" style="background:#D4772C;">5</span><span class="pq-text">Why do you think people long ago used the moon to tell time or find their way at night?</span></div>
+      <textarea class="response-textarea" id="ans-1" data-label="Why do you think people long ago used the moon to ..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+
       <div class="pq"><span class="pq-num" style="background:#D4772C;">6</span><span class="pq-text">The moon rotates (spins), but we always see the same side from Earth. Can you explain how that's possible?</span></div>
+      <textarea class="response-textarea" id="ans-2" data-label="The moon rotates (spins), but we always see the sa..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+
       <div class="pq"><span class="pq-num" style="background:#D4772C;">7</span><span class="pq-text">What is something surprising you learned today about how the moon moves or what it does?</span></div>
+      <textarea class="response-textarea" id="ans-3" data-label="What is something surprising you learned today abo..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+
       <div class="pq"><span class="pq-num" style="background:#D4772C;">8</span><span class="pq-text">In the lesson, we compared the moon's movement to walking in a circle around a friend while always facing them. Why is that comparison helpful? How is it different from the real moon?</span></div>
+      <textarea class="response-textarea" id="ans-4" data-label="In the lesson, we compared the moon&#x27;s movement to ..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+
 
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:22px;">🎨 Part C — Draw the Lunar Cycle</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Draw all <strong>8 moon phases in order</strong> arranged in a circle (like a clock face) with Earth in the center. Label each phase. Color or shade the lit and dark portions as accurately as you can!</p>
@@ -763,10 +796,7 @@ em{color:#5A4D3E}
       <strong style="color:#0E1C42;font-size:16px;">Claim</strong>
       <span style="color:#9A8E82;font-size:14px;">— Does the moon's shape actually change?</span>
     </div>
-    <div style="background:#fff;border:2px dashed #E8DDD2;border-radius:10px;padding:14px;">
-      <p style="color:#C7922C;font-size:14px;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"The moon appears to change shape because…"</em></p>
-      <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
-    </div>
+    <textarea class="response-textarea ta-lg" id="cer-7" data-label="CER — Claim" placeholder="The moon appears to change shape because…" oninput="refreshGathered()"></textarea>
   </div>
 
   <div style="margin-bottom:16px;">
@@ -775,11 +805,7 @@ em{color:#5A4D3E}
       <strong style="color:#0E1C42;font-size:16px;">Evidence</strong>
       <span style="color:#9A8E82;font-size:14px;">— What does the lunar cycle table show?</span>
     </div>
-    <div style="background:#fff;border:2px dashed #E8DDD2;border-radius:10px;padding:14px;">
-      <p style="color:#C7922C;font-size:14px;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"The data table shows that over ~29 days, the moon goes through… phases, including…"</em></p>
-      <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
-      <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
-    </div>
+    <textarea class="response-textarea ta-lg" id="cer-6" data-label="CER — Evidence" placeholder="The data table shows that over ~29 days, the moon goes through… phases, including…" oninput="refreshGathered()"></textarea>
   </div>
 
   <div style="margin-bottom:16px;">
@@ -788,11 +814,7 @@ em{color:#5A4D3E}
       <strong style="color:#0E1C42;font-size:16px;">Reasoning</strong>
       <span style="color:#9A8E82;font-size:14px;">— Why does the amount of lit surface change?</span>
     </div>
-    <div style="background:#fff;border:2px dashed #E8DDD2;border-radius:10px;padding:14px;">
-      <p style="color:#C7922C;font-size:14px;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because as the moon orbits Earth, the amount of its sunlit side that we can see…"</em></p>
-      <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
-      <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
-    </div>
+    <textarea class="response-textarea ta-lg" id="cer-5" data-label="CER — Reasoning" placeholder="This makes sense because as the moon orbits Earth, the amount of its sunlit side that we can see…" oninput="refreshGathered()"></textarea>
   </div>
 
   <div style="background:#EAF8FD;border-radius:10px;padding:12px 14px;border-left:3px solid #55C8E8;">
@@ -800,7 +822,31 @@ em{color:#5A4D3E}
   </div>
 </div>
 
-      <div style="background:#fff;border:2px solid #55C8E8;border-radius:18px;margin-top:20px;overflow:hidden;">
+      
+  <div class="gathered-card">
+    <div class="gathered-header">
+      <div class="gathered-header-icon">📋</div>
+      <div>
+        <div class="gathered-header-label">Lesson 3.01 · Submission Packet</div>
+        <div class="gathered-header-title">Gathered Answers</div>
+      </div>
+    </div>
+    <div class="gathered-body">
+      <div class="gathered-intro">All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.</div>
+      <div class="gathered-name-row">
+        <span class="gathered-name-label">Your name:</span>
+        <input type="text" class="gathered-name-input" id="student-name" placeholder="Type your name here" oninput="refreshGathered()" />
+      </div>
+      <textarea class="gathered-output" id="gatheredOutput" readonly></textarea>
+      <div class="gathered-actions">
+        <button class="gathered-btn" onclick="copyGathered()">📋 Copy to Clipboard</button>
+        <button class="gathered-btn gathered-btn-download" onclick="downloadGathered()">⬇ Download as Text</button>
+      </div>
+      <div class="gathered-copied" id="copiedMsg">Copied! Paste into your Canvas text box to turn in.</div>
+    </div>
+  </div>
+
+<div style="background:#fff;border:2px solid #55C8E8;border-radius:18px;margin-top:20px;overflow:hidden;">
         <div style="display:flex;align-items:center;gap:10px;padding:14px 20px;background:linear-gradient(135deg,#EAF8FD,#E0F4FB);border-bottom:2px solid #D6F2FB;"><div style="width:42px;height:42px;border-radius:50%;background:#55C8E8;color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">📬</div><div><div style="font-size:10px;color:#9A8E82;text-transform:uppercase;letter-spacing:.8px;font-weight:700;">Time to Submit</div><div style="font-size:20px;color:#0E1C42;font-weight:800;line-height:1.2;">What to Turn In</div></div></div>
         <div style="padding:18px 22px;">
           <p style="font-size:16px;color:#5A4D3E;line-height:1.65;margin-bottom:14px;">When you've finished all three parts, submit your work in Canvas. Use the checklist to make sure you have everything!</p>
@@ -994,6 +1040,54 @@ document.getElementById('progressPct').textContent='20%';
 document.querySelectorAll('.intro-2col .card').forEach(function(card){
   card.querySelector('.card-head').addEventListener('click',function(){card.classList.toggle('collapsed')});
 });
+
+
+function refreshGathered() {
+  var out = document.getElementById('gatheredOutput'); if (!out) return;
+  var lines = [];
+  var nameEl = document.getElementById('student-name'); var name = nameEl ? nameEl.value.trim() : '';
+  lines.push('═══════════════════════════════════════════════');
+  lines.push('  OPTIMA ACADEMY ONLINE — 4TH GRADE SCIENCE');
+  lines.push('  Lesson 3.01 · Meet The Moon');
+  lines.push('  Student: ' + (name || '(add your name above)'));
+  lines.push('═══════════════════════════════════════════════');
+  lines.push('');
+  var textareas = document.querySelectorAll('.response-textarea[data-label]');
+  textareas.forEach(function(ta) {
+    lines.push('--- ' + ta.getAttribute('data-label').toUpperCase() + ' ---');
+    lines.push(ta.value.trim() || '(not yet answered)');
+    lines.push('');
+  });
+  out.value = lines.join('\n');
+}
+function copyGathered() {
+  refreshGathered();
+  var out = document.getElementById('gatheredOutput'); out.select();
+  try { document.execCommand('copy'); } catch(e) {}
+  var msg = document.getElementById('copiedMsg');
+  if (msg) { msg.classList.add('show'); setTimeout(function(){ msg.classList.remove('show'); }, 2400); }
+}
+function downloadGathered() {
+  refreshGathered();
+  var text = document.getElementById('gatheredOutput').value;
+  var blob = new Blob([text], {type: 'text/plain'});
+  var a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = 'lesson-3-01-meet-the-moon.txt';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+}
+document.addEventListener('input', function(e) {
+  if (e.target.classList.contains('response-textarea') || e.target.id === 'student-name') {
+    var panel = document.getElementById('tab-assignment');
+    if (panel && panel.classList.contains('active')) refreshGathered();
+  }
+});
+(function(){
+  var origSwitch = window.switchTab;
+  if (origSwitch) {
+    window.switchTab = function(id) { origSwitch(id); if (id === 'assignment') setTimeout(refreshGathered, 50); };
+  }
+})();
+
 </script>
 </body>
 </html>

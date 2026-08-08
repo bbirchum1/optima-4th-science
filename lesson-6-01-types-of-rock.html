@@ -776,7 +776,32 @@
     .hCx5{animation:hCX  2.7s ease-in-out infinite 1.8s}
     .hCx6{animation:hCX2 3.8s ease-in-out infinite .2s}
     .hMA{animation:hMetaAura 4s ease-in-out infinite}
-  </style>
+  
+/* ── Response Textareas ── */
+.response-textarea { width: 100%; min-height: 80px; padding: 10px 12px; border: 1.5px solid #D0C8BE; border-radius: 10px; background: #FAFAF6; font-family: 'Nunito', sans-serif; font-size: 15px; color: #2B1D12; resize: vertical; line-height: 1.65; transition: border-color 0.2s, box-shadow 0.2s; box-sizing: border-box; }
+.response-textarea:focus { outline: none; border-color: #55C8E8; box-shadow: 0 0 0 3px rgba(85,200,232,0.15); background: #fff; }
+.response-textarea.ta-sm { min-height: 64px; }
+.response-textarea.ta-lg { min-height: 110px; }
+/* ── Gathered Answers ── */
+.gathered-card { background: #fff; border: 2px solid #E8DDD2; border-radius: 18px; margin: 24px 0; overflow: hidden; box-shadow: 0 2px 12px rgba(43,29,18,0.06); }
+.gathered-header { background: linear-gradient(135deg, #0E1C42, #1A2D5A); padding: 14px 20px; display: flex; align-items: center; gap: 12px; }
+.gathered-header-icon { font-size: 24px; }
+.gathered-header-label { font-size: 10px; color: #55C8E8; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+.gathered-header-title { font-size: 18px; color: #fff; font-weight: 800; line-height: 1.2; }
+.gathered-body { padding: 16px 20px 18px; }
+.gathered-intro { font-size: 14px; color: #5A4D3E; line-height: 1.6; margin-bottom: 12px; font-style: italic; }
+.gathered-name-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1.5px solid #E8DDD2; }
+.gathered-name-label { font-size: 13px; color: #0E1C42; font-weight: 800; white-space: nowrap; }
+.gathered-name-input { flex: 1; padding: 8px 12px; border: 1.5px solid #D0C8BE; border-radius: 8px; font-family: 'Nunito', sans-serif; font-size: 14px; color: #2B1D12; background: #FAFAF6; }
+.gathered-name-input:focus { outline: none; border-color: #55C8E8; background: #fff; }
+.gathered-output { width: 100%; min-height: 200px; padding: 12px 14px; border: 1.5px solid #D0C8BE; border-radius: 10px; background: #F4F0EB; font-family: 'Courier New', monospace; font-size: 13px; color: #2B1D12; resize: vertical; line-height: 1.6; white-space: pre-wrap; box-sizing: border-box; }
+.gathered-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.gathered-btn { background: #0E1C42; color: #fff; border: none; padding: 9px 18px; border-radius: 10px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+.gathered-btn:hover { background: #55C8E8; transform: translateY(-1px); }
+.gathered-btn-download { background: #34B76F; }
+.gathered-copied { display: none; margin-top: 8px; padding: 6px 12px; background: #EEF8F0; color: #1a6b35; border-radius: 8px; font-size: 13px; font-weight: 700; border: 1.5px solid #B8E8CF; }
+.gathered-copied.show { display: block; }
+</style>
 
   <!-- ══ BACKGROUND ══ -->
   <rect width="920" height="260" fill="url(#hSky)"/>
@@ -1803,18 +1828,26 @@
         <span class="pq-num" style="background:#34B76F;">1</span>
         <span class="pq-text"><strong>Title your page:</strong> Write <em>"Science Rocks!"</em> at the top of a new page in your science notebook.</span>
       </div>
+      <textarea class="response-textarea" id="ans-1" data-label="Title your page: Write &quot;Science Rocks!&quot; at the top..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+
       <div class="pq">
         <span class="pq-num" style="background:#34B76F;">2</span>
         <span class="pq-text"><strong>Find three rocks.</strong> Go outside or look around your home to collect <strong>three different rock samples</strong>. Make sure they are safe to pick up!</span>
       </div>
+      <textarea class="response-textarea" id="ans-2" data-label="Find three rocks. Go outside or look around your h..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+
       <div class="pq">
         <span class="pq-num" style="background:#34B76F;">3</span>
         <span class="pq-text"><strong>Observe and describe each rock.</strong> Look closely and notice: <strong>Color</strong> · <strong>Texture</strong> (smooth, rough, bumpy, or grainy?) · Any <strong>special features</strong> (sparkles, stripes, layers, holes, fossils?)</span>
       </div>
+      <textarea class="response-textarea" id="ans-3" data-label="Observe and describe each rock. Look closely and n..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+
       <div class="pq">
         <span class="pq-num" style="background:#34B76F;">4</span>
         <span class="pq-text"><strong>Make your best guess!</strong> Based on what you learned today, is each rock <strong>igneous</strong>, <strong>sedimentary</strong>, or <strong>metamorphic</strong>? It's okay to be unsure — make your best scientific guess and explain why!</span>
       </div>
+      <textarea class="response-textarea" id="ans-4" data-label="Make your best guess! Based on what you learned to..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+
 
       <div class="callout callout-think">
         <span class="callout-icon">🔍</span>
@@ -1860,14 +1893,20 @@
         <span class="pq-num" style="background:#D4772C;">6</span>
         <span class="pq-text">How did you decide what type each rock might be?</span>
       </div>
+      <textarea class="response-textarea" id="ans-5" data-label="How did you decide what type each rock might be?" placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+
       <div class="pq">
         <span class="pq-num" style="background:#D4772C;">7</span>
         <span class="pq-text">What clues or features helped you the most?</span>
       </div>
+      <textarea class="response-textarea" id="ans-6" data-label="What clues or features helped you the most?" placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+
       <div class="pq">
         <span class="pq-num" style="background:#D4772C;">8</span>
         <span class="pq-text">Was anything tricky or confusing? What questions do you still have?</span>
       </div>
+      <textarea class="response-textarea" id="ans-7" data-label="Was anything tricky or confusing? What questions d..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+
 
       <!-- PART C -->
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin:20px 0 6px;">🎨 Part C &mdash; Draw Your Rocks <em style="font-size:14px;font-weight:600;color:#9A8E82;">(optional but encouraged!)</em></p>
@@ -1886,16 +1925,35 @@
 <div style="background:#FAF7F3;border:2px solid #8B6FC0;border-radius:16px;padding:22px 24px;margin-bottom:20px;">
   <div style="font-size:12px;color:#8B6FC0;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:8px;">✏️ Evidence-Based Response</div>
   <p style="font-size:17px;color:#0E1C42;font-weight:700;margin-bottom:12px;">Make a claim about which rock type takes the longest to form. Use evidence from today's lesson — the formation process of each type — and explain your reasoning.</p>
-  <div style="background:#fff;border:2px dashed #E8DDD2;border-radius:10px;padding:14px;">
-    <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
-    <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
-    <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
-    <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
-  </div>
+  <textarea class="response-textarea ta-lg" id="cer-8" data-label="Response" placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
 </div>
 
       <!-- SUBMISSION CHECKLIST -->
-      <div style="background:#fff;border:2px solid #55C8E8;border-radius:18px;margin-top:20px;overflow:hidden;">
+      
+  <div class="gathered-card">
+    <div class="gathered-header">
+      <div class="gathered-header-icon">📋</div>
+      <div>
+        <div class="gathered-header-label">Lesson 6.01 · Submission Packet</div>
+        <div class="gathered-header-title">Gathered Answers</div>
+      </div>
+    </div>
+    <div class="gathered-body">
+      <div class="gathered-intro">All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.</div>
+      <div class="gathered-name-row">
+        <span class="gathered-name-label">Your name:</span>
+        <input type="text" class="gathered-name-input" id="student-name" placeholder="Type your name here" oninput="refreshGathered()" />
+      </div>
+      <textarea class="gathered-output" id="gatheredOutput" readonly></textarea>
+      <div class="gathered-actions">
+        <button class="gathered-btn" onclick="copyGathered()">📋 Copy to Clipboard</button>
+        <button class="gathered-btn gathered-btn-download" onclick="downloadGathered()">⬇ Download as Text</button>
+      </div>
+      <div class="gathered-copied" id="copiedMsg">Copied! Paste into your Canvas text box to turn in.</div>
+    </div>
+  </div>
+
+<div style="background:#fff;border:2px solid #55C8E8;border-radius:18px;margin-top:20px;overflow:hidden;">
         <div style="display:flex;align-items:center;gap:10px;padding:14px 20px;background:#EAF8FD;border-bottom:2px solid #D6F2FB;">
           <div style="width:42px;height:42px;border-radius:50%;background:#55C8E8;color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">📬</div>
           <div>
@@ -2195,6 +2253,54 @@ document.querySelectorAll('.intro-2col .card').forEach(function(card) {
 document.querySelector('[data-tab="vocab"]').classList.add('visited');
 document.getElementById('progressFill').style.width = '20%';
 document.getElementById('progressPct').textContent = '20%';
+
+
+function refreshGathered() {
+  var out = document.getElementById('gatheredOutput'); if (!out) return;
+  var lines = [];
+  var nameEl = document.getElementById('student-name'); var name = nameEl ? nameEl.value.trim() : '';
+  lines.push('═══════════════════════════════════════════════');
+  lines.push('  OPTIMA ACADEMY ONLINE — 4TH GRADE SCIENCE');
+  lines.push('  Lesson 6.01 · Types Of Rock');
+  lines.push('  Student: ' + (name || '(add your name above)'));
+  lines.push('═══════════════════════════════════════════════');
+  lines.push('');
+  var textareas = document.querySelectorAll('.response-textarea[data-label]');
+  textareas.forEach(function(ta) {
+    lines.push('--- ' + ta.getAttribute('data-label').toUpperCase() + ' ---');
+    lines.push(ta.value.trim() || '(not yet answered)');
+    lines.push('');
+  });
+  out.value = lines.join('\n');
+}
+function copyGathered() {
+  refreshGathered();
+  var out = document.getElementById('gatheredOutput'); out.select();
+  try { document.execCommand('copy'); } catch(e) {}
+  var msg = document.getElementById('copiedMsg');
+  if (msg) { msg.classList.add('show'); setTimeout(function(){ msg.classList.remove('show'); }, 2400); }
+}
+function downloadGathered() {
+  refreshGathered();
+  var text = document.getElementById('gatheredOutput').value;
+  var blob = new Blob([text], {type: 'text/plain'});
+  var a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = 'lesson-6-01-types-of-rock.txt';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+}
+document.addEventListener('input', function(e) {
+  if (e.target.classList.contains('response-textarea') || e.target.id === 'student-name') {
+    var panel = document.getElementById('tab-assignment');
+    if (panel && panel.classList.contains('active')) refreshGathered();
+  }
+});
+(function(){
+  var origSwitch = window.switchTab;
+  if (origSwitch) {
+    window.switchTab = function(id) { origSwitch(id); if (id === 'assignment') setTimeout(refreshGathered, 50); };
+  }
+})();
+
 </script>
 </body>
 </html>

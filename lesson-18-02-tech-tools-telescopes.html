@@ -731,6 +731,31 @@
     user-select: all;
   }
 
+
+/* ── Response Textareas ── */
+.response-textarea { width: 100%; min-height: 80px; padding: 10px 12px; border: 1.5px solid #D0C8BE; border-radius: 10px; background: #FAFAF6; font-family: 'Nunito', sans-serif; font-size: 15px; color: #2B1D12; resize: vertical; line-height: 1.65; transition: border-color 0.2s, box-shadow 0.2s; box-sizing: border-box; }
+.response-textarea:focus { outline: none; border-color: #55C8E8; box-shadow: 0 0 0 3px rgba(85,200,232,0.15); background: #fff; }
+.response-textarea.ta-sm { min-height: 64px; }
+.response-textarea.ta-lg { min-height: 110px; }
+/* ── Gathered Answers ── */
+.gathered-card { background: #fff; border: 2px solid #E8DDD2; border-radius: 18px; margin: 24px 0; overflow: hidden; box-shadow: 0 2px 12px rgba(43,29,18,0.06); }
+.gathered-header { background: linear-gradient(135deg, #0E1C42, #1A2D5A); padding: 14px 20px; display: flex; align-items: center; gap: 12px; }
+.gathered-header-icon { font-size: 24px; }
+.gathered-header-label { font-size: 10px; color: #55C8E8; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+.gathered-header-title { font-size: 18px; color: #fff; font-weight: 800; line-height: 1.2; }
+.gathered-body { padding: 16px 20px 18px; }
+.gathered-intro { font-size: 14px; color: #5A4D3E; line-height: 1.6; margin-bottom: 12px; font-style: italic; }
+.gathered-name-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1.5px solid #E8DDD2; }
+.gathered-name-label { font-size: 13px; color: #0E1C42; font-weight: 800; white-space: nowrap; }
+.gathered-name-input { flex: 1; padding: 8px 12px; border: 1.5px solid #D0C8BE; border-radius: 8px; font-family: 'Nunito', sans-serif; font-size: 14px; color: #2B1D12; background: #FAFAF6; }
+.gathered-name-input:focus { outline: none; border-color: #55C8E8; background: #fff; }
+.gathered-output { width: 100%; min-height: 200px; padding: 12px 14px; border: 1.5px solid #D0C8BE; border-radius: 10px; background: #F4F0EB; font-family: 'Courier New', monospace; font-size: 13px; color: #2B1D12; resize: vertical; line-height: 1.6; white-space: pre-wrap; box-sizing: border-box; }
+.gathered-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.gathered-btn { background: #0E1C42; color: #fff; border: none; padding: 9px 18px; border-radius: 10px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+.gathered-btn:hover { background: #55C8E8; transform: translateY(-1px); }
+.gathered-btn-download { background: #34B76F; }
+.gathered-copied { display: none; margin-top: 8px; padding: 6px 12px; background: #EEF8F0; color: #1a6b35; border-radius: 8px; font-size: 13px; font-weight: 700; border: 1.5px solid #B8E8CF; }
+.gathered-copied.show { display: block; }
 </style>
 </head>
 <body>
@@ -1406,14 +1431,20 @@
         <span class="pq-num" style="background:#D4772C;">5</span>
         <span class="pq-text">Pick ONE of the four objects from the diagram (Moon, Saturn, far stars, or galaxies). Write the best tool for it, and explain why in one sentence.</span>
       </div>
+      <textarea class="response-textarea" id="ans-1" data-label="Pick ONE of the four objects from the diagram (Moo..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+
       <div class="pq">
         <span class="pq-num" style="background:#D4772C;">6</span>
         <span class="pq-text">Why do scientists often use binoculars AND a backyard telescope when stargazing? Use the word <em>distant</em> in your answer.</span>
       </div>
+      <textarea class="response-textarea" id="ans-2" data-label="Why do scientists often use binoculars AND a backy..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+
       <div class="pq">
         <span class="pq-num" style="background:#D4772C;">7</span>
         <span class="pq-text">Why are SPACE telescopes a big improvement over ground telescopes? Use the word <em>image</em> in your answer.</span>
       </div>
+      <textarea class="response-textarea" id="ans-3" data-label="Why are SPACE telescopes a big improvement over gr..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+
 
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C &mdash; Build Your Own Food Chain</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">In your science notebook, draw a <strong>new</strong> food chain — different from the one in the lesson. It can be from a Florida beach, a backyard, a pond, or a pine forest. Include: <strong>the Sun · one producer · two consumers · labeled energy arrows between each</strong>.</p>
@@ -1431,12 +1462,7 @@
         <div style="font-size:12px;color:#8B6FC0;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:8px;">✏️ Use Your Evidence</div>
         <p style="font-size:17px;color:#0E1C42;font-weight:700;margin-bottom:8px;">A classmate says, <em>"If a telescope can make a star look bigger, then we don't need to send any telescopes to space — we can just build them taller on Earth."</em></p>
         <p style="font-size:16px;color:#2B1D12;margin-bottom:12px;">Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.</p>
-        <div style="background:#fff;border:2px dashed #E8DDD2;border-radius:10px;padding:14px;">
-          <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
-          <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
-          <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
-          <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
-        </div>
+        <textarea class="response-textarea ta-lg" id="cer-4" data-label="Response" placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
       </div>
 
       <div style="background:#fff;border:2px solid #8B6FC0;border-radius:18px;margin-top:20px;overflow:hidden;">
@@ -1741,6 +1767,54 @@ document.querySelectorAll('.intro-2col .card').forEach(function(card) {
     card.classList.toggle('collapsed');
   });
 });
+
+
+function refreshGathered() {
+  var out = document.getElementById('gatheredOutput'); if (!out) return;
+  var lines = [];
+  var nameEl = document.getElementById('student-name'); var name = nameEl ? nameEl.value.trim() : '';
+  lines.push('═══════════════════════════════════════════════');
+  lines.push('  OPTIMA ACADEMY ONLINE — 4TH GRADE SCIENCE');
+  lines.push('  Lesson 18.02 · Tech Tools Telescopes');
+  lines.push('  Student: ' + (name || '(add your name above)'));
+  lines.push('═══════════════════════════════════════════════');
+  lines.push('');
+  var textareas = document.querySelectorAll('.response-textarea[data-label]');
+  textareas.forEach(function(ta) {
+    lines.push('--- ' + ta.getAttribute('data-label').toUpperCase() + ' ---');
+    lines.push(ta.value.trim() || '(not yet answered)');
+    lines.push('');
+  });
+  out.value = lines.join('\n');
+}
+function copyGathered() {
+  refreshGathered();
+  var out = document.getElementById('gatheredOutput'); out.select();
+  try { document.execCommand('copy'); } catch(e) {}
+  var msg = document.getElementById('copiedMsg');
+  if (msg) { msg.classList.add('show'); setTimeout(function(){ msg.classList.remove('show'); }, 2400); }
+}
+function downloadGathered() {
+  refreshGathered();
+  var text = document.getElementById('gatheredOutput').value;
+  var blob = new Blob([text], {type: 'text/plain'});
+  var a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = 'lesson-18-02-tech-tools-telescopes.txt';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+}
+document.addEventListener('input', function(e) {
+  if (e.target.classList.contains('response-textarea') || e.target.id === 'student-name') {
+    var panel = document.getElementById('tab-assignment');
+    if (panel && panel.classList.contains('active')) refreshGathered();
+  }
+});
+(function(){
+  var origSwitch = window.switchTab;
+  if (origSwitch) {
+    window.switchTab = function(id) { origSwitch(id); if (id === 'assignment') setTimeout(refreshGathered, 50); };
+  }
+})();
+
 </script>
 </body>
 </html>
