@@ -8,7 +8,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Nunito','Century Gothic','Arial Rounded MT Bold',Verdana,sans-serif;background:#F4F0EB url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");color:#2B1D12;line-height:1.6;-webkit-font-smoothing:antialiased}
-.page-wrap{max-width:920px;margin:0 auto;background:#FAF7F3;box-shadow:0 0 40px rgba(0,0,0,0.07)}
+.page-wrap{max-width:920px;margin:0 auto;background:#FAF7F3;padding: 0 18px; box-shadow:0 0 40px rgba(0,0,0,0.07)}
 
 /* ── PROGRESS BAR ── */
 .progress-wrap{position:sticky;top:0;z-index:200;background:#0E1C42;padding:8px 20px 10px;border-bottom:2px solid rgba(168,216,120,0.3);display:flex;align-items:center;gap:14px}
@@ -278,6 +278,34 @@ strong{color:#0E1C42}
   .tab-btn{min-width:90px;font-size:11px;padding:10px 4px}
   .vocab-grid{grid-template-columns:1fr}
   .step-card{flex-direction:column;gap:8px}
+}
+
+/* ═══ VIDEO PLACEHOLDER ═══ */
+.video-placeholder-wrap {
+  border-radius: 14px; overflow: hidden; margin: 0 0 18px;
+  border: 2px dashed rgba(139, 111, 192, 0.4);
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+}
+.video-placeholder-inner {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 28px 20px;
+}
+.video-placeholder-inner .vp-icon { font-size: 34px; margin-bottom: 6px; }
+.video-placeholder-inner .vp-label {
+  font-size: 10px; color: #55C8E8; text-transform: uppercase;
+  letter-spacing: 2px; font-weight: 800; margin-bottom: 4px;
+}
+.video-placeholder-inner .vp-title {
+  font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px;
+}
+.video-placeholder-inner .vp-slot {
+  font-family: monospace; font-size: 11px; color: #8B6FC0;
+  background: rgba(139,111,192,0.15); padding: 3px 10px; border-radius: 4px;
+}
+.video-placeholder-inner .vp-notes {
+  font-size: 12px; color: rgba(255,255,255,0.8); font-style: italic;
+  margin-top: 10px; text-align: left; padding: 10px 12px;
+  background: rgba(0,0,0,0.25); border-radius: 6px; border-left: 3px solid #8B6FC0;
 }
 </style>
 </head>
@@ -722,6 +750,20 @@ strong{color:#0E1C42}
 <div class="tab-panel active" id="tab-vocab">
 
 
+
+<!-- ═══ INTRODUCTION VIDEO ═══ -->
+<div class="video-placeholder-wrap">
+<!-- slot: 4-01-intro -->
+<div class="video-placeholder-inner">
+  <span class="vp-icon">🎬</span>
+  <div class="vp-label">Introduction Video</div>
+  <div class="vp-title">Earth Diverse Features</div>
+  <div class="vp-slot">4-01-intro</div>
+  <div class="vp-notes">
+    <strong>Teacher recording notes:</strong> Introduce topographic maps and Earth landforms. Preview vocabulary: topographic map, contour line, landform, elevation, erosion, valley. Students will learn to read maps that reveal the shape of our planet. ~60-90 seconds.
+  </div>
+</div>
+</div>
   <!-- Activity 1 Warm-Up -->
   <div class="activity-card act-warmup">
     <div class="act-head">
@@ -1609,6 +1651,33 @@ window.addEventListener('beforeunload', function(e){
   }
 });
 
+</script>
+<!-- Video Manifest Loader -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('https://raw.githubusercontent.com/bbirchum1/optima-4th-science/main/video-manifest.json?v=' + Date.now())
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var manifest = data.videos || data;
+      document.querySelectorAll('.video-placeholder-wrap').forEach(function(wrap) {
+        var m = wrap.innerHTML.match(/<!--\s*slot:\s*([\w-]+)\s*-->/);
+        if (!m) return;
+        var entry = manifest[m[1]];
+        if (!entry || entry.status !== 'ready' || !entry.embed) return;
+        var temp = document.createElement('div');
+        temp.innerHTML = entry.embed;
+        var iframe = temp.querySelector('iframe');
+        if (!iframe) return;
+        iframe.removeAttribute('width');
+        iframe.removeAttribute('height');
+        iframe.style.cssText = 'display:block;width:100%;aspect-ratio:16/9;border:none;';
+        wrap.innerHTML = '';
+        wrap.style.cssText = 'border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
+        wrap.appendChild(iframe);
+      });
+    })
+    .catch(function(err) { console.warn('Video manifest load failed:', err); });
+});
 </script>
 </body>
 </html>
